@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Linux-基础篇 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Red Hat Enterprise Linux 71.Accessing The Command Line什么是shell?在计算机科学中，Shell俗称壳（用来区别于核），是指“提供使用者使用界面”的软件（命令解析器）。文字操作系统与外部最主要的接口就叫做shell。shell是操作系统最外面的一层。shell管理你与操作系统之间的交互：等待你输入，向操作系统解释你的输入，并且处理各种各样的操">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux-基础篇">
+<meta property="og:url" content="http://yoursite.com/2016/02/02/RH124-unit1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Red Hat Enterprise Linux 71.Accessing The Command Line什么是shell?在计算机科学中，Shell俗称壳（用来区别于核），是指“提供使用者使用界面”的软件（命令解析器）。文字操作系统与外部最主要的接口就叫做shell。shell是操作系统最外面的一层。shell管理你与操作系统之间的交互：等待你输入，向操作系统解释你的输入，并且处理各种各样的操">
+<meta property="og:updated_time" content="2016-02-02T11:56:07.161Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux-基础篇">
+<meta name="twitter:description" content="Red Hat Enterprise Linux 71.Accessing The Command Line什么是shell?在计算机科学中，Shell俗称壳（用来区别于核），是指“提供使用者使用界面”的软件（命令解析器）。文字操作系统与外部最主要的接口就叫做shell。shell是操作系统最外面的一层。shell管理你与操作系统之间的交互：等待你输入，向操作系统解释你的输入，并且处理各种各样的操">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" type="text/css">
+  
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/">Wang Chi</a></h1>
+        </hgroup>
+
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:123@123.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="/#" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Wang Chi</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Wang Chi</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:123@123.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="/#" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-RH124-unit1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/02/RH124-unit1/" class="article-date">
+      <time datetime="2016-02-02T11:56:07.161Z" itemprop="datePublished">2016-02-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux-基础篇
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h2 id="1-Accessing_The_Command_Line"><a href="#1-Accessing_The_Command_Line" class="headerlink" title="1.Accessing The Command Line"></a>1.Accessing The Command Line</h2><h3 id="u4EC0_u4E48_u662Fshell_3F"><a href="#u4EC0_u4E48_u662Fshell_3F" class="headerlink" title="什么是shell?"></a>什么是shell?</h3><p>在计算机科学中，Shell俗称壳（用来区别于核），是指“提供使用者使用界面”的软件（命令解析器）。文字操作系统与外部最主要的接口就叫做shell。shell是操作系统最外面的一层。shell管理你与操作系统之间的交互：等待你输入，向操作系统解释你的输入，并且处理各种各样的操作系统的输出结果。</p>
+<h3 id="u547D_u4EE4_u884C_u89E3_u91CA"><a href="#u547D_u4EE4_u884C_u89E3_u91CA" class="headerlink" title="命令行解释"></a>命令行解释</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Desktop]<span class="comment">#</span></span><br><span class="line">root      <span class="comment">##开启shell的用户</span></span><br><span class="line">@         <span class="comment">##分隔符（可以自定义)</span></span><br><span class="line">localhost <span class="comment">##主机的短名称，表示shell开启在哪台主机里</span></span><br><span class="line">Desktop   <span class="comment">##表示你在系统的什么位置</span></span><br><span class="line"><span class="comment">#         ##身份提示中的超级用户，普通用户：$</span></span><br></pre></td></tr></table></figure>
+<h3 id="u5207_u6362_u7528_u6237"><a href="#u5207_u6362_u7528_u6237" class="headerlink" title="切换用户"></a>切换用户</h3><p><code>[root@localhost Desktop]# su - 系统中已经存在用户名字   ##切换用户身份</code></p>
+<h3 id="u865A_u62DF_u63A7_u5236_u53F0"><a href="#u865A_u62DF_u63A7_u5236_u53F0" class="headerlink" title="虚拟控制台"></a>虚拟控制台</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ctrl+alt+f2<span class="operator">-f</span>6	<span class="comment">##进入虚拟控制台</span></span><br><span class="line">ctrl+alt+F1|F7	<span class="comment">##回到图形</span></span><br></pre></td></tr></table></figure>
+<h3 id="u5728shell_u4E2D_u5982_u4F55_u4F7F_u7528_u547D_u4EE4"><a href="#u5728shell_u4E2D_u5982_u4F55_u4F7F_u7528_u547D_u4EE4" class="headerlink" title="在shell中如何使用命令"></a>在shell中如何使用命令</h3><ul>
+<li>1.命令一定要在提示符之后输入</li>
+<li>2.命令的输入方式<br>命令     参数     目标   ##参数是命令功能的指定<br>-参数      ##单词的缩写<br>–参数    ##单词的全拼  </li>
+<li>3.帮助<br>命令     –help<br>【内容】       ##内容选加<br>&lt;内容&gt;        ##内容必加<br>内容…       ##内容个数任意</li>
+</ul>
+<h3 id="gnome_u4E2D_u7684_u5E38_u89C4_u64CD_u4F5C"><a href="#gnome_u4E2D_u7684_u5E38_u89C4_u64CD_u4F5C" class="headerlink" title="gnome中的常规操作"></a>gnome中的常规操作</h3><ul>
+<li><p>1.login</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##for gui</span></span><br><span class="line">not list -----&gt;  username :root ---------&gt;passwd: redhat</span><br><span class="line"><span class="comment">##for text</span></span><br><span class="line">localhost login: root</span><br><span class="line">Passwd: redhat</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2.切换工作界面<br><code>ctrl+alt+上|下</code></p>
+</li>
+<li>3.锁屏<br><code>ctrl+alt+L</code></li>
+<li><p>4.shell打开方式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">右健 --&gt; Open <span class="keyword">in</span> Terminal</span><br><span class="line">Applications --&gt; Favorites --&gt; Terminal</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5.图形下添加快捷方式<br><code>Application——&gt;System Tools——&gt;Settings——&gt;Keyboard——&gt;Shortcuts :gnome-terminal</code></p>
+</li>
+<li>6.系统重新初始化<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">关机:</span><br><span class="line">poweroff         </span><br><span class="line">init <span class="number">0</span>            </span><br><span class="line">shutdown -h now <span class="comment">##会依据目前已启动的服务逐次关闭各服务后才关机。</span></span><br><span class="line">halt   <span class="comment">##不理睬目前系统的状况，进行硬件关机。</span></span><br><span class="line">重启:</span><br><span class="line">reboot</span><br><span class="line">init <span class="number">6</span></span><br><span class="line">shutdown -r now</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="u7B80_u5355_u547D_u4EE4"><a href="#u7B80_u5355_u547D_u4EE4" class="headerlink" title="简单命令"></a>简单命令</h2><h3 id="date"><a href="#date" class="headerlink" title="date"></a>date</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">date -R    <span class="comment">##显示格式  星期 日 月 年 时:分:秒</span></span><br><span class="line">date 月月日日时时分分.秒秒 <span class="comment">##修改时间</span></span><br><span class="line">date <span class="operator">-d</span> +时间day/hour   <span class="comment">##显示多少天(小时)后的时间</span></span><br><span class="line">watch -n <span class="number">1</span> date	    <span class="comment">##监控date命令每秒钟执行一次</span></span><br><span class="line">date +%D            <span class="comment">##月/日/年</span></span><br><span class="line">date +%m-%d-%Y      <span class="comment">##月-日-年</span></span><br></pre></td></tr></table></figure>
+<h3 id="passwd"><a href="#passwd" class="headerlink" title="passwd"></a>passwd</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">passwd  username    <span class="comment">##更改用户密码(只有超级用户root可以)</span></span><br><span class="line">passwd	            <span class="comment">##普通用户修改自己的密码,普通用户只能修改自己的密码,并且必须知道自己原始密码,修改密码必须大于8位,不能与原始密码字符重复</span></span><br><span class="line">passwd <span class="operator">-l</span> username  <span class="comment">##冻结普通用户</span></span><br><span class="line">passwd -u username  <span class="comment">##解锁冻结帐号</span></span><br></pre></td></tr></table></figure>
+<h3 id="file"><a href="#file" class="headerlink" title="file"></a>file</h3><p><code>file    文件名   ##查看文件类型</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># file anaconda-ks.cfg</span></span><br><span class="line">anaconda-ks.cfg: ASCII text</span><br></pre></td></tr></table></figure></p>
+<h3 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat	文件名称 <span class="comment">##查看文件内所有内容</span></span><br><span class="line">cat - b 文件名称 <span class="comment">##查看文件内所有内容并给除空行外的行加行标号</span></span><br><span class="line">cat - n 文件名称 <span class="comment">##查看文件内所有内容并给所有行加标号</span></span><br></pre></td></tr></table></figure>
+<h3 id="head_2Ctail"><a href="#head_2Ctail" class="headerlink" title="head,tail"></a>head,tail</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">head -数字 文件名称         <span class="comment">##文件内容前多少行,不加-数字,默认为十行</span></span><br><span class="line">tail -数字 文件名称	 <span class="comment">##文件内容后多少行,不加-数字,默认为十行</span></span><br></pre></td></tr></table></figure>
+<h3 id="less"><a href="#less" class="headerlink" title="less"></a>less</h3><p><code>less 文件名称    ##查看文件所有内容从文件的开始,按q退出</code></p>
+<h3 id="wc"><a href="#wc" class="headerlink" title="wc"></a>wc</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wc    文件名   <span class="comment">##统计行数，单词数，字符数</span></span><br><span class="line">wc <span class="operator">-l</span> 文件名   <span class="comment">##统计行数(包含空行)</span></span><br><span class="line">wc -c 文件名   <span class="comment">##统计字节数</span></span><br><span class="line">wc -m 文件名   <span class="comment">##统计字符数</span></span><br><span class="line">wc -w 文件名   <span class="comment">##统计单词数</span></span><br><span class="line">wc -L 文件名   <span class="comment">##显示最长行的长度</span></span><br></pre></td></tr></table></figure>
+<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ls --help   <span class="comment">##命令帮助</span></span><br><span class="line">ls <span class="operator">-l</span>[long] <span class="comment">##查看属性</span></span><br><span class="line">ls <span class="operator">-s</span>[size] <span class="comment">##查看大小</span></span><br><span class="line">ls <span class="operator">-a</span>[all]  <span class="comment">##查看隐藏文件</span></span><br><span class="line">ls <span class="operator">-d</span>[directory] <span class="comment">##查看目录</span></span><br><span class="line">ls -R	      <span class="comment">##递归列出</span></span><br><span class="line">ls -Z       <span class="comment">##打印安全上下文</span></span><br></pre></td></tr></table></figure>
+<h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span>		        <span class="comment">##进入目标目录中(change directory)</span></span><br><span class="line"><span class="built_in">cd</span> ～		     <span class="comment">##回到当前用户家目录</span></span><br><span class="line"><span class="built_in">cd</span> ～username   <span class="comment">##进入到指定用户家目录</span></span><br><span class="line"><span class="built_in">cd</span> ..		      <span class="comment">##进入当前目录的上一级</span></span><br><span class="line"><span class="built_in">cd</span> -		      <span class="comment">##进入之前所在系统目录</span></span><br></pre></td></tr></table></figure>
+<h3 id="tab_u952E"><a href="#tab_u952E" class="headerlink" title="tab键"></a>tab键</h3><p><code>补齐系统中存在的文件名称,命令,和命令参数</code></p>
+<h3 id="u5386_u53F2_u8C03_u7528"><a href="#u5386_u53F2_u8C03_u7528" class="headerlink" title="历史调用"></a>历史调用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">!数字           <span class="comment">##执行第多少条命令</span></span><br><span class="line">!关键字         <span class="comment">##执行最近一条以关键字开头的命令</span></span><br><span class="line">ctrl+r+关键字   <span class="comment">##调出最近一条含有关键字的命令</span></span><br><span class="line">上下键	       <span class="comment">##从最后一条命令开始向前查看或者向后查看</span></span><br><span class="line"><span class="built_in">history</span>	       <span class="comment">##查看历史</span></span><br></pre></td></tr></table></figure>
+<h3 id="u5FEB_u6377_u952E"><a href="#u5FEB_u6377_u952E" class="headerlink" title="快捷键"></a>快捷键</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ctrl	+ a	<span class="comment">##光标移动到行首</span></span><br><span class="line">ctrl	+ e	<span class="comment">##光标移动到行尾</span></span><br><span class="line">ctrl	+ u	<span class="comment">##光标所在位置删除到行首</span></span><br><span class="line">ctrl	+ k	<span class="comment">##光标所在位置删除到行尾</span></span><br><span class="line">ctrl    + w     <span class="comment">##删除光标所在位置的前一个单词</span></span><br><span class="line">ctrl	+ r	<span class="comment">##调出最近一条含有关键字的命令</span></span><br><span class="line">ctrl	+ 左|右	<span class="comment">##光标移动以单词为单位</span></span><br><span class="line">ctrl	+ c	<span class="comment">##撤销已输入的命令</span></span><br><span class="line">ctrl	+ d	<span class="comment">##关闭当前环境</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/02/02/RH124-unit1/">Linux-基础篇</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Wang Chi 的个人博客">Wang Chi</a></p>
+        <p><span>发布时间:</span>2016年02月02日 - 19时56分</p>
+        <p><span>最后更新:</span>2016年02月02日 - 19时56分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/02/02/RH124-unit1/" title="Linux-基础篇">http://yoursite.com/2016/02/02/RH124-unit1/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/02/RH124-unit1/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/02/02/RH124-unit2/">
+                    Linux-基础篇
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/01/30/myfirst/">
+                    Wellcome to my blog
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Red_Hat_Enterprise_Linux_7"><span class="toc-number">1.</span> <span class="toc-text">Red Hat Enterprise Linux 7</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Accessing_The_Command_Line"><span class="toc-number">2.</span> <span class="toc-text">1.Accessing The Command Line</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4EC0_u4E48_u662Fshell_3F"><span class="toc-number">2.1.</span> <span class="toc-text">什么是shell?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u547D_u4EE4_u884C_u89E3_u91CA"><span class="toc-number">2.2.</span> <span class="toc-text">命令行解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5207_u6362_u7528_u6237"><span class="toc-number">2.3.</span> <span class="toc-text">切换用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u865A_u62DF_u63A7_u5236_u53F0"><span class="toc-number">2.4.</span> <span class="toc-text">虚拟控制台</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5728shell_u4E2D_u5982_u4F55_u4F7F_u7528_u547D_u4EE4"><span class="toc-number">2.5.</span> <span class="toc-text">在shell中如何使用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gnome_u4E2D_u7684_u5E38_u89C4_u64CD_u4F5C"><span class="toc-number">2.6.</span> <span class="toc-text">gnome中的常规操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u7B80_u5355_u547D_u4EE4"><span class="toc-number">3.</span> <span class="toc-text">简单命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#date"><span class="toc-number">3.1.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#passwd"><span class="toc-number">3.2.</span> <span class="toc-text">passwd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#file"><span class="toc-number">3.3.</span> <span class="toc-text">file</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cat"><span class="toc-number">3.4.</span> <span class="toc-text">cat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#head_2Ctail"><span class="toc-number">3.5.</span> <span class="toc-text">head,tail</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#less"><span class="toc-number">3.6.</span> <span class="toc-text">less</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wc"><span class="toc-number">3.7.</span> <span class="toc-text">wc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ls"><span class="toc-number">3.8.</span> <span class="toc-text">ls</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cd"><span class="toc-number">3.9.</span> <span class="toc-text">cd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tab_u952E"><span class="toc-number">3.10.</span> <span class="toc-text">tab键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5386_u53F2_u8C03_u7528"><span class="toc-number">3.11.</span> <span class="toc-text">历史调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5FEB_u6377_u952E"><span class="toc-number">3.12.</span> <span class="toc-text">快捷键</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+    <div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/02/02/RH124-unit2/" title="上一篇: Linux-基础篇">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/01/30/myfirst/" title="下一篇: Wellcome to my blog">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit5/">Linux-基础篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit4/">Linux-基础篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit3/">Linux-基础篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit2/">Linux-基础篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit1/">Linux-基础篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/30/myfirst/">Wellcome to my blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/hello-world/">Hello World</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 Wang Chi
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
