@@ -141,7 +141,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        
+                        <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux-基础/" style="font-size: 20px;">linux 基础</a> <a href="/tags/主页/" style="font-size: 10px;">主页</a>
                     </div>
                 </section>
                 
@@ -222,8 +222,8 @@
     <article id="post-RH124-unit5" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/02/RH124-unit5/" class="article-date">
-      <time datetime="2016-02-02T12:50:36.520Z" itemprop="datePublished">2016-02-02</time>
+      <a href="/2016/02/05/RH124-unit5/" class="article-date">
+      <time datetime="2016-02-05T09:33:12.000Z" itemprop="datePublished">2016-02-05</time>
 </a>
     </div>
   
@@ -236,7 +236,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/02/RH124-unit5/">Linux-基础篇</a>
+      <a class="article-title" href="/2016/02/05/RH124-unit5/">Linux-基础篇</a>
     </h1>
   
 
@@ -253,8 +253,16 @@
     <div class="article-info article-info-index">
       
       
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
+    </div>
+
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -274,8 +282,8 @@
     <article id="post-RH124-unit4" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/02/RH124-unit4/" class="article-date">
-      <time datetime="2016-02-02T12:49:07.303Z" itemprop="datePublished">2016-02-02</time>
+      <a href="/2016/02/03/RH124-unit4/" class="article-date">
+      <time datetime="2016-02-03T11:30:30.000Z" itemprop="datePublished">2016-02-03</time>
 </a>
     </div>
   
@@ -288,7 +296,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/02/RH124-unit4/">Linux-基础篇</a>
+      <a class="article-title" href="/2016/02/03/RH124-unit4/">Linux-基础篇</a>
     </h1>
   
 
@@ -298,48 +306,30 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h2 id="4-Creating_2C_Viewing_2C_and_Editing_Text_Files"><a href="#4-Creating_2C_Viewing_2C_and_Editing_Text_Files" class="headerlink" title="4.Creating, Viewing, and Editing Text Files"></a>4.Creating, Viewing, and Editing Text Files</h2><h3 id="u5982_u4F55_u7BA1_u7406_u8F93_u51FA"><a href="#u5982_u4F55_u7BA1_u7406_u8F93_u51FA" class="headerlink" title="如何管理输出"></a>如何管理输出</h3><blockquote>
+              <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h2 id="4-Creating_2C_Viewing_2C_and_Editing_Text_Files"><a href="#4-Creating_2C_Viewing_2C_and_Editing_Text_Files" class="headerlink" title="4.Creating, Viewing, and Editing Text Files"></a>4.Creating, Viewing, and Editing Text Files</h2><h3 id="u5982_u4F55_u7BA1_u7406_u8F93_u51FA"><a href="#u5982_u4F55_u7BA1_u7406_u8F93_u51FA" class="headerlink" title="如何管理输出"></a>如何管理输出</h3><blockquote>
 <p>1表示正确，2表示错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /etc -name passwd&#9;&#62; file&#9;       ####&#37325;&#23450;&#21521;&#27491;&#30830;&#36755;&#20986;&#10;find /etc -name passwd&#9;2&#62; file&#9;       ####&#37325;&#23450;&#21521;&#38169;&#35823;&#36755;&#20986;&#10;find /etc -name passwd&#9;&#38;&#62; file&#9;       ####&#37325;&#23450;&#21521;&#25152;&#26377;&#36755;&#20986;&#10;find /etc -name passwd&#9;&#62;&#62; file&#9;       ###&#36861;&#21152;&#27491;&#30830;&#36755;&#20986;&#10;find /etc -name passwd&#9;2&#62;&#62; file       ####&#36861;&#21152;&#38169;&#35823;&#36755;&#20986;&#10;find /etc -name passwd&#9;&#38;&#62;&#62; file       ####&#36861;&#21152;&#36755;&#20986;&#10;find /etc -name passwd&#9;&#62; file 2&#62;&#38;1    ####&#37325;&#26032;&#23450;&#20041;&#38169;&#35823;&#36755;&#20986;&#20026;&#27491;&#30830;&#10;find /etc -name passwd  &#62; file 1&#62;&#38;2    ####&#37325;&#26032;&#23450;&#20041;&#27491;&#30830;&#36755;&#20986;&#20026;&#38169;&#35823;&#10;find /etc -name passwd  &#62; /dev/null    ####&#25172;&#25481;&#36755;&#20986;&#32467;&#26524;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<h3 id="u7BA1_u9053"><a href="#u7BA1_u9053" class="headerlink" title="管道"></a>管道</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">|&#9;&#9;##&#31649;&#36947;&#21482;&#20801;&#35768;&#27491;&#30830;&#36755;&#20986;&#36890;&#36807;&#10;&#10;| tee &#25991;&#20214;&#21517;&#9;##&#22797;&#21046;&#19968;&#20221;&#36755;&#20986;&#65292;&#21363;&#19968;&#20221;&#21040;&#25351;&#23450;&#25991;&#26412;&#65292;&#19968;&#20221;&#36755;&#20986;&#26174;&#31034;&#10;&#10;2&#62;&#38;1 |&#9;&#9;##&#36716;&#25442;&#38169;&#35823;&#36755;&#20986;&#20026;&#27491;&#30830;&#20877;&#36890;&#36807;&#31649;&#36947;</span><br></pre></td></tr></table></figure>
-<h3 id="vim_u7528_u6CD5"><a href="#vim_u7528_u6CD5" class="headerlink" title="vim用法"></a>vim用法</h3><ul>
-<li><p>1,编辑文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#25353; i &#38190;&#36827;&#20837;&#25554;&#20837;&#27169;&#24335;&#10;&#25991;&#20214;&#32534;&#20889;&#23436;&#27605;&#25353; esc &#36864;&#20986;&#21040;&#27983;&#35272;&#27169;&#24335;&#10;:wq &#20445;&#23384;&#25512;&#20986;&#10;&#65288;&#20063;&#21487;&#20808;&#32534;&#36753;&#23436;&#25104;&#21518;&#36864;&#20986;&#20445;&#23384;:wq&#20043;&#21518;&#21152;&#31354;&#26684;&#21152;&#25991;&#20214;&#21517;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>2,命令模式</p>
-<blockquote>
-<p>设定</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/vimrc&#10;:set nu|nonu&#9;##&#34892;&#21495;&#30340;&#26174;&#31034;&#10;:set mouse=a&#9;##&#35774;&#23450;&#40736;&#26631;&#21487;&#20197;&#25805;&#20316;&#20809;&#26631;&#20301;&#32622;&#10;:help&#9;&#9;##&#26597;&#30475;vim&#30340;&#29992;&#27861;&#65292;:q&#36864;&#20986;&#24110;&#21161;&#10;ctrl + v&#9;##&#39640;&#20142;&#36873;&#25321;&#27169;&#24335;&#65292;&#21487;&#20197;&#36873;&#32773;&#19968;&#29255;&#21306;&#22495;&#25805;&#20316;&#10;u&#9;&#9;##&#24674;&#22797;&#21040;&#26410;&#25805;&#20316;&#20043;&#21069;&#10;ctrl + r&#9;##&#24674;&#22797;&#21040;&#25805;&#20316;&#20043;&#21518;</span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p>批量添加字符<br><code>ctrl + v 选中要加字符所在的位，按I键，在加入想要加入的字符，按esc</code><br>分屏功能<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ctrl+w s&#9;&#9;##&#19978;&#19979;&#20998;&#23631;&#10;ctrl+w v&#9;&#9;##&#24038;&#21491;&#20998;&#23631;&#10;ctrl+w c&#9;&#9;##&#25764;&#38144;&#20809;&#26631;&#25152;&#22312;&#23631;&#24149;&#10;ctrl+w &#19978;|&#19979;|&#24038;|&#21491;&#9;###&#31227;&#21160;&#20809;&#26631;&#21040;&#25351;&#23450;&#30340;&#23631;&#24149;&#20013;</span><br></pre></td></tr></table></figure></p>
-<p>替换字符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#22312;&#21629;&#20196;&#27169;&#24335;&#20013;&#10;:%s/&#21407;&#23383;&#31526;/&#26367;&#25442;&#21518;&#23383;&#31526;/g</span><br></pre></td></tr></table></figure></p>
-<p>搜索关键字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/&#20851;&#38190;&#23383;  &#10;n   ##&#21521;&#19979;&#21305;&#37197;&#10;N   ##&#21521;&#19978;&#21305;&#37197;</span><br></pre></td></tr></table></figure></p>
-<p>字符的管理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dw&#9;###&#21024;&#38500;&#20809;&#26631;&#25152;&#22312;&#21333;&#35789;&#10;dl&#9;###&#21024;&#38500;&#20809;&#25152;&#22312;&#23383;&#27597;&#10;dd&#9;###&#21024;&#38500;&#19968;&#25972;&#34892;&#10;d&#25968;&#23383;d&#9;###&#21024;&#38500;&#25968;&#23383;&#25351;&#23450;&#30340;&#34892;&#25968;&#10;d&#25968;&#23383; &#19978;&#38190;  ###&#21521;&#19978;&#21024;&#38500;&#25351;&#23450;&#34892;&#25968;&#10;&#10;yw&#9;###&#22797;&#21046;&#20809;&#26631;&#25152;&#22312;&#21333;&#35789;&#10;yl&#9;###&#22797;&#21046;&#20809;&#26631;&#25152;&#22312;&#23383;&#27597;&#10;yy&#9;###&#22797;&#21046;&#19968;&#25972;&#34892;&#10;y&#25968;&#23383;y&#9;###&#22797;&#21046;&#25968;&#23383;&#25351;&#23450;&#30340;&#34892;&#25968;&#10;p       ###&#31896;&#36148;&#10;&#10;cw&#9;###&#21098;&#20999;&#20809;&#26631;&#25152;&#22312;&#21333;&#35789;&#10;cl&#9;###&#21098;&#20999;&#20809;&#26631;&#25152;&#22312;&#23383;&#27597;&#10;cc&#9;###&#21098;&#20999;&#19968;&#25972;&#34892;&#10;c&#25968;&#23383;c&#9;###&#21098;&#20999;&#25968;&#23383;&#25351;&#23450;&#30340;&#34892;&#25968;&#10;&#21098;&#20999;&#23436;&#25104;&#21518;&#20250;&#36827;&#20837;&#25554;&#20837;&#27169;&#24335;&#65292;&#35201;&#31896;&#36148;&#20808;&#36864;&#20986;&#25554;&#20837;&#27169;&#24335;&#20877;&#25353;p&#38190;</span><br></pre></td></tr></table></figure></p>
-<p>移动光标到指定行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#65306;&#34892;&#21495;&#9;##&#31227;&#21160;&#20809;&#26631;&#21040;&#25351;&#23450;&#34892;&#21495;&#10;g&#9;##&#31227;&#21160;&#20809;&#26631;&#21040;&#25991;&#20214;&#39318;&#34892;&#10;G&#9;##&#31227;&#21160;&#20809;&#26631;&#21040;&#25991;&#20214;&#26411;&#34892;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<ul>
-<li><p>3.vim的插入模式    </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i  ###&#20809;&#26631;&#25152;&#22312;&#20301;&#32622;&#25554;&#20837;&#23383;&#31526;&#10;I  ###&#20809;&#26631;&#25152;&#22312;&#34892;&#34892;&#39318;&#25554;&#20837;&#10;a  ###&#20809;&#26631;&#25152;&#22312;&#23383;&#31526;&#30340;&#19979;&#19968;&#20301;&#25554;&#20837;&#10;A  ###&#20809;&#26631;&#25152;&#22312;&#34892;&#34892;&#23614;&#25554;&#20837;&#10;o  ###&#20809;&#26631;&#25152;&#22312;&#34892;&#30340;&#19979;&#19968;&#34892;&#10;O  ###&#20809;&#26631;&#25152;&#22312;&#34892;&#30340;&#19978;&#19968;&#34892;&#10;s  ###&#21024;&#38500;&#20809;&#26631;&#25152;&#22312;&#23383;&#31526;&#25554;&#20837;&#10;S  ###&#21024;&#38500;&#20809;&#26631;&#25152;&#22312;&#34892;&#25554;&#20837;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>4.vim的退出模式  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#22312;&#21629;&#20196;&#27169;&#24335;&#19979;&#36755;&#20837;&#10;:q&#9;###&#36864;&#20986;&#65292;&#22312;&#26410;&#23545;&#25991;&#20214;&#20316;&#20219;&#20309;&#20462;&#25913;&#30340;&#26102;&#20505;&#21487;&#20197;&#29992;&#10;:q!&#9;###&#24378;&#21046;&#36864;&#20986;&#10;:wq&#9;###&#36864;&#20986;&#20445;&#23384;&#10;:wq!&#9;###&#24378;&#21046;&#36864;&#20986;&#20445;&#23384;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>5.vim的说明工具<br><code>vimtutor ##q退出此工具</code></p>
-<h3 id="u56FE_u5F62_u4E2D_u7684_u6587_u672C_u7F16_u8F91_u5668gedit"><a href="#u56FE_u5F62_u4E2D_u7684_u6587_u672C_u7F16_u8F91_u5668gedit" class="headerlink" title="图形中的文本编辑器gedit"></a>图形中的文本编辑器gedit</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crtl+n&#9;##&#26032;&#24314;&#31383;&#21475;&#10;ctrl+s&#9;##&#20445;&#23384;&#25991;&#20214;&#10;ctrl+o&#9;##&#25171;&#24320;&#25991;&#20214;&#10;ctrl+x&#9;##&#21098;&#20999;&#10;ctrl+v&#9;##&#31896;&#36148;&#10;ctrl+c&#9;##&#22797;&#21046;&#10;yelp help&#65306;gedit ##&#26597;&#30475;giedit&#36719;&#20214;&#30340;&#24110;&#21161;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
+          
       
     </div>
     
     <div class="article-info article-info-index">
       
       
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
+    </div>
+
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/02/03/RH124-unit4/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -360,7 +350,7 @@
   
     <div class="article-meta">
       <a href="/2016/02/02/RH124-unit3/" class="article-date">
-      <time datetime="2016-02-02T12:24:54.086Z" itemprop="datePublished">2016-02-02</time>
+      <time datetime="2016-02-02T09:30:12.000Z" itemprop="datePublished">2016-02-02</time>
 </a>
     </div>
   
@@ -383,21 +373,30 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h2 id="3-Getting_Help_in_Red_Hat_Enterprise_Linux"><a href="#3-Getting_Help_in_Red_Hat_Enterprise_Linux" class="headerlink" title="3.Getting Help in Red Hat Enterprise Linux"></a>3.Getting Help in Red Hat Enterprise Linux</h2><h3 id="man_u547D_u4EE4"><a href="#man_u547D_u4EE4" class="headerlink" title="man命令"></a>man命令</h3><blockquote>
+              <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h2 id="3-Getting_Help_in_Red_Hat_Enterprise_Linux"><a href="#3-Getting_Help_in_Red_Hat_Enterprise_Linux" class="headerlink" title="3.Getting Help in Red Hat Enterprise Linux"></a>3.Getting Help in Red Hat Enterprise Linux</h2><h3 id="man_u547D_u4EE4"><a href="#man_u547D_u4EE4" class="headerlink" title="man命令"></a>man命令</h3><blockquote>
 <p>man查看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man &#32423;&#21035;  &#30446;&#26631;    ##&#25353;q&#36864;&#20986;&#10;man  1  &#25991;&#20214;&#21517;&#9;##&#26597;&#25214;&#21629;&#20196;&#30340;&#24110;&#21161;&#10;man  5  &#25991;&#20214;&#21517;&#9;##&#26597;&#25214;&#37197;&#32622;&#25991;&#20214;&#30340;&#24110;&#21161;</span><br></pre></td></tr></table></figure></p>
-<p>man的快捷用法:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/关键字		<span class="comment">###搜索关键字并且高亮显示结果</span></span><br><span class="line">n		<span class="comment">###向下匹配高亮结果</span></span><br><span class="line">N		<span class="comment">###向上匹配高亮结果</span></span><br><span class="line">pagup/b		<span class="comment">###向上滚动一个屏幕</span></span><br><span class="line">pagdown/空格	<span class="comment">###向下滚动一个屏幕</span></span><br><span class="line">上键		<span class="comment">###向上滚动一行</span></span><br><span class="line">下键		<span class="comment">###向下滚动一行</span></span><br><span class="line">d		<span class="comment">###向下滚动半个屏幕</span></span><br><span class="line">u		<span class="comment">###向上滚动半个屏幕</span></span><br><span class="line">g		<span class="comment">###回到man的最前面</span></span><br><span class="line">G		<span class="comment">###回到man的最后面</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<h3 id="pinfo"><a href="#pinfo" class="headerlink" title="pinfo"></a>pinfo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">pagedown/空格	<span class="comment">##向下翻页</span></span><br><span class="line">pageup/b	<span class="comment">##向上翻页</span></span><br><span class="line">home		<span class="comment">##回到本层最前面</span></span><br><span class="line">下键		<span class="comment">##回到下一个超接      </span></span><br><span class="line">上键		<span class="comment">##回到上一个超链接</span></span><br><span class="line">/关键字		<span class="comment">##搜索还有关键字的内容</span></span><br><span class="line">n		<span class="comment">##回到下一个</span></span><br><span class="line">p               <span class="comment">##回到上一个</span></span><br><span class="line">q               <span class="comment">##退出</span></span><br></pre></td></tr></table></figure>
-<h3 id="u5C0F_u77E5_u8BC6"><a href="#u5C0F_u77E5_u8BC6" class="headerlink" title="小知识"></a>小知识</h3><p><code>/usr/share/doc/*  ##在这个目录中的文件都是软件安装包的说明</code></p>
-
+          
       
     </div>
     
     <div class="article-info article-info-index">
       
       
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
+    </div>
+
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/02/02/RH124-unit3/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -418,7 +417,7 @@
   
     <div class="article-meta">
       <a href="/2016/02/02/RH124-unit2/" class="article-date">
-      <time datetime="2016-02-02T12:24:45.834Z" itemprop="datePublished">2016-02-02</time>
+      <time datetime="2016-02-02T08:30:30.000Z" itemprop="datePublished">2016-02-02</time>
 </a>
     </div>
   
@@ -441,25 +440,30 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h2 id="2-Managing_Files_Form_The_Command_Line"><a href="#2-Managing_Files_Form_The_Command_Line" class="headerlink" title="2.Managing Files Form The Command Line"></a>2.Managing Files Form The Command Line</h2><h3 id="linux_u7CFB_u7EDF_u7ED3_u6784"><a href="#linux_u7CFB_u7EDF_u7ED3_u6784" class="headerlink" title="linux系统结构"></a>linux系统结构</h3><blockquote>
+              <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h2 id="2-Managing_Files_Form_The_Command_Line"><a href="#2-Managing_Files_Form_The_Command_Line" class="headerlink" title="2.Managing Files Form The Command Line"></a>2.Managing Files Form The Command Line</h2><h3 id="linux_u7CFB_u7EDF_u7ED3_u6784"><a href="#linux_u7CFB_u7EDF_u7ED3_u6784" class="headerlink" title="linux系统结构"></a>linux系统结构</h3><blockquote>
 <p>linux系统结构是倒树型<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/bin	<span class="comment">##二进制可执行文件也就是系统命令</span></span><br><span class="line">/sbin	<span class="comment">##系统管理命令存放位置</span></span><br><span class="line">/boot	<span class="comment">##启动分区，负责系统启动</span></span><br><span class="line">/dev	<span class="comment">##设备管理文件</span></span><br><span class="line">/etc	<span class="comment">##大多数系统管理文件</span></span><br><span class="line">/home	<span class="comment">##普通用户的家目录</span></span><br><span class="line">/lib	<span class="comment">##32位系统库文件存放位置</span></span><br><span class="line">/lib64	<span class="comment">##64位系统库文件存放位置</span></span><br><span class="line">/media	<span class="comment">##系统临时设备挂载点</span></span><br><span class="line">/mnt	<span class="comment">##系统临时设备挂载点</span></span><br><span class="line">/run	<span class="comment">##系统临时设备挂载点</span></span><br><span class="line">/opt	<span class="comment">##第三方软件安装位置</span></span><br><span class="line">/proc	<span class="comment">##系统信息</span></span><br><span class="line">/root	<span class="comment">##超级用户家目录</span></span><br><span class="line">/srv，/var   <span class="comment">##系统数据</span></span><br><span class="line">/sys	<span class="comment">##系统管理，主要是关于内核的</span></span><br><span class="line">/tmp	<span class="comment">##系统临时文件存放位置</span></span><br><span class="line">/usr	<span class="comment">##系统用户相关信息数据及用户自定义软件存放位置</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<h3 id="u7CFB_u7EDF_u6587_u4EF6_u8DEF_u5F84"><a href="#u7CFB_u7EDF_u6587_u4EF6_u8DEF_u5F84" class="headerlink" title="系统文件路径"></a>系统文件路径</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#32477;&#23545;&#36335;&#24452;: &#25991;&#20214;&#22312;&#31995;&#32479;&#30340;&#30495;&#23454;&#20301;&#32622;&#65292;&#25991;&#20214;&#21517;&#23383;&#20197;&#8220;/&#8221;&#24320;&#22836;&#10;&#30456;&#23545;&#36335;&#24452;&#65306;&#25991;&#20214;&#30456;&#23545;&#19982;&#24403;&#21069;&#25152;&#22312;&#20301;&#32622;&#30340;&#19968;&#20010;&#21517;&#23383;&#30340;&#31616;&#20889;&#65292;&#36825;&#20010;&#21517;&#23383;&#19981;&#20250;&#20197;/&#24320;&#22836;&#65292;&#32780;&#19988;&#21517;&#23383;&#20250;&#33258;&#21160;&#28155;&#21152;pwd&#26174;&#31034;&#30340;&#20540;</span><br></pre></td></tr></table></figure>
-<h3 id="u6587_u4EF6_u7BA1_u7406"><a href="#u6587_u4EF6_u7BA1_u7406" class="headerlink" title="文件管理"></a>文件管理</h3><h3 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h3><p><code>touch 文件名    ##新建文件</code></p>
-<h3 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir	名字	 <span class="comment">##建立目录(make directory)</span></span><br><span class="line">mkdir -p 名字	 <span class="comment">##递归建立目录</span></span><br></pre></td></tr></table></figure>
-<h3 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cp 被复制文件 目的地   <span class="comment">##复制文件</span></span><br><span class="line">cp -r	被复制目录 目的地  <span class="comment">##递归复制，用于复制目录</span></span><br><span class="line">cp -p 被复制文件 目的地  <span class="comment">##复制并保留文件所有属性</span></span><br></pre></td></tr></table></figure>
-<h3 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv 被移动文件	目的地  <span class="comment">##移动文件</span></span><br><span class="line">mv 老名字	新名字     <span class="comment">##重命名，新名字事先不存在</span></span><br></pre></td></tr></table></figure>
-<h3 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rm      <span class="comment">##删除（会提示是否确定删除）</span></span><br><span class="line">rm <span class="operator">-f</span>	  <span class="comment">##强制删除文件</span></span><br><span class="line">rm -r   <span class="comment">##递归删除（常用于删除目录）</span></span><br><span class="line">rm -fr  <span class="comment">##强制删除目录</span></span><br></pre></td></tr></table></figure>
-<h3 id="u901A_u914D_u7B26"><a href="#u901A_u914D_u7B26" class="headerlink" title="通配符"></a>通配符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*&#9;#&#21305;&#37197;0&#21040;&#20219;&#24847;&#23383;&#31526;&#10;&#65311;&#9;#&#21305;&#37197;&#20219;&#24847;&#21333;&#20010;&#23383;&#31526;&#10;&#65374;&#9;#&#21305;&#37197;&#24403;&#21069;&#29992;&#25143;&#23478;&#30446;&#24405;&#10;&#65374;user&#9;#&#21305;&#37197;&#21040;user&#30340;&#23478;&#30446;&#24405;&#10;&#65374;+&#9;#&#24403;&#21069;&#30446;&#24405;&#10;&#65374;-&#9;#&#24403;&#21069;&#30446;&#24405;&#20043;&#21069;&#25152;&#22312;&#30340;&#30446;&#24405;&#10;[abc]&#9;#&#26377;a&#25110;&#32773;&#26377;b&#25110;&#32773;&#26377;c&#10;[!abc]&#9;#&#38500;&#20102;&#21547;&#26377;a&#25110;&#32773;b&#25110;&#32773;c&#10;[^abc]&#9;#&#38500;&#20102;&#21547;&#26377;a&#25110;&#32773;b&#25110;&#32773;c&#10;[[:alpha:]]&#9;##&#21333;&#20010;&#23383;&#27597;&#10;[[:lower:]]&#9;##&#21333;&#20010;&#23567;&#20889;&#23383;&#27597;&#10;[[:upper:]]&#9;##&#21333;&#20010;&#22823;&#20889;&#23383;&#27597;&#10;[[:alnum:]]&#9;##&#21333;&#20010;&#23383;&#27597;&#25110;&#25968;&#23383;&#10;[[:punct:]]&#9;##&#21333;&#20010;&#31526;&#21495;,&#19981;&#21253;&#21547;&#25968;&#23383;,&#23383;&#27597;&#20197;&#21450;&#31354;&#26684;&#10;[[:digit:]]&#9;##&#21333;&#20010;&#25968;&#23383;&#10;[[:space:]]&#9;##&#21333;&#20010;&#31354;&#26684;</span><br></pre></td></tr></table></figure>
-
+          
       
     </div>
     
     <div class="article-info article-info-index">
       
       
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
+    </div>
+
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/02/02/RH124-unit2/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -480,7 +484,7 @@
   
     <div class="article-meta">
       <a href="/2016/02/02/RH124-unit1/" class="article-date">
-      <time datetime="2016-02-02T11:56:07.161Z" itemprop="datePublished">2016-02-02</time>
+      <time datetime="2016-02-02T07:30:12.000Z" itemprop="datePublished">2016-02-02</time>
 </a>
     </div>
   
@@ -503,51 +507,28 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h2 id="1-Accessing_The_Command_Line"><a href="#1-Accessing_The_Command_Line" class="headerlink" title="1.Accessing The Command Line"></a>1.Accessing The Command Line</h2><h3 id="u4EC0_u4E48_u662Fshell_3F"><a href="#u4EC0_u4E48_u662Fshell_3F" class="headerlink" title="什么是shell?"></a>什么是shell?</h3><p>在计算机科学中，Shell俗称壳（用来区别于核），是指“提供使用者使用界面”的软件（命令解析器）。文字操作系统与外部最主要的接口就叫做shell。shell是操作系统最外面的一层。shell管理你与操作系统之间的交互：等待你输入，向操作系统解释你的输入，并且处理各种各样的操作系统的输出结果。</p>
-<h3 id="u547D_u4EE4_u884C_u89E3_u91CA"><a href="#u547D_u4EE4_u884C_u89E3_u91CA" class="headerlink" title="命令行解释"></a>命令行解释</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost Desktop]<span class="comment">#</span></span><br><span class="line">root      <span class="comment">##开启shell的用户</span></span><br><span class="line">@         <span class="comment">##分隔符（可以自定义)</span></span><br><span class="line">localhost <span class="comment">##主机的短名称，表示shell开启在哪台主机里</span></span><br><span class="line">Desktop   <span class="comment">##表示你在系统的什么位置</span></span><br><span class="line"><span class="comment">#         ##身份提示中的超级用户，普通用户：$</span></span><br></pre></td></tr></table></figure>
-<h3 id="u5207_u6362_u7528_u6237"><a href="#u5207_u6362_u7528_u6237" class="headerlink" title="切换用户"></a>切换用户</h3><p><code>[root@localhost Desktop]# su - 系统中已经存在用户名字   ##切换用户身份</code></p>
-<h3 id="u865A_u62DF_u63A7_u5236_u53F0"><a href="#u865A_u62DF_u63A7_u5236_u53F0" class="headerlink" title="虚拟控制台"></a>虚拟控制台</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ctrl+alt+f2<span class="operator">-f</span>6	<span class="comment">##进入虚拟控制台</span></span><br><span class="line">ctrl+alt+F1|F7	<span class="comment">##回到图形</span></span><br></pre></td></tr></table></figure>
-<h3 id="u5728shell_u4E2D_u5982_u4F55_u4F7F_u7528_u547D_u4EE4"><a href="#u5728shell_u4E2D_u5982_u4F55_u4F7F_u7528_u547D_u4EE4" class="headerlink" title="在shell中如何使用命令"></a>在shell中如何使用命令</h3><ul>
-<li>1.命令一定要在提示符之后输入</li>
-<li>2.命令的输入方式<br>命令     参数     目标   ##参数是命令功能的指定<br>-参数      ##单词的缩写<br>–参数    ##单词的全拼  </li>
-<li>3.帮助<br>命令     –help<br>【内容】       ##内容选加<br>&lt;内容&gt;        ##内容必加<br>内容…       ##内容个数任意</li>
-</ul>
-<h3 id="gnome_u4E2D_u7684_u5E38_u89C4_u64CD_u4F5C"><a href="#gnome_u4E2D_u7684_u5E38_u89C4_u64CD_u4F5C" class="headerlink" title="gnome中的常规操作"></a>gnome中的常规操作</h3><ul>
-<li><p>1.login</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##for gui</span></span><br><span class="line">not list -----&gt;  username :root ---------&gt;passwd: redhat</span><br><span class="line"><span class="comment">##for text</span></span><br><span class="line">localhost login: root</span><br><span class="line">Passwd: redhat</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>2.切换工作界面<br><code>ctrl+alt+上|下</code></p>
-</li>
-<li>3.锁屏<br><code>ctrl+alt+L</code></li>
-<li><p>4.shell打开方式</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">右健 --&gt; Open <span class="keyword">in</span> Terminal</span><br><span class="line">Applications --&gt; Favorites --&gt; Terminal</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>5.图形下添加快捷方式<br><code>Application——&gt;System Tools——&gt;Settings——&gt;Keyboard——&gt;Shortcuts :gnome-terminal</code></p>
-</li>
-<li>6.系统重新初始化<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">关机:</span><br><span class="line">poweroff         </span><br><span class="line">init <span class="number">0</span>            </span><br><span class="line">shutdown -h now <span class="comment">##会依据目前已启动的服务逐次关闭各服务后才关机。</span></span><br><span class="line">halt   <span class="comment">##不理睬目前系统的状况，进行硬件关机。</span></span><br><span class="line">重启:</span><br><span class="line">reboot</span><br><span class="line">init <span class="number">6</span></span><br><span class="line">shutdown -r now</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="u7B80_u5355_u547D_u4EE4"><a href="#u7B80_u5355_u547D_u4EE4" class="headerlink" title="简单命令"></a>简单命令</h2><h3 id="date"><a href="#date" class="headerlink" title="date"></a>date</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">date -R    <span class="comment">##显示格式  星期 日 月 年 时:分:秒</span></span><br><span class="line">date 月月日日时时分分.秒秒 <span class="comment">##修改时间</span></span><br><span class="line">date <span class="operator">-d</span> +时间day/hour   <span class="comment">##显示多少天(小时)后的时间</span></span><br><span class="line">watch -n <span class="number">1</span> date	    <span class="comment">##监控date命令每秒钟执行一次</span></span><br><span class="line">date +%D            <span class="comment">##月/日/年</span></span><br><span class="line">date +%m-%d-%Y      <span class="comment">##月-日-年</span></span><br></pre></td></tr></table></figure>
-<h3 id="passwd"><a href="#passwd" class="headerlink" title="passwd"></a>passwd</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">passwd  username    <span class="comment">##更改用户密码(只有超级用户root可以)</span></span><br><span class="line">passwd	            <span class="comment">##普通用户修改自己的密码,普通用户只能修改自己的密码,并且必须知道自己原始密码,修改密码必须大于8位,不能与原始密码字符重复</span></span><br><span class="line">passwd <span class="operator">-l</span> username  <span class="comment">##冻结普通用户</span></span><br><span class="line">passwd -u username  <span class="comment">##解锁冻结帐号</span></span><br></pre></td></tr></table></figure>
-<h3 id="file"><a href="#file" class="headerlink" title="file"></a>file</h3><p><code>file    文件名   ##查看文件类型</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># file anaconda-ks.cfg</span></span><br><span class="line">anaconda-ks.cfg: ASCII text</span><br></pre></td></tr></table></figure></p>
-<h3 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat	文件名称 <span class="comment">##查看文件内所有内容</span></span><br><span class="line">cat - b 文件名称 <span class="comment">##查看文件内所有内容并给除空行外的行加行标号</span></span><br><span class="line">cat - n 文件名称 <span class="comment">##查看文件内所有内容并给所有行加标号</span></span><br></pre></td></tr></table></figure>
-<h3 id="head_2Ctail"><a href="#head_2Ctail" class="headerlink" title="head,tail"></a>head,tail</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">head -数字 文件名称         <span class="comment">##文件内容前多少行,不加-数字,默认为十行</span></span><br><span class="line">tail -数字 文件名称	 <span class="comment">##文件内容后多少行,不加-数字,默认为十行</span></span><br></pre></td></tr></table></figure>
-<h3 id="less"><a href="#less" class="headerlink" title="less"></a>less</h3><p><code>less 文件名称    ##查看文件所有内容从文件的开始,按q退出</code></p>
-<h3 id="wc"><a href="#wc" class="headerlink" title="wc"></a>wc</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wc    文件名   <span class="comment">##统计行数，单词数，字符数</span></span><br><span class="line">wc <span class="operator">-l</span> 文件名   <span class="comment">##统计行数(包含空行)</span></span><br><span class="line">wc -c 文件名   <span class="comment">##统计字节数</span></span><br><span class="line">wc -m 文件名   <span class="comment">##统计字符数</span></span><br><span class="line">wc -w 文件名   <span class="comment">##统计单词数</span></span><br><span class="line">wc -L 文件名   <span class="comment">##显示最长行的长度</span></span><br></pre></td></tr></table></figure>
-<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ls --help   <span class="comment">##命令帮助</span></span><br><span class="line">ls <span class="operator">-l</span>[long] <span class="comment">##查看属性</span></span><br><span class="line">ls <span class="operator">-s</span>[size] <span class="comment">##查看大小</span></span><br><span class="line">ls <span class="operator">-a</span>[all]  <span class="comment">##查看隐藏文件</span></span><br><span class="line">ls <span class="operator">-d</span>[directory] <span class="comment">##查看目录</span></span><br><span class="line">ls -R	      <span class="comment">##递归列出</span></span><br><span class="line">ls -Z       <span class="comment">##打印安全上下文</span></span><br></pre></td></tr></table></figure>
-<h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span>		        <span class="comment">##进入目标目录中(change directory)</span></span><br><span class="line"><span class="built_in">cd</span> ～		     <span class="comment">##回到当前用户家目录</span></span><br><span class="line"><span class="built_in">cd</span> ～username   <span class="comment">##进入到指定用户家目录</span></span><br><span class="line"><span class="built_in">cd</span> ..		      <span class="comment">##进入当前目录的上一级</span></span><br><span class="line"><span class="built_in">cd</span> -		      <span class="comment">##进入之前所在系统目录</span></span><br></pre></td></tr></table></figure>
-<h3 id="tab_u952E"><a href="#tab_u952E" class="headerlink" title="tab键"></a>tab键</h3><p><code>补齐系统中存在的文件名称,命令,和命令参数</code></p>
-<h3 id="u5386_u53F2_u8C03_u7528"><a href="#u5386_u53F2_u8C03_u7528" class="headerlink" title="历史调用"></a>历史调用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">!数字           <span class="comment">##执行第多少条命令</span></span><br><span class="line">!关键字         <span class="comment">##执行最近一条以关键字开头的命令</span></span><br><span class="line">ctrl+r+关键字   <span class="comment">##调出最近一条含有关键字的命令</span></span><br><span class="line">上下键	       <span class="comment">##从最后一条命令开始向前查看或者向后查看</span></span><br><span class="line"><span class="built_in">history</span>	       <span class="comment">##查看历史</span></span><br></pre></td></tr></table></figure>
-<h3 id="u5FEB_u6377_u952E"><a href="#u5FEB_u6377_u952E" class="headerlink" title="快捷键"></a>快捷键</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ctrl	+ a	<span class="comment">##光标移动到行首</span></span><br><span class="line">ctrl	+ e	<span class="comment">##光标移动到行尾</span></span><br><span class="line">ctrl	+ u	<span class="comment">##光标所在位置删除到行首</span></span><br><span class="line">ctrl	+ k	<span class="comment">##光标所在位置删除到行尾</span></span><br><span class="line">ctrl    + w     <span class="comment">##删除光标所在位置的前一个单词</span></span><br><span class="line">ctrl	+ r	<span class="comment">##调出最近一条含有关键字的命令</span></span><br><span class="line">ctrl	+ 左|右	<span class="comment">##光标移动以单词为单位</span></span><br><span class="line">ctrl	+ c	<span class="comment">##撤销已输入的命令</span></span><br><span class="line">ctrl	+ d	<span class="comment">##关闭当前环境</span></span><br></pre></td></tr></table></figure>
-
+              <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h2 id="1-Accessing_The_Command_Line"><a href="#1-Accessing_The_Command_Line" class="headerlink" title="1.Accessing The Command Line"></a>1.Accessing The Command Line</h2><h3 id="u4EC0_u4E48_u662Fshell_3F"><a href="#u4EC0_u4E48_u662Fshell_3F" class="headerlink" title="什么是shell?"></a>什么是shell?</h3><p>在计算机科学中，Shell俗称壳（用来区别于核），是指“提供使用者使用界面”的软件（命令解析器）。文字操作系统与外部最主要的接口就叫做shell。shell是操作系统最外面的一层。shell管理你与操作系统之间的交互：等待你输入，向操作系统解释你的输入，并且处理各种各样的操作系统的输出结果。<br>
+          
       
     </div>
     
     <div class="article-info article-info-index">
       
       
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
+    </div>
+
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/02/02/RH124-unit1/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -567,8 +548,8 @@
     <article id="post-myfirst" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/30/myfirst/" class="article-date">
-      <time datetime="2016-01-30T15:39:50.092Z" itemprop="datePublished">2016-01-30</time>
+      <a href="/2016/02/01/myfirst/" class="article-date">
+      <time datetime="2016-02-01T15:30:12.000Z" itemprop="datePublished">2016-02-01</time>
 </a>
     </div>
   
@@ -581,7 +562,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/30/myfirst/">Wellcome to my blog</a>
+      <a class="article-title" href="/2016/02/01/myfirst/">Wellcome to my blog</a>
     </h1>
   
 
@@ -602,7 +583,7 @@
 <li>只有先改变了自己的态度，才能改变人生的高度。</li>
 <li>你所做的事情，也许暂时看不到成功，但不要灰心，你不是没有成长，而是在扎根。</li>
 </ul>
-<p><img src="http://peterson-linux.github.io/dream.jpg" alt="dream" title="Title"></p>
+<p><img src="/img/dream.jpg" alt="dream" title="Title"></p>
 
       
     </div>
@@ -612,6 +593,10 @@
       
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主页/">主页</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -632,7 +617,7 @@
   
     <div class="article-meta">
       <a href="/2016/01/26/hello-world/" class="article-date">
-      <time datetime="2016-01-26T15:04:13.972Z" itemprop="datePublished">2016-01-26</time>
+      <time datetime="2016-01-26T14:00:00.000Z" itemprop="datePublished">2016-01-26</time>
 </a>
     </div>
   
@@ -673,6 +658,10 @@
       
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+    </div>
+
       
       <div class="clearfix"></div>
     </div>

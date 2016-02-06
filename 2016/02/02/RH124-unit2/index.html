@@ -13,7 +13,7 @@ linux系统结构是倒树型123456789101112131415161718/bin	##二进制可执�
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Red Hat Enterprise Linux 72.Managing Files Form The Command Linelinux系统结构
 linux系统结构是倒树型123456789101112131415161718/bin	##二进制可执行文件也就是系统命令/sbin	##系统管理命令存放位置/boot	##启动分区，负责系统启动/dev	##设备管理文件/etc	##大多数系统管理">
-<meta property="og:updated_time" content="2016-02-02T12:24:45.834Z">
+<meta property="og:updated_time" content="2016-02-06T12:42:09.598Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux-基础篇">
 <meta name="twitter:description" content="Red Hat Enterprise Linux 72.Managing Files Form The Command Linelinux系统结构
@@ -142,7 +142,7 @@ linux系统结构是倒树型123456789101112131415161718/bin	##二进制可执�
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        
+                        <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux-基础/" style="font-size: 20px;">linux 基础</a> <a href="/tags/主页/" style="font-size: 10px;">主页</a>
                     </div>
                 </section>
                 
@@ -222,7 +222,7 @@ linux系统结构是倒树型123456789101112131415161718/bin	##二进制可执�
   
     <div class="article-meta">
       <a href="/2016/02/02/RH124-unit2/" class="article-date">
-      <time datetime="2016-02-02T12:24:45.834Z" itemprop="datePublished">2016-02-02</time>
+      <time datetime="2016-02-02T08:30:30.000Z" itemprop="datePublished">2016-02-02</time>
 </a>
     </div>
   
@@ -243,8 +243,16 @@ linux系统结构是倒树型123456789101112131415161718/bin	##二进制可执�
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -255,6 +263,7 @@ linux系统结构是倒树型123456789101112131415161718/bin	##二进制可执�
         <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h2 id="2-Managing_Files_Form_The_Command_Line"><a href="#2-Managing_Files_Form_The_Command_Line" class="headerlink" title="2.Managing Files Form The Command Line"></a>2.Managing Files Form The Command Line</h2><h3 id="linux_u7CFB_u7EDF_u7ED3_u6784"><a href="#linux_u7CFB_u7EDF_u7ED3_u6784" class="headerlink" title="linux系统结构"></a>linux系统结构</h3><blockquote>
 <p>linux系统结构是倒树型<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/bin	<span class="comment">##二进制可执行文件也就是系统命令</span></span><br><span class="line">/sbin	<span class="comment">##系统管理命令存放位置</span></span><br><span class="line">/boot	<span class="comment">##启动分区，负责系统启动</span></span><br><span class="line">/dev	<span class="comment">##设备管理文件</span></span><br><span class="line">/etc	<span class="comment">##大多数系统管理文件</span></span><br><span class="line">/home	<span class="comment">##普通用户的家目录</span></span><br><span class="line">/lib	<span class="comment">##32位系统库文件存放位置</span></span><br><span class="line">/lib64	<span class="comment">##64位系统库文件存放位置</span></span><br><span class="line">/media	<span class="comment">##系统临时设备挂载点</span></span><br><span class="line">/mnt	<span class="comment">##系统临时设备挂载点</span></span><br><span class="line">/run	<span class="comment">##系统临时设备挂载点</span></span><br><span class="line">/opt	<span class="comment">##第三方软件安装位置</span></span><br><span class="line">/proc	<span class="comment">##系统信息</span></span><br><span class="line">/root	<span class="comment">##超级用户家目录</span></span><br><span class="line">/srv，/var   <span class="comment">##系统数据</span></span><br><span class="line">/sys	<span class="comment">##系统管理，主要是关于内核的</span></span><br><span class="line">/tmp	<span class="comment">##系统临时文件存放位置</span></span><br><span class="line">/usr	<span class="comment">##系统用户相关信息数据及用户自定义软件存放位置</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
+<a id="more"></a>
 <h3 id="u7CFB_u7EDF_u6587_u4EF6_u8DEF_u5F84"><a href="#u7CFB_u7EDF_u6587_u4EF6_u8DEF_u5F84" class="headerlink" title="系统文件路径"></a>系统文件路径</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#32477;&#23545;&#36335;&#24452;: &#25991;&#20214;&#22312;&#31995;&#32479;&#30340;&#30495;&#23454;&#20301;&#32622;&#65292;&#25991;&#20214;&#21517;&#23383;&#20197;&#8220;/&#8221;&#24320;&#22836;&#10;&#30456;&#23545;&#36335;&#24452;&#65306;&#25991;&#20214;&#30456;&#23545;&#19982;&#24403;&#21069;&#25152;&#22312;&#20301;&#32622;&#30340;&#19968;&#20010;&#21517;&#23383;&#30340;&#31616;&#20889;&#65292;&#36825;&#20010;&#21517;&#23383;&#19981;&#20250;&#20197;/&#24320;&#22836;&#65292;&#32780;&#19988;&#21517;&#23383;&#20250;&#33258;&#21160;&#28155;&#21152;pwd&#26174;&#31034;&#30340;&#20540;</span><br></pre></td></tr></table></figure>
 <h3 id="u6587_u4EF6_u7BA1_u7406"><a href="#u6587_u4EF6_u7BA1_u7406" class="headerlink" title="文件管理"></a>文件管理</h3><h3 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h3><p><code>touch 文件名    ##新建文件</code></p>
 <h3 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir	名字	 <span class="comment">##建立目录(make directory)</span></span><br><span class="line">mkdir -p 名字	 <span class="comment">##递归建立目录</span></span><br></pre></td></tr></table></figure>
@@ -272,8 +281,8 @@ linux系统结构是倒树型123456789101112131415161718/bin	##二进制可执�
     <div class="copyright">
         <p><span>本文标题:</span><a href="/2016/02/02/RH124-unit2/">Linux-基础篇</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Wang Chi 的个人博客">Wang Chi</a></p>
-        <p><span>发布时间:</span>2016年02月02日 - 20时24分</p>
-        <p><span>最后更新:</span>2016年02月02日 - 20时24分</p>
+        <p><span>发布时间:</span>2016年02月02日 - 16时30分</p>
+        <p><span>最后更新:</span>2016年02月06日 - 20时42分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/02/02/RH124-unit2/" title="Linux-基础篇">http://yoursite.com/2016/02/02/RH124-unit2/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/02/RH124-unit2/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -391,7 +400,7 @@ linux系统结构是倒树型123456789101112131415161718/bin	##二进制可执�
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit5/">Linux-基础篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit4/">Linux-基础篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit3/">Linux-基础篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit2/">Linux-基础篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit1/">Linux-基础篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/30/myfirst/">Wellcome to my blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/RH124-unit5/">Linux-基础篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/03/RH124-unit4/">Linux-基础篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit3/">Linux-基础篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit2/">Linux-基础篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit1/">Linux-基础篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/myfirst/">Wellcome to my blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/hello-world/">Hello World</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
