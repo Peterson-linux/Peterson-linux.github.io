@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Red Hat Enterprise Linux 7查看文件属性123ls -l filename-		rw-rw-r-- 	1 		kiosk 	kiosk 		0 	Oct  2 17:05 		file文件类型	         文件权限   文件副本个数	      文件所有人  文件所有组	大小	最后一次被修改的时间	名字
 查看目录属性123ls -ld	directoyd	rwxr-x">
-<meta property="og:updated_time" content="2016-02-08T18:52:38.274Z">
+<meta property="og:updated_time" content="2016-02-08T19:11:54.576Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="6.Controlling Access to Files with Linux File System Permissions">
 <meta name="twitter:description" content="Red Hat Enterprise Linux 7查看文件属性123ls -l filename-		rw-rw-r-- 	1 		kiosk 	kiosk 		0 	Oct  2 17:05 		file文件类型	         文件权限   文件副本个数	      文件所有人  文件所有组	大小	最后一次被修改的时间	名字
@@ -262,6 +262,7 @@
           
         <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="u67E5_u770B_u6587_u4EF6_u5C5E_u6027"><a href="#u67E5_u770B_u6587_u4EF6_u5C5E_u6027" class="headerlink" title="查看文件属性"></a>查看文件属性</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls <span class="operator">-l</span> filename</span><br><span class="line">-		rw-rw-r-- 	<span class="number">1</span> 		kiosk 	kiosk 		<span class="number">0</span> 	Oct  <span class="number">2</span> <span class="number">17</span>:<span class="number">05</span> 		file</span><br><span class="line">文件类型	         文件权限   文件副本个数	      文件所有人  文件所有组	大小	最后一次被修改的时间	名字</span><br></pre></td></tr></table></figure>
 <h3 id="u67E5_u770B_u76EE_u5F55_u5C5E_u6027"><a href="#u67E5_u770B_u76EE_u5F55_u5C5E_u6027" class="headerlink" title="查看目录属性"></a>查看目录属性</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls -ld	directoy</span><br><span class="line">d	rwxr-xr-x  	<span class="number">3</span> 	kiosk 	kiosk    	<span class="number">33</span> 			Aug <span class="number">27</span> <span class="number">09</span>:<span class="number">47</span> 		directory</span><br><span class="line">类型	权限	   子目录个数   目录所有人  目录所有组  子文件属性大小	                目录中内容变化		目录名字</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="u6587_u4EF6_u7528_u6237_u7EC4_u7684_u66F4_u6539"><a href="#u6587_u4EF6_u7528_u6237_u7EC4_u7684_u66F4_u6539" class="headerlink" title="文件用户组的更改"></a>文件用户组的更改</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">chown	用户名称	文件	<span class="comment">##更改文件所有人</span></span><br><span class="line">chgrp	组名称	文件     <span class="comment">##更改文件所有组</span></span><br><span class="line">chown -R 用户	目录	<span class="comment">##更改目录本身以及目录中的子文件的所有人</span></span><br><span class="line">chgrp -R 组名	目录	<span class="comment">##更改目录本身以及目录中的子文件的所有组</span></span><br></pre></td></tr></table></figure>
 <h3 id="u6743_u9650_u7684_u8BC6_u522B"><a href="#u6743_u9650_u7684_u8BC6_u522B" class="headerlink" title="权限的识别"></a>权限的识别</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l &#20013;2-10&#23383;&#31526;&#20026;&#25991;&#20214;&#26435;&#38480;&#10;rwx&#9;      r-x&#9;     r-x&#10;&#29992;&#25143;&#26435;&#38480;     &#32452;&#25104;&#21592;&#26435;&#38480;&#9;  &#20854;&#20182;&#29992;&#25143;&#26435;&#38480;</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -299,7 +300,7 @@
         <p><span>本文标题:</span><a href="/2016/02/09/RH124-unit6/">6.Controlling Access to Files with Linux File System Permissions</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Wang Chi 的个人博客">Wang Chi</a></p>
         <p><span>发布时间:</span>2016年02月09日 - 02时02分</p>
-        <p><span>最后更新:</span>2016年02月09日 - 02时52分</p>
+        <p><span>最后更新:</span>2016年02月09日 - 03时11分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/02/09/RH124-unit6/" title="6.Controlling Access to Files with Linux File System Permissions">http://yoursite.com/2016/02/09/RH124-unit6/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/09/RH124-unit6/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
