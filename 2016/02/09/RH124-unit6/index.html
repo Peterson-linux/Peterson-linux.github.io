@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>6.Controlling Access to Files with Linux File System Permissions | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="Red Hat Enterprise Linux 7查看文件属性123ls -l filename-		rw-rw-r-- 	1 		kiosk 	kiosk 		0 	Oct  2 17:05 		file文件类型	         文件权限   文件副本个数	      文件所有人  文件所有组	大小	最后一次被修改的时间	名字
+查看目录属性123ls -ld	directoyd	rwxr-x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="6.Controlling Access to Files with Linux File System Permissions">
+<meta property="og:url" content="http://yoursite.com/2016/02/09/RH124-unit6/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description">
+<meta property="og:description" content="Red Hat Enterprise Linux 7查看文件属性123ls -l filename-		rw-rw-r-- 	1 		kiosk 	kiosk 		0 	Oct  2 17:05 		file文件类型	         文件权限   文件副本个数	      文件所有人  文件所有组	大小	最后一次被修改的时间	名字
+查看目录属性123ls -ld	directoyd	rwxr-x">
+<meta property="og:updated_time" content="2016-02-08T18:52:38.274Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description">
+<meta name="twitter:title" content="6.Controlling Access to Files with Linux File System Permissions">
+<meta name="twitter:description" content="Red Hat Enterprise Linux 7查看文件属性123ls -l filename-		rw-rw-r-- 	1 		kiosk 	kiosk 		0 	Oct  2 17:05 		file文件类型	         文件权限   文件副本个数	      文件所有人  文件所有组	大小	最后一次被修改的时间	名字
+查看目录属性123ls -ld	directoyd	rwxr-x">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -28,9 +32,6 @@
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-    
-    
-  
   
       <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   
@@ -38,8 +39,8 @@
       var yiliaConfig = {
           fancybox: true,
           animate: true,
-          isHome: true,
-          isPost: false,
+          isHome: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -217,69 +218,7 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-RH124-unit7" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/09/RH124-unit7/" class="article-date">
-      <time datetime="2016-02-08T19:03:36.000Z" itemprop="datePublished">2016-02-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/09/RH124-unit7/">7.Monitoring and Managing Linux Processes</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="u4EC0_u4E48_u662F_u8FDB_u7A0B"><a href="#u4EC0_u4E48_u662F_u8FDB_u7A0B" class="headerlink" title="什么是进程"></a>什么是进程</h3>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-RH124-unit6" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-RH124-unit6" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/02/09/RH124-unit6/" class="article-date">
@@ -295,12 +234,27 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/09/RH124-unit6/">6.Controlling Access to Files with Linux File System Permissions</a>
+    <h1 class="article-title" itemprop="name">
+      6.Controlling Access to Files with Linux File System Permissions
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -338,504 +292,159 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-RH124-unit5" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/05/RH124-unit5/" class="article-date">
-      <time datetime="2016-02-05T09:33:12.000Z" itemprop="datePublished">2016-02-05</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/05/RH124-unit5/">5.Managing Local Linux Users and Groups</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h2 id="u7528_u6237_u5982_u4F55_u5B58_u5728_u4E8E_u7CFB_u7EDF_u5F53_u4E2D"><a href="#u7528_u6237_u5982_u4F55_u5B58_u5728_u4E8E_u7CFB_u7EDF_u5F53_u4E2D" class="headerlink" title="用户如何存在于系统当中"></a>用户如何存在于系统当中</h2><h3 id="/etc/passwd_u7528_u6237_u4FE1_u606F_u6587_u4EF6"><a href="#/etc/passwd_u7528_u6237_u4FE1_u606F_u6587_u4EF6" class="headerlink" title="/etc/passwd用户信息文件"></a>/etc/passwd用户信息文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># ll /etc/passwd</span></span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root <span class="number">2009</span> Feb  <span class="number">8</span> <span class="number">20</span>:<span class="number">40</span> /etc/passwd</span><br></pre></td></tr></table></figure>
-<p><code>用户名字：用户密码：用户uid：用户gid：用户说明：用户家目录：用户使用的shell</code></p>
-<blockquote>
-<p><em>example</em><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root:x:<span class="number">0</span>:<span class="number">0</span>:root:/root:/bin/bash</span><br><span class="line">bin:x:<span class="number">1</span>:<span class="number">1</span>:bin:/bin:/sbin/nologin</span><br><span class="line">daemon:x:<span class="number">2</span>:<span class="number">2</span>:daemon:/sbin:/sbin/nologin</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/05/RH124-unit5/#more">more >></a>
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/02/09/RH124-unit6/">6.Controlling Access to Files with Linux File System Permissions</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Wang Chi 的个人博客">Wang Chi</a></p>
+        <p><span>发布时间:</span>2016年02月09日 - 02时02分</p>
+        <p><span>最后更新:</span>2016年02月09日 - 02时52分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/02/09/RH124-unit6/" title="6.Controlling Access to Files with Linux File System Permissions">http://yoursite.com/2016/02/09/RH124-unit6/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/09/RH124-unit6/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-RH124-unit4" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/03/RH124-unit4/" class="article-date">
-      <time datetime="2016-02-03T11:30:30.000Z" itemprop="datePublished">2016-02-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/03/RH124-unit4/">4.Creating, Viewing, and Editing Text Files</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="u5982_u4F55_u7BA1_u7406_u8F93_u51FA"><a href="#u5982_u4F55_u7BA1_u7406_u8F93_u51FA" class="headerlink" title="如何管理输出"></a>如何管理输出</h3><blockquote>
-<p>1表示正确，2表示错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /etc -name passwd&#9;&#62; file&#9;       ####&#37325;&#23450;&#21521;&#27491;&#30830;&#36755;&#20986;&#10;find /etc -name passwd&#9;2&#62; file&#9;       ####&#37325;&#23450;&#21521;&#38169;&#35823;&#36755;&#20986;&#10;find /etc -name passwd&#9;&#38;&#62; file&#9;       ####&#37325;&#23450;&#21521;&#25152;&#26377;&#36755;&#20986;&#10;find /etc -name passwd&#9;&#62;&#62; file&#9;       ###&#36861;&#21152;&#27491;&#30830;&#36755;&#20986;&#10;find /etc -name passwd&#9;2&#62;&#62; file       ####&#36861;&#21152;&#38169;&#35823;&#36755;&#20986;&#10;find /etc -name passwd&#9;&#38;&#62;&#62; file       ####&#36861;&#21152;&#36755;&#20986;&#10;find /etc -name passwd&#9;&#62; file 2&#62;&#38;1    ####&#37325;&#26032;&#23450;&#20041;&#38169;&#35823;&#36755;&#20986;&#20026;&#27491;&#30830;&#10;find /etc -name passwd  &#62; file 1&#62;&#38;2    ####&#37325;&#26032;&#23450;&#20041;&#27491;&#30830;&#36755;&#20986;&#20026;&#38169;&#35823;&#10;find /etc -name passwd  &#62; /dev/null    ####&#25172;&#25481;&#36755;&#20986;&#32467;&#26524;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/03/RH124-unit4/#more">more >></a>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
         </p>
-      
-      <div class="clearfix"></div>
     </div>
-    
-  </div>
-  
-</article>
 
 
 
-
-
-
-
-
-  
-    <article id="post-RH124-unit3" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/02/RH124-unit3/" class="article-date">
-      <time datetime="2016-02-02T09:30:12.000Z" itemprop="datePublished">2016-02-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+    <nav id="article-nav">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/02/RH124-unit3/">3.Getting Help in Red Hat Enterprise Linux</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="man_u547D_u4EE4"><a href="#man_u547D_u4EE4" class="headerlink" title="man命令"></a>man命令</h3><blockquote>
-<p>man查看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man &#32423;&#21035;  &#30446;&#26631;    ##&#25353;q&#36864;&#20986;&#10;man  1  &#25991;&#20214;&#21517;&#9;##&#26597;&#25214;&#21629;&#20196;&#30340;&#24110;&#21161;&#10;man  5  &#25991;&#20214;&#21517;&#9;##&#26597;&#25214;&#37197;&#32622;&#25991;&#20214;&#30340;&#24110;&#21161;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/02/RH124-unit3/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-RH124-unit2" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/02/RH124-unit2/" class="article-date">
-      <time datetime="2016-02-02T08:30:30.000Z" itemprop="datePublished">2016-02-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/02/09/RH124-unit7/">
+                    7.Monitoring and Managing Linux Processes
+                </a>
+            </div>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/02/RH124-unit2/">2.Managing Files Form The Command Line</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="linux_u7CFB_u7EDF_u7ED3_u6784"><a href="#linux_u7CFB_u7EDF_u7ED3_u6784" class="headerlink" title="linux系统结构"></a>linux系统结构</h3><blockquote>
-<p>linux系统结构是倒树型<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/bin	<span class="comment">##二进制可执行文件也就是系统命令</span></span><br><span class="line">/sbin	<span class="comment">##系统管理命令存放位置</span></span><br><span class="line">/boot	<span class="comment">##启动分区，负责系统启动</span></span><br><span class="line">/dev	<span class="comment">##设备管理文件</span></span><br><span class="line">/etc	<span class="comment">##大多数系统管理文件</span></span><br><span class="line">/home	<span class="comment">##普通用户的家目录</span></span><br><span class="line">/lib	<span class="comment">##32位系统库文件存放位置</span></span><br><span class="line">/lib64	<span class="comment">##64位系统库文件存放位置</span></span><br><span class="line">/media	<span class="comment">##系统临时设备挂载点</span></span><br><span class="line">/mnt	<span class="comment">##系统临时设备挂载点</span></span><br><span class="line">/run	<span class="comment">##系统临时设备挂载点</span></span><br><span class="line">/opt	<span class="comment">##第三方软件安装位置</span></span><br><span class="line">/proc	<span class="comment">##系统信息</span></span><br><span class="line">/root	<span class="comment">##超级用户家目录</span></span><br><span class="line">/srv，/var   <span class="comment">##系统数据</span></span><br><span class="line">/sys	<span class="comment">##系统管理，主要是关于内核的</span></span><br><span class="line">/tmp	<span class="comment">##系统临时文件存放位置</span></span><br><span class="line">/usr	<span class="comment">##系统用户相关信息数据及用户自定义软件存放位置</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/02/RH124-unit2/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-RH124-unit1" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/02/RH124-unit1/" class="article-date">
-      <time datetime="2016-02-02T07:30:12.000Z" itemprop="datePublished">2016-02-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/02/RH124-unit1/">1.Accessing The Command Line</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="u4EC0_u4E48_u662Fshell_3F"><a href="#u4EC0_u4E48_u662Fshell_3F" class="headerlink" title="什么是shell?"></a>什么是shell?</h3><p>在计算机科学中，Shell俗称壳（用来区别于核），是指<code>提供使用者使用界面</code>的软件（命令解析器）。文字操作系统与外部最主要的接口就叫做shell。shell是操作系统最外面的一层。shell管理你与操作系统之间的交互：等待你输入，向操作系统解释你的输入，并且处理各种各样的操作系统的输出结果。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/02/RH124-unit1/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-myfirst" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/01/myfirst/" class="article-date">
-      <time datetime="2016-02-01T15:30:12.000Z" itemprop="datePublished">2016-02-01</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/02/05/RH124-unit5/">
+                    5.Managing Local Linux Users and Groups
+                </a>
+            </div>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/01/myfirst/">Wellcome to my blog</a>
-    </h1>
-  
+    </nav>
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="Some_mottoes_want_to_share__2C_for_me__2C_for_you"><a href="#Some_mottoes_want_to_share__2C_for_me__2C_for_you" class="headerlink" title="Some mottoes want to share , for me , for you"></a>Some mottoes want to share , for me , for you</h2><blockquote>
-<p>送给奋斗中的自己</p>
-</blockquote>
-<ul>
-<li>耐得住寂寞才能守的住繁华，该奋斗的年龄不要选择了安逸。</li>
-<li>有些事情不是看到希望才去坚持，而是坚持了才看得到希望。</li>
-<li>不为模糊不清的未来担忧，只为清清楚楚的现在努力。</li>
-<li>理想和现实之间，不变的是跋涉，暗淡与辉煌之间，不变的是开拓。</li>
-<li>只有先改变了自己的态度，才能改变人生的高度。</li>
-<li>你所做的事情，也许暂时看不到成功，但不要灰心，你不是没有成长，而是在扎根。</li>
-</ul>
-<p><img src="/img/dream.jpg" alt="dream" title="Title"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/主页/">主页</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
   
 </article>
 
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Red_Hat_Enterprise_Linux_7"><span class="toc-number">1.</span> <span class="toc-text">Red Hat Enterprise Linux 7</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u67E5_u770B_u6587_u4EF6_u5C5E_u6027"><span class="toc-number">1.1.</span> <span class="toc-text">查看文件属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u67E5_u770B_u76EE_u5F55_u5C5E_u6027"><span class="toc-number">1.2.</span> <span class="toc-text">查看目录属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u6587_u4EF6_u7528_u6237_u7EC4_u7684_u66F4_u6539"><span class="toc-number">1.3.</span> <span class="toc-text">文件用户组的更改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u6743_u9650_u7684_u8BC6_u522B"><span class="toc-number">1.4.</span> <span class="toc-text">权限的识别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u6587_u4EF6_u7684_u9ED8_u8BA4_u6743_u9650"><span class="toc-number">1.5.</span> <span class="toc-text">文件的默认权限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u7279_u6B8A_u6743_u9650"><span class="toc-number">1.6.</span> <span class="toc-text">特殊权限</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
 
 
 
 
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/26/hello-world/" class="article-date">
-      <time datetime="2016-01-26T14:00:00.000Z" itemprop="datePublished">2016-01-26</time>
-</a>
+    <div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
     </div>
-  
-  <div class="article-inner">
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+
+
+
+
+    <div class="scroll" id="post-nav-button">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/26/hello-world/">Hello World</a>
-    </h1>
-  
+            <a href="/2016/02/09/RH124-unit7/" title="上一篇: 7.Monitoring and Managing Linux Processes">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+        
+            <a href="/2016/02/05/RH124-unit5/" title="下一篇: 5.Managing Local Linux Users and Groups">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit7/">7.Monitoring and Managing Linux Processes</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit6/">6.Controlling Access to Files with Linux File System Permissions</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/RH124-unit5/">5.Managing Local Linux Users and Groups</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/03/RH124-unit4/">4.Creating, Viewing, and Editing Text Files</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit3/">3.Getting Help in Red Hat Enterprise Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit2/">2.Managing Files Form The Command Line</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit1/">1.Accessing The Command Line</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/myfirst/">Wellcome to my blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/hello-world/">Hello World</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
 
 
 
 
-
-
-
-
-  
-  
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
