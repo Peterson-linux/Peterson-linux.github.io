@@ -3,21 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>2.Managing Files Form The Command Line | Hexo</title>
+  <title>8.Controlling Services and Daemons | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Red Hat Enterprise Linux 7linux系统结构
-linux系统结构是倒树型123456789101112131415161718/bin	##二进制可执行文件也就是系统命令/sbin	##系统管理命令存放位置/boot	##启动分区，负责系统启动/dev	##设备管理文件/etc	##大多数系统管理文件/home	##普通用户的家目录/lib	##32位系统库文件存放位置/">
+  <meta name="description" content="Red Hat Enterprise Linux 7什么是服务？
+service服务就是在系统中运行的软件，这个软件主要是对外提供某项功能，那么我们把这一类软件叫做服务。
+服务器则是安装了很多这类软件的主机。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2.Managing Files Form The Command Line">
-<meta property="og:url" content="http://yoursite.com/2016/02/02/RH124-unit2/index.html">
+<meta property="og:title" content="8.Controlling Services and Daemons">
+<meta property="og:url" content="http://yoursite.com/2016/02/09/RH124-unit8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Red Hat Enterprise Linux 7linux系统结构
-linux系统结构是倒树型123456789101112131415161718/bin	##二进制可执行文件也就是系统命令/sbin	##系统管理命令存放位置/boot	##启动分区，负责系统启动/dev	##设备管理文件/etc	##大多数系统管理文件/home	##普通用户的家目录/lib	##32位系统库文件存放位置/">
-<meta property="og:updated_time" content="2016-02-08T14:26:51.650Z">
+<meta property="og:description" content="Red Hat Enterprise Linux 7什么是服务？
+service服务就是在系统中运行的软件，这个软件主要是对外提供某项功能，那么我们把这一类软件叫做服务。
+服务器则是安装了很多这类软件的主机。">
+<meta property="og:updated_time" content="2016-02-09T04:14:15.485Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2.Managing Files Form The Command Line">
-<meta name="twitter:description" content="Red Hat Enterprise Linux 7linux系统结构
-linux系统结构是倒树型123456789101112131415161718/bin	##二进制可执行文件也就是系统命令/sbin	##系统管理命令存放位置/boot	##启动分区，负责系统启动/dev	##设备管理文件/etc	##大多数系统管理文件/home	##普通用户的家目录/lib	##32位系统库文件存放位置/">
+<meta name="twitter:title" content="8.Controlling Services and Daemons">
+<meta name="twitter:description" content="Red Hat Enterprise Linux 7什么是服务？
+service服务就是在系统中运行的软件，这个软件主要是对外提供某项功能，那么我们把这一类软件叫做服务。
+服务器则是安装了很多这类软件的主机。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -218,11 +221,11 @@ linux系统结构是倒树型123456789101112131415161718/bin	##二进制可执�
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-RH124-unit2" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-RH124-unit8" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/02/RH124-unit2/" class="article-date">
-      <time datetime="2016-02-02T08:30:30.000Z" itemprop="datePublished">2016-02-02</time>
+      <a href="/2016/02/09/RH124-unit8/" class="article-date">
+      <time datetime="2016-02-09T04:04:43.000Z" itemprop="datePublished">2016-02-09</time>
 </a>
     </div>
   
@@ -235,7 +238,7 @@ linux系统结构是倒树型123456789101112131415161718/bin	##二进制可执�
         
   
     <h1 class="article-title" itemprop="name">
-      2.Managing Files Form The Command Line
+      8.Controlling Services and Daemons
     </h1>
   
 
@@ -260,17 +263,11 @@ linux系统结构是倒树型123456789101112131415161718/bin	##二进制可执�
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="linux_u7CFB_u7EDF_u7ED3_u6784"><a href="#linux_u7CFB_u7EDF_u7ED3_u6784" class="headerlink" title="linux系统结构"></a>linux系统结构</h3><blockquote>
-<p>linux系统结构是倒树型<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/bin	<span class="comment">##二进制可执行文件也就是系统命令</span></span><br><span class="line">/sbin	<span class="comment">##系统管理命令存放位置</span></span><br><span class="line">/boot	<span class="comment">##启动分区，负责系统启动</span></span><br><span class="line">/dev	<span class="comment">##设备管理文件</span></span><br><span class="line">/etc	<span class="comment">##大多数系统管理文件</span></span><br><span class="line">/home	<span class="comment">##普通用户的家目录</span></span><br><span class="line">/lib	<span class="comment">##32位系统库文件存放位置</span></span><br><span class="line">/lib64	<span class="comment">##64位系统库文件存放位置</span></span><br><span class="line">/media	<span class="comment">##系统临时设备挂载点</span></span><br><span class="line">/mnt	<span class="comment">##系统临时设备挂载点</span></span><br><span class="line">/run	<span class="comment">##系统临时设备挂载点</span></span><br><span class="line">/opt	<span class="comment">##第三方软件安装位置</span></span><br><span class="line">/proc	<span class="comment">##系统信息</span></span><br><span class="line">/root	<span class="comment">##超级用户家目录</span></span><br><span class="line">/srv，/var   <span class="comment">##系统数据</span></span><br><span class="line">/sys	<span class="comment">##系统管理，主要是关于内核的</span></span><br><span class="line">/tmp	<span class="comment">##系统临时文件存放位置</span></span><br><span class="line">/usr	<span class="comment">##系统用户相关信息数据及用户自定义软件存放位置</span></span><br></pre></td></tr></table></figure></p>
+        <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="u4EC0_u4E48_u662F_u670D_u52A1_uFF1F"><a href="#u4EC0_u4E48_u662F_u670D_u52A1_uFF1F" class="headerlink" title="什么是服务？"></a>什么是服务？</h3><blockquote>
+<p>service<br><code>服务就是在系统中运行的软件，这个软件主要是对外提供某项功能，那么我们把这一类软件叫做服务。
+服务器则是安装了很多这类软件的主机。</code><br><a id="more"></a></p>
+<h3 id="u670D_u52A1_u7BA1_u7406systemctl"><a href="#u670D_u52A1_u7BA1_u7406systemctl" class="headerlink" title="服务管理systemctl"></a>服务管理systemctl</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">systemctl  start     服务名称   <span class="comment">##开启服务</span></span><br><span class="line">systemctl  stop      服务名称   <span class="comment">##关闭服务</span></span><br><span class="line">systemctl  restart   服务名称   <span class="comment">##重启服务</span></span><br><span class="line">systemctl  reload    服务名称   <span class="comment">##重新加载服务配置</span></span><br><span class="line">systemctl  status    服务名称   <span class="comment">##查看服务状态</span></span><br><span class="line">systemctl  <span class="built_in">enable</span>    服务名称   <span class="comment">##设定服务开机启动</span></span><br><span class="line">systemctl  <span class="built_in">disable</span>   服务名称   <span class="comment">##禁止服务开机启动</span></span><br><span class="line">systemctl  show      服务名称   <span class="comment">##查看服务的所有配置细节         </span></span><br><span class="line"></span><br><span class="line">systemctl  list-dependencies 服务名称       <span class="comment">##查看服务依赖关系</span></span><br><span class="line">systemctl  list-units                     <span class="comment">##查看当前运行的所有服务</span></span><br><span class="line">systemctl  list-unit-files                <span class="comment">##查看服务的开机启动情况    </span></span><br><span class="line">systemctl  <span class="built_in">set</span>-default multi-user.target  <span class="comment">##开机不启动图形</span></span><br><span class="line">systemctl  <span class="built_in">set</span>-default graphical.target   <span class="comment">##开机启动图形</span></span><br></pre></td></tr></table></figure>
 </blockquote>
-<a id="more"></a>
-<h3 id="u7CFB_u7EDF_u6587_u4EF6_u8DEF_u5F84"><a href="#u7CFB_u7EDF_u6587_u4EF6_u8DEF_u5F84" class="headerlink" title="系统文件路径"></a>系统文件路径</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#32477;&#23545;&#36335;&#24452;: &#25991;&#20214;&#22312;&#31995;&#32479;&#30340;&#30495;&#23454;&#20301;&#32622;&#65292;&#25991;&#20214;&#21517;&#23383;&#20197;&#8220;/&#8221;&#24320;&#22836;&#10;&#30456;&#23545;&#36335;&#24452;&#65306;&#25991;&#20214;&#30456;&#23545;&#19982;&#24403;&#21069;&#25152;&#22312;&#20301;&#32622;&#30340;&#19968;&#20010;&#21517;&#23383;&#30340;&#31616;&#20889;&#65292;&#36825;&#20010;&#21517;&#23383;&#19981;&#20250;&#20197;/&#24320;&#22836;&#65292;&#32780;&#19988;&#21517;&#23383;&#20250;&#33258;&#21160;&#28155;&#21152;pwd&#26174;&#31034;&#30340;&#20540;</span><br></pre></td></tr></table></figure>
-<h3 id="u6587_u4EF6_u7BA1_u7406"><a href="#u6587_u4EF6_u7BA1_u7406" class="headerlink" title="文件管理"></a>文件管理</h3><h3 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h3><p><code>touch 文件名      ##新建文件</code></p>
-<h3 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir    名字   <span class="comment">##建立目录(make directory)</span></span><br><span class="line">mkdir -p 名字   <span class="comment">##递归建立目录</span></span><br></pre></td></tr></table></figure>
-<h3 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cp     被复制文件 目的地  <span class="comment">##复制文件     </span></span><br><span class="line">cp -r  被复制目录 目的地  <span class="comment">##递归复制，用于复制目录</span></span><br><span class="line">cp -p  被复制文件 目的地  <span class="comment">##复制并保留文件所有属性</span></span><br></pre></td></tr></table></figure>
-<h3 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv 被移动文件   目的地  <span class="comment">##移动文件</span></span><br><span class="line">mv 老名字      新名字  <span class="comment">##重命名，新名字事先不存在</span></span><br></pre></td></tr></table></figure>
-<h3 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rm      <span class="comment">##删除（会提示是否确定删除）</span></span><br><span class="line">rm <span class="operator">-f</span>   <span class="comment">##强制删除文件  </span></span><br><span class="line">rm -r   <span class="comment">##递归删除（常用于删除目录）</span></span><br><span class="line">rm -fr  <span class="comment">##强制删除目录</span></span><br></pre></td></tr></table></figure>
-<h3 id="u901A_u914D_u7B26"><a href="#u901A_u914D_u7B26" class="headerlink" title="通配符"></a>通配符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*&#9;#&#21305;&#37197;0&#21040;&#20219;&#24847;&#23383;&#31526;&#10;&#65311;&#9;#&#21305;&#37197;&#20219;&#24847;&#21333;&#20010;&#23383;&#31526;&#10;&#65374;&#9;#&#21305;&#37197;&#24403;&#21069;&#29992;&#25143;&#23478;&#30446;&#24405;&#10;&#65374;user&#9;#&#21305;&#37197;&#21040;user&#30340;&#23478;&#30446;&#24405;&#10;&#65374;+&#9;#&#24403;&#21069;&#30446;&#24405;&#10;&#65374;-&#9;#&#24403;&#21069;&#30446;&#24405;&#20043;&#21069;&#25152;&#22312;&#30340;&#30446;&#24405;&#10;[abc]&#9;#&#26377;a&#25110;&#32773;&#26377;b&#25110;&#32773;&#26377;c&#10;[!abc]&#9;#&#38500;&#20102;&#21547;&#26377;a&#25110;&#32773;b&#25110;&#32773;c&#10;[^abc]&#9;#&#38500;&#20102;&#21547;&#26377;a&#25110;&#32773;b&#25110;&#32773;c&#10;[[:alpha:]]&#9;##&#21333;&#20010;&#23383;&#27597;&#10;[[:lower:]]&#9;##&#21333;&#20010;&#23567;&#20889;&#23383;&#27597;&#10;[[:upper:]]&#9;##&#21333;&#20010;&#22823;&#20889;&#23383;&#27597;&#10;[[:alnum:]]&#9;##&#21333;&#20010;&#23383;&#27597;&#25110;&#25968;&#23383;&#10;[[:punct:]]&#9;##&#21333;&#20010;&#31526;&#21495;,&#19981;&#21253;&#21547;&#25968;&#23383;,&#23383;&#27597;&#20197;&#21450;&#31354;&#26684;&#10;[[:digit:]]&#9;##&#21333;&#20010;&#25968;&#23383;&#10;[[:space:]]&#9;##&#21333;&#20010;&#31354;&#26684;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -279,13 +276,13 @@ linux系统结构是倒树型123456789101112131415161718/bin	##二进制可执�
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/02/02/RH124-unit2/">2.Managing Files Form The Command Line</a></p>
+        <p><span>本文标题:</span><a href="/2016/02/09/RH124-unit8/">8.Controlling Services and Daemons</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Wang Chi 的个人博客">Wang Chi</a></p>
-        <p><span>发布时间:</span>2016年02月02日 - 16时30分</p>
-        <p><span>最后更新:</span>2016年02月08日 - 22时26分</p>
+        <p><span>发布时间:</span>2016年02月09日 - 12时04分</p>
+        <p><span>最后更新:</span>2016年02月09日 - 12时14分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/02/02/RH124-unit2/" title="2.Managing Files Form The Command Line">http://yoursite.com/2016/02/02/RH124-unit2/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/02/RH124-unit2/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/02/09/RH124-unit8/" title="8.Controlling Services and Daemons">http://yoursite.com/2016/02/09/RH124-unit8/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/09/RH124-unit8/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -298,16 +295,10 @@ linux系统结构是倒树型123456789101112131415161718/bin	##二进制可执�
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/02/02/RH124-unit3/">
-                    3.Getting Help in Red Hat Enterprise Linux
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/02/02/RH124-unit1/">
-                    1.Accessing The Command Line
+                <a href="/2016/02/09/RH124-unit7/">
+                    7.Monitoring and Managing Linux Processes
                 </a>
             </div>
         
@@ -318,7 +309,7 @@ linux系统结构是倒树型123456789101112131415161718/bin	##二进制可执�
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Red_Hat_Enterprise_Linux_7"><span class="toc-number">1.</span> <span class="toc-text">Red Hat Enterprise Linux 7</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#linux_u7CFB_u7EDF_u7ED3_u6784"><span class="toc-number">1.1.</span> <span class="toc-text">linux系统结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u7CFB_u7EDF_u6587_u4EF6_u8DEF_u5F84"><span class="toc-number">1.2.</span> <span class="toc-text">系统文件路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u6587_u4EF6_u7BA1_u7406"><span class="toc-number">1.3.</span> <span class="toc-text">文件管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#touch"><span class="toc-number">1.4.</span> <span class="toc-text">touch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mkdir"><span class="toc-number">1.5.</span> <span class="toc-text">mkdir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cp"><span class="toc-number">1.6.</span> <span class="toc-text">cp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mv"><span class="toc-number">1.7.</span> <span class="toc-text">mv</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rm"><span class="toc-number">1.8.</span> <span class="toc-text">rm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u901A_u914D_u7B26"><span class="toc-number">1.9.</span> <span class="toc-text">通配符</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Red_Hat_Enterprise_Linux_7"><span class="toc-number">1.</span> <span class="toc-text">Red Hat Enterprise Linux 7</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4EC0_u4E48_u662F_u670D_u52A1_uFF1F"><span class="toc-number">1.1.</span> <span class="toc-text">什么是服务？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u670D_u52A1_u7BA1_u7406systemctl"><span class="toc-number">1.2.</span> <span class="toc-text">服务管理systemctl</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -386,15 +377,13 @@ linux系统结构是倒树型123456789101112131415161718/bin	##二进制可执�
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/02/02/RH124-unit3/" title="上一篇: 3.Getting Help in Red Hat Enterprise Linux">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/02/02/RH124-unit1/" title="下一篇: 1.Accessing The Command Line">
+            <a href="/2016/02/09/RH124-unit7/" title="下一篇: 7.Monitoring and Managing Linux Processes">
                 <i class="fa fa-angle-right"></i>
             </a>
         

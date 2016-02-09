@@ -5,16 +5,70 @@
   
   <title>7.Monitoring and Managing Linux Processes | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Red Hat Enterprise Linux 7什么是进程">
+  <meta name="description" content="Red Hat Enterprise Linux 7什么是进程进程（Process）是计算机中的程序关于某数据集合上的一次运行活动，是系统进行资源分配和调度的基本单位，是操作系统结构的基础。简单的说，进程就是系统正在做的事情。
+进程状态
+
+
+名称
+ps状态
+解释
+
+
+
+
+运行
+R ： runnable (on run queue)
+正在运行或在运行队列中等待
+
+
+中断
+S ： sleeping
+休">
 <meta property="og:type" content="article">
 <meta property="og:title" content="7.Monitoring and Managing Linux Processes">
 <meta property="og:url" content="http://yoursite.com/2016/02/09/RH124-unit7/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Red Hat Enterprise Linux 7什么是进程">
-<meta property="og:updated_time" content="2016-02-08T19:06:47.362Z">
+<meta property="og:description" content="Red Hat Enterprise Linux 7什么是进程进程（Process）是计算机中的程序关于某数据集合上的一次运行活动，是系统进行资源分配和调度的基本单位，是操作系统结构的基础。简单的说，进程就是系统正在做的事情。
+进程状态
+
+
+名称
+ps状态
+解释
+
+
+
+
+运行
+R ： runnable (on run queue)
+正在运行或在运行队列中等待
+
+
+中断
+S ： sleeping
+休">
+<meta property="og:updated_time" content="2016-02-09T04:02:29.078Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="7.Monitoring and Managing Linux Processes">
-<meta name="twitter:description" content="Red Hat Enterprise Linux 7什么是进程">
+<meta name="twitter:description" content="Red Hat Enterprise Linux 7什么是进程进程（Process）是计算机中的程序关于某数据集合上的一次运行活动，是系统进行资源分配和调度的基本单位，是操作系统结构的基础。简单的说，进程就是系统正在做的事情。
+进程状态
+
+
+名称
+ps状态
+解释
+
+
+
+
+运行
+R ： runnable (on run queue)
+正在运行或在运行队列中等待
+
+
+中断
+S ： sleeping
+休">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -257,7 +311,61 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="u4EC0_u4E48_u662F_u8FDB_u7A0B"><a href="#u4EC0_u4E48_u662F_u8FDB_u7A0B" class="headerlink" title="什么是进程"></a>什么是进程</h3>
+        <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="u4EC0_u4E48_u662F_u8FDB_u7A0B"><a href="#u4EC0_u4E48_u662F_u8FDB_u7A0B" class="headerlink" title="什么是进程"></a>什么是进程</h3><p>进程（Process）是计算机中的程序关于某数据集合上的一次运行活动，是系统进行资源分配和调度的基本单位，是操作系统结构的基础。简单的说，进程就是系统正在做的事情。</p>
+<h3 id="u8FDB_u7A0B_u72B6_u6001"><a href="#u8FDB_u7A0B_u72B6_u6001" class="headerlink" title="进程状态"></a>进程状态</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>ps状态</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>运行</td>
+<td>R ： runnable (on run queue)</td>
+<td>正在运行或在运行队列中等待</td>
+</tr>
+<tr>
+<td>中断</td>
+<td>S ： sleeping</td>
+<td>休眠中, 受阻, 在等待某个条件的形成或接受到信号</td>
+</tr>
+<tr>
+<td>停止</td>
+<td>T ： traced or stopped</td>
+<td>进程收到SIGSTOP, SIGSTP, SIGTIN, SIGTOU信号后停止运行</td>
+</tr>
+<tr>
+<td>僵死</td>
+<td>Z ：  a defunct (“zombie”) process</td>
+<td>进程已终止, 但进程描述符存在, 直到父进程调用wait4()系统调用后释放</td>
+</tr>
+<tr>
+<td>不可中断</td>
+<td>D ：  uninterruptible sleep (usually IO)</td>
+<td>收到信号不唤醒和不可运行, 进程必须等待直到有中断发生</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<h3 id="u56FE_u5F62_u4E2D_u5982_u4F55_u67E5_u770B_u8FDB_u7A0B"><a href="#u56FE_u5F62_u4E2D_u5982_u4F55_u67E5_u770B_u8FDB_u7A0B" class="headerlink" title="图形中如何查看进程"></a>图形中如何查看进程</h3><ul>
+<li>直接打开system monitor</li>
+<li>用命令gnome-system-monitor打开进程管理器<h3 id="u5982_u4F55_u7528_u547D_u4EE4_u67E5_u770B_u8FDB_u7A0B"><a href="#u5982_u4F55_u7528_u547D_u4EE4_u67E5_u770B_u8FDB_u7A0B" class="headerlink" title="如何用命令查看进程"></a>如何用命令查看进程</h3><h3 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ps      <span class="comment">##进程查看工具</span></span><br><span class="line">ps  <span class="operator">-a</span>  <span class="comment">##shell中运行的进程</span></span><br><span class="line">ps  -x  <span class="comment">##不在shell中运行的进程</span></span><br><span class="line">ps  -u  <span class="comment">##查看进程用户</span></span><br><span class="line">ps  <span class="operator">-l</span>  <span class="comment">##显示进程的详细信息</span></span><br><span class="line">ps  <span class="operator">-f</span>  <span class="comment">##完全信息full的缩写</span></span><br><span class="line">ps  <span class="operator">-e</span>  <span class="comment">##显示进程的依赖关系</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ps   aux  | grep 进程关键字           <span class="comment">##仅列出某个进程</span></span><br><span class="line">ps ax  -o %cpu,%mem,user,pid,comm   <span class="comment">##查看进程某项信息</span></span><br><span class="line">ps aux --sort +|-%cpu|%mem...       <span class="comment">##进程按指定方式排序</span></span><br><span class="line">ps ax -o gid --sort -%cpu | grep -v GID | head -<span class="number">5</span>  <span class="comment">##按cpu占用排序，显示占用最多的前五名的gid</span></span><br></pre></td></tr></table></figure>
+<h3 id="u5982_u4F55_u63A7_u5236shell_u91CD_u8FDB_u7A0B_u7684_u524D_u540E_u53F0_u8C03_u7528"><a href="#u5982_u4F55_u63A7_u5236shell_u91CD_u8FDB_u7A0B_u7684_u524D_u540E_u53F0_u8C03_u7528" class="headerlink" title="如何控制shell重进程的前后台调用"></a>如何控制shell重进程的前后台调用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#21629;&#20196;&#38;        ##&#36827;&#31243;&#22312;shell&#21518;&#21488;&#36816;&#34892;&#10;ctrl +z     ##&#25226;&#21344;&#29992;shell&#30340;&#36827;&#31243;&#25171;&#20837;&#21518;&#21488;&#20572;&#27490;&#10;jobs        ##&#26597;&#30475;&#34987;&#25171;&#20837;&#21518;&#21488;&#30340;&#36827;&#31243;&#20449;&#24687;&#10;fg job&#21495;    ##&#25226;&#25351;&#23450;&#36827;&#31243;&#35843;&#22238;&#21069;&#21488;&#10;bg job&#21495;    ##&#36816;&#34892;&#21518;&#21488;&#20572;&#27490;&#36827;&#31243;&#10;ctrl +c     ##&#20851;&#38381;&#21344;&#29992;shell&#36827;&#31243;</span><br></pre></td></tr></table></figure>
+<h3 id="u5982_u4F55_u7528_u547D_u4EE4_u63A7_u5236_u8FDB_u7A0B_28man_7_signal_29"><a href="#u5982_u4F55_u7528_u547D_u4EE4_u63A7_u5236_u8FDB_u7A0B_28man_7_signal_29" class="headerlink" title="如何用命令控制进程(man 7 signal)"></a>如何用命令控制进程(man 7 signal)</h3><h4 id="1_29_u4FE1_u53F7"><a href="#1_29_u4FE1_u53F7" class="headerlink" title="1)信号"></a>1)信号</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#20449;&#21495; 1&#9;&#9;##reload&#36827;&#31243;&#10;&#20449;&#21495; 2&#9;&#9;##ctrl +c &#21024;&#38500;&#36827;&#31243;&#22312;&#20869;&#23384;&#20013;&#30340;&#20449;&#24687;&#10;&#20449;&#21495; 3&#9;&#9;##&#28165;&#38500;&#20869;&#23384;&#20013;&#30340;&#40736;&#26631;&#20449;&#24687;&#10;&#20449;&#21495; 9&#9;&#9;##&#24378;&#34892;&#20851;&#38381;&#36827;&#31243;&#10;&#20449;&#21495; 15&#9;&#9;##&#27491;&#24120;&#20851;&#38381;&#36827;&#31243;&#10;&#20449;&#21495; 18&#9;&#9;##&#24320;&#21551;&#20572;&#27490;&#30340;&#36827;&#31243;&#10;&#20449;&#21495; 19&#9;&#9;##&#20572;&#27490;&#27491;&#22312;&#36816;&#34892;&#30340;&#36827;&#31243;&#10;&#20449;&#21495; 20&#9;&#9;##ctrl +z</span><br></pre></td></tr></table></figure>
+<h3 id="2_29_u4FE1_u53F7_u53D1_u8D77"><a href="#2_29_u4FE1_u53F7_u53D1_u8D77" class="headerlink" title="2)信号发起"></a>2)信号发起</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill &#9;&#20449;&#21495;   pid&#10;killall&#9;&#20449;&#21495;   &#36827;&#31243;&#21517;&#31216;&#10;pkill -u username     ##&#32467;&#26463;&#26576;&#20010;&#29992;&#25143;&#30340;&#25152;&#26377;&#36827;&#31243;</span><br></pre></td></tr></table></figure>
+<h3 id="u7528_u6237_u767B_u9646_u76D1_u63A7"><a href="#u7528_u6237_u767B_u9646_u76D1_u63A7" class="headerlink" title="用户登陆监控"></a>用户登陆监控</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">w&#9;##&#26597;&#30475;&#24403;&#21069;&#20351;&#29992;&#31995;&#32479;&#30340;&#29992;&#25143;&#10;w   -f&#9;##&#26597;&#30475;&#24403;&#21069;&#20351;&#29992;&#31995;&#32479;&#30340;&#29992;&#25143;&#24182;&#26174;&#31034;&#20351;&#29992;&#22320;&#28857;&#10;last&#9;##&#26597;&#30475;&#30331;&#38470;&#36807;&#31995;&#32479;&#30340;&#29992;&#25143;&#10;lastb&#9;##&#26597;&#30475;&#35797;&#22270;&#30331;&#38470;&#20294;&#27809;&#26377;&#25104;&#21151;&#30340;&#29992;&#25143;</span><br></pre></td></tr></table></figure>
+<h3 id="top_u547D_u4EE4"><a href="#top_u547D_u4EE4" class="headerlink" title="top命令"></a>top命令</h3><blockquote>
+<p>在shell中显示进程管理器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">u username&#10;k &#20449;&#21495;&#10;h &#24110;&#21161;&#10;s &#25913;&#21464;&#21047;&#26032;&#36895;&#24230;&#10;m &#20197;&#20869;&#23384;&#21344;&#29992;&#37327;&#25490;&#24207;&#10;c &#20197;cpu&#21344;&#29992;&#29575;&#25490;&#24207;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="pstree__u8FDB_u7A0B_u6811"><a href="#pstree__u8FDB_u7A0B_u6811" class="headerlink" title="pstree 进程树"></a>pstree 进程树</h3><blockquote>
+<p>example<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># pstree</span></span><br><span class="line">systemd─┬─ModemManager───<span class="number">2</span>*[&#123;ModemManager&#125;]</span><br><span class="line">        ├─NetworkManager─┬─dhclient</span><br><span class="line">        │                └─<span class="number">3</span>*[&#123;NetworkManager&#125;]</span><br><span class="line">        ├─<span class="number">2</span>*[abrt-watch-log]</span><br><span class="line">        ├─abrtd</span><br><span class="line">        ├─accounts-daemon───<span class="number">2</span>*[&#123;accounts-daemon&#125;]</span><br><span class="line">        ├─alsactl</span><br><span class="line">        ├─at-spi-bus-laun─┬─dbus-daemon───&#123;dbus-daemon&#125;</span><br><span class="line">        │                 └─<span class="number">3</span>*[&#123;at-spi-bus-laun&#125;]</span><br><span class="line">        ├─at-spi2-registr───&#123;at-spi2-registr&#125;</span><br><span class="line">        ├─atd</span><br><span class="line">        ├─auditd─┬─audispd─┬─sedispatch</span><br><span class="line">        │        │         └─&#123;audispd&#125;</span><br><span class="line">        │        └─&#123;auditd&#125;</span><br><span class="line">        ├─avahi-daemon───avahi-daemon</span><br><span class="line">        ├─chronyd</span><br><span class="line">        ├─colord───&#123;colord&#125;</span><br><span class="line">        ├─crond</span><br><span class="line">        ├─<span class="number">2</span>*[dbus-daemon───&#123;dbus-daemon&#125;]</span><br><span class="line">        ├─dbus-launch</span><br><span class="line">        ├─dconf-service───<span class="number">2</span>*[&#123;dconf-service&#125;]</span><br><span class="line">        ├─firewalld───&#123;firewalld&#125;</span><br><span class="line">        ├─gdm─┬─gdm-simple-slav─┬─Xorg</span><br><span class="line">        │     │                 ├─gdm-session-wor─┬─gnome-session─┬─gnome-settings-───<span class="number">3</span>*[&#123;gnome-settin+</span><br><span class="line">        │     │                 │                 │               ├─gnome-shell───<span class="number">4</span>*[&#123;gnome-shell&#125;]</span><br><span class="line">        │     │                 │                 │               └─<span class="number">3</span>*[&#123;gnome-session&#125;]</span><br><span class="line">        │     │                 │                 └─<span class="number">2</span>*[&#123;gdm-session-wor&#125;]</span><br><span class="line">        │     │                 └─<span class="number">2</span>*[&#123;gdm-simple-slav&#125;]</span><br><span class="line">        │     └─<span class="number">2</span>*[&#123;gdm&#125;]</span><br><span class="line">        ├─goa-daemon───<span class="number">3</span>*[&#123;goa-daemon&#125;]</span><br><span class="line">        ├─ibus-daemon─┬─ibus-dconf───<span class="number">2</span>*[&#123;ibus-dconf&#125;]</span><br><span class="line">        │             ├─ibus-engine-sim───&#123;ibus-engine-sim&#125;</span><br><span class="line">        │             └─<span class="number">2</span>*[&#123;ibus-daemon&#125;]</span><br><span class="line">        ├─ibus-x11───&#123;ibus-x11&#125;</span><br><span class="line">        ├─iprdump</span><br><span class="line">        ├─iprinit</span><br><span class="line">        ├─iprupdate</span><br><span class="line">        ├─ksmtuned───sleep</span><br><span class="line">        ├─libvirtd───<span class="number">10</span>*[&#123;libvirtd&#125;]</span><br><span class="line">        ├─lsmd</span><br><span class="line">        ├─lvmetad</span><br><span class="line">        ├─master─┬─pickup</span><br><span class="line">        │        └─qmgr</span><br><span class="line">        ├─mission-control───<span class="number">2</span>*[&#123;mission-control&#125;]</span><br><span class="line">        ├─polkitd───<span class="number">5</span>*[&#123;polkitd&#125;]</span><br><span class="line">        ├─pulseaudio───<span class="number">2</span>*[&#123;pulseaudio&#125;]</span><br><span class="line">        ├─rhsmcertd</span><br><span class="line">        ├─rpc.statd</span><br><span class="line">        ├─rpcbind</span><br><span class="line">        ├─rsyslogd───<span class="number">2</span>*[&#123;rsyslogd&#125;]</span><br><span class="line">        ├─rtkit-daemon───<span class="number">2</span>*[&#123;rtkit-daemon&#125;]</span><br><span class="line">        ├─smartd</span><br><span class="line">        ├─sshd───sshd───bash───pstree</span><br><span class="line">        ├─systemd-journal</span><br><span class="line">        ├─systemd-logind</span><br><span class="line">        ├─systemd-udevd</span><br><span class="line">        ├─tuned───<span class="number">4</span>*[&#123;tuned&#125;]</span><br><span class="line">        └─upowerd───<span class="number">2</span>*[&#123;upowerd&#125;]</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
       
     </div>
     
@@ -268,7 +376,7 @@
         <p><span>本文标题:</span><a href="/2016/02/09/RH124-unit7/">7.Monitoring and Managing Linux Processes</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Wang Chi 的个人博客">Wang Chi</a></p>
         <p><span>发布时间:</span>2016年02月09日 - 03时03分</p>
-        <p><span>最后更新:</span>2016年02月09日 - 03时06分</p>
+        <p><span>最后更新:</span>2016年02月09日 - 12时02分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/02/09/RH124-unit7/" title="7.Monitoring and Managing Linux Processes">http://yoursite.com/2016/02/09/RH124-unit7/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/09/RH124-unit7/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -284,6 +392,12 @@
 
     <nav id="article-nav">
         
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/02/09/RH124-unit8/">
+                    8.Controlling Services and Daemons
+                </a>
+            </div>
+        
         
             <div id="article-nav-older" class="article-nav-title">
                 <a href="/2016/02/09/RH124-unit6/">
@@ -298,7 +412,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Red_Hat_Enterprise_Linux_7"><span class="toc-number">1.</span> <span class="toc-text">Red Hat Enterprise Linux 7</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4EC0_u4E48_u662F_u8FDB_u7A0B"><span class="toc-number">1.1.</span> <span class="toc-text">什么是进程</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Red_Hat_Enterprise_Linux_7"><span class="toc-number">1.</span> <span class="toc-text">Red Hat Enterprise Linux 7</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4EC0_u4E48_u662F_u8FDB_u7A0B"><span class="toc-number">1.1.</span> <span class="toc-text">什么是进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u8FDB_u7A0B_u72B6_u6001"><span class="toc-number">1.2.</span> <span class="toc-text">进程状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u56FE_u5F62_u4E2D_u5982_u4F55_u67E5_u770B_u8FDB_u7A0B"><span class="toc-number">1.3.</span> <span class="toc-text">图形中如何查看进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5982_u4F55_u7528_u547D_u4EE4_u67E5_u770B_u8FDB_u7A0B"><span class="toc-number">1.4.</span> <span class="toc-text">如何用命令查看进程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ps"><span class="toc-number">1.5.</span> <span class="toc-text">ps</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5982_u4F55_u63A7_u5236shell_u91CD_u8FDB_u7A0B_u7684_u524D_u540E_u53F0_u8C03_u7528"><span class="toc-number">1.6.</span> <span class="toc-text">如何控制shell重进程的前后台调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5982_u4F55_u7528_u547D_u4EE4_u63A7_u5236_u8FDB_u7A0B_28man_7_signal_29"><span class="toc-number">1.7.</span> <span class="toc-text">如何用命令控制进程(man 7 signal)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1_29_u4FE1_u53F7"><span class="toc-number">1.7.1.</span> <span class="toc-text">1)信号</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2_29_u4FE1_u53F7_u53D1_u8D77"><span class="toc-number">1.8.</span> <span class="toc-text">2)信号发起</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u7528_u6237_u767B_u9646_u76D1_u63A7"><span class="toc-number">1.9.</span> <span class="toc-text">用户登陆监控</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#top_u547D_u4EE4"><span class="toc-number">1.10.</span> <span class="toc-text">top命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pstree__u8FDB_u7A0B_u6811"><span class="toc-number">1.11.</span> <span class="toc-text">pstree 进程树</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -366,7 +480,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/02/09/RH124-unit8/" title="上一篇: 8.Controlling Services and Daemons">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -378,7 +494,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit7/">7.Monitoring and Managing Linux Processes</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit6/">6.Controlling Access to Files with Linux File System Permissions</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/RH124-unit5/">5.Managing Local Linux Users and Groups</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/03/RH124-unit4/">4.Creating, Viewing, and Editing Text Files</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit3/">3.Getting Help in Red Hat Enterprise Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit2/">2.Managing Files Form The Command Line</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit1/">1.Accessing The Command Line</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/myfirst/">Wellcome to my blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit8/">8.Controlling Services and Daemons</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit7/">7.Monitoring and Managing Linux Processes</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit6/">6.Controlling Access to Files with Linux File System Permissions</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/RH124-unit5/">5.Managing Local Linux Users and Groups</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/03/RH124-unit4/">4.Creating, Viewing, and Editing Text Files</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit3/">3.Getting Help in Red Hat Enterprise Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit2/">2.Managing Files Form The Command Line</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit1/">1.Accessing The Command Line</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/myfirst/">Wellcome to my blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/hello-world/">Hello World</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
