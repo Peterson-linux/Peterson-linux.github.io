@@ -3,24 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>8.Controlling Services and Daemons | Hexo</title>
+  <title>10.Analyzing and Storing Logs | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Red Hat Enterprise Linux 7什么是服务？
-service服务就是在系统中运行的软件，这个软件主要是对外提供某项功能，那么我们把这一类软件叫做服务。
-服务器则是安装了很多这类软件的主机。">
+  <meta name="description" content="Red Hat Enterprise Linux 7日志文件1/var/log/messages      ##&amp;#23384;&amp;#25918;&amp;#22823;&amp;#37096;&amp;#20998;&amp;#26085;&amp;#24535;(&amp;#38750;&amp;#24120;&amp;#37325;&amp;#35201;&amp;#65292;&amp;#20960;&amp;#20046;&amp;#25152;&amp;#26377;&amp;#30340;&amp;#38169">
 <meta property="og:type" content="article">
-<meta property="og:title" content="8.Controlling Services and Daemons">
-<meta property="og:url" content="http://yoursite.com/2016/02/09/RH124-unit8/index.html">
+<meta property="og:title" content="10.Analyzing and Storing Logs">
+<meta property="og:url" content="http://yoursite.com/2016/02/09/RH124-unit10/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Red Hat Enterprise Linux 7什么是服务？
-service服务就是在系统中运行的软件，这个软件主要是对外提供某项功能，那么我们把这一类软件叫做服务。
-服务器则是安装了很多这类软件的主机。">
-<meta property="og:updated_time" content="2016-02-09T04:14:15.485Z">
+<meta property="og:description" content="Red Hat Enterprise Linux 7日志文件1/var/log/messages      ##&amp;#23384;&amp;#25918;&amp;#22823;&amp;#37096;&amp;#20998;&amp;#26085;&amp;#24535;(&amp;#38750;&amp;#24120;&amp;#37325;&amp;#35201;&amp;#65292;&amp;#20960;&amp;#20046;&amp;#25152;&amp;#26377;&amp;#30340;&amp;#38169">
+<meta property="og:updated_time" content="2016-02-09T11:18:09.212Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="8.Controlling Services and Daemons">
-<meta name="twitter:description" content="Red Hat Enterprise Linux 7什么是服务？
-service服务就是在系统中运行的软件，这个软件主要是对外提供某项功能，那么我们把这一类软件叫做服务。
-服务器则是安装了很多这类软件的主机。">
+<meta name="twitter:title" content="10.Analyzing and Storing Logs">
+<meta name="twitter:description" content="Red Hat Enterprise Linux 7日志文件1/var/log/messages      ##&amp;#23384;&amp;#25918;&amp;#22823;&amp;#37096;&amp;#20998;&amp;#26085;&amp;#24535;(&amp;#38750;&amp;#24120;&amp;#37325;&amp;#35201;&amp;#65292;&amp;#20960;&amp;#20046;&amp;#25152;&amp;#26377;&amp;#30340;&amp;#38169">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -221,11 +215,11 @@ service服务就是在系统中运行的软件，这个软件主要是对外提�
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-RH124-unit8" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-RH124-unit10" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/09/RH124-unit8/" class="article-date">
-      <time datetime="2016-02-09T04:04:43.000Z" itemprop="datePublished">2016-02-09</time>
+      <a href="/2016/02/09/RH124-unit10/" class="article-date">
+      <time datetime="2016-02-09T10:55:40.000Z" itemprop="datePublished">2016-02-09</time>
 </a>
     </div>
   
@@ -238,7 +232,7 @@ service服务就是在系统中运行的软件，这个软件主要是对外提�
         
   
     <h1 class="article-title" itemprop="name">
-      8.Controlling Services and Daemons
+      10.Analyzing and Storing Logs
     </h1>
   
 
@@ -263,11 +257,24 @@ service服务就是在系统中运行的软件，这个软件主要是对外提�
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="u4EC0_u4E48_u662F_u670D_u52A1_uFF1F"><a href="#u4EC0_u4E48_u662F_u670D_u52A1_uFF1F" class="headerlink" title="什么是服务？"></a>什么是服务？</h3><blockquote>
-<p>service<br><code>服务就是在系统中运行的软件，这个软件主要是对外提供某项功能，那么我们把这一类软件叫做服务。
-服务器则是安装了很多这类软件的主机。</code><br><a id="more"></a></p>
-<h3 id="u670D_u52A1_u7BA1_u7406systemctl"><a href="#u670D_u52A1_u7BA1_u7406systemctl" class="headerlink" title="服务管理systemctl"></a>服务管理systemctl</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">systemctl  start     服务名称   <span class="comment">##开启服务</span></span><br><span class="line">systemctl  stop      服务名称   <span class="comment">##关闭服务</span></span><br><span class="line">systemctl  restart   服务名称   <span class="comment">##重启服务</span></span><br><span class="line">systemctl  reload    服务名称   <span class="comment">##重新加载服务配置</span></span><br><span class="line">systemctl  status    服务名称   <span class="comment">##查看服务状态</span></span><br><span class="line">systemctl  <span class="built_in">enable</span>    服务名称   <span class="comment">##设定服务开机启动</span></span><br><span class="line">systemctl  <span class="built_in">disable</span>   服务名称   <span class="comment">##禁止服务开机启动</span></span><br><span class="line">systemctl  show      服务名称   <span class="comment">##查看服务的所有配置细节         </span></span><br><span class="line"></span><br><span class="line">systemctl  list-dependencies 服务名称       <span class="comment">##查看服务依赖关系</span></span><br><span class="line">systemctl  list-units                     <span class="comment">##查看当前运行的所有服务</span></span><br><span class="line">systemctl  list-unit-files                <span class="comment">##查看服务的开机启动情况    </span></span><br><span class="line">systemctl  <span class="built_in">set</span>-default multi-user.target  <span class="comment">##开机不启动图形</span></span><br><span class="line">systemctl  <span class="built_in">set</span>-default graphical.target   <span class="comment">##开机启动图形</span></span><br></pre></td></tr></table></figure>
+        <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="u65E5_u5FD7_u6587_u4EF6"><a href="#u65E5_u5FD7_u6587_u4EF6" class="headerlink" title="日志文件"></a>日志文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/var/log/messages      ##&#23384;&#25918;&#22823;&#37096;&#20998;&#26085;&#24535;(&#38750;&#24120;&#37325;&#35201;&#65292;&#20960;&#20046;&#25152;&#26377;&#30340;&#38169;&#35823;&#20449;&#24687;&#65292;&#37325;&#35201;&#20449;&#24687;&#37117;&#20250;&#34987;&#35760;&#24405;)&#10;/var/log/secure        ##&#23384;&#25918;&#23433;&#20840;&#21450;&#29992;&#25143;&#30456;&#20851;&#30340;&#26085;&#24535;&#10;/var/log/maillog       ##&#23384;&#25918;&#19982;&#37038;&#20214;&#26377;&#20851;&#30340;&#26085;&#24535;&#10;/var/log/cron          ##&#23384;&#25918;&#23450;&#26399;&#25191;&#34892;&#30340;&#25991;&#20214;&#30340;&#26085;&#24535;&#10;/var/log/boot.log      ##&#23384;&#25918;&#19982;&#31995;&#32479;&#21551;&#21160;&#30456;&#20851;&#30340;&#26085;&#24535;(&#31995;&#32479;&#24320;&#26426;&#26102;&#30340;&#35835;&#26465;)&#10;/var/log/dmesg         ##&#35760;&#24405;&#31995;&#32479;&#22312;&#24320;&#26426;&#26102;&#20869;&#26680;&#26816;&#27979;&#36807;&#31243;&#25152;&#20135;&#29983;&#30340;&#20449;&#24687;&#10;/var/log/wtmp          ##&#35760;&#24405;&#29992;&#25143;&#27491;&#30830;&#25110;&#38169;&#35823;&#30331;&#24405;&#26102;&#30340;&#20449;&#24687;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="rsyslogd_u670D_u52A1_28reliable_and_extended_syslogd_29"><a href="#rsyslogd_u670D_u52A1_28reliable_and_extended_syslogd_29" class="headerlink" title="rsyslogd服务(reliable and extended syslogd)"></a>rsyslogd服务(reliable and extended syslogd)</h3><blockquote>
+<p>服务功能<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#36825;&#20010;&#26381;&#21153;&#26159;&#29992;&#26469;&#31649;&#29702;&#31995;&#32479;&#26085;&#24535;&#30340;&#36827;&#31243;</span><br></pre></td></tr></table></figure></p>
+<p>服务配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/rsyslog.conf</span><br></pre></td></tr></table></figure></p>
+<p>服务配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/rsyslog.conf</span><br><span class="line">service.loglevel	logfile</span><br><span class="line">*.*                     /var/<span class="built_in">log</span>/all.log    <span class="comment">##所有服务的所有日志都放到/var/log/all.log中</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
+<h3 id="u65E5_u5FD7_u540C_u6B65"><a href="#u65E5_u5FD7_u540C_u6B65" class="headerlink" title="日志同步"></a>日志同步</h3><blockquote>
+<p>日志接收方<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld <span class="comment">##关闭火墙</span></span><br><span class="line">vim /etc/rsyslog.conf</span><br><span class="line"><span class="variable">$ModLoad</span> imudp		 <span class="comment">##加载日志接收功能模块</span></span><br><span class="line"><span class="variable">$UDPServerRun</span> <span class="number">514</span>	 <span class="comment">##加载日志接收接口</span></span><br></pre></td></tr></table></figure></p>
+<p>在日志发送方<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*.*&#9;&#9;@&#26085;&#24535;&#25509;&#25910;&#26041;ip</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart rsyslog.service ##&#20570;&#23436;&#37197;&#32622;&#37325;&#21551;rsyslogd&#26381;&#21153;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>观察<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">watch -n 1 tail -6 /var/log/messages</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="u65E5_u5FD7_u5206_u6790"><a href="#u65E5_u5FD7_u5206_u6790" class="headerlink" title="日志分析"></a>日志分析</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemd-journald  ##&#26085;&#24535;&#20998;&#26512;&#36827;&#31243;</span><br></pre></td></tr></table></figure>
+<h3 id="journalctl"><a href="#journalctl" class="headerlink" title="journalctl"></a>journalctl</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">journalctl -n <span class="number">5</span>         <span class="comment">##查看最近生成的5条日志</span></span><br><span class="line">journalctl -p err       <span class="comment">##查看系统报错</span></span><br><span class="line">journalctl -o verbose   <span class="comment">##查看日志能够使用的条件参数</span></span><br><span class="line">journalctl --since 时间 --until 时间   <span class="comment">##查看某个时间段生成的日志</span></span><br><span class="line"></span><br><span class="line">journalctl   _UID=           <span class="comment">##进程uid</span></span><br><span class="line">journalctl   _PID=           <span class="comment">##进程id</span></span><br><span class="line">journalctl   _GID=           <span class="comment">##进程gid</span></span><br><span class="line">journalctl   _HOSTNAME=      <span class="comment">##进程所在主机</span></span><br><span class="line">journalctl   _SYSTEMD_UNIT=  <span class="comment">##服务名称</span></span><br><span class="line">journalctl   _COMM=          <span class="comment">##命令名称</span></span><br></pre></td></tr></table></figure>
+<h3 id="u65E5_u5FD7_u76D1_u63A7_u5DE5_u5177_u7684_u8BBE_u5B9A"><a href="#u65E5_u5FD7_u76D1_u63A7_u5DE5_u5177_u7684_u8BBE_u5B9A" class="headerlink" title="日志监控工具的设定"></a>日志监控工具的设定</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -276,13 +283,13 @@ service服务就是在系统中运行的软件，这个软件主要是对外提�
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/02/09/RH124-unit8/">8.Controlling Services and Daemons</a></p>
+        <p><span>本文标题:</span><a href="/2016/02/09/RH124-unit10/">10.Analyzing and Storing Logs</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Wang Chi 的个人博客">Wang Chi</a></p>
-        <p><span>发布时间:</span>2016年02月09日 - 12时04分</p>
-        <p><span>最后更新:</span>2016年02月09日 - 12时14分</p>
+        <p><span>发布时间:</span>2016年02月09日 - 18时55分</p>
+        <p><span>最后更新:</span>2016年02月09日 - 19时18分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/02/09/RH124-unit8/" title="8.Controlling Services and Daemons">http://yoursite.com/2016/02/09/RH124-unit8/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/09/RH124-unit8/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/02/09/RH124-unit10/" title="10.Analyzing and Storing Logs">http://yoursite.com/2016/02/09/RH124-unit10/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/09/RH124-unit10/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -295,16 +302,10 @@ service服务就是在系统中运行的软件，这个软件主要是对外提�
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/02/09/RH124-unit9/">
-                    9.Configuring and Securing OpenSSH Service
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/02/09/RH124-unit7/">
-                    7.Monitoring and Managing Linux Processes
+                <a href="/2016/02/09/RH124-unit9/">
+                    9.Configuring and Securing OpenSSH Service
                 </a>
             </div>
         
@@ -315,7 +316,7 @@ service服务就是在系统中运行的软件，这个软件主要是对外提�
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Red_Hat_Enterprise_Linux_7"><span class="toc-number">1.</span> <span class="toc-text">Red Hat Enterprise Linux 7</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4EC0_u4E48_u662F_u670D_u52A1_uFF1F"><span class="toc-number">1.1.</span> <span class="toc-text">什么是服务？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u670D_u52A1_u7BA1_u7406systemctl"><span class="toc-number">1.2.</span> <span class="toc-text">服务管理systemctl</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Red_Hat_Enterprise_Linux_7"><span class="toc-number">1.</span> <span class="toc-text">Red Hat Enterprise Linux 7</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u65E5_u5FD7_u6587_u4EF6"><span class="toc-number">1.1.</span> <span class="toc-text">日志文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rsyslogd_u670D_u52A1_28reliable_and_extended_syslogd_29"><span class="toc-number">1.2.</span> <span class="toc-text">rsyslogd服务(reliable and extended syslogd)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u65E5_u5FD7_u540C_u6B65"><span class="toc-number">1.3.</span> <span class="toc-text">日志同步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u65E5_u5FD7_u5206_u6790"><span class="toc-number">1.4.</span> <span class="toc-text">日志分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#journalctl"><span class="toc-number">1.5.</span> <span class="toc-text">journalctl</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u65E5_u5FD7_u76D1_u63A7_u5DE5_u5177_u7684_u8BBE_u5B9A"><span class="toc-number">1.6.</span> <span class="toc-text">日志监控工具的设定</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -383,15 +384,13 @@ service服务就是在系统中运行的软件，这个软件主要是对外提�
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/02/09/RH124-unit9/" title="上一篇: 9.Configuring and Securing OpenSSH Service">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/02/09/RH124-unit7/" title="下一篇: 7.Monitoring and Managing Linux Processes">
+            <a href="/2016/02/09/RH124-unit9/" title="下一篇: 9.Configuring and Securing OpenSSH Service">
                 <i class="fa fa-angle-right"></i>
             </a>
         
