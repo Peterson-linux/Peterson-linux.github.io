@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>10.Analyzing and Storing Logs | Hexo</title>
+  <title>13.Installingand Updating Software Packages | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Red Hat Enterprise Linux 7日志文件1/var/log/messages      ##&amp;#23384;&amp;#25918;&amp;#22823;&amp;#37096;&amp;#20998;&amp;#26085;&amp;#24535;(&amp;#38750;&amp;#24120;&amp;#37325;&amp;#35201;&amp;#65292;&amp;#20960;&amp;#20046;&amp;#25152;&amp;#26377;&amp;#30340;&amp;#38169">
+  <meta name="description" content="Red Hat Enterprise Linux 7如何安装软件
+yum : Yellowdog Updater Modified1234567891011121314yum 	list	all		##列出所有安装包yum 	list	installed	##列出已经安装的yum	list	available	##列出没有安装的yum 	remove	software	##卸载软件yum 	ins">
 <meta property="og:type" content="article">
-<meta property="og:title" content="10.Analyzing and Storing Logs">
-<meta property="og:url" content="http://yoursite.com/2016/02/09/RH124-unit10/index.html">
+<meta property="og:title" content="13.Installingand Updating Software Packages">
+<meta property="og:url" content="http://yoursite.com/2016/02/13/RH124-unit13/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Red Hat Enterprise Linux 7日志文件1/var/log/messages      ##&amp;#23384;&amp;#25918;&amp;#22823;&amp;#37096;&amp;#20998;&amp;#26085;&amp;#24535;(&amp;#38750;&amp;#24120;&amp;#37325;&amp;#35201;&amp;#65292;&amp;#20960;&amp;#20046;&amp;#25152;&amp;#26377;&amp;#30340;&amp;#38169">
-<meta property="og:updated_time" content="2016-02-09T13:38:12.919Z">
+<meta property="og:description" content="Red Hat Enterprise Linux 7如何安装软件
+yum : Yellowdog Updater Modified1234567891011121314yum 	list	all		##列出所有安装包yum 	list	installed	##列出已经安装的yum	list	available	##列出没有安装的yum 	remove	software	##卸载软件yum 	ins">
+<meta property="og:updated_time" content="2016-02-13T12:41:07.928Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="10.Analyzing and Storing Logs">
-<meta name="twitter:description" content="Red Hat Enterprise Linux 7日志文件1/var/log/messages      ##&amp;#23384;&amp;#25918;&amp;#22823;&amp;#37096;&amp;#20998;&amp;#26085;&amp;#24535;(&amp;#38750;&amp;#24120;&amp;#37325;&amp;#35201;&amp;#65292;&amp;#20960;&amp;#20046;&amp;#25152;&amp;#26377;&amp;#30340;&amp;#38169">
+<meta name="twitter:title" content="13.Installingand Updating Software Packages">
+<meta name="twitter:description" content="Red Hat Enterprise Linux 7如何安装软件
+yum : Yellowdog Updater Modified1234567891011121314yum 	list	all		##列出所有安装包yum 	list	installed	##列出已经安装的yum	list	available	##列出没有安装的yum 	remove	software	##卸载软件yum 	ins">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -215,11 +218,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-RH124-unit10" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-RH124-unit13" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/09/RH124-unit10/" class="article-date">
-      <time datetime="2016-02-09T10:55:40.000Z" itemprop="datePublished">2016-02-09</time>
+      <a href="/2016/02/13/RH124-unit13/" class="article-date">
+      <time datetime="2016-02-13T12:13:39.000Z" itemprop="datePublished">2016-02-13</time>
 </a>
     </div>
   
@@ -232,7 +235,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      10.Analyzing and Storing Logs
+      13.Installingand Updating Software Packages
     </h1>
   
 
@@ -257,30 +260,25 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="u65E5_u5FD7_u6587_u4EF6"><a href="#u65E5_u5FD7_u6587_u4EF6" class="headerlink" title="日志文件"></a>日志文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/var/log/messages      ##&#23384;&#25918;&#22823;&#37096;&#20998;&#26085;&#24535;(&#38750;&#24120;&#37325;&#35201;&#65292;&#20960;&#20046;&#25152;&#26377;&#30340;&#38169;&#35823;&#20449;&#24687;&#65292;&#37325;&#35201;&#20449;&#24687;&#37117;&#20250;&#34987;&#35760;&#24405;)&#10;/var/log/secure        ##&#23384;&#25918;&#23433;&#20840;&#21450;&#29992;&#25143;&#30456;&#20851;&#30340;&#26085;&#24535;&#10;/var/log/maillog       ##&#23384;&#25918;&#19982;&#37038;&#20214;&#26377;&#20851;&#30340;&#26085;&#24535;&#10;/var/log/cron          ##&#23384;&#25918;&#23450;&#26399;&#25191;&#34892;&#30340;&#25991;&#20214;&#30340;&#26085;&#24535;&#10;/var/log/boot.log      ##&#23384;&#25918;&#19982;&#31995;&#32479;&#21551;&#21160;&#30456;&#20851;&#30340;&#26085;&#24535;(&#31995;&#32479;&#24320;&#26426;&#26102;&#30340;&#35835;&#26465;)&#10;/var/log/dmesg         ##&#35760;&#24405;&#31995;&#32479;&#22312;&#24320;&#26426;&#26102;&#20869;&#26680;&#26816;&#27979;&#36807;&#31243;&#25152;&#20135;&#29983;&#30340;&#20449;&#24687;&#10;/var/log/wtmp          ##&#35760;&#24405;&#29992;&#25143;&#27491;&#30830;&#25110;&#38169;&#35823;&#30331;&#24405;&#26102;&#30340;&#20449;&#24687;&#65292;last&#21629;&#20196;&#23601;&#26159;&#35835;&#30340;&#36825;&#20010;&#25991;&#20214;</span><br></pre></td></tr></table></figure>
+        <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="u5982_u4F55_u5B89_u88C5_u8F6F_u4EF6"><a href="#u5982_u4F55_u5B89_u88C5_u8F6F_u4EF6" class="headerlink" title="如何安装软件"></a>如何安装软件</h3><blockquote>
+<p>yum : Yellowdog Updater Modified<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">yum 	list	all		<span class="comment">##列出所有安装包</span></span><br><span class="line">yum 	list	installed	<span class="comment">##列出已经安装的</span></span><br><span class="line">yum	list	available	<span class="comment">##列出没有安装的</span></span><br><span class="line">yum 	remove	software	<span class="comment">##卸载软件</span></span><br><span class="line">yum 	install	software	<span class="comment">##安装软件</span></span><br><span class="line">yum	search	关键字		<span class="comment">##搜索与关键字相关的软件</span></span><br><span class="line">yum	whatprovides  文件	<span class="comment">##搜索包含此文件的包</span></span><br><span class="line">yum 	reinstall software	<span class="comment">##重新安装软件</span></span><br><span class="line">yum	localinstall 第三方软件	<span class="comment">##安装第三方软件并解决依赖关系</span></span><br><span class="line">yum 	info	software	<span class="comment">##查询软件信息</span></span><br><span class="line">yum 	groups  list		<span class="comment">##列出软件组</span></span><br><span class="line">yum	groups	install	组名	<span class="comment">##安装组</span></span><br><span class="line">yum	groups	remove	组名	<span class="comment">##卸载组</span></span><br><span class="line">yum	groups	info	组名	<span class="comment">##查看组信息</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
 <a id="more"></a>
-<h3 id="rsyslogd_u670D_u52A1_28reliable_and_extended_syslogd_29"><a href="#rsyslogd_u670D_u52A1_28reliable_and_extended_syslogd_29" class="headerlink" title="rsyslogd服务(reliable and extended syslogd)"></a>rsyslogd服务(reliable and extended syslogd)</h3><blockquote>
-<p>服务功能<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#36825;&#20010;&#26381;&#21153;&#26159;&#29992;&#26469;&#31649;&#29702;&#31995;&#32479;&#26085;&#24535;&#30340;&#36827;&#31243;</span><br></pre></td></tr></table></figure></p>
-<p>服务配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/rsyslog.conf</span><br></pre></td></tr></table></figure></p>
-<p>服务配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/rsyslog.conf</span><br><span class="line">service.loglevel	logfile</span><br><span class="line">*.*                     /var/<span class="built_in">log</span>/all.log    <span class="comment">##所有服务的所有日志都放到/var/log/all.log中</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="u65E5_u5FD7_u540C_u6B65"><a href="#u65E5_u5FD7_u540C_u6B65" class="headerlink" title="日志同步"></a>日志同步</h3><blockquote>
-<p>日志接收方<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld <span class="comment">##关闭火墙</span></span><br><span class="line">vim /etc/rsyslog.conf</span><br><span class="line"><span class="variable">$ModLoad</span> imudp		 <span class="comment">##加载日志接收功能模块</span></span><br><span class="line"><span class="variable">$UDPServerRun</span> <span class="number">514</span>	 <span class="comment">##加载日志接收接口</span></span><br></pre></td></tr></table></figure></p>
-<p>在日志发送方<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/rsyslog.conf&#10;*.*&#9;&#9;@&#26085;&#24535;&#25509;&#25910;&#26041;ip</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart rsyslog.service ##&#20570;&#23436;&#37197;&#32622;&#37325;&#21551;rsyslogd&#26381;&#21153;</span><br></pre></td></tr></table></figure>
+<h3 id="u5B98_u65B9_u8F6F_u4EF6_u4ED3_u5E93_u7684_u5EFA_u7ACB"><a href="#u5B98_u65B9_u8F6F_u4EF6_u4ED3_u5E93_u7684_u5EFA_u7ACB" class="headerlink" title="官方软件仓库的建立"></a>官方软件仓库的建立</h3><p>1.需要一个与本机匹配的安装镜像，<code>rhel-server-7.0-x86_64-dvd.iso</code>,这个文件从官方网站下载得到<br>2.让系统能够读取rhel-server-7.0-x86_64-dvd.iso中的内容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/fstab</span><br><span class="line">/xxx/rhel-server-<span class="number">7.0</span>-x86_64-dvd.iso	/xxx	iso9660	ro,relatime	<span class="number">0</span> 	<span class="number">0</span></span><br><span class="line">镜像文件				        挂载点	类型	 挂载参数	备份	检测</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -a ##&#37325;&#35835;&#32534;&#36753;&#21518;&#30340;&#37197;&#32622;&#25991;&#20214;</span><br></pre></td></tr></table></figure>
+<p>3.编写软件仓库的指定文件<br><code>/etc/yum.repos.d    ##仓库指向文件存储目录</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/yum.repos.d/test.repo	<span class="comment">##仓库指向文件</span></span><br><span class="line">[redhatsoftware]		<span class="comment">##仓库名称</span></span><br><span class="line">name=localsoftware		<span class="comment">##仓库描述</span></span><br><span class="line">baseurl=file:///<span class="built_in">source</span>		<span class="comment">##仓库地址</span></span><br><span class="line">gpgcheck=<span class="number">1</span>|<span class="number">0</span>			<span class="comment">##是否检测软件的gpgkey</span></span><br><span class="line">enabled=<span class="number">1</span>			<span class="comment">##此仓库在系统中生效</span></span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release	<span class="comment">##本机gpgkey文件</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum clean all&#9;&#9;&#9;##&#21047;&#26032;&#20179;&#24211;&#37197;&#32622;</span><br></pre></td></tr></table></figure>
+<p>4.网络yum源的配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/fstab</span><br><span class="line">/xxx/rhel-server-<span class="number">7.0</span>-x86_64-dvd.iso     /var/www/html/<span class="built_in">source</span>    iso9660 ro,relatime     <span class="number">0</span>       <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -a</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/yum.repos.d/test.repo</span><br><span class="line">baseurl=file:///var/www/html/<span class="built_in">source</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum clean all</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>观察<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">watch -n 1 tail -6 /var/log/messages</span><br></pre></td></tr></table></figure></p>
+<p>其他用户访问时<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum&#28304;&#20013;&#65306;&#10;baseurl=http://&#26381;&#21153;&#22120;ip/source</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<h3 id="u65E5_u5FD7_u5206_u6790"><a href="#u65E5_u5FD7_u5206_u6790" class="headerlink" title="日志分析"></a>日志分析</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemd-journald  ##&#26085;&#24535;&#20998;&#26512;&#36827;&#31243;</span><br></pre></td></tr></table></figure>
-<h3 id="journalctl"><a href="#journalctl" class="headerlink" title="journalctl"></a>journalctl</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">journalctl -n <span class="number">5</span>         <span class="comment">##查看最近生成的5条日志</span></span><br><span class="line">journalctl -p err       <span class="comment">##查看系统报错</span></span><br><span class="line">journalctl --since 时间 --until 时间   <span class="comment">##查看某个时间段生成的日志</span></span><br><span class="line"></span><br><span class="line">journalctl -o verbose   <span class="comment">##查看日志能够使用的条件参数</span></span><br><span class="line">journalctl   _UID=           <span class="comment">##进程uid</span></span><br><span class="line">journalctl   _PID=           <span class="comment">##进程id</span></span><br><span class="line">journalctl   _GID=           <span class="comment">##进程gid</span></span><br><span class="line">journalctl   _HOSTNAME=      <span class="comment">##进程所在主机</span></span><br><span class="line">journalctl   _SYSTEMD_UNIT=  <span class="comment">##服务名称</span></span><br><span class="line">journalctl   _COMM=          <span class="comment">##命令名称</span></span><br></pre></td></tr></table></figure>
-<h3 id="u65E5_u5FD7_u76D1_u63A7_u5DE5_u5177_u7684_u8BBE_u5B9A"><a href="#u65E5_u5FD7_u76D1_u63A7_u5DE5_u5177_u7684_u8BBE_u5B9A" class="headerlink" title="日志监控工具的设定"></a>日志监控工具的设定</h3><p><code>默认情况下journalctl是无法看到关机之前产生的日志的</code></p>
-<blockquote>
-<p>如果想检测到这类日志设置如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[root@server ~]<span class="comment"># mkdir /var/log/journal</span></span><br><span class="line">[root@server ~]<span class="comment"># chown root:systemd-journal /var/log/journal/</span></span><br><span class="line">[root@server ~]<span class="comment"># ll -d /var/log/journal/</span></span><br><span class="line">drwxr-xr-x. <span class="number">2</span> root systemd-journal <span class="number">6</span> Feb  <span class="number">9</span> <span class="number">21</span>:<span class="number">19</span> /var/<span class="built_in">log</span>/journal/</span><br><span class="line">[root@server ~]<span class="comment"># chmod 2755 /var/log/journal/</span></span><br><span class="line">[root@server ~]<span class="comment"># killall -1 systemd-journald</span></span><br><span class="line">[root@server ~]<span class="comment"># ls /var/log/journal/</span></span><br><span class="line">cf9614f38c154c789955da465f63b5ce</span><br><span class="line">[root@server ~]<span class="comment"># ls /var/log/journal/cf9614f38c154c789955da465f63b5ce/</span></span><br><span class="line">system.journal</span><br><span class="line">[root@server ~]<span class="comment"># reboot</span></span><br><span class="line">[root@server ~]<span class="comment"># ll /var/log/journal/cf9614f38c154c789955da465f63b5ce/</span></span><br><span class="line">total <span class="number">16392</span></span><br><span class="line">-rw-r-----. <span class="number">1</span> root systemd-journal <span class="number">8388608</span> Feb  <span class="number">9</span> <span class="number">21</span>:<span class="number">24</span> system.journal</span><br><span class="line">-rw-r-----+ <span class="number">1</span> root systemd-journal <span class="number">8388608</span> Feb  <span class="number">9</span> <span class="number">21</span>:<span class="number">24</span> user-<span class="number">42</span>.journal</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="u5982_u4F55_u540C_u6B65_u7CFB_u7EDF_u65F6_u95F4"><a href="#u5982_u4F55_u540C_u6B65_u7CFB_u7EDF_u65F6_u95F4" class="headerlink" title="如何同步系统时间"></a>如何同步系统时间</h3><p><strong>1.确定时间源地址</strong><br>172.25.254.254<br><strong>2.确定客户主机使用的时间同步服务</strong><br>chronyd.service<br><strong>3.在chronyd.service服务中加载时间源地址</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/chrony.conf</span><br><span class="line">server	<span class="number">172.25</span>.<span class="number">254.254</span> iburst</span><br></pre></td></tr></table></figure></p>
-<p><strong>4.重启服务</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart chronyd.service</span><br></pre></td></tr></table></figure></p>
-<h3 id="timedatectl"><a href="#timedatectl" class="headerlink" title="timedatectl"></a>timedatectl</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timedatectl list-timezones&#9;   ##&#21015;&#20986;&#26102;&#21306;&#10;timedatectl set-timezone &#26102;&#21306;&#9;   ##&#35774;&#23450;&#26102;&#21306;&#10;timedatectl set-time HH&#65306;mm&#65306;ss&#9;   ##&#35774;&#23450;&#31995;&#32479;&#26102;&#38388;</span><br></pre></td></tr></table></figure>
+<h3 id="u7B2C_u4E09_u65B9_u8F6F_u4EF6_u4ED3_u5E93_u7684_u642D_u5EFA"><a href="#u7B2C_u4E09_u65B9_u8F6F_u4EF6_u4ED3_u5E93_u7684_u642D_u5EFA" class="headerlink" title="第三方软件仓库的搭建"></a>第三方软件仓库的搭建</h3><p>1.把所有rpm包放到指定目录中，比如放到/software中<br>2.在这个目录中执行createrepo /software，生成repodate目录<br>3.编写/etc/yum.repos.d/xxx.repo 指定/software为yum源<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[software]</span><br><span class="line">name=software</span><br><span class="line">baseurl=file:///software</span><br><span class="line">gpgcheck=<span class="number">0</span>       <span class="comment">##这个很重要，因为安装的是第三方软件，所以要关闭检测性</span></span><br><span class="line"><span class="built_in">enable</span>=<span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="yum_u8F6F_u4EF6_u63A7_u5236"><a href="#yum_u8F6F_u4EF6_u63A7_u5236" class="headerlink" title="yum软件控制"></a>yum软件控制</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/yum.conf</span><br><span class="line">exclude=*.x86_64	<span class="comment">##忽略64位安装包(man 5 yum.conf)</span></span><br></pre></td></tr></table></figure>
+<h3 id="rpm_u547D_u4EE4_u7684_u4F7F_u7528"><a href="#rpm_u547D_u4EE4_u7684_u4F7F_u7528" class="headerlink" title="rpm命令的使用"></a>rpm命令的使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">rpm  -i  <span class="comment">##install</span></span><br><span class="line">rpm  -v  <span class="comment">##显示信息</span></span><br><span class="line">rpm  -h  <span class="comment">##指定包的解密方式为hash</span></span><br><span class="line">rpm  -q  <span class="comment">##查询</span></span><br><span class="line">rpm  -p  <span class="comment">##指定软件包本身</span></span><br><span class="line">rpm  <span class="operator">-l</span>  <span class="comment">##列出软件中文件的名字</span></span><br><span class="line">rpm  --scripts  <span class="comment">##查看软件安装和卸载过程中所执行的动作</span></span><br><span class="line">rpm  <span class="operator">-f</span>    <span class="comment">##查询某个文件属于那个安装包</span></span><br><span class="line">rpm  <span class="operator">-a</span>    <span class="comment">##所有</span></span><br><span class="line">rpm  <span class="operator">-e</span>    <span class="comment">##卸载</span></span><br><span class="line">rpm  --force  <span class="comment">##强制</span></span><br><span class="line">rpm  --nodeps <span class="comment">##忽略依赖性</span></span><br><span class="line"></span><br><span class="line">rpm     -qf  文件名    <span class="comment">##查询某个文件属于哪个安装包</span></span><br><span class="line">rpm     -qlp 包名      <span class="comment">##列出安装包中的文件  </span></span><br><span class="line">rpm     -ql  软件名    <span class="comment">##列出软件中的文件   </span></span><br><span class="line">rpm     -qa            <span class="comment">##列出所有已安装的软件</span></span><br><span class="line">rpm     -ivh           <span class="comment">##安装软件</span></span><br></pre></td></tr></table></figure>
+<h3 id="ntfs_u652F_u6301"><a href="#ntfs_u652F_u6301" class="headerlink" title="ntfs支持"></a>ntfs支持</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.&#19979;&#36733;&#36719;&#20214;&#21253; ntfs-3g_ntfsprogs-2014.2.15.tgz&#10;2.&#29992;&#21629;&#20196; tar zxf ntfs-3g_ntfsprogs-2014.2.15.tgz &#35299;&#21387;&#10;3.&#36827;&#20837;&#35299;&#21387;&#21518;&#30340;&#25991;&#20214;&#22841;&#10;&#9;&#25191;&#34892;   ./configure&#10;&#9;&#23433;&#35013;gcc&#25991;&#20214;&#31995;&#32479;&#32763;&#35793;&#24037;&#20855;:  yum install gcc -y&#10;&#9;&#23433;&#35013;ntfs:    make install&#10;4.&#20351;&#29992;&#21629;&#20196;&#65306;  ntfs-3g &#35774;&#22791;&#21517; &#25346;&#36733;&#28857;    ##&#25346;&#36733;&#35774;&#22791;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -289,13 +287,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/02/09/RH124-unit10/">10.Analyzing and Storing Logs</a></p>
+        <p><span>本文标题:</span><a href="/2016/02/13/RH124-unit13/">13.Installingand Updating Software Packages</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Wang Chi 的个人博客">Wang Chi</a></p>
-        <p><span>发布时间:</span>2016年02月09日 - 18时55分</p>
-        <p><span>最后更新:</span>2016年02月09日 - 21时38分</p>
+        <p><span>发布时间:</span>2016年02月13日 - 20时13分</p>
+        <p><span>最后更新:</span>2016年02月13日 - 20时41分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/02/09/RH124-unit10/" title="10.Analyzing and Storing Logs">http://yoursite.com/2016/02/09/RH124-unit10/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/09/RH124-unit10/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/02/13/RH124-unit13/" title="13.Installingand Updating Software Packages">http://yoursite.com/2016/02/13/RH124-unit13/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/13/RH124-unit13/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -308,16 +306,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/02/09/RH124-unit11/">
-                    11.Managing Red Hat Enterprise Linux Networking
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/02/09/RH124-unit9/">
-                    9.Configuring and Securing OpenSSH Service
+                <a href="/2016/02/13/RH124-unit12/">
+                    12.Archiving and Copying Files Between Systems
                 </a>
             </div>
         
@@ -328,7 +320,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Red_Hat_Enterprise_Linux_7"><span class="toc-number">1.</span> <span class="toc-text">Red Hat Enterprise Linux 7</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u65E5_u5FD7_u6587_u4EF6"><span class="toc-number">1.1.</span> <span class="toc-text">日志文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rsyslogd_u670D_u52A1_28reliable_and_extended_syslogd_29"><span class="toc-number">1.2.</span> <span class="toc-text">rsyslogd服务(reliable and extended syslogd)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u65E5_u5FD7_u540C_u6B65"><span class="toc-number">1.3.</span> <span class="toc-text">日志同步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u65E5_u5FD7_u5206_u6790"><span class="toc-number">1.4.</span> <span class="toc-text">日志分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#journalctl"><span class="toc-number">1.5.</span> <span class="toc-text">journalctl</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u65E5_u5FD7_u76D1_u63A7_u5DE5_u5177_u7684_u8BBE_u5B9A"><span class="toc-number">1.6.</span> <span class="toc-text">日志监控工具的设定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5982_u4F55_u540C_u6B65_u7CFB_u7EDF_u65F6_u95F4"><span class="toc-number">1.7.</span> <span class="toc-text">如何同步系统时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#timedatectl"><span class="toc-number">1.8.</span> <span class="toc-text">timedatectl</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Red_Hat_Enterprise_Linux_7"><span class="toc-number">1.</span> <span class="toc-text">Red Hat Enterprise Linux 7</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u5982_u4F55_u5B89_u88C5_u8F6F_u4EF6"><span class="toc-number">1.1.</span> <span class="toc-text">如何安装软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5B98_u65B9_u8F6F_u4EF6_u4ED3_u5E93_u7684_u5EFA_u7ACB"><span class="toc-number">1.2.</span> <span class="toc-text">官方软件仓库的建立</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u7B2C_u4E09_u65B9_u8F6F_u4EF6_u4ED3_u5E93_u7684_u642D_u5EFA"><span class="toc-number">1.3.</span> <span class="toc-text">第三方软件仓库的搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yum_u8F6F_u4EF6_u63A7_u5236"><span class="toc-number">1.4.</span> <span class="toc-text">yum软件控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rpm_u547D_u4EE4_u7684_u4F7F_u7528"><span class="toc-number">1.5.</span> <span class="toc-text">rpm命令的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ntfs_u652F_u6301"><span class="toc-number">1.6.</span> <span class="toc-text">ntfs支持</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -396,15 +388,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/02/09/RH124-unit11/" title="上一篇: 11.Managing Red Hat Enterprise Linux Networking">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/02/09/RH124-unit9/" title="下一篇: 9.Configuring and Securing OpenSSH Service">
+            <a href="/2016/02/13/RH124-unit12/" title="下一篇: 12.Archiving and Copying Files Between Systems">
                 <i class="fa fa-angle-right"></i>
             </a>
         
