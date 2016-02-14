@@ -3,21 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>3.Getting Help in Red Hat Enterprise Linux | Hexo</title>
+  <title>15.Using Virtualized Systems | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Red Hat Enterprise Linux 7man命令
-man查看1man &amp;#32423;&amp;#21035;  &amp;#30446;&amp;#26631;    ##&amp;#25353;q&amp;#36864;&amp;#20986;&amp;#10;man  1  &amp;#25991;&amp;#20214;&amp;#21517;&amp;#9;##&amp;#26597;&amp;#25214;&amp;#21629;&amp;#20196;&amp;#30340;&amp;#24110;&amp;#">
+  <meta name="description" content="Red Hat Enterprise Linux 7虚拟机安装1yum install qemu-kvm qemu-ing&amp;#9; ##&amp;#23433;&amp;#35013;&amp;#34394;&amp;#25311;&amp;#26426;&amp;#26680;&amp;#24515;&amp;#32452;&amp;#20214;&amp;#10;yum install virt-manager libvirt libvirt-python-virtins">
 <meta property="og:type" content="article">
-<meta property="og:title" content="3.Getting Help in Red Hat Enterprise Linux">
-<meta property="og:url" content="http://yoursite.com/2016/02/02/RH124-unit3/index.html">
+<meta property="og:title" content="15.Using Virtualized Systems">
+<meta property="og:url" content="http://yoursite.com/2016/02/14/RH124-unit15/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Red Hat Enterprise Linux 7man命令
-man查看1man &amp;#32423;&amp;#21035;  &amp;#30446;&amp;#26631;    ##&amp;#25353;q&amp;#36864;&amp;#20986;&amp;#10;man  1  &amp;#25991;&amp;#20214;&amp;#21517;&amp;#9;##&amp;#26597;&amp;#25214;&amp;#21629;&amp;#20196;&amp;#30340;&amp;#24110;&amp;#">
-<meta property="og:updated_time" content="2016-02-08T13:50:15.385Z">
+<meta property="og:description" content="Red Hat Enterprise Linux 7虚拟机安装1yum install qemu-kvm qemu-ing&amp;#9; ##&amp;#23433;&amp;#35013;&amp;#34394;&amp;#25311;&amp;#26426;&amp;#26680;&amp;#24515;&amp;#32452;&amp;#20214;&amp;#10;yum install virt-manager libvirt libvirt-python-virtins">
+<meta property="og:updated_time" content="2016-02-14T09:49:13.179Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="3.Getting Help in Red Hat Enterprise Linux">
-<meta name="twitter:description" content="Red Hat Enterprise Linux 7man命令
-man查看1man &amp;#32423;&amp;#21035;  &amp;#30446;&amp;#26631;    ##&amp;#25353;q&amp;#36864;&amp;#20986;&amp;#10;man  1  &amp;#25991;&amp;#20214;&amp;#21517;&amp;#9;##&amp;#26597;&amp;#25214;&amp;#21629;&amp;#20196;&amp;#30340;&amp;#24110;&amp;#">
+<meta name="twitter:title" content="15.Using Virtualized Systems">
+<meta name="twitter:description" content="Red Hat Enterprise Linux 7虚拟机安装1yum install qemu-kvm qemu-ing&amp;#9; ##&amp;#23433;&amp;#35013;&amp;#34394;&amp;#25311;&amp;#26426;&amp;#26680;&amp;#24515;&amp;#32452;&amp;#20214;&amp;#10;yum install virt-manager libvirt libvirt-python-virtins">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -218,11 +215,11 @@ man查看1man &amp;#32423;&amp;#21035;  &amp;#30446;&amp;#26631;    ##&amp;#2535
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-RH124-unit3" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-RH124-unit15" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/02/RH124-unit3/" class="article-date">
-      <time datetime="2016-02-02T09:30:12.000Z" itemprop="datePublished">2016-02-02</time>
+      <a href="/2016/02/14/RH124-unit15/" class="article-date">
+      <time datetime="2016-02-14T09:38:54.000Z" itemprop="datePublished">2016-02-14</time>
 </a>
     </div>
   
@@ -235,7 +232,7 @@ man查看1man &amp;#32423;&amp;#21035;  &amp;#30446;&amp;#26631;    ##&amp;#2535
         
   
     <h1 class="article-title" itemprop="name">
-      3.Getting Help in Red Hat Enterprise Linux
+      15.Using Virtualized Systems
     </h1>
   
 
@@ -260,15 +257,14 @@ man查看1man &amp;#32423;&amp;#21035;  &amp;#30446;&amp;#26631;    ##&amp;#2535
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="man_u547D_u4EE4"><a href="#man_u547D_u4EE4" class="headerlink" title="man命令"></a>man命令</h3><blockquote>
-<p>man查看<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">man &#32423;&#21035;  &#30446;&#26631;    ##&#25353;q&#36864;&#20986;&#10;man  1  &#25991;&#20214;&#21517;&#9;##&#26597;&#25214;&#21629;&#20196;&#30340;&#24110;&#21161;&#10;man  5  &#25991;&#20214;&#21517;&#9;##&#26597;&#25214;&#37197;&#32622;&#25991;&#20214;&#30340;&#24110;&#21161;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
+        <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="u865A_u62DF_u673A_u5B89_u88C5"><a href="#u865A_u62DF_u673A_u5B89_u88C5" class="headerlink" title="虚拟机安装"></a>虚拟机安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install qemu-kvm qemu-ing&#9; ##&#23433;&#35013;&#34394;&#25311;&#26426;&#26680;&#24515;&#32452;&#20214;&#10;yum install virt-manager libvirt libvirt-python-virtinst libvirtnt   ##&#23433;&#35013;&#34394;&#25311;&#26426;&#21069;&#31471;&#31649;&#29702;&#24037;&#20855;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<blockquote>
-<p>man的快捷用法:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/关键字		<span class="comment">###搜索关键字并且高亮显示结果</span></span><br><span class="line">n		<span class="comment">###向下匹配高亮结果</span></span><br><span class="line">N		<span class="comment">###向上匹配高亮结果</span></span><br><span class="line">pagup/b		<span class="comment">###向上滚动一个屏幕</span></span><br><span class="line">pagdown/空格	<span class="comment">###向下滚动一个屏幕</span></span><br><span class="line">上键		<span class="comment">###向上滚动一行</span></span><br><span class="line">下键		<span class="comment">###向下滚动一行</span></span><br><span class="line">d		<span class="comment">###向下滚动半个屏幕</span></span><br><span class="line">u		<span class="comment">###向上滚动半个屏幕</span></span><br><span class="line">g		<span class="comment">###回到man的最前面</span></span><br><span class="line">G		<span class="comment">###回到man的最后面</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="u865A_u62DF_u673A_u7BA1_u7406"><a href="#u865A_u62DF_u673A_u7BA1_u7406" class="headerlink" title="虚拟机管理"></a>虚拟机管理</h3><blockquote>
+<p>注意：在此命令执行时图形和用户要保持一致<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virt-manager&#9;##&#24320;&#21551;&#34394;&#25311;&#26426;&#22270;&#24418;&#31649;&#29702;</span><br></pre></td></tr></table></figure></p>
+<p>注意：以下命令只能由超级用户执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">virsh list             <span class="comment">##查看开启的虚拟机</span></span><br><span class="line">virsh list --all       <span class="comment">##查看所有虚拟机</span></span><br><span class="line">virsh start    虚拟机   <span class="comment">##开启</span></span><br><span class="line">virsh shutdown 虚拟机   <span class="comment">##关闭</span></span><br><span class="line">virsh destroy  虚拟机   <span class="comment">##强制关闭虚拟机</span></span><br><span class="line">virt-viewer -参数      <span class="comment">##显示虚拟机信息</span></span><br><span class="line"></span><br><span class="line">virsh create 前端管理文件  <span class="comment">##启动此文件管理的虚拟机</span></span><br><span class="line">virsh define 前端管理文件  <span class="comment">##恢复此文件管理的虚拟机</span></span><br><span class="line">virsh undefine 虚拟机     <span class="comment">##删除虚拟机前端管理</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<h3 id="pinfo"><a href="#pinfo" class="headerlink" title="pinfo"></a>pinfo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">pagedown/空格	<span class="comment">##向下翻页</span></span><br><span class="line">pageup/b	<span class="comment">##向上翻页</span></span><br><span class="line">home		<span class="comment">##回到本层最前面</span></span><br><span class="line">下键		<span class="comment">##回到下一个超接      </span></span><br><span class="line">上键		<span class="comment">##回到上一个超链接</span></span><br><span class="line">/关键字		<span class="comment">##搜索还有关键字的内容</span></span><br><span class="line">n		<span class="comment">##回到下一个</span></span><br><span class="line">p               <span class="comment">##回到上一个</span></span><br><span class="line">q               <span class="comment">##退出</span></span><br></pre></td></tr></table></figure>
-<h3 id="u5C0F_u77E5_u8BC6"><a href="#u5C0F_u77E5_u8BC6" class="headerlink" title="小知识"></a>小知识</h3><p><code>/usr/share/doc/*  ##在这个目录中的文件都是软件安装包的说明</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#34394;&#25311;&#26426;&#21069;&#31471;&#31649;&#29702;&#25991;&#20214;&#22312;/etc/libvirt/qemu&#30446;&#24405;&#10;&#34394;&#25311;&#26426;&#23384;&#20648;&#35774;&#22791;&#22312;/var/lib/libvirt/images&#30446;&#24405;</span><br></pre></td></tr></table></figure>
+<h3 id="u901A_u8FC7_u955C_u50CF_u5B89_u88C5_u865A_u62DF_u673A"><a href="#u901A_u8FC7_u955C_u50CF_u5B89_u88C5_u865A_u62DF_u673A" class="headerlink" title="通过镜像安装虚拟机"></a>通过镜像安装虚拟机</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#27493;&#39588;&#65306;&#10;1.&#22312;virtual machine manager&#37324;&#36873;&#25321;&#26032;&#24314;&#34394;&#25311;&#26426;&#65292;&#32473;&#34394;&#25311;&#26426;&#21629;&#21517;&#65292;&#24182;&#36873;&#25321;local install media&#10;2.&#22312;use iso image&#20013;&#36873;&#20837;&#26412;&#26426;&#38236;&#20687;&#30340;&#23384;&#25918;&#20301;&#32622;&#10;3.&#30913;&#30424;&#20998;&#21306;&#65292;/boot 200m&#65292;swap 500m&#65288;&#33509;&#26159;&#30495;&#26426;&#21017;&#26159;&#20869;&#23384;&#30340;&#20004;&#20493;&#65289;&#65292;&#21097;&#20313;&#20840;&#37096;&#20998;&#32473;/&#10;4.&#23436;&#25104;&#30456;&#20851;&#36873;&#25321;&#65292;&#30830;&#23450;&#23433;&#35013;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -277,13 +273,13 @@ man查看1man &amp;#32423;&amp;#21035;  &amp;#30446;&amp;#26631;    ##&amp;#2535
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/02/02/RH124-unit3/">3.Getting Help in Red Hat Enterprise Linux</a></p>
+        <p><span>本文标题:</span><a href="/2016/02/14/RH124-unit15/">15.Using Virtualized Systems</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Wang Chi 的个人博客">Wang Chi</a></p>
-        <p><span>发布时间:</span>2016年02月02日 - 17时30分</p>
-        <p><span>最后更新:</span>2016年02月08日 - 21时50分</p>
+        <p><span>发布时间:</span>2016年02月14日 - 17时38分</p>
+        <p><span>最后更新:</span>2016年02月14日 - 17时49分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/02/02/RH124-unit3/" title="3.Getting Help in Red Hat Enterprise Linux">http://yoursite.com/2016/02/02/RH124-unit3/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/02/RH124-unit3/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/02/14/RH124-unit15/" title="15.Using Virtualized Systems">http://yoursite.com/2016/02/14/RH124-unit15/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/14/RH124-unit15/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -296,16 +292,10 @@ man查看1man &amp;#32423;&amp;#21035;  &amp;#30446;&amp;#26631;    ##&amp;#2535
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/02/03/RH124-unit4/">
-                    4.Creating, Viewing, and Editing Text Files
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/02/02/RH124-unit2/">
-                    2.Managing Files Form The Command Line
+                <a href="/2016/02/13/RH124-unit14/">
+                    14.Accessing Linux File Systems
                 </a>
             </div>
         
@@ -316,7 +306,7 @@ man查看1man &amp;#32423;&amp;#21035;  &amp;#30446;&amp;#26631;    ##&amp;#2535
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Red_Hat_Enterprise_Linux_7"><span class="toc-number">1.</span> <span class="toc-text">Red Hat Enterprise Linux 7</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#man_u547D_u4EE4"><span class="toc-number">1.1.</span> <span class="toc-text">man命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pinfo"><span class="toc-number">1.2.</span> <span class="toc-text">pinfo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5C0F_u77E5_u8BC6"><span class="toc-number">1.3.</span> <span class="toc-text">小知识</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Red_Hat_Enterprise_Linux_7"><span class="toc-number">1.</span> <span class="toc-text">Red Hat Enterprise Linux 7</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u865A_u62DF_u673A_u5B89_u88C5"><span class="toc-number">1.1.</span> <span class="toc-text">虚拟机安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u865A_u62DF_u673A_u7BA1_u7406"><span class="toc-number">1.2.</span> <span class="toc-text">虚拟机管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u901A_u8FC7_u955C_u50CF_u5B89_u88C5_u865A_u62DF_u673A"><span class="toc-number">1.3.</span> <span class="toc-text">通过镜像安装虚拟机</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -384,15 +374,13 @@ man查看1man &amp;#32423;&amp;#21035;  &amp;#30446;&amp;#26631;    ##&amp;#2535
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/02/03/RH124-unit4/" title="上一篇: 4.Creating, Viewing, and Editing Text Files">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/02/02/RH124-unit2/" title="下一篇: 2.Managing Files Form The Command Line">
+            <a href="/2016/02/13/RH124-unit14/" title="下一篇: 14.Accessing Linux File Systems">
                 <i class="fa fa-angle-right"></i>
             </a>
         
