@@ -41,7 +41,7 @@
 <meta property="og:image" content="http://yoursite.com/img/Encapsulate-virtual-machine/Screenshot from 2016-02-17 22:44:16.png">
 <meta property="og:image" content="http://yoursite.com/img/Encapsulate-virtual-machine/Screenshot from 2016-02-17 22:44:45.png">
 <meta property="og:image" content="http://yoursite.com/img/Encapsulate-virtual-machine/Screenshot from 2016-02-17 22:45:02.png">
-<meta property="og:updated_time" content="2016-02-17T15:00:15.591Z">
+<meta property="og:updated_time" content="2016-02-18T02:59:45.605Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Encapsulate-virtual-machine">
 <meta name="twitter:description" content="Red Hat Enterprise Linux 6.5封装虚拟机配置yum源(物理机Rhel7)效果123456789101112[root@foundation ~]# df -hFilesystem                           Size  Used Avail Use% Mounted on/dev/mapper/rhel_foundation163-root   8">
@@ -169,7 +169,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux-基础/" style="font-size: 20px;">linux 基础</a> <a href="/tags/linux-集群架构篇/" style="font-size: 10px;">linux 集群架构篇</a> <a href="/tags/主页/" style="font-size: 10px;">主页</a>
+                        <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux-基础/" style="font-size: 20px;">linux 基础</a> <a href="/tags/linux-集群架构篇/" style="font-size: 15px;">linux 集群架构篇</a> <a href="/tags/主页/" style="font-size: 10px;">主页</a>
                     </div>
                 </section>
                 
@@ -307,7 +307,12 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@foundation images]<span class="comment"># for i in &#123;1..20&#125;;do qemu-img create -f qcow2 -b rhel6.5-base.img vm$i;done  ##批量创建</span></span><br></pre></td></tr></table></figure>
 <h3 id="u6DFB_u52A0_u865A_u62DF_u673A"><a href="#u6DFB_u52A0_u865A_u62DF_u673A" class="headerlink" title="添加虚拟机"></a>添加虚拟机</h3><p><img src="/img/Encapsulate-virtual-machine/Screenshot from 2016-02-17 22:42:19.png" alt="" title="Title"><br><img src="/img/Encapsulate-virtual-machine/Screenshot from 2016-02-17 22:43:20.png" alt="" title="Title"><br><img src="/img/Encapsulate-virtual-machine/Screenshot from 2016-02-17 22:44:09.png" alt="" title="Title"><br><img src="/img/Encapsulate-virtual-machine/Screenshot from 2016-02-17 22:44:16.png" alt="" title="Title"><br><img src="/img/Encapsulate-virtual-machine/Screenshot from 2016-02-17 22:44:45.png" alt="" title="Title"><br><img src="/img/Encapsulate-virtual-machine/Screenshot from 2016-02-17 22:45:02.png" alt="" title="Title"></p>
 <blockquote>
-<p><strong>注意</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#23553;&#35013;&#34394;&#25311;&#26426;&#26102;&#27597;&#30424;&#30340;&#37197;&#32622;&#23436;&#20840;&#21487;&#20197;&#33258;&#23450;&#20041;&#65292;&#19981;&#36807;`rm -f 70-persistent-*`&#21644;`rm -f ssh_host_*`&#26159;&#24517;&#39035;&#30340;&#65292;&#21542;&#21017;&#20250;&#24433;&#21709;&#21040;&#21019;&#24314;&#30340;&#34394;&#25311;&#26426;&#30340;&#27491;&#24120;&#36816;&#34892;&#12290;&#10;&#27599;&#25171;&#24320;&#19968;&#20010;&#34394;&#25311;&#26426;&#65292;&#35835;&#30340;&#30913;&#30424;&#26159;&#27597;&#30424;&#65292;&#21482;&#26159;&#25226;&#27599;&#27425;&#25805;&#20316;&#30340;&#25913;&#21464;&#37117;&#20445;&#23384;&#22312;&#20102;&#23376;&#38236;&#20687;&#20013;&#65292;&#21487;&#20197;&#36890;&#36807;&#35266;&#23519;&#23376;&#38236;&#20687;&#30340;&#22823;&#23567;&#26469;&#39564;&#35777;&#12290;</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意</strong></p>
+<ul>
+<li>封装虚拟机时母盘的配置完全可以自定义，不过<code>rm -f 70-persistent-*</code>和<code>rm -f ssh_host_*</code>是必须的，否则会影响到创建的虚拟机的正常运行。</li>
+<li>每打开一个虚拟机，读的磁盘是母盘，只是把每次操作的改变都保存在了子镜像中，可以通过观察子镜像的大小来验证。</li>
+<li>创建的虚拟机需要修改yum源，<code>baseurl=http://172.25.0.250/rh6.5</code>,要写和物理机在同一个网段的ip。</li>
+</ul>
 </blockquote>
 
       
@@ -320,7 +325,7 @@
         <p><span>本文标题:</span><a href="/2016/02/17/encapsulate-virtual-machine/">Encapsulate-virtual-machine</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Wang Chi 的个人博客">Wang Chi</a></p>
         <p><span>发布时间:</span>2016年02月17日 - 20时28分</p>
-        <p><span>最后更新:</span>2016年02月17日 - 23时00分</p>
+        <p><span>最后更新:</span>2016年02月18日 - 10时59分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/02/17/encapsulate-virtual-machine/" title="Encapsulate-virtual-machine">http://yoursite.com/2016/02/17/encapsulate-virtual-machine/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/17/encapsulate-virtual-machine/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -335,6 +340,12 @@
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/02/18/lanmp/">
+                    lanmp
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -418,7 +429,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/02/18/lanmp/" title="上一篇: lanmp">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -430,7 +443,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/17/encapsulate-virtual-machine/">Encapsulate-virtual-machine</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/14/RH124-unit15/">15.Using Virtualized Systems</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/RH124-unit14/">14.Accessing Linux File Systems</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/RH124-unit13/">13.Installingand Updating Software Packages</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/RH124-unit12/">12.Archiving and Copying Files Between Systems</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit11/">11.Managing Red Hat Enterprise Linux Networking</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit10/">10.Analyzing and Storing Logs</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit9/">9.Configuring and Securing OpenSSH Service</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit8/">8.Controlling Services and Daemons</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit7/">7.Monitoring and Managing Linux Processes</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit6/">6.Controlling Access to Files with Linux File System Permissions</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/RH124-unit5/">5.Managing Local Linux Users and Groups</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/03/RH124-unit4/">4.Creating, Viewing, and Editing Text Files</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit3/">3.Getting Help in Red Hat Enterprise Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit2/">2.Managing Files Form The Command Line</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit1/">1.Accessing The Command Line</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/myfirst/">Wellcome to my blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/lanmp/">lanmp</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/17/encapsulate-virtual-machine/">Encapsulate-virtual-machine</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/14/RH124-unit15/">15.Using Virtualized Systems</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/RH124-unit14/">14.Accessing Linux File Systems</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/RH124-unit13/">13.Installingand Updating Software Packages</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/RH124-unit12/">12.Archiving and Copying Files Between Systems</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit11/">11.Managing Red Hat Enterprise Linux Networking</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit10/">10.Analyzing and Storing Logs</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit9/">9.Configuring and Securing OpenSSH Service</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit8/">8.Controlling Services and Daemons</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit7/">7.Monitoring and Managing Linux Processes</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit6/">6.Controlling Access to Files with Linux File System Permissions</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/RH124-unit5/">5.Managing Local Linux Users and Groups</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/03/RH124-unit4/">4.Creating, Viewing, and Editing Text Files</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit3/">3.Getting Help in Red Hat Enterprise Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit2/">2.Managing Files Form The Command Line</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit1/">1.Accessing The Command Line</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/myfirst/">Wellcome to my blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/hello-world/">Hello World</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");

@@ -141,7 +141,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux-基础/" style="font-size: 20px;">linux 基础</a> <a href="/tags/linux-集群架构篇/" style="font-size: 10px;">linux 集群架构篇</a> <a href="/tags/主页/" style="font-size: 10px;">主页</a>
+                        <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux-基础/" style="font-size: 20px;">linux 基础</a> <a href="/tags/linux-集群架构篇/" style="font-size: 15px;">linux 集群架构篇</a> <a href="/tags/主页/" style="font-size: 10px;">主页</a>
                     </div>
                 </section>
                 
@@ -218,6 +218,74 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-lanmp" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/18/lanmp/" class="article-date">
+      <time datetime="2016-02-18T01:58:24.000Z" itemprop="datePublished">2016-02-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/18/lanmp/">lanmp</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="Red_Hat_Enterprise_Linux_6-5"><a href="#Red_Hat_Enterprise_Linux_6-5" class="headerlink" title="Red Hat Enterprise Linux 6.5"></a>Red Hat Enterprise Linux 6.5</h2><ul>
+<li>LAMP = linux + apache/nginx + mysql/postgress + php/jsp</li>
+<li>实验环境： selinux and iptables disabled<h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><h3 id="MySQL_u5B98_u7F51"><a href="#MySQL_u5B98_u7F51" class="headerlink" title="MySQL官网"></a>MySQL官网</h3></li>
+<li>[Mysql] : <a href="http://www.mysql.com/">http://www.mysql.com/</a>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/linux-集群架构篇/">linux 集群架构篇</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-集群架构篇/">linux 集群架构篇</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/02/18/lanmp/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
   
     <article id="post-encapsulate-virtual-machine" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -796,107 +864,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/02/09/RH124-unit8/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-RH124-unit7" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/09/RH124-unit7/" class="article-date">
-      <time datetime="2016-02-08T19:03:36.000Z" itemprop="datePublished">2016-02-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/09/RH124-unit7/">7.Monitoring and Managing Linux Processes</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="u4EC0_u4E48_u662F_u8FDB_u7A0B"><a href="#u4EC0_u4E48_u662F_u8FDB_u7A0B" class="headerlink" title="什么是进程"></a>什么是进程</h3><p>进程（Process）是计算机中的程序关于某数据集合上的一次运行活动，是系统进行资源分配和调度的基本单位，是操作系统结构的基础。简单的说，进程就是系统正在做的事情。</p>
-<h3 id="u8FDB_u7A0B_u72B6_u6001"><a href="#u8FDB_u7A0B_u72B6_u6001" class="headerlink" title="进程状态"></a>进程状态</h3><table>
-<thead>
-<tr>
-<th>名称</th>
-<th>ps状态</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>运行</td>
-<td>R ： runnable (on run queue)</td>
-<td>正在运行或在运行队列中等待</td>
-</tr>
-<tr>
-<td>中断</td>
-<td>S ： sleeping</td>
-<td>休眠中, 受阻, 在等待某个条件的形成或接受到信号</td>
-</tr>
-<tr>
-<td>停止</td>
-<td>T ： traced or stopped</td>
-<td>进程收到SIGSTOP, SIGSTP, SIGTIN, SIGTOU信号后停止运行</td>
-</tr>
-<tr>
-<td>僵死</td>
-<td>Z ：  a defunct (“zombie”) process</td>
-<td>进程已终止, 但进程描述符存在, 直到父进程调用wait4()系统调用后释放</td>
-</tr>
-<tr>
-<td>不可中断</td>
-<td>D ：  uninterruptible sleep (usually IO)</td>
-<td>收到信号不唤醒和不可运行, 进程必须等待直到有中断发生</td>
-</tr>
-</tbody>
-</table>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/09/RH124-unit7/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

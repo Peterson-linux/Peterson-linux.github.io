@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>lanmp | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Red Hat Enterprise Linux 6.5
+LAMP = linux + apache/nginx + mysql/postgress + php/jsp
+实验环境： selinux and iptables disabledMySQLMySQL官网
+[Mysql] : http://www.mysql.com/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="lanmp">
+<meta property="og:url" content="http://yoursite.com/2016/02/18/lanmp/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Red Hat Enterprise Linux 6.5
+LAMP = linux + apache/nginx + mysql/postgress + php/jsp
+实验环境： selinux and iptables disabledMySQLMySQL官网
+[Mysql] : http://www.mysql.com/">
+<meta property="og:image" content="http://yoursite.com/img/lanmp/Screenshot from 2016-02-18 17:11:58.png">
+<meta property="og:image" content="http://yoursite.com/img/lanmp/Screenshot from 2016-02-18 17:12:13.png">
+<meta property="og:image" content="http://yoursite.com/img/lanmp/Screenshot from 2016-02-18 17:13:15.png">
+<meta property="og:image" content="http://yoursite.com/img/lanmp/Screenshot from 2016-02-18 17:43:26.png">
+<meta property="og:image" content="http://yoursite.com/img/lanmp/Screenshot from 2016-02-18 17:44:46.png">
+<meta property="og:image" content="http://yoursite.com/img/lanmp/Screenshot from 2016-02-18 17:50:20.png">
+<meta property="og:image" content="http://yoursite.com/img/lanmp/Screenshot from 2016-02-18 18:15:58.png">
+<meta property="og:image" content="http://yoursite.com/img/lanmp/Screenshot from 2016-02-18 18:16:17.png">
+<meta property="og:image" content="http://yoursite.com/img/lanmp/Screenshot from 2016-02-18 18:16:33.png">
+<meta property="og:image" content="http://yoursite.com/img/lanmp/Screenshot from 2016-02-18 18:18:07.png">
+<meta property="og:image" content="http://yoursite.com/img/lanmp/Screenshot from 2016-02-18 18:18:16.png">
+<meta property="og:image" content="http://yoursite.com/img/lanmp/Screenshot from 2016-02-18 18:18:33.png">
+<meta property="og:image" content="http://yoursite.com/img/lanmp/Screenshot from 2016-02-18 18:21:37.png">
+<meta property="og:image" content="http://yoursite.com/img/lanmp/Screenshot from 2016-02-18 19:43:42.png">
+<meta property="og:image" content="http://yoursite.com/img/lanmp/Screenshot from 2016-02-18 19:44:57.png">
+<meta property="og:image" content="http://yoursite.com/img/lanmp/Screenshot from 2016-02-18 19:45:18.png">
+<meta property="og:image" content="http://yoursite.com/img/lanmp/Screenshot from 2016-02-18 19:46:57.png">
+<meta property="og:image" content="http://yoursite.com/img/lanmp/Screenshot from 2016-02-18 19:48:22.png">
+<meta property="og:updated_time" content="2016-02-18T12:06:28.410Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="lanmp">
+<meta name="twitter:description" content="Red Hat Enterprise Linux 6.5
+LAMP = linux + apache/nginx + mysql/postgress + php/jsp
+实验环境： selinux and iptables disabledMySQLMySQL官网
+[Mysql] : http://www.mysql.com/">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" type="text/css">
+  
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/GreenArrow.png" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/">Wang Chi</a></h1>
+        </hgroup>
+
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:123@123.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="/#" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux-基础/" style="font-size: 20px;">linux 基础</a> <a href="/tags/linux-集群架构篇/" style="font-size: 15px;">linux 集群架构篇</a> <a href="/tags/主页/" style="font-size: 10px;">主页</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Wang Chi</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/GreenArrow.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Wang Chi</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:123@123.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="/#" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-lanmp" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/18/lanmp/" class="article-date">
+      <time datetime="2016-02-18T01:58:24.000Z" itemprop="datePublished">2016-02-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      lanmp
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/linux-集群架构篇/">linux 集群架构篇</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-集群架构篇/">linux 集群架构篇</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="Red_Hat_Enterprise_Linux_6-5"><a href="#Red_Hat_Enterprise_Linux_6-5" class="headerlink" title="Red Hat Enterprise Linux 6.5"></a>Red Hat Enterprise Linux 6.5</h2><ul>
+<li>LAMP = linux + apache/nginx + mysql/postgress + php/jsp</li>
+<li>实验环境： selinux and iptables disabled<h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><h3 id="MySQL_u5B98_u7F51"><a href="#MySQL_u5B98_u7F51" class="headerlink" title="MySQL官网"></a>MySQL官网</h3></li>
+<li>[Mysql] : <a href="http://www.mysql.com/" target="_blank" rel="external">http://www.mysql.com/</a><a id="more"></a>
+<h3 id="mysql_u6E90_u7801_u7F16_u8BD1"><a href="#mysql_u6E90_u7801_u7F16_u8BD1" class="headerlink" title="mysql源码编译"></a>mysql源码编译</h3></li>
+<li>源码编译步骤： cmake -&gt; makefile -&gt; make -&gt; install</li>
+<li>源码包：mysql-5.5.12.tar.gz<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar zxf mysql-5.5.12.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>安装编译过程中所需要的包</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y cmake gcc ncurses-devel gcc-c++ bison</span><br></pre></td></tr></table></figure></p>
+<p><strong>编译</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /mnt/mysql-<span class="number">5.5</span>.<span class="number">12</span></span><br><span class="line">rm <span class="operator">-f</span> CMakeCache.txt</span><br><span class="line">cmake -DCMAKE_INSTALL_PREFIX=/usr/<span class="built_in">local</span>/lnmp/mysql \   <span class="comment">##安装目录</span></span><br><span class="line">      -DMYSQL_DATADIR=/usr/<span class="built_in">local</span>/lnmp/mysql/data \    <span class="comment">##数据库存放目录  </span></span><br><span class="line">      -DMYSQL_UNIX_ADDR=/usr/<span class="built_in">local</span>/lnmp/mysql/data/mysql.sock \ <span class="comment">##Unix socket 文件路径</span></span><br><span class="line">      -DWITH_MYISAM_STORAGE_ENGINE=<span class="number">1</span> \  <span class="comment">##安装 myisam 存储引擎</span></span><br><span class="line">      -DWITH_INNOBASE_STORAGE_ENGINE=<span class="number">1</span> \ <span class="comment">##安装 innodb 存储引擎</span></span><br><span class="line">      -DDEFAULT_CHARSET=utf8 \  <span class="comment">##使用 utf8 字符</span></span><br><span class="line">      -DDEFAULT_COLLATION=utf8_general_ci \  <span class="comment">##校验字符</span></span><br><span class="line">      -DEXTRA_CHARSETS=all \   <span class="comment">##安装所有扩展字符集</span></span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p><strong>注意</strong></p>
+<ul>
+<li>1，报错cxx -&gt; gcc-c++</li>
+<li>2，每次使用cmake之前，都要删除CMakerCache.txt（缓存）</li>
+<li>3，一般都是缺少xx.devel开发包<h3 id="u914D_u7F6E_u6570_u636E_u5E93"><a href="#u914D_u7F6E_u6570_u636E_u5E93" class="headerlink" title="配置数据库"></a>配置数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br><span class="line">PATH=<span class="variable">$PATH</span>:<span class="variable">$HOME</span>/bin:/usr/<span class="built_in">local</span>/lnmp/mysql/bin <span class="comment">##将数据库的二进制可执行文件添加到系统环境变量中。</span></span><br><span class="line"><span class="built_in">source</span> ~/.bash_profile <span class="comment">##立即生效</span></span><br><span class="line"><span class="built_in">which</span> mysql <span class="comment">##可以用which命令查看</span></span><br><span class="line"></span><br><span class="line">groupadd -g <span class="number">27</span> mysql</span><br><span class="line">useradd -u <span class="number">27</span> -g <span class="number">27</span> <span class="operator">-d</span> /usr/<span class="built_in">local</span>/lnmp/mysql/data/ -M mysql <span class="comment">##创建一个家目录为/usr/local/lnmp/mysql/data/的uid和gid为27的mysql用户。-M表示默认不自动建立家目录</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/lnmp/mysql</span><br><span class="line">chown mysql.mysql . -R  <span class="comment">##将mysql目录下的文件权限改为mysql所属，为执行scripts做准备</span></span><br><span class="line">scripts/mysql_install_db --user=mysql --basedir=/usr/<span class="built_in">local</span>/lnmp/mysql/ --datadir=/usr/<span class="built_in">local</span>/lnmp/mysql/data/ <span class="comment">##使用scripts/mysql_install_db脚本数据库中的列表,并且指定了基础目录和数据目录。</span></span><br><span class="line">chown root . -R  <span class="comment">##为了安全，将文件的用户改回root</span></span><br><span class="line">chown -R mysql data/ <span class="comment">##因为mysql用户需要操作数据库，所以数据目录的权限应交给mysql用户</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/lnmp/mysql/support-files</span><br><span class="line">cp my-medium.cnf /etc/my.cnf <span class="comment">##使用中型数据库配置模板作为数据库的配置文件</span></span><br><span class="line">cp mysql.server /etc/init.d/mysqld <span class="comment">##将mysql.server作为启动脚本</span></span><br><span class="line">/etc/init.d/mysqld start <span class="comment">##开启数据库服务，数据库默认开启的是3306端口</span></span><br><span class="line">chkconfig mysqld on <span class="comment">##开机启动mysql服务</span></span><br><span class="line">mysql_secure_installation <span class="comment">##初始化数据库</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<p><strong>example</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br></pre></td><td class="code"><pre><span class="line">[root@server1 mysql-<span class="number">5.5</span>.<span class="number">12</span>]<span class="comment"># vim ~/.bash_profile</span></span><br><span class="line">[root@server1 mysql-<span class="number">5.5</span>.<span class="number">12</span>]<span class="comment"># cat ~/.bash_profile</span></span><br><span class="line"><span class="comment"># .bash_profile</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Get the aliases and functions</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="operator">-f</span> ~/.bashrc ]; <span class="keyword">then</span></span><br><span class="line">	. ~/.bashrc</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># User specific environment and startup programs</span></span><br><span class="line"></span><br><span class="line">PATH=<span class="variable">$PATH</span>:<span class="variable">$HOME</span>/bin:/usr/<span class="built_in">local</span>/lnmp/mysql/bin</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> PATH</span><br><span class="line">[root@server1 mysql-<span class="number">5.5</span>.<span class="number">12</span>]<span class="comment"># source ~/.bash_profile</span></span><br><span class="line">[root@server1 mysql-<span class="number">5.5</span>.<span class="number">12</span>]<span class="comment"># groupadd -g 27 mysql</span></span><br><span class="line">[root@server1 mysql-<span class="number">5.5</span>.<span class="number">12</span>]<span class="comment"># useradd -u 27 -g 27 -d /usr/local/lnmp/mysql/data/ -M mysql</span></span><br><span class="line">[root@server1 mysql-<span class="number">5.5</span>.<span class="number">12</span>]<span class="comment"># cd /usr/local/lnmp/mysql/</span></span><br><span class="line">[root@server1 mysql]<span class="comment"># chown mysql.mysql . -R</span></span><br><span class="line">[root@server1 mysql]<span class="comment"># scripts/mysql_install_db --user=mysql --basedir=/usr/local/lnmp/mysql/ --datadir=/usr/local/lnmp/mysql/data/</span></span><br><span class="line">Installing MySQL system tables...</span><br><span class="line">OK                       <span class="comment">##这里看到两个OK即为成功</span></span><br><span class="line">Filling <span class="built_in">help</span> tables...</span><br><span class="line">OK</span><br><span class="line"></span><br><span class="line">To start mysqld at boot time you have to copy</span><br><span class="line">support-files/mysql.server to the right place <span class="keyword">for</span> your system</span><br><span class="line"></span><br><span class="line">PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !</span><br><span class="line">To <span class="keyword">do</span> so, start the server, <span class="keyword">then</span> issue the following commands:</span><br><span class="line"></span><br><span class="line">/usr/<span class="built_in">local</span>/lnmp/mysql//bin/mysqladmin -u root password <span class="string">'new-password'</span></span><br><span class="line">/usr/<span class="built_in">local</span>/lnmp/mysql//bin/mysqladmin -u root -h server1.example.com password <span class="string">'new-password'</span></span><br><span class="line"></span><br><span class="line">Alternatively you can run:</span><br><span class="line">/usr/<span class="built_in">local</span>/lnmp/mysql//bin/mysql_secure_installation</span><br><span class="line"></span><br><span class="line"><span class="built_in">which</span> will also give you the option of removing the <span class="built_in">test</span></span><br><span class="line">databases and anonymous user created by default.  This is</span><br><span class="line">strongly recommended <span class="keyword">for</span> production servers.</span><br><span class="line"></span><br><span class="line">See the manual <span class="keyword">for</span> more instructions.</span><br><span class="line"></span><br><span class="line">You can start the MySQL daemon with:</span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/lnmp/mysql/ ; /usr/<span class="built_in">local</span>/lnmp/mysql//bin/mysqld_safe &amp;</span><br><span class="line"></span><br><span class="line">You can <span class="built_in">test</span> the MySQL daemon with mysql-test-run.pl</span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/lnmp/mysql//mysql-test ; perl mysql-test-run.pl</span><br><span class="line"></span><br><span class="line">Please report any problems with the /usr/<span class="built_in">local</span>/lnmp/mysql//scripts/mysqlbug script!</span><br><span class="line"></span><br><span class="line">[root@server1 mysql]<span class="comment"># chown root . -R</span></span><br><span class="line">[root@server1 mysql]<span class="comment"># chown -R mysql data/</span></span><br><span class="line">[root@server1 mysql]<span class="comment"># cd /usr/local/lnmp/mysql/support-files</span></span><br><span class="line">[root@server1 support-files]<span class="comment"># cp my-medium.cnf /etc/my.cnf</span></span><br><span class="line">cp: overwrite `/etc/my.cnf<span class="string">'? y</span><br><span class="line">[root@server1 support-files]# cp mysql.server /etc/init.d/mysqld</span><br><span class="line">[root@server1 support-files]# /etc/init.d/mysqld start</span><br><span class="line">Starting MySQL.. SUCCESS!</span><br><span class="line">[root@server1 support-files]# chkconfig mysqld on</span><br><span class="line">[root@server1 support-files]# ll</span><br><span class="line">total 92</span><br><span class="line">-rwxr-xr-x 1 root mysql  1153 Feb 18 11:04 binary-configure</span><br><span class="line">-rwxr-xr-x 1 root mysql  3805 Feb 18 11:04 config.huge.ini</span><br><span class="line">-rwxr-xr-x 1 root mysql  1661 Feb 18 11:04 config.medium.ini</span><br><span class="line">-rwxr-xr-x 1 root mysql   905 Feb 18 11:04 config.small.ini</span><br><span class="line">-rw-r--r-- 1 root mysql   773 Apr 11  2011 magic</span><br><span class="line">-rw-r--r-- 1 root mysql  4745 Feb 18 11:04 my-huge.cnf</span><br><span class="line">-rw-r--r-- 1 root mysql 19803 Feb 18 11:04 my-innodb-heavy-4G.cnf</span><br><span class="line">-rw-r--r-- 1 root mysql  4719 Feb 18 11:04 my-large.cnf    ##大型数据库配置模板</span><br><span class="line">-rw-r--r-- 1 root mysql  4730 Feb 18 11:04 my-medium.cnf   ##中型数据库配置模板</span><br><span class="line">-rw-r--r-- 1 root mysql  2894 Feb 18 11:04 my-small.cnf    ##小型数据库配置模板</span><br><span class="line">-rwxr-xr-x 1 root mysql  1061 Feb 18 11:04 mysqld_multi.server</span><br><span class="line">-rwxr-xr-x 1 root mysql   864 Feb 18 11:04 mysql-log-rotate</span><br><span class="line">-rwxr-xr-x 1 root mysql 10680 Feb 18 11:04 mysql.server</span><br><span class="line">-rwxr-xr-x 1 root mysql   589 Feb 18 11:04 ndb-config-2-node.ini</span><br><span class="line">[root@server1 support-files]# mysql_secure_installation</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MySQL</span><br><span class="line">      SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">In order to log into MySQL to secure it, we'</span>ll need the current</span><br><span class="line">password <span class="keyword">for</span> the root user.  If you<span class="string">'ve just installed MySQL, and</span><br><span class="line">you haven'</span>t <span class="built_in">set</span> the root password yet, the password will be blank,</span><br><span class="line">so you should just press enter here.</span><br><span class="line"></span><br><span class="line">Enter current password <span class="keyword">for</span> root (enter <span class="keyword">for</span> none):</span><br><span class="line">OK, successfully used password, moving on...</span><br><span class="line"></span><br><span class="line">Setting the root password ensures that nobody can <span class="built_in">log</span> into the MySQL</span><br><span class="line">root user without the proper authorisation.</span><br><span class="line"></span><br><span class="line">Set root password? [Y/n] y</span><br><span class="line">New password:</span><br><span class="line">Re-enter new password:</span><br><span class="line">Password updated successfully!</span><br><span class="line">Reloading privilege tables..</span><br><span class="line"> ... Success!</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">By default, a MySQL installation has an anonymous user, allowing anyone</span><br><span class="line">to <span class="built_in">log</span> into MySQL without having to have a user account created <span class="keyword">for</span></span><br><span class="line">them.  This is intended only <span class="keyword">for</span> testing, and to make the installation</span><br><span class="line">go a bit smoother.  You should remove them before moving into a</span><br><span class="line">production environment.</span><br><span class="line"></span><br><span class="line">Remove anonymous users? [Y/n] y</span><br><span class="line"> ... Success!</span><br><span class="line"></span><br><span class="line">Normally, root should only be allowed to connect from <span class="string">'localhost'</span>.  This</span><br><span class="line">ensures that someone cannot guess at the root password from the network.</span><br><span class="line"></span><br><span class="line">Disallow root login remotely? [Y/n] y</span><br><span class="line"> ... Success!</span><br><span class="line"></span><br><span class="line">By default, MySQL comes with a database named <span class="string">'test'</span> that anyone can</span><br><span class="line">access.  This is also intended only <span class="keyword">for</span> testing, and should be removed</span><br><span class="line">before moving into a production environment.</span><br><span class="line"></span><br><span class="line">Remove <span class="built_in">test</span> database and access to it? [Y/n] y</span><br><span class="line"> - Dropping <span class="built_in">test</span> database...</span><br><span class="line">ERROR <span class="number">1010</span> (HY000) at line <span class="number">1</span>: Error dropping database (can<span class="string">'t rmdir '</span>./<span class="built_in">test</span>/<span class="string">', errno: 17)</span><br><span class="line"> ... Failed!  Not critical, keep moving...</span><br><span class="line"> - Removing privileges on test database...</span><br><span class="line"> ... Success!</span><br><span class="line"></span><br><span class="line">Reloading the privilege tables will ensure that all changes made so far</span><br><span class="line">will take effect immediately.</span><br><span class="line"></span><br><span class="line">Reload privilege tables now? [Y/n] y</span><br><span class="line"> ... Success!</span><br><span class="line"></span><br><span class="line">Cleaning up...</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">All done!  If you'</span>ve completed all of the above steps, your MySQL</span><br><span class="line">installation should now be secure.</span><br><span class="line"></span><br><span class="line">Thanks <span class="keyword">for</span> using MySQL!</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p><strong>注意</strong></p>
+<ul>
+<li>如果cmake时出现路径指定时的错误：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/my.cnf  ##&#20462;&#25913;&#37197;&#32622;&#25991;&#20214;&#10;vim /etc/init.d/mysqld ##&#20462;&#25913;&#21551;&#21160;&#33050;&#26412;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><h3 id="Nginx_u5B98_u7F51"><a href="#Nginx_u5B98_u7F51" class="headerlink" title="Nginx官网"></a>Nginx官网</h3><ul>
+<li>[Nginx] : <a href="http://nginx.org/" target="_blank" rel="external">http://nginx.org/</a><h3 id="Nginx_u6E90_u7801_u7F16_u8BD1"><a href="#Nginx_u6E90_u7801_u7F16_u8BD1" class="headerlink" title="Nginx源码编译"></a>Nginx源码编译</h3></li>
+<li>源码编译步骤 ： ./configure -&gt; make -&gt; make install</li>
+<li>源码包 ： nginx-1.8.0.tar.gz<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /mnt/nginx-<span class="number">1.8</span>.<span class="number">0</span></span><br><span class="line">./configure --prefix=/usr/<span class="built_in">local</span>/lnmp/nginx --with-http_ssl_module --with-http_stub_status_module</span><br><span class="line">                         |                            |                            |</span><br><span class="line">                 指定nginx安装路径               https加密模块        统计链接数模块（监控nginx所处理的请求）</span><br><span class="line"></span><br><span class="line">报错处理：</span><br><span class="line">yum install pcre-devel -y  <span class="comment">## PCRE librar --&gt;pcre-devel</span></span><br><span class="line">yum install openssl-devel -y <span class="comment">##OpenSSL library--&gt;openssl-devel</span></span><br><span class="line"></span><br><span class="line">每次修改都要执行./configure --prefix=/usr/<span class="built_in">local</span>/lnmp/nginx --with-http_ssl_module --with-http_stub_status_module</span><br><span class="line">直到成功后再 make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>example</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@server1 nginx-<span class="number">1.8</span>.<span class="number">0</span>]<span class="comment"># yum install -y pcre-devel openssl-devel</span></span><br><span class="line">[root@server1 nginx-<span class="number">1.8</span>.<span class="number">0</span>]<span class="comment"># ./configure --prefix=/usr/local/lnmp/nginx --with-http_ssl_module --with-http_stub_status_module</span></span><br><span class="line">[root@server1 nginx-<span class="number">1.8</span>.<span class="number">0</span>]<span class="comment"># make &amp;&amp; make install</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="nginx__u914D_u7F6E"><a href="#nginx__u914D_u7F6E" class="headerlink" title="nginx 配置"></a>nginx 配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ln <span class="operator">-s</span> /usr/<span class="built_in">local</span>/lnmp/nginx/sbin/nginx /usr/<span class="built_in">local</span>/sbin/  <span class="comment">##创建软链接</span></span><br><span class="line">nginx -t  <span class="comment">##检测nginx配置文件是否正确</span></span><br><span class="line">nginx  <span class="comment">##开启nginx</span></span><br><span class="line">nginx <span class="operator">-s</span> stop <span class="comment">##关闭nginx</span></span><br><span class="line">nginx <span class="operator">-s</span> reload <span class="comment">##重载</span></span><br><span class="line">groupadd -g <span class="number">48</span> nginx  <span class="comment">##创建一个gid为48的nginx用户组</span></span><br><span class="line">useradd -u <span class="number">48</span> -g <span class="number">48</span> <span class="operator">-s</span> /sbin/nologin <span class="operator">-d</span> /usr/<span class="built_in">local</span>/lnmp/nginx/ -M nginx  <span class="comment">##添加一个家目录为/usr/local/lnmp/nginx/的nginx用户</span></span><br></pre></td></tr></table></figure>
+<p><strong>example</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@server1 nginx-<span class="number">1.8</span>.<span class="number">0</span>]<span class="comment"># ln -s /usr/local/lnmp/nginx/sbin/nginx /usr/local/sbin/</span></span><br><span class="line">[root@server1 nginx-<span class="number">1.8</span>.<span class="number">0</span>]<span class="comment"># groupadd -g 48 nginx</span></span><br><span class="line">[root@server1 nginx-<span class="number">1.8</span>.<span class="number">0</span>]<span class="comment"># useradd -u 48 -g 48 -s /sbin/nologin -d /usr/local/lnmp/nginx/ -M nginx</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="nginx_u652F_u6301php"><a href="#nginx_u652F_u6301php" class="headerlink" title="nginx支持php"></a>nginx支持php</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/<span class="built_in">local</span>/lnmp/nginx/conf/nginx.conf</span><br><span class="line">user  nginx;  <span class="comment">##nginx进程所属用户</span></span><br><span class="line">worker_processes  <span class="number">1</span>; <span class="comment">##nginx开启的进程数，根据lscpu所查看的cpu核心数来确定</span></span><br><span class="line"></span><br><span class="line">location / &#123;</span><br><span class="line">    root   html;</span><br><span class="line">    index index.php index.html index.htm; <span class="comment">##让主页默认读index.php</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">location ~ \.php$ &#123;</span><br><span class="line">    root           html;</span><br><span class="line">    fastcgi_pass   <span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">9000</span>;</span><br><span class="line">    fastcgi_index  index.php;</span><br><span class="line"><span class="comment">#    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span></span><br><span class="line">    include        fastcgi.conf;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>example</strong><br><code>[root@server1 nginx-1.8.0]# vim /usr/local/lnmp/nginx/conf/nginx.conf</code><br><img src="/img/lanmp/Screenshot from 2016-02-18 17:11:58.png" alt="" title="Title"><br><img src="/img/lanmp/Screenshot from 2016-02-18 17:12:13.png" alt="" title="Title"><br><img src="/img/lanmp/Screenshot from 2016-02-18 17:13:15.png" alt="" title="Title"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@server1 nginx-<span class="number">1.8</span>.<span class="number">0</span>]<span class="comment"># nginx -t</span></span><br><span class="line">nginx: the configuration file /usr/<span class="built_in">local</span>/lnmp/nginx/conf/nginx.conf syntax is ok</span><br><span class="line">nginx: configuration file /usr/<span class="built_in">local</span>/lnmp/nginx/conf/nginx.conf <span class="built_in">test</span> is successful</span><br><span class="line">[root@server1 nginx-<span class="number">1.8</span>.<span class="number">0</span>]<span class="comment"># nginx -s reload</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><h3 id="PHP_u5B98_u7F51"><a href="#PHP_u5B98_u7F51" class="headerlink" title="PHP官网"></a>PHP官网</h3><ul>
+<li>[PHP] : <a href="http://php.net/" target="_blank" rel="external">http://php.net/</a><h3 id="php_u6E90_u7801_u7F16_u8BD1"><a href="#php_u6E90_u7801_u7F16_u8BD1" class="headerlink" title="php源码编译"></a>php源码编译</h3></li>
+<li>源码编译步骤 ： ./configure -&gt; make -&gt; make install</li>
+<li>源码包 ： php-5.4.36.tar.bz2<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">[root@server1 php-<span class="number">5.4</span>.<span class="number">36</span>]<span class="comment"># ./configure --prefix=/usr/local/lnmp/php \ ##php安装位置</span></span><br><span class="line">&gt; --with-config-file-path=/usr/<span class="built_in">local</span>/lnmp/php/etc \   <span class="comment">##php配置文件位置</span></span><br><span class="line">&gt; --with-mysql=/usr/<span class="built_in">local</span>/lnmp/mysql/ \  <span class="comment">##mysql安装目录，对mysql的支持</span></span><br><span class="line">&gt; --with-mysqli=/usr/<span class="built_in">local</span>/lnmp/mysql/bin/mysql_config \  <span class="comment">##mysqli文件目录，优化支持</span></span><br><span class="line">&gt; --with-openssl \       <span class="comment">##openssl的支持，加密传输时用到的</span></span><br><span class="line">&gt; --with-snmp \          <span class="comment">##对snmp的支持</span></span><br><span class="line">&gt; --with-gd \            <span class="comment">##打开gd库的支持</span></span><br><span class="line">&gt; --with-zlib \          <span class="comment">##打开zlib库的支持</span></span><br><span class="line">&gt; --with-curl \          <span class="comment">##打开curl浏览工具的支持</span></span><br><span class="line">&gt; --with-libxml-dir \    <span class="comment">##打开libxml2库的支持</span></span><br><span class="line">&gt; --with-png-dir \       <span class="comment">##打开对png图片的支持</span></span><br><span class="line">&gt; --with-jpeg-dir \      <span class="comment">##打开对jpeg图片的支持</span></span><br><span class="line">&gt; --with-freetype-dir \  <span class="comment">##对freetype字体库的支持</span></span><br><span class="line">&gt; --without-pear \       <span class="comment">##不打开pear命令的支持，联网后可以打开，php扩展用的</span></span><br><span class="line">&gt; --with-gettext \       <span class="comment">##打开gnu的gettext支持，编码库用到</span></span><br><span class="line">&gt; --with-gmp \           <span class="comment">##对gmp数学运算库的支持</span></span><br><span class="line">&gt; --enable-inline-optimization \  <span class="comment">##php性能优化参数</span></span><br><span class="line">&gt; --enable-soap \       <span class="comment">##对soap的支持</span></span><br><span class="line">&gt; --enable-ftp \        <span class="comment">##对ftp的支持</span></span><br><span class="line">&gt; --enable-sockets \        <span class="comment">##打开sockets支持</span></span><br><span class="line">&gt; --enable-mbstring \       <span class="comment">##多字节，字符串的支持</span></span><br><span class="line">&gt; --enable-fpm \            <span class="comment">##fpm的支持</span></span><br><span class="line">&gt; --with-fpm-user=nginx \</span><br><span class="line">&gt; --with-fpm-group=nginx \  </span><br><span class="line">&gt; --with-mhash \        <span class="comment">##对mhash算法的支持</span></span><br><span class="line"></span><br><span class="line">可能需要安装的包：yum install net-snmp-devel curl-devel libxml2-devel libpng-devel libjpeg-devel freetype-devel gmp-devel openldap-devel -y</span><br><span class="line"></span><br><span class="line">make &amp;&amp; make install</span><br><span class="line"></span><br><span class="line">注意：</span><br><span class="line"><span class="number">1</span>，当出现缺少xxx，一般安装xx.devel</span><br><span class="line"><span class="number">2</span>,当出现缺少xx.h,一般用yum whatprovides xx.h</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>example</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@server1 php-<span class="number">5.4</span>.<span class="number">36</span>]<span class="comment"># yum install gcc libxml2-devel openssl-devel curl-devel libjpeg-turbo-devel libpng-devel freetype-devel gmp-devel net-snmp-devel -y</span></span><br><span class="line">[root@server1 php-<span class="number">5.4</span>.<span class="number">36</span>]<span class="comment"># ./configure --prefix=/usr/local/lnmp/php --with-config-file-path=/usr/local/lnmp/php/etc --with-mysql=/usr/local/lnmp/mysql/ --with-mysqli=/usr/local/lnmp/mysql/bin/mysql_config --with-openssl --with-snmp --with-gd --with-zlib --with-curl --with-libxml-dir --with-png-dir --with-jpeg-dir --with-freetype-dir --without-pear --with-gettext --with-gmp --enable-inline-optimization --enable-soap --enable-ftp --enable-sockets --enable-mbstring --enable-fpm --with-fpm-user=nginx --with-fpm-group=nginx --with-mhash</span></span><br><span class="line">[root@server1 php-<span class="number">5.4</span>.<span class="number">36</span>]<span class="comment"># make &amp;&amp; make install</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="php_u914D_u7F6E"><a href="#php_u914D_u7F6E" class="headerlink" title="php配置"></a>php配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /mnt/php-<span class="number">5.4</span>.<span class="number">36</span></span><br><span class="line">[root@server1 php-<span class="number">5.4</span>.<span class="number">36</span>]<span class="comment"># ll php.ini-*</span></span><br><span class="line">-rw-r--r-- <span class="number">1</span> <span class="number">502</span> games <span class="number">65429</span> Dec <span class="number">17</span>  <span class="number">2014</span> php.ini-development <span class="comment">##php的配置文件-开发环境</span></span><br><span class="line">-rw-r--r-- <span class="number">1</span> <span class="number">502</span> games <span class="number">65459</span> Dec <span class="number">17</span>  <span class="number">2014</span> php.ini-production  <span class="comment">##php的配置文件-生产环境</span></span><br><span class="line"></span><br><span class="line">cp php.ini-production /usr/<span class="built_in">local</span>/lnmp/php/etc/php.ini  <span class="comment">##把php.ini-production作为php配置文件</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /mnt/php-<span class="number">5.4</span>.<span class="number">36</span>/sapi/fpm</span><br><span class="line">cp init.d.php-fpm /etc/init.d/fpm  <span class="comment">##把init.d.php-fpm(php管理软件)添加到启动目录中</span></span><br><span class="line">chmod +x /etc/init.d/fpm <span class="comment">##给fpm脚本添加执行权限</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/lnmp/php/etc</span><br><span class="line">cp php-fpm.conf.default php-fpm.conf <span class="comment">##php-fpm的配置文件</span></span><br><span class="line"></span><br><span class="line">vim php-fpm.conf</span><br><span class="line">pid = run/php-fpm.pid  <span class="comment">##pid有效</span></span><br><span class="line"></span><br><span class="line">vim php.ini</span><br><span class="line">date.timezone = Asia/Shanghai <span class="comment">##php的时区</span></span><br><span class="line"></span><br><span class="line">/etc/init.d/fpm start</span><br><span class="line">/etc/init.d/fpm reload</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/lnmp/nginx/html/  <span class="comment">##进入nginx的默认发布目录</span></span><br><span class="line">vim index.php</span><br><span class="line">&lt;?php</span><br><span class="line">phpinfo()   <span class="comment">##显示php配置的函数</span></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>example</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[root@server1 php-<span class="number">5.4</span>.<span class="number">36</span>]<span class="comment"># cp php.ini-production /usr/local/lnmp/php/etc/php.ini</span></span><br><span class="line">[root@server1 php-<span class="number">5.4</span>.<span class="number">36</span>]<span class="comment"># cd /mnt/php-5.4.36/sapi/fpm</span></span><br><span class="line">[root@server1 fpm]<span class="comment"># cp init.d.php-fpm /etc/init.d/fpm</span></span><br><span class="line">[root@server1 fpm]<span class="comment"># chmod +x /etc/init.d/fpm</span></span><br><span class="line">[root@server1 fpm]<span class="comment"># cd /usr/local/lnmp/php/etc</span></span><br><span class="line">[root@server1 etc]<span class="comment"># cp php-fpm.conf.default php-fpm.conf</span></span><br><span class="line">[root@server1 etc]<span class="comment"># vim php-fpm.conf</span></span><br><span class="line">pid = run/php-fpm.pid</span><br><span class="line">[root@server1 etc]<span class="comment"># vim php.ini</span></span><br><span class="line">date.timezone = Asia/Shanghai</span><br><span class="line">[root@server1 etc]<span class="comment"># /etc/init.d/fpm start</span></span><br><span class="line">Starting php-fpm  <span class="keyword">done</span></span><br><span class="line">[root@server1 etc]<span class="comment"># cd /usr/local/lnmp/nginx/html/</span></span><br><span class="line">[root@server1 html]<span class="comment"># ls</span></span><br><span class="line"><span class="number">50</span>x.html  index.html</span><br><span class="line">[root@server1 html]<span class="comment"># vim index.php</span></span><br><span class="line">[root@server1 html]<span class="comment"># cat index.php</span></span><br><span class="line">&lt;?php</span><br><span class="line">phpinfo()</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<p><code>php-fpm</code><br><img src="/img/lanmp/Screenshot from 2016-02-18 17:43:26.png" alt="" title="Title"><br><code>php-ini</code><br><img src="/img/lanmp/Screenshot from 2016-02-18 17:44:46.png" alt="" title="Title"><br><strong>测试</strong><br><img src="/img/lanmp/Screenshot from 2016-02-18 17:50:20.png" alt="" title="Title"></p>
+<h2 id="u90E8_u7F72_u8BBA_u575B_u4E0A_u7EBF"><a href="#u90E8_u7F72_u8BBA_u575B_u4E0A_u7EBF" class="headerlink" title="部署论坛上线"></a>部署论坛上线</h2><ul>
+<li>论坛： Discuz_X2.5_SC_UTF8.zip<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">unzip Discuz_X2.<span class="number">5</span>_SC_UTF8.zip <span class="operator">-d</span> /usr/<span class="built_in">local</span>/lnmp/nginx/html/  <span class="comment">##把论坛解压到nginx的发布目录</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/lnmp/nginx/html/</span><br><span class="line">mv upload bbs  <span class="comment">##论坛名bbs</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/lnmp/nginx/html/bbs</span><br><span class="line">chmod <span class="number">777</span> data/  config/ uc_client/ uc_server/ -R   <span class="comment">##解决不可写问题，实际需要对权限进行严格控制而不是简单设为777</span></span><br><span class="line"></span><br><span class="line">rm <span class="operator">-f</span> /usr/<span class="built_in">local</span>/lnmp/nginx/html/bbs/install/index.php <span class="comment">##论坛会给出提示，删掉它会比较安全</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>example</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@server1 mnt]<span class="comment"># yum install -y unzip</span></span><br><span class="line">[root@server1 mnt]<span class="comment"># unzip Discuz_X2.5_SC_UTF8.zip -d /usr/local/lnmp/nginx/html/</span></span><br><span class="line">[root@server1 mnt]<span class="comment"># cd /usr/local/lnmp/nginx/html/</span></span><br><span class="line">[root@server1 html]<span class="comment"># mv upload/ bbs/</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="/img/lanmp/Screenshot from 2016-02-18 18:15:58.png" alt="" title="Title"><br><img src="/img/lanmp/Screenshot from 2016-02-18 18:16:17.png" alt="" title="Title"><br><img src="/img/lanmp/Screenshot from 2016-02-18 18:16:33.png" alt="" title="Title"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@server1 html]<span class="comment"># cd /usr/local/lnmp/nginx/html/bbs</span></span><br><span class="line">[root@server1 bbs]<span class="comment"># chmod 777 data/  config/ uc_client/ uc_server/ -R</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="/img/lanmp/Screenshot from 2016-02-18 18:18:07.png" alt="" title="Title"><br><img src="/img/lanmp/Screenshot from 2016-02-18 18:18:16.png" alt="" title="Title"><br><img src="/img/lanmp/Screenshot from 2016-02-18 18:18:33.png" alt="" title="Title"><br><img src="/img/lanmp/Screenshot from 2016-02-18 18:21:37.png" alt="" title="Title"><br><img src="/img/lanmp/Screenshot from 2016-02-18 19:43:42.png" alt="" title="Title"><br><img src="/img/lanmp/Screenshot from 2016-02-18 19:44:57.png" alt="" title="Title"><br><img src="/img/lanmp/Screenshot from 2016-02-18 19:45:18.png" alt="" title="Title"><br><img src="/img/lanmp/Screenshot from 2016-02-18 19:46:57.png" alt="" title="Title"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@server1 bbs]<span class="comment"># rm -f /usr/local/lnmp/nginx/html/bbs/install/index.php</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="/img/lanmp/Screenshot from 2016-02-18 19:48:22.png" alt="" title="Title"></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/02/18/lanmp/">lanmp</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Wang Chi 的个人博客">Wang Chi</a></p>
+        <p><span>发布时间:</span>2016年02月18日 - 09时58分</p>
+        <p><span>最后更新:</span>2016年02月18日 - 20时06分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/02/18/lanmp/" title="lanmp">http://yoursite.com/2016/02/18/lanmp/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/18/lanmp/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/02/17/encapsulate-virtual-machine/">
+                    Encapsulate-virtual-machine
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Red_Hat_Enterprise_Linux_6-5"><span class="toc-number">1.</span> <span class="toc-text">Red Hat Enterprise Linux 6.5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL"><span class="toc-number">2.</span> <span class="toc-text">MySQL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL_u5B98_u7F51"><span class="toc-number">2.1.</span> <span class="toc-text">MySQL官网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mysql_u6E90_u7801_u7F16_u8BD1"><span class="toc-number">2.2.</span> <span class="toc-text">mysql源码编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u914D_u7F6E_u6570_u636E_u5E93"><span class="toc-number">2.3.</span> <span class="toc-text">配置数据库</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nginx"><span class="toc-number">3.</span> <span class="toc-text">Nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx_u5B98_u7F51"><span class="toc-number">3.1.</span> <span class="toc-text">Nginx官网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx_u6E90_u7801_u7F16_u8BD1"><span class="toc-number">3.2.</span> <span class="toc-text">Nginx源码编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx__u914D_u7F6E"><span class="toc-number">3.3.</span> <span class="toc-text">nginx 配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx_u652F_u6301php"><span class="toc-number">3.4.</span> <span class="toc-text">nginx支持php</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP"><span class="toc-number">4.</span> <span class="toc-text">PHP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP_u5B98_u7F51"><span class="toc-number">4.1.</span> <span class="toc-text">PHP官网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#php_u6E90_u7801_u7F16_u8BD1"><span class="toc-number">4.2.</span> <span class="toc-text">php源码编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#php_u914D_u7F6E"><span class="toc-number">4.3.</span> <span class="toc-text">php配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u90E8_u7F72_u8BBA_u575B_u4E0A_u7EBF"><span class="toc-number">5.</span> <span class="toc-text">部署论坛上线</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+    <div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/02/17/encapsulate-virtual-machine/" title="下一篇: Encapsulate-virtual-machine">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/lanmp/">lanmp</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/17/encapsulate-virtual-machine/">Encapsulate-virtual-machine</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/14/RH124-unit15/">15.Using Virtualized Systems</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/RH124-unit14/">14.Accessing Linux File Systems</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/RH124-unit13/">13.Installingand Updating Software Packages</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/RH124-unit12/">12.Archiving and Copying Files Between Systems</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit11/">11.Managing Red Hat Enterprise Linux Networking</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit10/">10.Analyzing and Storing Logs</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit9/">9.Configuring and Securing OpenSSH Service</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit8/">8.Controlling Services and Daemons</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit7/">7.Monitoring and Managing Linux Processes</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit6/">6.Controlling Access to Files with Linux File System Permissions</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/RH124-unit5/">5.Managing Local Linux Users and Groups</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/03/RH124-unit4/">4.Creating, Viewing, and Editing Text Files</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit3/">3.Getting Help in Red Hat Enterprise Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit2/">2.Managing Files Form The Command Line</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit1/">1.Accessing The Command Line</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/myfirst/">Wellcome to my blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/hello-world/">Hello World</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 Wang Chi
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
