@@ -246,15 +246,28 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+              <h2 id="Red_Hat_Enterprise_Linux_6-5"><a href="#Red_Hat_Enterprise_Linux_6-5" class="headerlink" title="Red Hat Enterprise Linux 6.5"></a>Red Hat Enterprise Linux 6.5</h2><h2 id="Nginx_u6E90_u7801_u5B89_u88C5"><a href="#Nginx_u6E90_u7801_u5B89_u88C5" class="headerlink" title="Nginx源码安装"></a>Nginx源码安装</h2><h3 id="u9690_u85CFnginx_u7248_u672C_uFF0C_u7F29_u5C0Fnginx_u5B89_u88C5_u540E_u7684_u5927_u5C0F"><a href="#u9690_u85CFnginx_u7248_u672C_uFF0C_u7F29_u5C0Fnginx_u5B89_u88C5_u540E_u7684_u5927_u5C0F" class="headerlink" title="隐藏nginx版本，缩小nginx安装后的大小"></a>隐藏nginx版本，缩小nginx安装后的大小</h3><p><strong>之前也做过Nginx源码安装，这次进行一些优化的安装</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim /mnt/nginx-<span class="number">1.8</span>.<span class="number">0</span>/src/core/nginx.h</span><br><span class="line"><span class="comment">#define NGINX_VER          "nginx/"   ##这样设置在用curl -I localhost时，就不会显示nginx版本号。</span></span><br><span class="line"></span><br><span class="line">vim /mnt/nginx-<span class="number">1.8</span>.<span class="number">0</span>/auto/cc/gcc</span><br><span class="line"><span class="comment"># debug</span></span><br><span class="line"><span class="comment">#CFLAGS="$CFLAGS -g"  ##注销debug选项，会大大减少nginx占用的空间。(从十几M缩小到几百K)</span></span><br></pre></td></tr></table></figure></p>
+          
       
     </div>
     
     <div class="article-info article-info-index">
       
       
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/linux-集群架构篇/">linux 集群架构篇</a>
+    </div>
+
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-集群架构篇/">linux 集群架构篇</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/02/20/Nginx/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
