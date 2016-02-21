@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>PHP | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Red Hat Enterprise Linux 6.5PHPPHP官网
+[PHP] : http://php.net/PHP 编译，安装，配置
+环境 ： selinux and iptables disabled
+主机 ： server8.example.com : 172.25.0.8">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP">
+<meta property="og:url" content="http://yoursite.com/2016/02/21/PHP/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Red Hat Enterprise Linux 6.5PHPPHP官网
+[PHP] : http://php.net/PHP 编译，安装，配置
+环境 ： selinux and iptables disabled
+主机 ： server8.example.com : 172.25.0.8">
+<meta property="og:image" content="http://yoursite.com/img/PHP/Screenshot from 2016-02-21 10:34:02.png">
+<meta property="og:image" content="http://yoursite.com/img/PHP/Screenshot from 2016-02-21 10:52:32.png">
+<meta property="og:image" content="http://yoursite.com/img/PHP/Screenshot from 2016-02-21 11:02:26.png">
+<meta property="og:image" content="http://yoursite.com/img/PHP/Screenshot from 2016-02-21 11:03:03.png">
+<meta property="og:image" content="http://yoursite.com/img/PHP/Screenshot from 2016-02-21 11:04:54.png">
+<meta property="og:image" content="http://yoursite.com/img/PHP/Screenshot from 2016-02-21 11:05:23.png">
+<meta property="og:image" content="http://yoursite.com/img/PHP/Screenshot from 2016-02-21 11:06:30.png">
+<meta property="og:image" content="http://yoursite.com/img/PHP/Screenshot from 2016-02-21 11:06:46.png">
+<meta property="og:image" content="http://yoursite.com/img/PHP/Screenshot from 2016-02-21 11:07:01.png">
+<meta property="og:image" content="http://yoursite.com/img/PHP/Screenshot from 2016-02-21 11:07:41.png">
+<meta property="og:updated_time" content="2016-02-21T03:36:24.384Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP">
+<meta name="twitter:description" content="Red Hat Enterprise Linux 6.5PHPPHP官网
+[PHP] : http://php.net/PHP 编译，安装，配置
+环境 ： selinux and iptables disabled
+主机 ： server8.example.com : 172.25.0.8">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" type="text/css">
+  
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/GreenArrow.png" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/">Wang Chi</a></h1>
+        </hgroup>
+
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:123@123.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="/#" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux-基础/" style="font-size: 20px;">linux 基础</a> <a href="/tags/linux-集群架构篇/" style="font-size: 15px;">linux 集群架构篇</a> <a href="/tags/主页/" style="font-size: 10px;">主页</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Wang Chi</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/GreenArrow.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Wang Chi</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:123@123.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="/#" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-PHP" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/21/PHP/" class="article-date">
+      <time datetime="2016-02-21T01:47:40.000Z" itemprop="datePublished">2016-02-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      PHP
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/linux-集群架构篇/">linux 集群架构篇</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-集群架构篇/">linux 集群架构篇</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="Red_Hat_Enterprise_Linux_6-5"><a href="#Red_Hat_Enterprise_Linux_6-5" class="headerlink" title="Red Hat Enterprise Linux 6.5"></a>Red Hat Enterprise Linux 6.5</h2><h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><h3 id="PHP_u5B98_u7F51"><a href="#PHP_u5B98_u7F51" class="headerlink" title="PHP官网"></a>PHP官网</h3><ul>
+<li>[PHP] : <a href="http://php.net/" target="_blank" rel="external">http://php.net/</a><h3 id="PHP__u7F16_u8BD1_uFF0C_u5B89_u88C5_uFF0C_u914D_u7F6E"><a href="#PHP__u7F16_u8BD1_uFF0C_u5B89_u88C5_uFF0C_u914D_u7F6E" class="headerlink" title="PHP 编译，安装，配置"></a>PHP 编译，安装，配置</h3></li>
+<li>环境 ： selinux and iptables disabled</li>
+<li>主机 ： server8.example.com : 172.25.0.8<a id="more"></a>
+<strong>example</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[root@server8 mnt]<span class="comment"># ls</span></span><br><span class="line">memcache-<span class="number">2.2</span>.<span class="number">5</span>.tgz  php-<span class="number">5.4</span>.<span class="number">36</span>.tar.bz2</span><br><span class="line">[root@server8 mnt]<span class="comment"># tar jxf php-5.4.36.tar.bz2</span></span><br><span class="line">[root@server8 mnt]<span class="comment"># yum install gcc libxml2-devel openssl-devel curl-devel libjpeg-turbo-devel libpng-devel freetype-devel gmp-devel net-snmp-devel -y</span></span><br><span class="line">[root@server8 mnt]<span class="comment"># cd php-5.4.36</span></span><br><span class="line">[root@server8 php-<span class="number">5.4</span>.<span class="number">36</span>]<span class="comment"># ./configure --prefix=/usr/local/lnmp/php --with-config-file-path=/usr/local/lnmp/php/etc --with-mysql --with-mysqli --with-openssl --with-snmp --with-gd --with-zlib --with-curl --with-libxml-dir --with-png-dir --with-jpeg-dir --with-freetype-dir --without-pear --with-gettext --with-gmp --enable-inline-optimization --enable-soap --enable-ftp --enable-sockets --enable-mbstring --enable-fpm --with-fpm-user=nginx --with-fpm-group=nginx --with-mhash</span></span><br><span class="line">[root@server8 php-<span class="number">5.4</span>.<span class="number">36</span>]<span class="comment"># make &amp;&amp; make install</span></span><br><span class="line">[root@server8 php-<span class="number">5.4</span>.<span class="number">36</span>]<span class="comment"># cp php.ini-production /usr/local/lnmp/php/etc/php.ini</span></span><br><span class="line">[root@server8 php-<span class="number">5.4</span>.<span class="number">36</span>]<span class="comment"># cd /mnt/php-5.4.36/sapi/fpm</span></span><br><span class="line">[root@server8 fpm]<span class="comment"># cp init.d.php-fpm /etc/init.d/fpm</span></span><br><span class="line">[root@server8 fpm]<span class="comment"># chmod +x /etc/init.d/fpm</span></span><br><span class="line">[root@server8 fpm]<span class="comment"># cd /usr/local/lnmp/php/etc</span></span><br><span class="line">[root@server8 etc]<span class="comment"># cp php-fpm.conf.default php-fpm.conf</span></span><br><span class="line">[root@server8 etc]<span class="comment"># vim php-fpm.conf</span></span><br><span class="line">pid = run/php-fpm.pid</span><br><span class="line">[root@server8 etc]<span class="comment"># vim php.ini</span></span><br><span class="line">date.timezone = Asia/Shanghai</span><br><span class="line">[root@server8 etc]<span class="comment"># groupadd -g 48 nginx</span></span><br><span class="line">[root@server8 etc]<span class="comment"># useradd -u 48 -g 48 -s /sbin/nologin -d /usr/local/lnmp/nginx/ -M nginx</span></span><br><span class="line">[root@server8 etc]<span class="comment"># /etc/init.d/fpm start</span></span><br><span class="line">Starting php-fpm  <span class="keyword">done</span></span><br><span class="line">[root@server8 etc]<span class="comment"># chkconfig fpm on</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="PHP_u6DFB_u52A0memcache_u6A21_u5757"><a href="#PHP_u6DFB_u52A0memcache_u6A21_u5757" class="headerlink" title="PHP添加memcache模块"></a>PHP添加memcache模块</h3><blockquote>
+<p><strong>由于需要nginx，所以先进行nginx的编译安装</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@server8 etc]<span class="comment"># cd /mnt</span></span><br><span class="line">[root@server8 mnt]<span class="comment"># tar -zxf nginx-1.8.0.tar.gz</span></span><br><span class="line">[root@server8 mnt]<span class="comment"># cd nginx-1.8.0</span></span><br><span class="line">[root@server8 nginx-<span class="number">1.8</span>.<span class="number">0</span>]<span class="comment"># yum install gcc pcre-devel openssl-devel  -y</span></span><br><span class="line">[root@server8 nginx-<span class="number">1.8</span>.<span class="number">0</span>]<span class="comment"># ./configure --prefix=/usr/local/lnmp/nginx --with-http_ssl_module --with-http_stub_status_module</span></span><br><span class="line">[root@server8 nginx-<span class="number">1.8</span>.<span class="number">0</span>]<span class="comment"># make &amp;&amp; make install</span></span><br><span class="line">[root@server8 nginx-<span class="number">1.8</span>.<span class="number">0</span>]<span class="comment"># ln -s /usr/local/lnmp/nginx/sbin/nginx /usr/local/sbin/</span></span><br><span class="line">[root@server8 nginx-<span class="number">1.8</span>.<span class="number">0</span>]<span class="comment"># vim /etc/rc.local</span></span><br><span class="line">/usr/<span class="built_in">local</span>/sbin/nginx</span><br><span class="line">[root@server8 nginx-<span class="number">1.8</span>.<span class="number">0</span>]<span class="comment"># nginx</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><strong>给php添加memcache模块</strong></p>
+<ul>
+<li>memcache软件包 ： memcache-2.2.5.tgz<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">[root@server8 nginx-<span class="number">1.8</span>.<span class="number">0</span>]<span class="comment"># cd /mnt/</span></span><br><span class="line">[root@server8 mnt]<span class="comment"># vim ~/.bash_profile  ##将/usr/local/lnmp/php/bin/加入环境变量中</span></span><br><span class="line">PATH=<span class="variable">$PATH</span>:<span class="variable">$HOME</span>/bin:/usr/<span class="built_in">local</span>/lnmp/php/bin/</span><br><span class="line">[root@server8 mnt]<span class="comment"># which phpize  ##检测是否生效</span></span><br><span class="line">/usr/<span class="built_in">local</span>/lnmp/php/bin/phpize</span><br><span class="line">[root@server8 mnt]<span class="comment"># ls</span></span><br><span class="line">memcache-<span class="number">2.2</span>.<span class="number">5</span>.tgz  nginx-<span class="number">1.8</span>.<span class="number">0</span>.tar.gz  php-<span class="number">5.4</span>.<span class="number">36</span>.tar.bz2</span><br><span class="line">nginx-<span class="number">1.8</span>.<span class="number">0</span>         php-<span class="number">5.4</span>.<span class="number">36</span></span><br><span class="line">[root@server8 mnt]<span class="comment"># tar zxf memcache-2.2.5.tgz</span></span><br><span class="line">[root@server8 mnt]<span class="comment"># cd memcache-2.2.5</span></span><br><span class="line">[root@server8 memcache-<span class="number">2.2</span>.<span class="number">5</span>]<span class="comment"># phpize  ##此目录下会生成configure</span></span><br><span class="line">Configuring <span class="keyword">for</span>:</span><br><span class="line">PHP Api Version:         <span class="number">20100412</span></span><br><span class="line">Zend Module Api No:      <span class="number">20100525</span></span><br><span class="line">Zend Extension Api No:   <span class="number">220100525</span></span><br><span class="line">[root@server8 memcache-<span class="number">2.2</span>.<span class="number">5</span>]<span class="comment"># ./configure --enable-memcache</span></span><br><span class="line">[root@server8 memcache-<span class="number">2.2</span>.<span class="number">5</span>]<span class="comment"># make &amp;&amp; make install</span></span><br><span class="line">Build complete.</span><br><span class="line">Don<span class="string">'t forget to run '</span>make <span class="built_in">test</span><span class="string">'.</span><br><span class="line"></span><br><span class="line">Installing shared extensions:     /usr/local/lnmp/php/lib/php/extensions/no-debug-non-zts-20100525/   ##此目录中存放着memcache.so</span><br><span class="line">[root@server8 memcache-2.2.5]# ll /usr/local/lnmp/php/lib/php/extensions/no-debug-non-zts-20100525/</span><br><span class="line">total 256</span><br><span class="line">-rwxr-xr-x 1 root root 259032 Feb 21 10:31 memcache.so</span><br><span class="line">[root@server8 memcache-2.2.5]# vim /usr/local/lnmp/php/etc/php.ini</span><br><span class="line">extension=memcache.so   ##添加memcache扩展模块，大概在846行</span><br><span class="line">[root@server8 memcache-2.2.5]# php -m | grep memcache</span><br><span class="line">memcache  ##查看是否添加memcache成功，也可在浏览器访问http://172.25.0.8/index.php，查看是否有memcache模块</span><br><span class="line">[root@server8 memcache-2.2.5]# yum install memcached -y  ##安装memcached服务，默认打开11211端口。</span><br><span class="line">[root@server8 memcache-2.2.5]# /etc/init.d/memcached start</span><br><span class="line">Starting memcached:                                        [  OK  ]</span><br><span class="line">[root@server8 memcache-2.2.5]# chkconfig memcached on</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><code>php.ini</code><br><img src="/img/PHP/Screenshot from 2016-02-21 10:34:02.png" alt="" title="Title"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[root@server8 memcache-<span class="number">2.2</span>.<span class="number">5</span>]<span class="comment"># vim /usr/local/lnmp/nginx/html/index.php</span></span><br><span class="line">&lt;?php</span><br><span class="line">phpinfo()</span><br><span class="line">?&gt;</span><br><span class="line">[root@server8 memcache-<span class="number">2.2</span>.<span class="number">5</span>]<span class="comment"># vim /usr/local/lnmp/nginx/conf/nginx.conf</span></span><br><span class="line">user  nginx;</span><br><span class="line">        location ~ \.php$ &#123;</span><br><span class="line">            root           html;</span><br><span class="line">            fastcgi_pass   <span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">9000</span>;</span><br><span class="line">            fastcgi_index  index.php;</span><br><span class="line">        <span class="comment">#    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span></span><br><span class="line">            include        fastcgi.conf;</span><br><span class="line">        &#125;</span><br><span class="line">[root@server8 memcache-<span class="number">2.2</span>.<span class="number">5</span>]<span class="comment"># nginx -s reload</span></span><br><span class="line">[root@server8 memcache-<span class="number">2.2</span>.<span class="number">5</span>]<span class="comment"># /etc/init.d/fpm restart</span></span><br><span class="line">Gracefully shutting down php-fpm . <span class="keyword">done</span></span><br><span class="line">Starting php-fpm  <span class="keyword">done</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="/img/PHP/Screenshot from 2016-02-21 10:52:32.png" alt="" title="Title"></p>
+<h3 id="u6D4B_u8BD5"><a href="#u6D4B_u8BD5" class="headerlink" title="测试"></a>测试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">[root@server8 memcache-<span class="number">2.2</span>.<span class="number">5</span>]<span class="comment"># vim /mnt/memcache-2.2.5/memcache.php  ##memcache自带的命中率监控页面</span></span><br><span class="line"><span class="variable">$VERSION</span>=<span class="string">'$Id: memcache.php,v 1.2 2008/09/11 19:21:06 mikl Exp $'</span>;</span><br><span class="line"></span><br><span class="line">define(<span class="string">'ADMIN_USERNAME'</span>,<span class="string">'cache'</span>);       // Admin Username  <span class="comment">##用户名</span></span><br><span class="line">define(<span class="string">'ADMIN_PASSWORD'</span>,<span class="string">'redhat'</span>);      // Admin Password  <span class="comment">##密码</span></span><br><span class="line">define(<span class="string">'DATE_FORMAT'</span>,<span class="string">'Y/m/d H:i:s'</span>);</span><br><span class="line">define(<span class="string">'GRAPH_SIZE'</span>,<span class="number">200</span>);</span><br><span class="line">define(<span class="string">'MAX_ITEM_DUMP'</span>,<span class="number">50</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable">$MEMCACHE_SERVERS</span>[] = <span class="string">'127.0.0.1:11211'</span>; // add more as an array</span><br><span class="line"><span class="comment">#$MEMCACHE_SERVERS[] = 'mymemcache-server2:11211'; // add more as an array</span></span><br><span class="line">[root@server8 memcache-<span class="number">2.2</span>.<span class="number">5</span>]<span class="comment"># cp /mnt/memcache-2.2.5/memcache.php /usr/local/lnmp/nginx/html/</span></span><br><span class="line">[root@server8 memcache-<span class="number">2.2</span>.<span class="number">5</span>]<span class="comment"># cd /usr/local/lnmp/nginx/html/</span></span><br><span class="line">[root@server8 html]<span class="comment"># vim test.php  ##自己写的检测页面，会把数据写入缓存</span></span><br><span class="line">&lt;?php</span><br><span class="line"><span class="variable">$memcache</span> = new Memcache;</span><br><span class="line"><span class="variable">$memcache</span>-&gt;connect(<span class="string">'127.0.0.1'</span>, <span class="number">11211</span>) or die (<span class="string">"Could not connect"</span>);</span><br><span class="line"><span class="variable">$version</span> = <span class="variable">$memcache</span>-&gt;getVersion();</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Server's version: "</span>.<span class="variable">$version</span>.<span class="string">"\n"</span>;</span><br><span class="line"><span class="variable">$tmp_object</span> = new stdClass;</span><br><span class="line"><span class="variable">$tmp_object</span>-&gt;str_attr = <span class="string">'test'</span>;</span><br><span class="line"><span class="variable">$tmp_object</span>-&gt;int_attr = <span class="number">123</span>;</span><br><span class="line"><span class="variable">$memcache</span>-&gt;<span class="built_in">set</span>(<span class="string">'key'</span>, <span class="variable">$tmp_object</span>, <span class="literal">false</span>, <span class="number">10</span>) or die (<span class="string">"Failed to save data at the</span><br><span class="line">server"</span>);</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Store data in the cache (data will expire in 10 seconds)\n"</span>;</span><br><span class="line"><span class="variable">$get_result</span> = <span class="variable">$memcache</span>-&gt;get(<span class="string">'key'</span>);</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Data from the cache:\n"</span>;</span><br><span class="line">var_dump(<span class="variable">$get_result</span>);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p><code>memcache.php</code><br><img src="/img/PHP/Screenshot from 2016-02-21 11:02:26.png" alt="" title="Title"><br><code>test.php</code><br><img src="/img/PHP/Screenshot from 2016-02-21 11:03:03.png" alt="" title="Title"><br><strong>浏览器访问：<a href="http://172.25.0.8/memcache.php" target="_blank" rel="external">http://172.25.0.8/memcache.php</a></strong><br><img src="/img/PHP/Screenshot from 2016-02-21 11:04:54.png" alt="" title="Title"><br><img src="/img/PHP/Screenshot from 2016-02-21 11:05:23.png" alt="" title="Title"><br><strong>浏览器访问：<a href="http://172.25.0.8/test.php" target="_blank" rel="external">http://172.25.0.8/test.php</a></strong><br><img src="/img/PHP/Screenshot from 2016-02-21 11:06:30.png" alt="" title="Title"><br><strong>多次刷新<a href="http://172.25.0.8/test.php页面，观察http://172.25.0.8/memcache.php页面，发现命中率在升高。" target="_blank" rel="external">http://172.25.0.8/test.php页面，观察http://172.25.0.8/memcache.php页面，发现命中率在升高。</a></strong><br><img src="/img/PHP/Screenshot from 2016-02-21 11:06:46.png" alt="" title="Title"><br><img src="/img/PHP/Screenshot from 2016-02-21 11:07:01.png" alt="" title="Title"><br><img src="/img/PHP/Screenshot from 2016-02-21 11:07:41.png" alt="" title="Title"></p>
+<h3 id="telnet"><a href="#telnet" class="headerlink" title="telnet"></a>telnet</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">[root@server8 html]<span class="comment"># yum install telnet -y</span></span><br><span class="line">[root@server8 html]<span class="comment"># telnet localhost 11211  ##访问本地memcached(默认在系统内存中占64M)</span></span><br><span class="line">Trying ::<span class="number">1</span>...</span><br><span class="line">Connected to localhost.</span><br><span class="line">Escape character is <span class="string">'^]'</span>.</span><br><span class="line">stats  <span class="comment">##列出memcache的状态</span></span><br><span class="line">STAT pid <span class="number">13138</span></span><br><span class="line">STAT uptime <span class="number">2796</span></span><br><span class="line">STAT time <span class="number">1456024963</span></span><br><span class="line">STAT version <span class="number">1.4</span>.<span class="number">4</span></span><br><span class="line">STAT pointer_size <span class="number">64</span></span><br><span class="line">STAT rusage_user <span class="number">0.082987</span></span><br><span class="line">STAT rusage_system <span class="number">0.079987</span></span><br><span class="line">STAT curr_connections <span class="number">10</span></span><br><span class="line">STAT total_connections <span class="number">141</span></span><br><span class="line">STAT connection_structures <span class="number">12</span></span><br><span class="line">STAT cmd_get <span class="number">4</span></span><br><span class="line">STAT cmd_<span class="built_in">set</span> <span class="number">4</span></span><br><span class="line">STAT cmd_flush <span class="number">0</span></span><br><span class="line">STAT get_hits <span class="number">4</span></span><br><span class="line">STAT get_misses <span class="number">0</span></span><br><span class="line">STAT delete_misses <span class="number">0</span></span><br><span class="line">STAT delete_hits <span class="number">0</span></span><br><span class="line">STAT incr_misses <span class="number">0</span></span><br><span class="line">STAT incr_hits <span class="number">0</span></span><br><span class="line">STAT decr_misses <span class="number">0</span></span><br><span class="line">STAT decr_hits <span class="number">0</span></span><br><span class="line">STAT cas_misses <span class="number">0</span></span><br><span class="line">STAT cas_hits <span class="number">0</span></span><br><span class="line">STAT cas_badval <span class="number">0</span></span><br><span class="line">STAT auth_cmds <span class="number">0</span></span><br><span class="line">STAT auth_errors <span class="number">0</span></span><br><span class="line">STAT bytes_<span class="built_in">read</span> <span class="number">1301</span></span><br><span class="line">STAT bytes_written <span class="number">98364</span></span><br><span class="line">STAT <span class="built_in">limit</span>_maxbytes <span class="number">67108864</span></span><br><span class="line">STAT accepting_conns <span class="number">1</span></span><br><span class="line">STAT listen_disabled_num <span class="number">0</span></span><br><span class="line">STAT threads <span class="number">4</span></span><br><span class="line">STAT conn_yields <span class="number">0</span></span><br><span class="line">STAT bytes <span class="number">135</span></span><br><span class="line">STAT curr_items <span class="number">1</span></span><br><span class="line">STAT total_items <span class="number">4</span></span><br><span class="line">STAT evictions <span class="number">0</span></span><br><span class="line">END</span><br><span class="line"><span class="built_in">set</span> name <span class="number">0</span> <span class="number">0</span> <span class="number">5</span>  <span class="comment">##设置一个key，第一个0为标志，第二个0（永久不过期）为过期时间，值的个数为5</span></span><br><span class="line"><span class="number">12345</span>  <span class="comment">##设置name的值</span></span><br><span class="line">STORED</span><br><span class="line">get name  <span class="comment">##获取name的值</span></span><br><span class="line">VALUE name <span class="number">0</span> <span class="number">5</span></span><br><span class="line"><span class="number">12345</span></span><br><span class="line">END</span><br><span class="line">quit  <span class="comment">##退出</span></span><br><span class="line">Connection closed by foreign host.</span><br></pre></td></tr></table></figure>
+<h3 id="memcached_u7684_u914D_u7F6E_u6587_u4EF6"><a href="#memcached_u7684_u914D_u7F6E_u6587_u4EF6" class="headerlink" title="memcached的配置文件"></a>memcached的配置文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@server8 html]<span class="comment"># vim /etc/sysconfig/memcached  ##memcached的配置文件</span></span><br><span class="line">PORT=<span class="string">"11211"</span>    <span class="comment">##端口11211</span></span><br><span class="line">USER=<span class="string">"memcached"</span></span><br><span class="line">MAXCONN=<span class="string">"1024"</span>  <span class="comment">##最大连接数</span></span><br><span class="line">CACHESIZE=<span class="string">"64"</span>  <span class="comment">##大小64M</span></span><br><span class="line">OPTIONS=<span class="string">""</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/02/21/PHP/">PHP</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Wang Chi 的个人博客">Wang Chi</a></p>
+        <p><span>发布时间:</span>2016年02月21日 - 09时47分</p>
+        <p><span>最后更新:</span>2016年02月21日 - 11时36分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/02/21/PHP/" title="PHP">http://yoursite.com/2016/02/21/PHP/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/21/PHP/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/02/20/Nginx/">
+                    Nginx
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Red_Hat_Enterprise_Linux_6-5"><span class="toc-number">1.</span> <span class="toc-text">Red Hat Enterprise Linux 6.5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP"><span class="toc-number">2.</span> <span class="toc-text">PHP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP_u5B98_u7F51"><span class="toc-number">2.1.</span> <span class="toc-text">PHP官网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP__u7F16_u8BD1_uFF0C_u5B89_u88C5_uFF0C_u914D_u7F6E"><span class="toc-number">2.2.</span> <span class="toc-text">PHP 编译，安装，配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PHP_u6DFB_u52A0memcache_u6A21_u5757"><span class="toc-number">2.3.</span> <span class="toc-text">PHP添加memcache模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u6D4B_u8BD5"><span class="toc-number">2.4.</span> <span class="toc-text">测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#telnet"><span class="toc-number">2.5.</span> <span class="toc-text">telnet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#memcached_u7684_u914D_u7F6E_u6587_u4EF6"><span class="toc-number">2.6.</span> <span class="toc-text">memcached的配置文件</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+    <div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/02/20/Nginx/" title="下一篇: Nginx">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/21/PHP/">PHP</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/20/Nginx/">Nginx</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/19/lanmp-separation/">lanmp-separation</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/lanmp/">lanmp</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/17/encapsulate-virtual-machine/">Encapsulate-virtual-machine</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/14/RH124-unit15/">15.Using Virtualized Systems</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/RH124-unit14/">14.Accessing Linux File Systems</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/RH124-unit13/">13.Installingand Updating Software Packages</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/RH124-unit12/">12.Archiving and Copying Files Between Systems</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit11/">11.Managing Red Hat Enterprise Linux Networking</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit10/">10.Analyzing and Storing Logs</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit9/">9.Configuring and Securing OpenSSH Service</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit8/">8.Controlling Services and Daemons</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit7/">7.Monitoring and Managing Linux Processes</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit6/">6.Controlling Access to Files with Linux File System Permissions</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/RH124-unit5/">5.Managing Local Linux Users and Groups</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/03/RH124-unit4/">4.Creating, Viewing, and Editing Text Files</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit3/">3.Getting Help in Red Hat Enterprise Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit2/">2.Managing Files Form The Command Line</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit1/">1.Accessing The Command Line</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/myfirst/">Wellcome to my blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/hello-world/">Hello World</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 Wang Chi
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
