@@ -3,21 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>4.Creating, Viewing, and Editing Text Files | Hexo</title>
+  <title>tomcat+jdk | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Red Hat Enterprise Linux 7如何管理输出
-1表示正确，2表示错误1find /etc -name passwd&amp;#9;&amp;#62; file&amp;#9;       ##&amp;#37325;&amp;#23450;&amp;#21521;&amp;#27491;&amp;#30830;&amp;#36755;&amp;#20986;&amp;#10;find /etc -name passwd&amp;#9;2&amp;#62; file&amp;#9;">
+  <meta name="description" content="Red Hat Enterprise Linux 6.5jdkjdk官网
+[jdk] : http://www.oracle.com/technetwork/java/javase/downloads/index.htmljdk 安装，配置
+环境 ： selinux and iptables disabled
+主机 ： server9.example.com : 172.25.0.9">
 <meta property="og:type" content="article">
-<meta property="og:title" content="4.Creating, Viewing, and Editing Text Files">
-<meta property="og:url" content="http://yoursite.com/2016/02/03/RH124-unit4/index.html">
+<meta property="og:title" content="tomcat+jdk">
+<meta property="og:url" content="http://yoursite.com/2016/02/22/tomcat-jdk/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Red Hat Enterprise Linux 7如何管理输出
-1表示正确，2表示错误1find /etc -name passwd&amp;#9;&amp;#62; file&amp;#9;       ##&amp;#37325;&amp;#23450;&amp;#21521;&amp;#27491;&amp;#30830;&amp;#36755;&amp;#20986;&amp;#10;find /etc -name passwd&amp;#9;2&amp;#62; file&amp;#9;">
-<meta property="og:updated_time" content="2016-02-09T04:15:35.100Z">
+<meta property="og:description" content="Red Hat Enterprise Linux 6.5jdkjdk官网
+[jdk] : http://www.oracle.com/technetwork/java/javase/downloads/index.htmljdk 安装，配置
+环境 ： selinux and iptables disabled
+主机 ： server9.example.com : 172.25.0.9">
+<meta property="og:image" content="http://yoursite.com/img/tomcat+jdk/Screenshot from 2016-02-22 20:25:44.png">
+<meta property="og:image" content="http://yoursite.com/img/tomcat+jdk/Screenshot from 2016-02-22 21:04:48.png">
+<meta property="og:image" content="http://yoursite.com/img/tomcat+jdk/Screenshot from 2016-02-22 21:11:29.png">
+<meta property="og:updated_time" content="2016-02-22T13:34:31.395Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="4.Creating, Viewing, and Editing Text Files">
-<meta name="twitter:description" content="Red Hat Enterprise Linux 7如何管理输出
-1表示正确，2表示错误1find /etc -name passwd&amp;#9;&amp;#62; file&amp;#9;       ##&amp;#37325;&amp;#23450;&amp;#21521;&amp;#27491;&amp;#30830;&amp;#36755;&amp;#20986;&amp;#10;find /etc -name passwd&amp;#9;2&amp;#62; file&amp;#9;">
+<meta name="twitter:title" content="tomcat+jdk">
+<meta name="twitter:description" content="Red Hat Enterprise Linux 6.5jdkjdk官网
+[jdk] : http://www.oracle.com/technetwork/java/javase/downloads/index.htmljdk 安装，配置
+环境 ： selinux and iptables disabled
+主机 ： server9.example.com : 172.25.0.9">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -218,11 +227,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-RH124-unit4" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-tomcat-jdk" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/03/RH124-unit4/" class="article-date">
-      <time datetime="2016-02-03T11:30:30.000Z" itemprop="datePublished">2016-02-03</time>
+      <a href="/2016/02/22/tomcat-jdk/" class="article-date">
+      <time datetime="2016-02-22T08:16:55.000Z" itemprop="datePublished">2016-02-22</time>
 </a>
     </div>
   
@@ -235,7 +244,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      4.Creating, Viewing, and Editing Text Files
+      tomcat+jdk
     </h1>
   
 
@@ -244,13 +253,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
+    <a class="article-category-link" href="/categories/linux-集群架构篇/">linux 集群架构篇</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-集群架构篇/">linux 集群架构篇</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -260,26 +269,19 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="u5982_u4F55_u7BA1_u7406_u8F93_u51FA"><a href="#u5982_u4F55_u7BA1_u7406_u8F93_u51FA" class="headerlink" title="如何管理输出"></a>如何管理输出</h3><blockquote>
-<p>1表示正确，2表示错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /etc -name passwd&#9;&#62; file&#9;       ##&#37325;&#23450;&#21521;&#27491;&#30830;&#36755;&#20986;&#10;find /etc -name passwd&#9;2&#62; file&#9;       ##&#37325;&#23450;&#21521;&#38169;&#35823;&#36755;&#20986;&#10;find /etc -name passwd&#9;&#38;&#62; file&#9;       ##&#37325;&#23450;&#21521;&#25152;&#26377;&#36755;&#20986;&#10;find /etc -name passwd&#9;&#62;&#62; file&#9;       ##&#36861;&#21152;&#27491;&#30830;&#36755;&#20986;&#10;find /etc -name passwd&#9;2&#62;&#62; file       ##&#36861;&#21152;&#38169;&#35823;&#36755;&#20986;&#10;find /etc -name passwd&#9;&#38;&#62;&#62; file       ##&#36861;&#21152;&#36755;&#20986;&#10;find /etc -name passwd&#9;&#62; file 2&#62;&#38;1    ##&#37325;&#26032;&#23450;&#20041;&#38169;&#35823;&#36755;&#20986;&#20026;&#27491;&#30830;&#10;find /etc -name passwd  &#62; file 1&#62;&#38;2    ##&#37325;&#26032;&#23450;&#20041;&#27491;&#30830;&#36755;&#20986;&#20026;&#38169;&#35823;&#10;find /etc -name passwd  &#62; /dev/null    ##&#25172;&#25481;&#36755;&#20986;&#32467;&#26524;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<a id="more"></a>
-<h3 id="u7BA1_u9053"><a href="#u7BA1_u9053" class="headerlink" title="管道"></a>管道</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">|&#9;&#9;##&#31649;&#36947;&#21482;&#20801;&#35768;&#27491;&#30830;&#36755;&#20986;&#36890;&#36807;&#10;&#10;| tee &#25991;&#20214;&#21517;&#9;##&#22797;&#21046;&#19968;&#20221;&#36755;&#20986;&#65292;&#21363;&#19968;&#20221;&#21040;&#25351;&#23450;&#25991;&#26412;&#65292;&#19968;&#20221;&#36755;&#20986;&#26174;&#31034;&#10;&#10;2&#62;&#38;1 |&#9;&#9;##&#36716;&#25442;&#38169;&#35823;&#36755;&#20986;&#20026;&#27491;&#30830;&#20877;&#36890;&#36807;&#31649;&#36947;</span><br></pre></td></tr></table></figure>
-<h3 id="vim_u7528_u6CD5"><a href="#vim_u7528_u6CD5" class="headerlink" title="vim用法"></a>vim用法</h3><p><strong>1,编辑文件</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#25353; i &#38190;&#36827;&#20837;&#25554;&#20837;&#27169;&#24335;&#10;&#25991;&#20214;&#32534;&#20889;&#23436;&#27605;&#25353; esc &#36864;&#20986;&#21040;&#27983;&#35272;&#27169;&#24335;&#10;:wq &#20445;&#23384;&#25512;&#20986;&#10;&#65288;&#20063;&#21487;&#20808;&#32534;&#36753;&#23436;&#25104;&#21518;&#36864;&#20986;&#20445;&#23384;:wq&#20043;&#21518;&#21152;&#31354;&#26684;&#21152;&#25991;&#20214;&#21517;)</span><br></pre></td></tr></table></figure></p>
-<p><strong>2,命令模式</strong></p>
-<blockquote>
-<p>设定<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/vimrc&#10;:set nu|nonu&#9;##&#34892;&#21495;&#30340;&#26174;&#31034;&#10;:set mouse=a&#9;##&#35774;&#23450;&#40736;&#26631;&#21487;&#20197;&#25805;&#20316;&#20809;&#26631;&#20301;&#32622;&#10;:help&#9;&#9;##&#26597;&#30475;vim&#30340;&#29992;&#27861;&#65292;:q&#36864;&#20986;&#24110;&#21161;&#10;ctrl + v&#9;##&#39640;&#20142;&#36873;&#25321;&#27169;&#24335;&#65292;&#21487;&#20197;&#36873;&#32773;&#19968;&#29255;&#21306;&#22495;&#25805;&#20316;&#10;u&#9;&#9;##&#24674;&#22797;&#21040;&#26410;&#25805;&#20316;&#20043;&#21069;&#10;ctrl + r&#9;##&#24674;&#22797;&#21040;&#25805;&#20316;&#20043;&#21518;</span><br></pre></td></tr></table></figure></p>
-<p>批量添加字符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ctrl + v &#36873;&#20013;&#35201;&#21152;&#23383;&#31526;&#25152;&#22312;&#30340;&#20301;&#65292;&#25353;I&#38190;&#65292;&#22312;&#21152;&#20837;&#24819;&#35201;&#21152;&#20837;&#30340;&#23383;&#31526;&#65292;&#25353;esc</span><br></pre></td></tr></table></figure></p>
-<p>分屏功能<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ctrl+w s&#9;&#9;##&#19978;&#19979;&#20998;&#23631;&#10;ctrl+w v&#9;&#9;##&#24038;&#21491;&#20998;&#23631;&#10;ctrl+w c&#9;&#9;##&#25764;&#38144;&#20809;&#26631;&#25152;&#22312;&#23631;&#24149;&#10;ctrl+w &#19978;|&#19979;|&#24038;|&#21491;&#9;###&#31227;&#21160;&#20809;&#26631;&#21040;&#25351;&#23450;&#30340;&#23631;&#24149;&#20013;</span><br></pre></td></tr></table></figure></p>
-<p>替换字符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#22312;&#21629;&#20196;&#27169;&#24335;&#20013;&#10;:%s/&#21407;&#23383;&#31526;/&#26367;&#25442;&#21518;&#23383;&#31526;/g</span><br></pre></td></tr></table></figure></p>
-<p>搜索关键字<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/&#20851;&#38190;&#23383;  &#10;n   ##&#21521;&#19979;&#21305;&#37197;&#10;N   ##&#21521;&#19978;&#21305;&#37197;</span><br></pre></td></tr></table></figure></p>
-<p>字符的管理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dw&#9;###&#21024;&#38500;&#20809;&#26631;&#25152;&#22312;&#21333;&#35789;&#10;dl&#9;###&#21024;&#38500;&#20809;&#25152;&#22312;&#23383;&#27597;&#10;dd&#9;###&#21024;&#38500;&#19968;&#25972;&#34892;&#10;d&#25968;&#23383;d&#9;###&#21024;&#38500;&#25968;&#23383;&#25351;&#23450;&#30340;&#34892;&#25968;&#10;d&#25968;&#23383; &#19978;&#38190;  ###&#21521;&#19978;&#21024;&#38500;&#25351;&#23450;&#34892;&#25968;&#10;&#10;yw&#9;###&#22797;&#21046;&#20809;&#26631;&#25152;&#22312;&#21333;&#35789;&#10;yl&#9;###&#22797;&#21046;&#20809;&#26631;&#25152;&#22312;&#23383;&#27597;&#10;yy&#9;###&#22797;&#21046;&#19968;&#25972;&#34892;&#10;y&#25968;&#23383;y&#9;###&#22797;&#21046;&#25968;&#23383;&#25351;&#23450;&#30340;&#34892;&#25968;&#10;p       ###&#31896;&#36148;&#10;&#10;cw&#9;###&#21098;&#20999;&#20809;&#26631;&#25152;&#22312;&#21333;&#35789;&#10;cl&#9;###&#21098;&#20999;&#20809;&#26631;&#25152;&#22312;&#23383;&#27597;&#10;cc&#9;###&#21098;&#20999;&#19968;&#25972;&#34892;&#10;c&#25968;&#23383;c&#9;###&#21098;&#20999;&#25968;&#23383;&#25351;&#23450;&#30340;&#34892;&#25968;&#10;&#21098;&#20999;&#23436;&#25104;&#21518;&#20250;&#36827;&#20837;&#25554;&#20837;&#27169;&#24335;&#65292;&#35201;&#31896;&#36148;&#20808;&#36864;&#20986;&#25554;&#20837;&#27169;&#24335;&#20877;&#25353;p&#38190;</span><br></pre></td></tr></table></figure></p>
-<p>移动光标到指定行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#65306;&#34892;&#21495;&#9;##&#31227;&#21160;&#20809;&#26631;&#21040;&#25351;&#23450;&#34892;&#21495;&#10;g&#9;##&#31227;&#21160;&#20809;&#26631;&#21040;&#25991;&#20214;&#39318;&#34892;&#10;G&#9;##&#31227;&#21160;&#20809;&#26631;&#21040;&#25991;&#20214;&#26411;&#34892;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p><strong>3.vim的插入模式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i  ###&#20809;&#26631;&#25152;&#22312;&#20301;&#32622;&#25554;&#20837;&#23383;&#31526;&#10;I  ###&#20809;&#26631;&#25152;&#22312;&#34892;&#34892;&#39318;&#25554;&#20837;&#10;a  ###&#20809;&#26631;&#25152;&#22312;&#23383;&#31526;&#30340;&#19979;&#19968;&#20301;&#25554;&#20837;&#10;A  ###&#20809;&#26631;&#25152;&#22312;&#34892;&#34892;&#23614;&#25554;&#20837;&#10;o  ###&#20809;&#26631;&#25152;&#22312;&#34892;&#30340;&#19979;&#19968;&#34892;&#10;O  ###&#20809;&#26631;&#25152;&#22312;&#34892;&#30340;&#19978;&#19968;&#34892;&#10;s  ###&#21024;&#38500;&#20809;&#26631;&#25152;&#22312;&#23383;&#31526;&#25554;&#20837;&#10;S  ###&#21024;&#38500;&#20809;&#26631;&#25152;&#22312;&#34892;&#25554;&#20837;</span><br></pre></td></tr></table></figure></p>
-<p><strong>4.vim的退出模式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#22312;&#21629;&#20196;&#27169;&#24335;&#19979;&#36755;&#20837;&#10;:q&#9;###&#36864;&#20986;&#65292;&#22312;&#26410;&#23545;&#25991;&#20214;&#20316;&#20219;&#20309;&#20462;&#25913;&#30340;&#26102;&#20505;&#21487;&#20197;&#29992;&#10;:q!&#9;###&#24378;&#21046;&#36864;&#20986;&#10;:wq&#9;###&#36864;&#20986;&#20445;&#23384;&#10;:wq!&#9;###&#24378;&#21046;&#36864;&#20986;&#20445;&#23384;</span><br></pre></td></tr></table></figure></p>
-<p><strong>5.vim的说明工具</strong><br><code>vimtutor ##q退出此工具</code></p>
-<h3 id="u56FE_u5F62_u4E2D_u7684_u6587_u672C_u7F16_u8F91_u5668gedit"><a href="#u56FE_u5F62_u4E2D_u7684_u6587_u672C_u7F16_u8F91_u5668gedit" class="headerlink" title="图形中的文本编辑器gedit"></a>图形中的文本编辑器gedit</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crtl+n&#9;##&#26032;&#24314;&#31383;&#21475;&#10;ctrl+s&#9;##&#20445;&#23384;&#25991;&#20214;&#10;ctrl+o&#9;##&#25171;&#24320;&#25991;&#20214;&#10;ctrl+x&#9;##&#21098;&#20999;&#10;ctrl+v&#9;##&#31896;&#36148;&#10;ctrl+c&#9;##&#22797;&#21046;&#10;yelp help&#65306;gedit ##&#26597;&#30475;giedit&#36719;&#20214;&#30340;&#24110;&#21161;</span><br></pre></td></tr></table></figure>
+        <h2 id="Red_Hat_Enterprise_Linux_6-5"><a href="#Red_Hat_Enterprise_Linux_6-5" class="headerlink" title="Red Hat Enterprise Linux 6.5"></a>Red Hat Enterprise Linux 6.5</h2><h2 id="jdk"><a href="#jdk" class="headerlink" title="jdk"></a>jdk</h2><h3 id="jdk_u5B98_u7F51"><a href="#jdk_u5B98_u7F51" class="headerlink" title="jdk官网"></a>jdk官网</h3><ul>
+<li>[jdk] : <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="external">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a><h3 id="jdk__u5B89_u88C5_uFF0C_u914D_u7F6E"><a href="#jdk__u5B89_u88C5_uFF0C_u914D_u7F6E" class="headerlink" title="jdk 安装，配置"></a>jdk 安装，配置</h3></li>
+<li>环境 ： selinux and iptables disabled</li>
+<li>主机 ： server9.example.com : 172.25.0.9  <a id="more"></a>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">[root@server9 mnt]<span class="comment"># mkdir /usr/local/lnmp</span></span><br><span class="line">[root@server9 mnt]<span class="comment"># ls</span></span><br><span class="line">jdk-<span class="number">6</span>u32-linux-x64.bin</span><br><span class="line">[root@server9 mnt]<span class="comment"># sh jdk-6u32-linux-x64.bin  ##执行脚本，生成jdk1.6.0_32/目录</span></span><br><span class="line">[root@server9 mnt]<span class="comment"># ls</span></span><br><span class="line">jdk1.<span class="number">6.0</span>_32  jdk-<span class="number">6</span>u32-linux-x64.bin</span><br><span class="line">[root@server9 mnt]<span class="comment"># mv jdk1.6.0_32/ /usr/local/lnmp/</span></span><br><span class="line">[root@server9 mnt]<span class="comment"># cd /usr/local/lnmp/</span></span><br><span class="line">[root@server9 lnmp]<span class="comment"># ln -s jdk1.6.0_32/ java  ##做一个软链接名字叫java，方便以后使用</span></span><br><span class="line">[root@server9 lnmp]<span class="comment"># vim /etc/profile ##配置java的环境变量</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/<span class="built_in">local</span>/lnmp/java</span><br><span class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$JAVA_HOME</span>/lib:<span class="variable">$JAVA_HOME</span>/jre/lib</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin</span><br><span class="line">[root@server9 lnmp]<span class="comment"># source /etc/profile</span></span><br><span class="line">[root@server9 lnmp]<span class="comment"># echo $CLASSPATH ##测试是否生效，也可通过java,javac看是否存在此命令来测试</span></span><br><span class="line">.:/usr/<span class="built_in">local</span>/lnmp/java/lib:/usr/<span class="built_in">local</span>/lnmp/java/jre/lib</span><br><span class="line">[root@server9 lnmp]<span class="comment"># cd /mnt/</span></span><br><span class="line">[root@server9 mnt]<span class="comment"># vim test.java ##写一个java文件用于测试</span></span><br><span class="line">public class <span class="built_in">test</span> &#123;</span><br><span class="line">        public static void main(String[] args)</span><br><span class="line">        &#123;</span><br><span class="line">                System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line">[root@server9 mnt]<span class="comment"># javac test.java  ##编译</span></span><br><span class="line">[root@server9 mnt]<span class="comment"># ls</span></span><br><span class="line">jdk-<span class="number">6</span>u32-linux-x64.bin  test.class  test.java</span><br><span class="line">[root@server9 mnt]<span class="comment"># java test  ##运行(只用跟文件名即可)</span></span><br><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><code>/etc/profile</code><br><img src="/img/tomcat+jdk/Screenshot from 2016-02-22 20:25:44.png" alt="" title="Title"></p>
+<h2 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h2><h3 id="tomcat_u5B98_u7F51"><a href="#tomcat_u5B98_u7F51" class="headerlink" title="tomcat官网"></a>tomcat官网</h3><ul>
+<li>[tomcat] : <a href="http://tomcat.apache.org/" target="_blank" rel="external">http://tomcat.apache.org/</a><h3 id="tomcat_u5B89_u88C5_uFF0C_u914D_u7F6E"><a href="#tomcat_u5B89_u88C5_uFF0C_u914D_u7F6E" class="headerlink" title="tomcat安装，配置"></a>tomcat安装，配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[root@server9 lnmp]<span class="comment"># cd /mnt/</span></span><br><span class="line">[root@server9 mnt]<span class="comment"># ls</span></span><br><span class="line">apache-tomcat-<span class="number">7.0</span>.<span class="number">37</span>.tar.gz  jdk-<span class="number">6</span>u32-linux-x64.bin  test.class  test.java</span><br><span class="line">[root@server9 mnt]<span class="comment"># tar zxf apache-tomcat-7.0.37.tar.gz -C /usr/local/lnmp/</span></span><br><span class="line">[root@server9 mnt]<span class="comment"># cd /usr/local/lnmp/</span></span><br><span class="line">[root@server9 lnmp]<span class="comment"># ln -s apache-tomcat-7.0.37/ tomcat</span></span><br><span class="line">[root@server9 lnmp]<span class="comment"># cd tomcat/</span></span><br><span class="line">[root@server9 tomcat]<span class="comment"># bin/startup.sh   ####开启tomcat，bin/shutdown.sh表示关闭tomcat</span></span><br><span class="line">Using CATALINA_BASE:   /usr/<span class="built_in">local</span>/lnmp/tomcat</span><br><span class="line">Using CATALINA_HOME:   /usr/<span class="built_in">local</span>/lnmp/tomcat</span><br><span class="line">Using CATALINA_TMPDIR: /usr/<span class="built_in">local</span>/lnmp/tomcat/temp</span><br><span class="line">Using JRE_HOME:        /usr/<span class="built_in">local</span>/lnmp/java</span><br><span class="line">Using CLASSPATH:       /usr/<span class="built_in">local</span>/lnmp/tomcat/bin/bootstrap.jar:/usr/<span class="built_in">local</span>/lnmp/tomcat/bin/tomcat-juli.jar</span><br><span class="line">[root@server9 tomcat]<span class="comment"># cd webapps/ROOT/  ##tomcat默认发布目录</span></span><br><span class="line">[root@server9 ROOT]<span class="comment"># vim test.jsp  ##写一个测试文件</span></span><br><span class="line">[root@server9 ROOT]<span class="comment"># cat test.jsp</span></span><br><span class="line">the time is &lt;%=new java.util.Date()%&gt;  <span class="comment">##显示当前时间</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="u6D4B_u8BD5"><a href="#u6D4B_u8BD5" class="headerlink" title="测试"></a>测试</h3><p><strong>访问：<a href="http://172.25.0.9:8080/" target="_blank" rel="external">http://172.25.0.9:8080/</a></strong><br><img src="/img/tomcat+jdk/Screenshot from 2016-02-22 21:04:48.png" alt="" title="Title"><br>**访问：<a href="http://172.25.0.9:8080/test.jsp" target="_blank" rel="external">http://172.25.0.9:8080/test.jsp</a><br><img src="/img/tomcat+jdk/Screenshot from 2016-02-22 21:11:29.png" alt="" title="Title"></p>
 
       
     </div>
@@ -288,13 +290,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/02/03/RH124-unit4/">4.Creating, Viewing, and Editing Text Files</a></p>
+        <p><span>本文标题:</span><a href="/2016/02/22/tomcat-jdk/">tomcat+jdk</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Wang Chi 的个人博客">Wang Chi</a></p>
-        <p><span>发布时间:</span>2016年02月03日 - 19时30分</p>
-        <p><span>最后更新:</span>2016年02月09日 - 12时15分</p>
+        <p><span>发布时间:</span>2016年02月22日 - 16时16分</p>
+        <p><span>最后更新:</span>2016年02月22日 - 21时34分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/02/03/RH124-unit4/" title="4.Creating, Viewing, and Editing Text Files">http://yoursite.com/2016/02/03/RH124-unit4/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/03/RH124-unit4/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/02/22/tomcat-jdk/" title="tomcat+jdk">http://yoursite.com/2016/02/22/tomcat-jdk/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/22/tomcat-jdk/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -308,15 +310,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/02/05/RH124-unit5/">
-                    5.Managing Local Linux Users and Groups
+                <a href="/2016/02/22/nginx-tomcat-memcached/">
+                    nginx+tomcat+memcached
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/02/02/RH124-unit3/">
-                    3.Getting Help in Red Hat Enterprise Linux
+                <a href="/2016/02/21/PHP/">
+                    PHP
                 </a>
             </div>
         
@@ -327,7 +329,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Red_Hat_Enterprise_Linux_7"><span class="toc-number">1.</span> <span class="toc-text">Red Hat Enterprise Linux 7</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u5982_u4F55_u7BA1_u7406_u8F93_u51FA"><span class="toc-number">1.1.</span> <span class="toc-text">如何管理输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u7BA1_u9053"><span class="toc-number">1.2.</span> <span class="toc-text">管道</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vim_u7528_u6CD5"><span class="toc-number">1.3.</span> <span class="toc-text">vim用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u56FE_u5F62_u4E2D_u7684_u6587_u672C_u7F16_u8F91_u5668gedit"><span class="toc-number">1.4.</span> <span class="toc-text">图形中的文本编辑器gedit</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Red_Hat_Enterprise_Linux_6-5"><span class="toc-number">1.</span> <span class="toc-text">Red Hat Enterprise Linux 6.5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jdk"><span class="toc-number">2.</span> <span class="toc-text">jdk</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#jdk_u5B98_u7F51"><span class="toc-number">2.1.</span> <span class="toc-text">jdk官网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jdk__u5B89_u88C5_uFF0C_u914D_u7F6E"><span class="toc-number">2.2.</span> <span class="toc-text">jdk 安装，配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tomcat"><span class="toc-number">3.</span> <span class="toc-text">tomcat</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#tomcat_u5B98_u7F51"><span class="toc-number">3.1.</span> <span class="toc-text">tomcat官网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tomcat_u5B89_u88C5_uFF0C_u914D_u7F6E"><span class="toc-number">3.2.</span> <span class="toc-text">tomcat安装，配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u6D4B_u8BD5"><span class="toc-number">3.3.</span> <span class="toc-text">测试</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -395,7 +397,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/02/05/RH124-unit5/" title="上一篇: 5.Managing Local Linux Users and Groups">
+            <a href="/2016/02/22/nginx-tomcat-memcached/" title="上一篇: nginx+tomcat+memcached">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -403,7 +405,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/02/02/RH124-unit3/" title="下一篇: 3.Getting Help in Red Hat Enterprise Linux">
+            <a href="/2016/02/21/PHP/" title="下一篇: PHP">
                 <i class="fa fa-angle-right"></i>
             </a>
         

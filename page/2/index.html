@@ -219,6 +219,141 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-RH124-unit12" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/13/RH124-unit12/" class="article-date">
+      <time datetime="2016-02-13T11:41:26.000Z" itemprop="datePublished">2016-02-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/13/RH124-unit12/">12.Archiving and Copying Files Between Systems</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h2 id="u6253_u5305"><a href="#u6253_u5305" class="headerlink" title="打包"></a>打包</h2><h3 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h3><blockquote>
+<p>打包表示把一堆文件变成一个<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">tar  <span class="operator">-f</span>   <span class="comment">##指定生成包的名字</span></span><br><span class="line">tar  -c   <span class="comment">##创建包</span></span><br><span class="line">tar  -v   <span class="comment">##显示创建过程</span></span><br><span class="line">tar  -t   <span class="comment">##查看包中内容</span></span><br><span class="line">tar  -x   <span class="comment">##解包</span></span><br><span class="line"></span><br><span class="line">tar  -rf  包名 文件名              <span class="comment">##添加文件到包中</span></span><br><span class="line">tar  <span class="operator">-f</span>   包名 --delete filename  <span class="comment">##删除包中指定文件</span></span><br><span class="line">tar  <span class="operator">-f</span>   包名 --get    filename  <span class="comment">##取出包中指定文件</span></span><br><span class="line"></span><br><span class="line">tar -cvf  包名  要打包的目录 <span class="comment">##创建包</span></span><br><span class="line">tar -xvf  包名             <span class="comment">##解包</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/02/13/RH124-unit12/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-RH124-unit11" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/09/RH124-unit11/" class="article-date">
+      <time datetime="2016-02-09T13:46:41.000Z" itemprop="datePublished">2016-02-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/09/RH124-unit11/">11.Managing Red Hat Enterprise Linux Networking</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="u7F51_u7EDC_u57FA_u7840_u77E5_u8BC6"><a href="#u7F51_u7EDC_u57FA_u7840_u77E5_u8BC6" class="headerlink" title="网络基础知识"></a>网络基础知识</h3><blockquote>
+<p><strong>ip</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip,Internet Protocol,网络之间互连的协议,目前最广泛使用的是IPV4，<span class="number">32</span>位。</span><br></pre></td></tr></table></figure></p>
+<p><strong>ip的表示</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">00000000.00000000</span>.<span class="number">00000000.00000000</span>  ==&gt;<span class="number">0.0</span>.<span class="number">0.0</span></span><br><span class="line"><span class="number">11111111.11111111</span>.<span class="number">11111111.11111111</span>  ==&gt;<span class="number">255.255</span>.<span class="number">255.255</span></span><br><span class="line"></span><br><span class="line"><span class="number">192.168</span>.<span class="number">0.255</span> class C:</span><br><span class="line"><span class="number">11000000.10101000</span>.<span class="number">00000000.11111111</span></span><br><span class="line">|---------Net_ID--------- |-HOST_ID-|</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/02/09/RH124-unit11/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-RH124-unit10" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -769,138 +904,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/02/02/RH124-unit3/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-RH124-unit2" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/02/RH124-unit2/" class="article-date">
-      <time datetime="2016-02-02T08:30:30.000Z" itemprop="datePublished">2016-02-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/02/RH124-unit2/">2.Managing Files Form The Command Line</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="linux_u7CFB_u7EDF_u7ED3_u6784"><a href="#linux_u7CFB_u7EDF_u7ED3_u6784" class="headerlink" title="linux系统结构"></a>linux系统结构</h3><blockquote>
-<p>linux系统结构是倒树型<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/bin	<span class="comment">##二进制可执行文件也就是系统命令</span></span><br><span class="line">/sbin	<span class="comment">##系统管理命令存放位置</span></span><br><span class="line">/boot	<span class="comment">##启动分区，负责系统启动</span></span><br><span class="line">/dev	<span class="comment">##设备管理文件</span></span><br><span class="line">/etc	<span class="comment">##大多数系统管理文件</span></span><br><span class="line">/home	<span class="comment">##普通用户的家目录</span></span><br><span class="line">/lib	<span class="comment">##32位系统库文件存放位置</span></span><br><span class="line">/lib64	<span class="comment">##64位系统库文件存放位置</span></span><br><span class="line">/media	<span class="comment">##系统临时设备挂载点</span></span><br><span class="line">/mnt	<span class="comment">##系统临时设备挂载点</span></span><br><span class="line">/run	<span class="comment">##系统临时设备挂载点</span></span><br><span class="line">/opt	<span class="comment">##第三方软件安装位置</span></span><br><span class="line">/proc	<span class="comment">##系统信息</span></span><br><span class="line">/root	<span class="comment">##超级用户家目录</span></span><br><span class="line">/srv，/var   <span class="comment">##系统数据</span></span><br><span class="line">/sys	<span class="comment">##系统管理，主要是关于内核的</span></span><br><span class="line">/tmp	<span class="comment">##系统临时文件存放位置</span></span><br><span class="line">/usr	<span class="comment">##系统用户相关信息数据及用户自定义软件存放位置</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/02/RH124-unit2/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-RH124-unit1" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/02/RH124-unit1/" class="article-date">
-      <time datetime="2016-02-02T07:30:12.000Z" itemprop="datePublished">2016-02-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/02/RH124-unit1/">1.Accessing The Command Line</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="u4EC0_u4E48_u662Fshell_3F"><a href="#u4EC0_u4E48_u662Fshell_3F" class="headerlink" title="什么是shell?"></a>什么是shell?</h3><p>在计算机科学中，Shell俗称壳（用来区别于核），是指<code>提供使用者使用界面</code>的软件（命令解析器）。文字操作系统与外部最主要的接口就叫做shell。shell是操作系统最外面的一层。shell管理你与操作系统之间的交互：等待你输入，向操作系统解释你的输入，并且处理各种各样的操作系统的输出结果。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/02/RH124-unit1/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
