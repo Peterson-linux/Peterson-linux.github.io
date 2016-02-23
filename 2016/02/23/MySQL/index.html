@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>MySQL | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Red Hat Enterprise Linux 6.5MySQL官网
+[MySQL] : http://www.mysql.com/MySQL的A-B复制实验环境1Environment : selinux and iptables disabled&amp;#10;Master : server13.example.com : 172.25.0.13&amp;#10;Slave  : server14.exa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL">
+<meta property="og:url" content="http://yoursite.com/2016/02/23/MySQL/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Red Hat Enterprise Linux 6.5MySQL官网
+[MySQL] : http://www.mysql.com/MySQL的A-B复制实验环境1Environment : selinux and iptables disabled&amp;#10;Master : server13.example.com : 172.25.0.13&amp;#10;Slave  : server14.exa">
+<meta property="og:image" content="http://yoursite.com/img/Mysql/Screenshot from 2016-02-23 17:33:07.png">
+<meta property="og:image" content="http://yoursite.com/img/Mysql/Screenshot from 2016-02-23 17:42:36.png">
+<meta property="og:image" content="http://yoursite.com/img/Mysql/Screenshot from 2016-02-23 18:28:34.png">
+<meta property="og:image" content="http://yoursite.com/img/Mysql/Screenshot from 2016-02-23 18:30:15.png">
+<meta property="og:image" content="http://yoursite.com/img/Mysql/Screenshot from 2016-02-23 19:44:44.png">
+<meta property="og:image" content="http://yoursite.com/img/Mysql/Screenshot from 2016-02-23 19:55:52.png">
+<meta property="og:image" content="http://yoursite.com/img/Mysql/Screenshot from 2016-02-23 20:03:21.png">
+<meta property="og:image" content="http://yoursite.com/img/Mysql/Screenshot from 2016-02-23 20:03:50.png">
+<meta property="og:image" content="http://yoursite.com/img/Mysql/Screenshot from 2016-02-23 21:18:11.png">
+<meta property="og:image" content="http://yoursite.com/img/Mysql/Screenshot from 2016-02-23 21:55:06.png">
+<meta property="og:image" content="http://yoursite.com/img/Mysql/Screenshot from 2016-02-23 21:55:35.png">
+<meta property="og:image" content="http://yoursite.com/img/Mysql/Screenshot from 2016-02-23 21:56:22.png">
+<meta property="og:image" content="http://yoursite.com/img/Mysql/Screenshot from 2016-02-23 21:56:56.png">
+<meta property="og:updated_time" content="2016-02-23T13:58:35.587Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL">
+<meta name="twitter:description" content="Red Hat Enterprise Linux 6.5MySQL官网
+[MySQL] : http://www.mysql.com/MySQL的A-B复制实验环境1Environment : selinux and iptables disabled&amp;#10;Master : server13.example.com : 172.25.0.13&amp;#10;Slave  : server14.exa">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" type="text/css">
+  
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/GreenArrow.png" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/">Wang Chi</a></h1>
+        </hgroup>
+
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:123@123.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="/#" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux-基础/" style="font-size: 20px;">linux 基础</a> <a href="/tags/linux-集群架构篇/" style="font-size: 15px;">linux 集群架构篇</a> <a href="/tags/主页/" style="font-size: 10px;">主页</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Wang Chi</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/GreenArrow.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Wang Chi</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:123@123.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="/#" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-MySQL" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/23/MySQL/" class="article-date">
+      <time datetime="2016-02-23T06:46:19.000Z" itemprop="datePublished">2016-02-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MySQL
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/linux-集群架构篇/">linux 集群架构篇</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-集群架构篇/">linux 集群架构篇</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="Red_Hat_Enterprise_Linux_6-5"><a href="#Red_Hat_Enterprise_Linux_6-5" class="headerlink" title="Red Hat Enterprise Linux 6.5"></a>Red Hat Enterprise Linux 6.5</h2><h3 id="MySQL_u5B98_u7F51"><a href="#MySQL_u5B98_u7F51" class="headerlink" title="MySQL官网"></a>MySQL官网</h3><ul>
+<li>[MySQL] : <a href="http://www.mysql.com/" target="_blank" rel="external">http://www.mysql.com/</a><h2 id="MySQL_u7684A-B_u590D_u5236"><a href="#MySQL_u7684A-B_u590D_u5236" class="headerlink" title="MySQL的A-B复制"></a>MySQL的A-B复制</h2><h3 id="u5B9E_u9A8C_u73AF_u5883"><a href="#u5B9E_u9A8C_u73AF_u5883" class="headerlink" title="实验环境"></a>实验环境</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Environment : selinux and iptables disabled&#10;Master : server13.example.com : 172.25.0.13&#10;Slave  : server14.example.com : 172.25.0.14</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<h3 id="Master_u7F16_u8BD1_u5B89_u88C5"><a href="#Master_u7F16_u8BD1_u5B89_u88C5" class="headerlink" title="Master编译安装"></a>Master编译安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[root@server13 mnt]<span class="comment"># yum install cmake gcc ncurses-devel gcc-c++ bison -y</span></span><br><span class="line">[root@server13 mnt]<span class="comment"># cd mysql-5.5.12</span></span><br><span class="line">[root@server13 mysql-<span class="number">5.5</span>.<span class="number">12</span>]<span class="comment"># cmake -DCMAKE_INSTALL_PREFIX=/usr/local/lnmp/mysql -DMYSQL_DATADIR=/usr/local/lnmp/mysql/data -DMYSQL_UNIX_ADDR=/usr/local/lnmp/mysql/data/mysql.sock -DWITH_MYISAM_STORAGE_ENGINE=1 -DWITH_INNOBASE_STORAGE_ENGINE=1 -DDEFAULT_CHARSET=utf8 -DDEFAULT_COLLATION=utf8_general_ci -DEXTRA_CHARSETS=all</span></span><br><span class="line">[root@server13 mysql-<span class="number">5.5</span>.<span class="number">12</span>]<span class="comment"># make &amp;&amp; make install</span></span><br><span class="line">[root@server13 mysql-<span class="number">5.5</span>.<span class="number">12</span>]<span class="comment"># vim ~/.bash_profile</span></span><br><span class="line">PATH=<span class="variable">$PATH</span>:<span class="variable">$HOME</span>/bin:/usr/<span class="built_in">local</span>/lnmp/mysql/bin</span><br><span class="line">[root@server13 mysql-<span class="number">5.5</span>.<span class="number">12</span>]<span class="comment"># source ~/.bash_profile</span></span><br><span class="line">[root@server13 mysql-<span class="number">5.5</span>.<span class="number">12</span>]<span class="comment"># groupadd -g 27 mysql</span></span><br><span class="line">[root@server13 mysql-<span class="number">5.5</span>.<span class="number">12</span>]<span class="comment"># useradd -u 27 -g 27 -d /usr/local/lnmp/mysql/data/ -M mysql</span></span><br><span class="line">[root@server13 mysql-<span class="number">5.5</span>.<span class="number">12</span>]<span class="comment"># cd /usr/local/lnmp/mysql</span></span><br><span class="line">[root@server13 mysql]<span class="comment"># chown mysql.mysql . -R</span></span><br><span class="line">[root@server13 mysql]<span class="comment"># scripts/mysql_install_db --user=mysql --basedir=/usr/local/lnmp/mysql/ --datadir=/usr/local/lnmp/mysql/data/</span></span><br><span class="line">[root@server13 mysql]<span class="comment"># chown root . -R</span></span><br><span class="line">[root@server13 mysql]<span class="comment"># chown -R mysql data/</span></span><br><span class="line">[root@server13 mysql]<span class="comment"># cd /usr/local/lnmp/mysql/support-files</span></span><br><span class="line">[root@server13 support-files]<span class="comment"># cp my-medium.cnf /etc/my.cnf</span></span><br><span class="line">cp: overwrite `/etc/my.cnf<span class="string">'? y</span><br><span class="line">[root@server13 support-files]# cp mysql.server /etc/init.d/mysqld</span><br><span class="line">[root@server13 support-files]# /etc/init.d/mysqld start</span><br><span class="line">Starting MySQL.. SUCCESS!</span><br><span class="line">[root@server13 support-files]# chkconfig mysqld on</span><br><span class="line">[root@server13 support-files]# mysql_secure_installation</span></span><br></pre></td></tr></table></figure>
+<h3 id="Master_u914D_u7F6E"><a href="#Master_u914D_u7F6E" class="headerlink" title="Master配置"></a>Master配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">[root@server13 lnmp]<span class="comment"># vim /etc/my.cnf</span></span><br><span class="line">server-id       = <span class="number">1</span> <span class="comment">##必须为1-2^32-1之间的值</span></span><br><span class="line">binlog-do-db=<span class="built_in">test</span>   <span class="comment">##二进制需要同步的数据库名</span></span><br><span class="line">binlog-ignore-db=mysql <span class="comment">##避免同步mysql用户配置，以免不必要的麻烦</span></span><br><span class="line">[root@server13 lnmp]<span class="comment"># /etc/init.d/mysqld restart</span></span><br><span class="line">Shutting down MySQL. SUCCESS!</span><br><span class="line">Starting MySQL.. SUCCESS!</span><br><span class="line">[root@server13 lnmp]<span class="comment"># mysql -predhat</span></span><br><span class="line">Welcome to the MySQL monitor.  Commands end with ; or \g.</span><br><span class="line">Your MySQL connection id is <span class="number">9</span></span><br><span class="line">Server version: <span class="number">5.5</span>.<span class="number">12</span>-log Source distribution</span><br><span class="line"></span><br><span class="line">Copyright (c) <span class="number">2000</span>, <span class="number">2010</span>, Oracle and/or its affiliates. All rights reserved.</span><br><span class="line"></span><br><span class="line">Oracle is a registered trademark of Oracle Corporation and/or its</span><br><span class="line">affiliates. Other names may be trademarks of their respective</span><br><span class="line">owners.</span><br><span class="line"></span><br><span class="line">Type <span class="string">'help;'</span> or <span class="string">'\h'</span> <span class="keyword">for</span> help. Type <span class="string">'\c'</span> to clear the current input statement.</span><br><span class="line"></span><br><span class="line">mysql&gt; use <span class="built_in">test</span>;</span><br><span class="line">Database changed</span><br><span class="line">mysql&gt; create table westos ( username varchar(<span class="number">25</span>) not null, password varchar(<span class="number">35</span>) not null );</span><br><span class="line">Query OK, <span class="number">0</span> rows affected (<span class="number">0.04</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; desc westos;</span><br><span class="line">+----------+-------------+------+-----+---------+-------+</span><br><span class="line">| Field    | Type        | Null | Key | Default | Extra |</span><br><span class="line">+----------+-------------+------+-----+---------+-------+</span><br><span class="line">| username | varchar(<span class="number">25</span>) | NO   |     | NULL    |       |</span><br><span class="line">| password | varchar(<span class="number">35</span>) | NO   |     | NULL    |       |</span><br><span class="line">+----------+-------------+------+-----+---------+-------+</span><br><span class="line"><span class="number">2</span> rows <span class="keyword">in</span> <span class="built_in">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; insert into westos value (<span class="string">'user1'</span>,<span class="string">'123'</span>);</span><br><span class="line">Query OK, <span class="number">1</span> row affected (<span class="number">0.01</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; insert into westos value (<span class="string">'user2'</span>,<span class="string">'234'</span>);</span><br><span class="line">Query OK, <span class="number">1</span> row affected (<span class="number">0.02</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; show master status;</span><br><span class="line">+------------------+----------+--------------+------------------+</span><br><span class="line">| File             | Position | Binlog_Do_DB | Binlog_Ignore_DB |</span><br><span class="line">+------------------+----------+--------------+------------------+</span><br><span class="line">| mysql-bin.<span class="number">000002</span> |      <span class="number">107</span> | <span class="built_in">test</span>         | mysql            |</span><br><span class="line">+------------------+----------+--------------+------------------+</span><br><span class="line"><span class="number">1</span> row <span class="keyword">in</span> <span class="built_in">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; grant replication slave,reload,super on *.* to abuser@<span class="string">'172.25.0.%'</span> identified by <span class="string">'redhat'</span>; <span class="comment">##创建一个abuser用户，在172.25.0.0网段对数据库所有内容有slave,reload,super权限，密码为redhat。</span></span><br><span class="line">Query OK, <span class="number">0</span> rows affected (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; flush privileges;</span><br><span class="line">Query OK, <span class="number">0</span> rows affected (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; Ctrl-C -- <span class="built_in">exit</span>!</span><br><span class="line">Aborted</span><br><span class="line">[root@server13 lnmp]<span class="comment"># cd /usr/local/lnmp/mysql/data</span></span><br><span class="line">[root@server13 data]<span class="comment"># mysqldump -predhat test &gt; test.sql ##把数据库test备份成test.sql</span></span><br><span class="line">[root@server13 data]<span class="comment"># scp mysql-bin.000002 test.sql root@172.25.0.14:   ##把日志mysql-bin.000002和test.sql传到slave机上，用来恢复数据。</span></span><br><span class="line">root@<span class="number">172.25</span>.<span class="number">0.14</span><span class="string">'s password:</span><br><span class="line">mysql-bin.000002                              100%  354     0.4KB/s   00:00    </span><br><span class="line">test.sql                                      100% 1862     1.8KB/s   00:00</span></span><br></pre></td></tr></table></figure>
+<p><code>my.cnf</code><br><img src="/img/Mysql/Screenshot from 2016-02-23 17:33:07.png" alt="" title="Title"></p>
+<h3 id="slave_u7F16_u8BD1_u5B89_u88C5"><a href="#slave_u7F16_u8BD1_u5B89_u88C5" class="headerlink" title="slave编译安装"></a>slave编译安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[root@server14 ~]<span class="comment"># mkdir /usr/local/lnmp</span></span><br><span class="line">[root@server13 lnmp]<span class="comment"># scp -r mysql/ root@172.25.0.14:/usr/local/lnmp/   ##将编译好的mysql直接拷贝过来，server14数据库的密码与server13相同。</span></span><br><span class="line">[root@server14 ~]<span class="comment"># vim ~/.bash_profile</span></span><br><span class="line">PATH=<span class="variable">$PATH</span>:<span class="variable">$HOME</span>/bin:/usr/<span class="built_in">local</span>/lnmp/mysql/bin</span><br><span class="line">[root@server14 ~]<span class="comment"># source ~/.bash_profile</span></span><br><span class="line">[root@server14 ~]<span class="comment"># groupadd -g 27 mysql</span></span><br><span class="line">[root@server14 ~]<span class="comment"># useradd -u 27 -g 27 -d /usr/local/lnmp/mysql/data/ -M mysql</span></span><br><span class="line">[root@server14 ~]<span class="comment"># cd /usr/local/lnmp/mysql</span></span><br><span class="line">[root@server14 mysql]<span class="comment"># chown mysql.mysql . -R</span></span><br><span class="line">[root@server14 mysql]<span class="comment"># scripts/mysql_install_db --user=mysql --basedir=/usr/local/lnmp/mysql/ --datadir=/usr/local/lnmp/mysql/data/</span></span><br><span class="line">[root@server14 mysql]<span class="comment"># chown root . -R</span></span><br><span class="line">[root@server14 mysql]<span class="comment"># chown -R mysql data/</span></span><br><span class="line">[root@server14 mysql]<span class="comment"># cd /usr/local/lnmp/mysql/support-files</span></span><br><span class="line">[root@server14 support-files]<span class="comment"># cp my-medium.cnf /etc/my.cnf</span></span><br><span class="line">cp: overwrite `/etc/my.cnf<span class="string">'? y</span><br><span class="line">[root@server14 support-files]# cp mysql.server /etc/init.d/mysqld</span><br><span class="line">[root@server14 support-files]# /etc/init.d/mysqld start</span><br><span class="line">Starting MySQL.. SUCCESS!</span><br><span class="line">[root@server14 support-files]# chkconfig mysqld on</span></span><br></pre></td></tr></table></figure>
+<h3 id="Slave_u914D_u7F6E"><a href="#Slave_u914D_u7F6E" class="headerlink" title="Slave配置"></a>Slave配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">[root@server14 support-files]<span class="comment"># vim /etc/my.cnf</span></span><br><span class="line">server-id       = <span class="number">2</span> <span class="comment">##区别于master</span></span><br><span class="line">[root@server14 support-files]<span class="comment"># cd /usr/local/lnmp/mysql/data/</span></span><br><span class="line">[root@server14 data]<span class="comment"># rm -f mysql-bin.*  ##删除不必要的日志</span></span><br><span class="line">[root@server14 data]<span class="comment"># rm -f server13*</span></span><br><span class="line">[root@server14 data]<span class="comment"># cd</span></span><br><span class="line">[root@server14 ~]<span class="comment"># ls</span></span><br><span class="line">mysql-bin.<span class="number">000002</span>  test.sql</span><br><span class="line">[root@server14 ~]<span class="comment"># mysql -predhat test &lt; test.sql  ##使用test.sql恢复数据库</span></span><br><span class="line">[root@server14 ~]<span class="comment"># mysql -predhat</span></span><br><span class="line">Welcome to the MySQL monitor.  Commands end with ; or \g.</span><br><span class="line">Your MySQL connection id is <span class="number">7</span></span><br><span class="line">Server version: <span class="number">5.5</span>.<span class="number">12</span>-log Source distribution</span><br><span class="line"></span><br><span class="line">Copyright (c) <span class="number">2000</span>, <span class="number">2010</span>, Oracle and/or its affiliates. All rights reserved.</span><br><span class="line"></span><br><span class="line">Oracle is a registered trademark of Oracle Corporation and/or its</span><br><span class="line">affiliates. Other names may be trademarks of their respective</span><br><span class="line">owners.</span><br><span class="line"></span><br><span class="line">Type <span class="string">'help;'</span> or <span class="string">'\h'</span> <span class="keyword">for</span> help. Type <span class="string">'\c'</span> to clear the current input statement.</span><br><span class="line"></span><br><span class="line">mysql&gt; use <span class="built_in">test</span>;</span><br><span class="line">Database changed</span><br><span class="line">mysql&gt; show tables;  <span class="comment">##说明数据恢复成功，slave必须先和master保持一致，才能对master进行同步的操作。</span></span><br><span class="line">+----------------+</span><br><span class="line">| Tables_<span class="keyword">in</span>_<span class="built_in">test</span> |</span><br><span class="line">+----------------+</span><br><span class="line">| westos         |</span><br><span class="line">+----------------+</span><br><span class="line"><span class="number">1</span> row <span class="keyword">in</span> <span class="built_in">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; CHANGE MASTER TO MASTER_HOST=<span class="string">'172.25.0.13'</span>,MASTER_USER=<span class="string">'abuser'</span>,MASTER_PASSWORD=<span class="string">'redhat'</span>,MASTER_LOG_FILE=<span class="string">'mysql-bin.000002'</span>,MASTER_LOG_POS=<span class="number">107</span>;  <span class="comment">##这里需要参考Master主机上的show master status;的内容</span></span><br><span class="line">Query OK, <span class="number">0</span> rows affected (<span class="number">0.08</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; slave start;</span><br><span class="line">Query OK, <span class="number">0</span> rows affected (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; show slave status\G;</span><br><span class="line">*************************** <span class="number">1</span>. row ***************************</span><br><span class="line">               Slave_IO_State: Waiting <span class="keyword">for</span> master to send event</span><br><span class="line">                  Master_Host: <span class="number">172.25</span>.<span class="number">0.13</span></span><br><span class="line">                  Master_User: abuser</span><br><span class="line">                  Master_Port: <span class="number">3306</span></span><br><span class="line">                Connect_Retry: <span class="number">60</span></span><br><span class="line">              Master_Log_File: mysql-bin.<span class="number">000002</span></span><br><span class="line">          Read_Master_Log_Pos: <span class="number">354</span></span><br><span class="line">               Relay_Log_File: server14-relay-bin.<span class="number">000002</span></span><br><span class="line">                Relay_Log_Pos: <span class="number">500</span></span><br><span class="line">        Relay_Master_Log_File: mysql-bin.<span class="number">000002</span></span><br><span class="line">             Slave_IO_Running: Yes     <span class="comment">##出现两个Yes即可</span></span><br><span class="line">            Slave_SQL_Running: Yes</span><br><span class="line">              Replicate_Do_DB:</span><br><span class="line">          Replicate_Ignore_DB:</span><br><span class="line">           Replicate_Do_Table:</span><br><span class="line">       Replicate_Ignore_Table:</span><br><span class="line">      Replicate_Wild_Do_Table:</span><br><span class="line">  Replicate_Wild_Ignore_Table:</span><br><span class="line">                   Last_Errno: <span class="number">0</span></span><br><span class="line">                   Last_Error:</span><br><span class="line">                 Skip_Counter: <span class="number">0</span></span><br><span class="line">          Exec_Master_Log_Pos: <span class="number">354</span></span><br><span class="line">              Relay_Log_Space: <span class="number">659</span></span><br><span class="line">              Until_Condition: None</span><br><span class="line">               Until_Log_File:</span><br><span class="line">                Until_Log_Pos: <span class="number">0</span></span><br><span class="line">           Master_SSL_Allowed: No</span><br><span class="line">           Master_SSL_CA_File:</span><br><span class="line">           Master_SSL_CA_Path:</span><br><span class="line">              Master_SSL_Cert:</span><br><span class="line">            Master_SSL_Cipher:</span><br><span class="line">               Master_SSL_Key:</span><br><span class="line">        Seconds_Behind_Master: <span class="number">0</span></span><br><span class="line">Master_SSL_Verify_Server_Cert: No</span><br><span class="line">                Last_IO_Errno: <span class="number">0</span></span><br><span class="line">                Last_IO_Error:</span><br><span class="line">               Last_SQL_Errno: <span class="number">0</span></span><br><span class="line">               Last_SQL_Error:</span><br><span class="line">  Replicate_Ignore_Server_Ids:</span><br><span class="line">             Master_Server_Id: <span class="number">1</span></span><br><span class="line"><span class="number">1</span> row <span class="keyword">in</span> <span class="built_in">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line">ERROR:</span><br><span class="line">No query specified</span><br><span class="line"></span><br><span class="line">mysql&gt; Ctrl-C -- <span class="built_in">exit</span>!</span><br><span class="line">Aborted</span><br><span class="line">[root@server14 ~]<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#25968;&#25454;&#24211;&#24674;&#22797;&#30340;&#20004;&#31181;&#26041;&#27861;&#65306;&#10;mysqlbinlog mysql-bin.000002 | mysql -predhat  ##&#20351;&#29992;Master&#30340;&#26085;&#24535;&#25991;&#20214;&#24674;&#22797;&#21040;slave&#30340;&#25968;&#25454;&#24211;&#10;mysql -predhat test &#60; test.sql  ##&#20063;&#21487;&#20197;&#20351;&#29992;test.sql&#24674;&#22797;&#25968;&#25454;&#24211;</span><br></pre></td></tr></table></figure>
+<p><code>my.cnf</code><br><img src="/img/Mysql/Screenshot from 2016-02-23 17:42:36.png" alt="" title="Title"></p>
+<h3 id="u6D4B_u8BD5"><a href="#u6D4B_u8BD5" class="headerlink" title="测试"></a>测试</h3><p><strong>在Master主机上删除westos表中的user1</strong><br><img src="/img/Mysql/Screenshot from 2016-02-23 18:28:34.png" alt="" title="Title"><br><strong>Slave主机上查看，发现已经同步了</strong><br><img src="/img/Mysql/Screenshot from 2016-02-23 18:30:15.png" alt="" title="Title"></p>
+<h2 id="Master-_26gt_3BS1-_26gt_3BS2_u6570_u636E_u540C_u6B65"><a href="#Master-_26gt_3BS1-_26gt_3BS2_u6570_u636E_u540C_u6B65" class="headerlink" title="Master-&gt;S1-&gt;S2数据同步"></a>Master-&gt;S1-&gt;S2数据同步</h2><h3 id="u73AF_u5883_u914D_u7F6E"><a href="#u73AF_u5883_u914D_u7F6E" class="headerlink" title="环境配置"></a>环境配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Environment : selinux and iptables disabled&#10;Master : server13.example.com : 172.25.0.13&#10;Slave1 : server14.example.com : 172.25.0.14&#10;Slave2 : server14.example.com : 172.25.0.15</span><br></pre></td></tr></table></figure>
+<p><code>本实验需要在AB复制成功的条件下进行</code><br><code>M-&gt;S1-&gt;S2 这样S1就也要开启binlog,是一种减小Master负载的方法。</code></p>
+<h3 id="Master_u914D_u7F6E-1"><a href="#Master_u914D_u7F6E-1" class="headerlink" title="Master配置"></a>Master配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@server13 data]<span class="comment"># mysqldump -predhat test &gt; test.sql</span></span><br><span class="line">[root@server13 data]<span class="comment"># scp test.sql root@172.25.0.15:</span></span><br><span class="line">root@<span class="number">172.25</span>.<span class="number">0.15</span><span class="string">'s password:</span><br><span class="line">test.sql                                           100% 1846     1.8KB/s   00:00</span></span><br></pre></td></tr></table></figure>
+<h3 id="Slave1_u914D_u7F6E"><a href="#Slave1_u914D_u7F6E" class="headerlink" title="Slave1配置"></a>Slave1配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">[root@server14 ~]<span class="comment"># vim /etc/my.cnf</span></span><br><span class="line">server-id       = <span class="number">2</span></span><br><span class="line">binlog-do-db=<span class="built_in">test</span></span><br><span class="line">binlog-ignore-db=mysql</span><br><span class="line"><span class="built_in">log</span>-slave-updates  <span class="comment">##把事件写入binlog中</span></span><br><span class="line">[root@server14 ~]<span class="comment"># /etc/init.d/mysqld restart</span></span><br><span class="line">Shutting down MySQL. SUCCESS!</span><br><span class="line">Starting MySQL.. SUCCESS!</span><br><span class="line">[root@server14 ~]<span class="comment"># mysql -predhat</span></span><br><span class="line">Welcome to the MySQL monitor.  Commands end with ; or \g.</span><br><span class="line">Your MySQL connection id is <span class="number">3</span></span><br><span class="line">Server version: <span class="number">5.5</span>.<span class="number">12</span>-log Source distribution</span><br><span class="line"></span><br><span class="line">Copyright (c) <span class="number">2000</span>, <span class="number">2010</span>, Oracle and/or its affiliates. All rights reserved.</span><br><span class="line"></span><br><span class="line">Oracle is a registered trademark of Oracle Corporation and/or its</span><br><span class="line">affiliates. Other names may be trademarks of their respective</span><br><span class="line">owners.</span><br><span class="line"></span><br><span class="line">Type <span class="string">'help;'</span> or <span class="string">'\h'</span> <span class="keyword">for</span> help. Type <span class="string">'\c'</span> to clear the current input statement.</span><br><span class="line"></span><br><span class="line">mysql&gt; show master status;</span><br><span class="line">+------------------+----------+--------------+------------------+</span><br><span class="line">| File             | Position | Binlog_Do_DB | Binlog_Ignore_DB |</span><br><span class="line">+------------------+----------+--------------+------------------+</span><br><span class="line">| mysql-bin.<span class="number">000001</span> |      <span class="number">107</span> | <span class="built_in">test</span>         | mysql            |</span><br><span class="line">+------------------+----------+--------------+------------------+</span><br><span class="line"><span class="number">1</span> row <span class="keyword">in</span> <span class="built_in">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; grant replication slave,reload,super on *.* to abuser@<span class="string">'172.25.0.15'</span> identified by <span class="string">'redhat'</span>;</span><br><span class="line">Query OK, <span class="number">0</span> rows affected (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; Ctrl-C -- <span class="built_in">exit</span>!</span><br><span class="line">Aborted</span><br></pre></td></tr></table></figure>
+<p><code>my.cnf</code><br><img src="/img/Mysql/Screenshot from 2016-02-23 19:44:44.png" alt="" title="Title"></p>
+<h3 id="Slave2_u914D_u7F6E"><a href="#Slave2_u914D_u7F6E" class="headerlink" title="Slave2配置"></a>Slave2配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line">[root@server15 ~]<span class="comment"># mkdir /usr/local/lnmp</span></span><br><span class="line">[root@server13 lnmp]<span class="comment"># scp -r mysql/ root@172.25.0.15:/usr/local/lnmp/  ##将编译好的mysql直接拷贝过来</span></span><br><span class="line">[root@server15 ~]<span class="comment"># cd /usr/local/lnmp/mysql/data/</span></span><br><span class="line">[root@server15 data]<span class="comment"># rm -f mysql-bin.*</span></span><br><span class="line">[root@server15 data]<span class="comment"># rm -f server13.*</span></span><br><span class="line">[root@server15 data]<span class="comment"># vim ~/.bash_profile</span></span><br><span class="line">PATH=<span class="variable">$PATH</span>:<span class="variable">$HOME</span>/bin:/usr/<span class="built_in">local</span>/lnmp/mysql/bin</span><br><span class="line">[root@server15 data]<span class="comment"># source ~/.bash_profile</span></span><br><span class="line">[root@server15 data]<span class="comment"># groupadd -g 27 mysql</span></span><br><span class="line">[root@server15 data]<span class="comment"># useradd -u 27 -g 27 -d /usr/local/lnmp/mysql/data/ -M mysql</span></span><br><span class="line">[root@server15 data]<span class="comment"># cd /usr/local/lnmp/mysql</span></span><br><span class="line">[root@server15 mysql]<span class="comment"># chown mysql.mysql . -R</span></span><br><span class="line">[root@server15 mysql]<span class="comment"># scripts/mysql_install_db --user=mysql --basedir=/usr/local/lnmp/mysql/ --datadir=/usr/local/lnmp/mysql/data/</span></span><br><span class="line">[root@server15 mysql]<span class="comment"># chown root . -R</span></span><br><span class="line">[root@server15 mysql]<span class="comment"># chown -R mysql data/</span></span><br><span class="line">[root@server15 mysql]<span class="comment"># cd /usr/local/lnmp/mysql/support-files</span></span><br><span class="line">[root@server15 support-files]<span class="comment"># cp my-medium.cnf /etc/my.cnf</span></span><br><span class="line">cp: overwrite `/etc/my.cnf<span class="string">'? y</span><br><span class="line">[root@server15 support-files]# cp mysql.server /etc/init.d/mysqld</span><br><span class="line">[root@server15 support-files]# /etc/init.d/mysqld start</span><br><span class="line">Starting MySQL.. SUCCESS!</span><br><span class="line">[root@server15 support-files]# chkconfig mysqld on</span><br><span class="line">[root@server15 support-files]# vim /etc/my.cnf</span><br><span class="line">server-id       = 3</span><br><span class="line">relay-log = relay-bin  ##定义relay-log的格式,这样可以避免因更换主机名而导致relay-log的格式的改变</span><br><span class="line">[root@server15 support-files]# cd</span><br><span class="line">[root@server15 ~]# ls</span><br><span class="line">test.sql</span><br><span class="line">[root@server15 ~]# mysql -predhat test &lt; test.sql</span><br><span class="line">[root@server15 ~]# mysql -predhat</span><br><span class="line">Welcome to the MySQL monitor.  Commands end with ; or \g.</span><br><span class="line">Your MySQL connection id is 3</span><br><span class="line">Server version: 5.5.12-log Source distribution</span><br><span class="line"></span><br><span class="line">Copyright (c) 2000, 2010, Oracle and/or its affiliates. All rights reserved.</span><br><span class="line"></span><br><span class="line">Oracle is a registered trademark of Oracle Corporation and/or its</span><br><span class="line">affiliates. Other names may be trademarks of their respective</span><br><span class="line">owners.</span><br><span class="line"></span><br><span class="line">Type '</span><span class="built_in">help</span>;<span class="string">' or '</span>\h<span class="string">' for help. Type '</span>\c<span class="string">' to clear the current input statement.</span><br><span class="line"></span><br><span class="line">mysql&gt; use test;</span><br><span class="line">Database changed</span><br><span class="line">mysql&gt; show tables;</span><br><span class="line">+----------------+</span><br><span class="line">| Tables_in_test |</span><br><span class="line">+----------------+</span><br><span class="line">| westos         |</span><br><span class="line">+----------------+</span><br><span class="line">1 row in set (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; select * from westos;</span><br><span class="line">+----------+----------+</span><br><span class="line">| username | password |</span><br><span class="line">+----------+----------+</span><br><span class="line">| user2    | 234      |</span><br><span class="line">+----------+----------+</span><br><span class="line">1 row in set (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; CHANGE MASTER TO MASTER_HOST='</span><span class="number">172.25</span>.<span class="number">0.14</span><span class="string">',MASTER_USER='</span>abuser<span class="string">',MASTER_PASSWORD='</span>redhat<span class="string">',MASTER_LOG_FILE='</span>mysql-bin.<span class="number">000001</span><span class="string">',MASTER_LOG_POS=107;</span><br><span class="line">Query OK, 0 rows affected (0.07 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; slave start;</span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; show slave status\G;</span><br><span class="line">*************************** 1. row ***************************</span><br><span class="line">               Slave_IO_State: Waiting for master to send event</span><br><span class="line">                  Master_Host: 172.25.0.14</span><br><span class="line">                  Master_User: abuser</span><br><span class="line">                  Master_Port: 3306</span><br><span class="line">                Connect_Retry: 60</span><br><span class="line">              Master_Log_File: mysql-bin.000001</span><br><span class="line">          Read_Master_Log_Pos: 107</span><br><span class="line">               Relay_Log_File: server15-relay-bin.000002</span><br><span class="line">                Relay_Log_Pos: 253</span><br><span class="line">        Relay_Master_Log_File: mysql-bin.000001</span><br><span class="line">             Slave_IO_Running: Yes</span><br><span class="line">            Slave_SQL_Running: Yes</span><br><span class="line">              Replicate_Do_DB:</span><br><span class="line">          Replicate_Ignore_DB:</span><br><span class="line">           Replicate_Do_Table:</span><br><span class="line">       Replicate_Ignore_Table:</span><br><span class="line">      Replicate_Wild_Do_Table:</span><br><span class="line">  Replicate_Wild_Ignore_Table:</span><br><span class="line">                   Last_Errno: 0</span><br><span class="line">                   Last_Error:</span><br><span class="line">                 Skip_Counter: 0</span><br><span class="line">          Exec_Master_Log_Pos: 107</span><br><span class="line">              Relay_Log_Space: 412</span><br><span class="line">              Until_Condition: None</span><br><span class="line">               Until_Log_File:</span><br><span class="line">                Until_Log_Pos: 0</span><br><span class="line">           Master_SSL_Allowed: No</span><br><span class="line">           Master_SSL_CA_File:</span><br><span class="line">           Master_SSL_CA_Path:</span><br><span class="line">              Master_SSL_Cert:</span><br><span class="line">            Master_SSL_Cipher:</span><br><span class="line">               Master_SSL_Key:</span><br><span class="line">        Seconds_Behind_Master: 0</span><br><span class="line">Master_SSL_Verify_Server_Cert: No</span><br><span class="line">                Last_IO_Errno: 0</span><br><span class="line">                Last_IO_Error:</span><br><span class="line">               Last_SQL_Errno: 0</span><br><span class="line">               Last_SQL_Error:</span><br><span class="line">  Replicate_Ignore_Server_Ids:</span><br><span class="line">             Master_Server_Id: 2</span><br><span class="line">1 row in set (0.00 sec)</span><br><span class="line"></span><br><span class="line">ERROR:</span><br><span class="line">No query specified</span><br><span class="line"></span><br><span class="line">mysql&gt; Ctrl-C -- exit!</span><br><span class="line">Aborted</span></span><br></pre></td></tr></table></figure>
+<p><code>my.cnf</code><br><img src="/img/Mysql/Screenshot from 2016-02-23 19:55:52.png" alt="" title="Title"></p>
+<h3 id="u6D4B_u8BD5-1"><a href="#u6D4B_u8BD5-1" class="headerlink" title="测试"></a>测试</h3><p><code>通过改变Master中的test库的内容，观察S1,S2数据库中test库的内容即可</code><br><strong>在Master上的test库中的westos表中增加user1</strong><br><img src="/img/Mysql/Screenshot from 2016-02-23 20:03:21.png" alt="" title="Title"><br><strong>Slave1</strong><br><img src="/img/Mysql/Screenshot from 2016-02-23 20:03:50.png" alt="" title="Title"><br><strong>Slave2</strong><br><img src="/img/Mysql/Screenshot from 2016-02-23 21:18:11.png" alt="" title="Title"><br><strong>下图可以看出Master-&gt;S1-&gt;S2之间的关系</strong><br><img src="/img/Mysql/Screenshot from 2016-02-23 21:55:06.png" alt="" title="Title"><br><img src="/img/Mysql/Screenshot from 2016-02-23 21:55:35.png" alt="" title="Title"><br><img src="/img/Mysql/Screenshot from 2016-02-23 21:56:22.png" alt="" title="Title"><br><img src="/img/Mysql/Screenshot from 2016-02-23 21:56:56.png" alt="" title="Title"></p>
+<h2 id="u5C0F_u7ED3"><a href="#u5C0F_u7ED3" class="headerlink" title="小结"></a>小结</h2><h3 id="u539F_u7406"><a href="#u539F_u7406" class="headerlink" title="原理"></a>原理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">M(&#21333;&#32447;&#31243;)             S(&#20004;&#20010;&#32447;&#31243;)&#10;binlog   --------&#62;   relay log</span><br></pre></td></tr></table></figure>
+<p><code>slave 开启一个I/O线程，I/O线程在master上打开一个普通的连接，然后开始 binlog dump process。Binlog dump process 从master的二进制日志中读取事件。I/O线程会将这些事件写入中继日志中。SQL线程从中继日志中读取事件，并写入slave数据库。master中的binlog dump process线程是和slave中的I/O线程做连接用的。</code></p>
+<h3 id="u590D_u5236_u662F_u5982_u4F55_u5DE5_u4F5C_u7684"><a href="#u590D_u5236_u662F_u5982_u4F55_u5DE5_u4F5C_u7684" class="headerlink" title="复制是如何工作的"></a>复制是如何工作的</h3><ul>
+<li>1,mater将改变记录到binary log中</li>
+<li>2,slave将master的binary log拷贝到自己的中继日志中(relay log)</li>
+<li>3,slave重做中继日志中的事件，将改变写入自己数据库<h3 id="u6570_u636E_u5E93_u8BFB_u5199_u5206_u79BB"><a href="#u6570_u636E_u5E93_u8BFB_u5199_u5206_u79BB" class="headerlink" title="数据库读写分离"></a>数据库读写分离</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">               |------&#62;S(&#35835;)&#10;   M(&#20889;&#20837;)-----|------&#62;S(&#35835;)     &#25968;&#25454;&#24211;&#20919;&#28909;&#25968;&#25454;&#65292;&#32771;&#34385;ssd/redis,sata&#12290;(&#25968;&#25454;&#20998;&#26512;)&#10;               |------&#62;S(&#35835;)&#10;&#10;&#22240;&#20026;M&#23384;&#22312;&#21333;&#28857;&#65292;&#32771;&#34385;HA&#12290;&#10;Master&#38750;&#24120;&#24537;&#65292;&#21017;&#32771;&#34385;&#23545;slave&#36827;&#34892;&#22791;&#20221;&#21363;&#21487;&#12290;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/02/23/MySQL/">MySQL</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Wang Chi 的个人博客">Wang Chi</a></p>
+        <p><span>发布时间:</span>2016年02月23日 - 14时46分</p>
+        <p><span>最后更新:</span>2016年02月23日 - 21时58分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/02/23/MySQL/" title="MySQL">http://yoursite.com/2016/02/23/MySQL/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/23/MySQL/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/02/22/nginx-tomcat-memcached/">
+                    nginx+tomcat+memcached
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Red_Hat_Enterprise_Linux_6-5"><span class="toc-number">1.</span> <span class="toc-text">Red Hat Enterprise Linux 6.5</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL_u5B98_u7F51"><span class="toc-number">1.1.</span> <span class="toc-text">MySQL官网</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL_u7684A-B_u590D_u5236"><span class="toc-number">2.</span> <span class="toc-text">MySQL的A-B复制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u5B9E_u9A8C_u73AF_u5883"><span class="toc-number">2.1.</span> <span class="toc-text">实验环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Master_u7F16_u8BD1_u5B89_u88C5"><span class="toc-number">2.2.</span> <span class="toc-text">Master编译安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Master_u914D_u7F6E"><span class="toc-number">2.3.</span> <span class="toc-text">Master配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#slave_u7F16_u8BD1_u5B89_u88C5"><span class="toc-number">2.4.</span> <span class="toc-text">slave编译安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Slave_u914D_u7F6E"><span class="toc-number">2.5.</span> <span class="toc-text">Slave配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u6D4B_u8BD5"><span class="toc-number">2.6.</span> <span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Master-_26gt_3BS1-_26gt_3BS2_u6570_u636E_u540C_u6B65"><span class="toc-number">3.</span> <span class="toc-text">Master->S1->S2数据同步</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u73AF_u5883_u914D_u7F6E"><span class="toc-number">3.1.</span> <span class="toc-text">环境配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Master_u914D_u7F6E-1"><span class="toc-number">3.2.</span> <span class="toc-text">Master配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Slave1_u914D_u7F6E"><span class="toc-number">3.3.</span> <span class="toc-text">Slave1配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Slave2_u914D_u7F6E"><span class="toc-number">3.4.</span> <span class="toc-text">Slave2配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u6D4B_u8BD5-1"><span class="toc-number">3.5.</span> <span class="toc-text">测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5C0F_u7ED3"><span class="toc-number">4.</span> <span class="toc-text">小结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u539F_u7406"><span class="toc-number">4.1.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u590D_u5236_u662F_u5982_u4F55_u5DE5_u4F5C_u7684"><span class="toc-number">4.2.</span> <span class="toc-text">复制是如何工作的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u6570_u636E_u5E93_u8BFB_u5199_u5206_u79BB"><span class="toc-number">4.3.</span> <span class="toc-text">数据库读写分离</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+    <div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/02/22/nginx-tomcat-memcached/" title="下一篇: nginx+tomcat+memcached">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/23/MySQL/">MySQL</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/22/nginx-tomcat-memcached/">nginx+tomcat+memcached</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/22/tomcat-jdk/">tomcat+jdk</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/21/PHP/">PHP</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/20/Nginx/">Nginx</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/19/lanmp-separation/">lanmp-separation</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/lanmp/">lanmp</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/17/encapsulate-virtual-machine/">Encapsulate-virtual-machine</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/14/RH124-unit15/">15.Using Virtualized Systems</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/RH124-unit14/">14.Accessing Linux File Systems</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/RH124-unit13/">13.Installingand Updating Software Packages</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/RH124-unit12/">12.Archiving and Copying Files Between Systems</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit11/">11.Managing Red Hat Enterprise Linux Networking</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit10/">10.Analyzing and Storing Logs</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit9/">9.Configuring and Securing OpenSSH Service</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit8/">8.Controlling Services and Daemons</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit7/">7.Monitoring and Managing Linux Processes</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit6/">6.Controlling Access to Files with Linux File System Permissions</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/RH124-unit5/">5.Managing Local Linux Users and Groups</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/03/RH124-unit4/">4.Creating, Viewing, and Editing Text Files</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit3/">3.Getting Help in Red Hat Enterprise Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit2/">2.Managing Files Form The Command Line</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit1/">1.Accessing The Command Line</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/myfirst/">Wellcome to my blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/hello-world/">Hello World</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 Wang Chi
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
