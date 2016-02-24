@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Cacti-monitoring-platform | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Red Hat Enterprise Linux 6.5Cacti官网
+[Cacti] : http://www.cacti.net/Cacti是一套基于PHP,MySQL,SNMP(数据采集)及RRDTool(数据存储和图表的生成)开发的网络流量监测图形分析工具。实验环境1Environment : selinux and iptables disabled&amp;#10;&amp;#30417;&amp;#2551">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cacti-monitoring-platform">
+<meta property="og:url" content="http://yoursite.com/2016/02/24/Cacti-monitoring-platform/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Red Hat Enterprise Linux 6.5Cacti官网
+[Cacti] : http://www.cacti.net/Cacti是一套基于PHP,MySQL,SNMP(数据采集)及RRDTool(数据存储和图表的生成)开发的网络流量监测图形分析工具。实验环境1Environment : selinux and iptables disabled&amp;#10;&amp;#30417;&amp;#2551">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 10:22:24.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 10:30:53.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 10:31:51.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 10:33:10.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 10:35:42.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 10:36:05.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 10:36:14.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 11:18:34.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 11:18:54.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 11:19:20.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 11:19:54.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 20:21:54.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 20:29:49.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 20:31:09.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 20:31:33.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 20:32:28.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 20:32:38.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 20:33:24.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 20:34:15.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 20:34:25.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 20:35:13.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 21:15:02.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 21:29:13.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 21:29:27.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 21:29:39.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 21:39:35.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 21:47:12.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 21:48:32.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 22:05:25.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 22:05:39.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 22:05:50.png">
+<meta property="og:image" content="http://yoursite.com/img/Cacti/Screenshot from 2016-02-24 22:06:00.png">
+<meta property="og:updated_time" content="2016-02-24T14:26:35.930Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cacti-monitoring-platform">
+<meta name="twitter:description" content="Red Hat Enterprise Linux 6.5Cacti官网
+[Cacti] : http://www.cacti.net/Cacti是一套基于PHP,MySQL,SNMP(数据采集)及RRDTool(数据存储和图表的生成)开发的网络流量监测图形分析工具。实验环境1Environment : selinux and iptables disabled&amp;#10;&amp;#30417;&amp;#2551">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" type="text/css">
+  
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/GreenArrow.png" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/">Wang Chi</a></h1>
+        </hgroup>
+
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:123@123.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="/#" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux-基础/" style="font-size: 20px;">linux 基础</a> <a href="/tags/linux-集群架构篇/" style="font-size: 15px;">linux 集群架构篇</a> <a href="/tags/主页/" style="font-size: 10px;">主页</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Wang Chi</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/GreenArrow.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Wang Chi</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:123@123.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="/#" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Cacti-monitoring-platform" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/24/Cacti-monitoring-platform/" class="article-date">
+      <time datetime="2016-02-24T01:17:37.000Z" itemprop="datePublished">2016-02-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Cacti-monitoring-platform
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/linux-集群架构篇/">linux 集群架构篇</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-集群架构篇/">linux 集群架构篇</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="Red_Hat_Enterprise_Linux_6-5"><a href="#Red_Hat_Enterprise_Linux_6-5" class="headerlink" title="Red Hat Enterprise Linux 6.5"></a>Red Hat Enterprise Linux 6.5</h2><h3 id="Cacti_u5B98_u7F51"><a href="#Cacti_u5B98_u7F51" class="headerlink" title="Cacti官网"></a>Cacti官网</h3><ul>
+<li>[Cacti] : <a href="http://www.cacti.net/" target="_blank" rel="external">http://www.cacti.net/</a><br>Cacti是一套基于PHP,MySQL,SNMP(数据采集)及RRDTool(数据存储和图表的生成)开发的网络流量监测图形分析工具。<h3 id="u5B9E_u9A8C_u73AF_u5883"><a href="#u5B9E_u9A8C_u73AF_u5883" class="headerlink" title="实验环境"></a>实验环境</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Environment : selinux and iptables disabled&#10;&#30417;&#25511;&#26426; &#65306; server16.example.com : 172.25.0.16&#10;&#34987;&#30417;&#25511;&#30340;&#36828;&#31243;&#20027;&#26426; : server17.example.com : 172.25.0.17</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<h3 id="u76D1_u63A7_u673Aserver16"><a href="#u76D1_u63A7_u673Aserver16" class="headerlink" title="监控机server16"></a>监控机server16</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">[root@server16 ~]<span class="comment"># yum install -y httpd php php-mysql mysql-server php-snmp ##快速安装lamp，安装步骤请查看官方文档</span></span><br><span class="line">[root@server16 ~]<span class="comment"># yum install rrdtool -y</span></span><br><span class="line">[root@server16 ~]<span class="comment"># rpm -q mysql  ##查看本机安装的mysql版本</span></span><br><span class="line">mysql-<span class="number">5.1</span>.<span class="number">71</span>-<span class="number">1</span>.el6.x86_64</span><br><span class="line">[root@server16 ~]<span class="comment"># rpm -q php  ##查看本机安装的php版本</span></span><br><span class="line">php-<span class="number">5.3</span>.<span class="number">3</span>-<span class="number">26</span>.el6.x86_64</span><br><span class="line">[root@server16 ~]<span class="comment"># rpm -q rrdtool  ##查看本机安装的rrdtool版本</span></span><br><span class="line">rrdtool-<span class="number">1.3</span>.<span class="number">8</span>-<span class="number">6</span>.el6.x86_64</span><br><span class="line">[root@server16 ~]<span class="comment"># cd /mnt/</span></span><br><span class="line">[root@server16 mnt]<span class="comment"># ls</span></span><br><span class="line">cacti-<span class="number">0.8</span>.<span class="number">8</span>f.tar.gz        php-snmp-<span class="number">5.3</span>.<span class="number">3</span>-<span class="number">26</span>.el6.x86_64.rpm</span><br><span class="line">cacti-spine-<span class="number">0.8</span>.<span class="number">8</span>f.tar.gz</span><br><span class="line">[root@server16 mnt]<span class="comment"># rpm -ivh php-snmp-5.3.3-26.el6.x86_64.rpm  ##使php支持snmp模块</span></span><br><span class="line">warning: php-snmp-<span class="number">5.3</span>.<span class="number">3</span>-<span class="number">26</span>.el6.x86_64.rpm: Header V3 RSA/SHA1 Signature, key ID c105b9de: NOKEY</span><br><span class="line">error: Failed dependencies:</span><br><span class="line">	libnetsnmp.so.<span class="number">20</span>()(<span class="number">64</span>bit) is needed by php-snmp-<span class="number">5.3</span>.<span class="number">3</span>-<span class="number">26</span>.el6.x86_64</span><br><span class="line">	net-snmp is needed by php-snmp-<span class="number">5.3</span>.<span class="number">3</span>-<span class="number">26</span>.el6.x86_64</span><br><span class="line">[root@server16 mnt]<span class="comment"># yum install php-snmp-5.3.3-26.el6.x86_64.rpm -y</span></span><br><span class="line">[root@server16 mnt]<span class="comment"># php -m ##查看php支持的模块，必须有以下三个</span></span><br><span class="line">mysql</span><br><span class="line">xml</span><br><span class="line">snmp</span><br><span class="line">[root@server16 mnt]<span class="comment"># /etc/init.d/mysqld start ##数据库初始化</span></span><br><span class="line">[root@server16 mnt]<span class="comment"># mysql_secure_installation</span></span><br><span class="line">[root@server16 mnt]<span class="comment"># vim /etc/php.ini</span></span><br><span class="line">date.timezone = Asia/Shanghai</span><br><span class="line">[root@server16 mnt]<span class="comment"># tar zxf cacti-0.8.8f.tar.gz -C /var/www/html/</span></span><br><span class="line">[root@server16 mnt]<span class="comment"># cd /var/www/html/</span></span><br><span class="line">[root@server16 html]<span class="comment"># ln -s cacti-0.8.8f/ cacti</span></span><br><span class="line">[root@server16 html]<span class="comment"># cd cacti/include/</span></span><br><span class="line">[root@server16 include]<span class="comment"># vim config.php</span></span><br><span class="line">/* make sure these values refect your actual database/host/user/password */</span><br><span class="line"><span class="variable">$database_type</span> = <span class="string">"mysql"</span>;</span><br><span class="line"><span class="variable">$database_default</span> = <span class="string">"cacti"</span>;</span><br><span class="line"><span class="variable">$database_hostname</span> = <span class="string">"localhost"</span>;</span><br><span class="line"><span class="variable">$database_username</span> = <span class="string">"cacti"</span>;  <span class="comment">##用户名</span></span><br><span class="line"><span class="variable">$database_password</span> = <span class="string">"redhat"</span>; <span class="comment">##密码</span></span><br><span class="line"><span class="variable">$database_port</span> = <span class="string">"3306"</span>;</span><br><span class="line"><span class="variable">$database_ssl</span> = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">   Edit this to point to the default URL of your Cacti install</span><br><span class="line">   ex: <span class="keyword">if</span> your cacti install as at http://serverip/cacti/ this</span><br><span class="line">   would be <span class="built_in">set</span> to /cacti/</span><br><span class="line">*/</span><br><span class="line"><span class="variable">$url_path</span> = <span class="string">"/cacti/"</span>; <span class="comment">##url的设置，浏览器中在就可以http://serverip/cacti/访问了</span></span><br><span class="line">[root@server16 include]<span class="comment"># mysql -predhat</span></span><br><span class="line">Welcome to the MySQL monitor.  Commands end with ; or \g.</span><br><span class="line">Your MySQL connection id is <span class="number">10</span></span><br><span class="line">Server version: <span class="number">5.1</span>.<span class="number">71</span> Source distribution</span><br><span class="line"></span><br><span class="line">Copyright (c) <span class="number">2000</span>, <span class="number">2013</span>, Oracle and/or its affiliates. All rights reserved.</span><br><span class="line"></span><br><span class="line">Oracle is a registered trademark of Oracle Corporation and/or its</span><br><span class="line">affiliates. Other names may be trademarks of their respective</span><br><span class="line">owners.</span><br><span class="line"></span><br><span class="line">Type <span class="string">'help;'</span> or <span class="string">'\h'</span> <span class="keyword">for</span> help. Type <span class="string">'\c'</span> to clear the current input statement.</span><br><span class="line"></span><br><span class="line">mysql&gt; grant all on cacti.* to cacti@localhost identified by <span class="string">'redhat'</span>;  <span class="comment">##创建了一个对cacti库有所有权限的cacti用户，密码为redhat。</span></span><br><span class="line">Query OK, <span class="number">0</span> rows affected (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; flush privileges;</span><br><span class="line">Query OK, <span class="number">0</span> rows affected (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; create database cacti;</span><br><span class="line">Query OK, <span class="number">1</span> row affected (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; Ctrl-C -- <span class="built_in">exit</span>!</span><br><span class="line">Aborted</span><br><span class="line">[root@server16 include]<span class="comment"># cd ..</span></span><br><span class="line">[root@server16 cacti]<span class="comment"># mysql -ucacti -predhat cacti &lt; cacti.sql  ##导入cacti.sql</span></span><br><span class="line">[root@server16 cacti]<span class="comment"># useradd -u 1000 -d /var/www/html/cacti -M cacti ##新建一个cacti用户，并设定了uid,家目录</span></span><br><span class="line">[root@server16 cacti]<span class="comment"># su - cacti</span></span><br><span class="line">-bash-<span class="number">4.1</span>$ crontab <span class="operator">-e</span>  <span class="comment">##添加定时任务，每5分钟获取一次数据</span></span><br><span class="line">no crontab <span class="keyword">for</span> cacti - using an empty one</span><br><span class="line">crontab: installing new crontab</span><br><span class="line">-bash-<span class="number">4.1</span>$ crontab <span class="operator">-l</span></span><br><span class="line">*/<span class="number">5</span> * * * *   php  /var/www/html/cacti/poller.php &gt; /dev/null <span class="number">2</span>&gt;&amp;<span class="number">1</span></span><br><span class="line">-bash-<span class="number">4.1</span>$ <span class="built_in">logout</span></span><br><span class="line">[root@server16 cacti]<span class="comment"># /etc/init.d/httpd start</span></span><br><span class="line">Starting httpd:                                            [  OK  ]</span><br><span class="line">[root@server16 cacti]<span class="comment"># chkconfig httpd on</span></span><br></pre></td></tr></table></figure>
+<p><code>config.php</code><br><img src="/img/Cacti/Screenshot from 2016-02-24 10:22:24.png" alt="" title="Title"><br><strong>访问：<a href="http://172.25.0.16/cacti/" target="_blank" rel="external">http://172.25.0.16/cacti/</a></strong><br><img src="/img/Cacti/Screenshot from 2016-02-24 10:30:53.png" alt="" title="Title"><br><img src="/img/Cacti/Screenshot from 2016-02-24 10:31:51.png" alt="" title="Title"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@server16 cacti]<span class="comment"># yum install net-snmp-utils -y  ##解决网页中所报的错误,因为缺少net-snmp-utils。</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>刷新网页</strong><br><img src="/img/Cacti/Screenshot from 2016-02-24 10:33:10.png" alt="" title="Title"><br><strong>默认登陆用户名和密码都为admin</strong><br><img src="/img/Cacti/Screenshot from 2016-02-24 10:35:42.png" alt="" title="Title"><br><img src="/img/Cacti/Screenshot from 2016-02-24 10:36:05.png" alt="" title="Title"><br><img src="/img/Cacti/Screenshot from 2016-02-24 10:36:14.png" alt="" title="Title"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@server16 cacti]<span class="comment"># ll /var/www/html/cacti/rra  ##此目录中放的都是*.rrd文件(环形数据库)，cacti的图表信息都存在这里。</span></span><br><span class="line">total <span class="number">332</span></span><br><span class="line">-rw-r--r-- <span class="number">1</span> cacti cacti <span class="number">141640</span> Feb <span class="number">24</span> <span class="number">10</span>:<span class="number">45</span> localhost_load_1min_5.rrd</span><br><span class="line">-rw-r--r-- <span class="number">1</span> cacti cacti  <span class="number">47992</span> Feb <span class="number">24</span> <span class="number">10</span>:<span class="number">45</span> localhost_mem_buffers_3.rrd</span><br><span class="line">-rw-r--r-- <span class="number">1</span> cacti cacti  <span class="number">47992</span> Feb <span class="number">24</span> <span class="number">10</span>:<span class="number">45</span> localhost_mem_swap_4.rrd</span><br><span class="line">-rw-r--r-- <span class="number">1</span> cacti cacti  <span class="number">47992</span> Feb <span class="number">24</span> <span class="number">10</span>:<span class="number">45</span> localhost_proc_7.rrd</span><br><span class="line">-rw-r--r-- <span class="number">1</span> cacti cacti  <span class="number">47992</span> Feb <span class="number">24</span> <span class="number">10</span>:<span class="number">45</span> localhost_users_6.rrd</span><br></pre></td></tr></table></figure></p>
+<h3 id="u88AB_u76D1_u63A7_u7684_u8FDC_u7A0B_u4E3B_u673Aserver17"><a href="#u88AB_u76D1_u63A7_u7684_u8FDC_u7A0B_u4E3B_u673Aserver17" class="headerlink" title="被监控的远程主机server17"></a>被监控的远程主机server17</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">[root@server17 ~]<span class="comment"># yum install -y net-snmp net-snmp-utils ##安装所需要的软件</span></span><br><span class="line">[root@server17 ~]<span class="comment"># vim /etc/snmp/snmpd.conf  ##修改配置文件</span></span><br><span class="line"><span class="comment">#com2sec notConfigUser  default       public</span></span><br><span class="line">com2sec <span class="built_in">local</span>     localhost           public  <span class="comment">##这里的public表示组织名称，这个信息非常重要。</span></span><br><span class="line">com2sec mynetwork <span class="number">172.25</span>.<span class="number">0.0</span>/<span class="number">24</span>       public  <span class="comment">##172.25.0.0网段的都可以对这台服务器进行数据采集</span></span><br><span class="line"><span class="comment">#       groupName      securityModel securityName</span></span><br><span class="line"><span class="comment">#group   notConfigGroup v1           notConfigUser</span></span><br><span class="line"><span class="comment">#group   notConfigGroup v2c           notConfigUser</span></span><br><span class="line">group MyRWGroup v1         <span class="built_in">local</span></span><br><span class="line">group MyRWGroup v2c        <span class="built_in">local</span></span><br><span class="line">group MyRWGroup usm        <span class="built_in">local</span></span><br><span class="line">group MyROGroup v1         mynetwork</span><br><span class="line">group MyROGroup v2c        mynetwork</span><br><span class="line">group MyROGroup usm        mynetwork</span><br><span class="line"><span class="comment"># Make at least  snmpwalk -v 1 localhost -c public system fast again.</span></span><br><span class="line"><span class="comment">#       name           incl/excl     subtree         mask(optional)</span></span><br><span class="line">view    systemview    included   .<span class="number">1.3</span>.<span class="number">6.1</span>.<span class="number">2.1</span></span><br><span class="line">view    systemview    included   .<span class="number">1.3</span>.<span class="number">6.1</span>.<span class="number">2.1</span>.<span class="number">25.1</span>.<span class="number">1</span></span><br><span class="line">view all    included  .<span class="number">1</span></span><br><span class="line"><span class="comment">#access  notConfigGroup ""      any       noauth    exact  systemview none none</span></span><br><span class="line">access MyROGroup <span class="string">""</span>      any       noauth    <span class="number">0</span>      all    none   none</span><br><span class="line">access MyRWGroup <span class="string">""</span>      any       noauth    <span class="number">0</span>      all    all    all</span><br><span class="line">syslocation RHEL6.<span class="number">5</span>  <span class="comment">##主机系统版本</span></span><br><span class="line">syscontact Root &lt;itprogrammer@<span class="number">126</span>.com&gt;  <span class="comment">##管理员邮箱</span></span><br><span class="line">disk / <span class="number">10000</span>  <span class="comment">##开启这个可以监控根目录</span></span><br><span class="line">[root@server17 ~]<span class="comment"># /etc/init.d/snmpd start</span></span><br><span class="line">Starting snmpd:                                            [  OK  ]</span><br><span class="line">[root@server17 ~]<span class="comment"># snmpwalk -v 1  -c public localhost IP-MIB::ipAdEntIfIndex  ##出现如下表示ok</span></span><br><span class="line">IP-MIB::ipAdEntIfIndex.<span class="number">127.0</span>.<span class="number">0.1</span> = INTEGER: <span class="number">1</span></span><br><span class="line">IP-MIB::ipAdEntIfIndex.<span class="number">172.25</span>.<span class="number">0.17</span> = INTEGER: <span class="number">2</span></span><br><span class="line">[root@server17 ~]<span class="comment"># netstat -anulp | grep snmpd  ##161端口</span></span><br><span class="line">udp        <span class="number">0</span>      <span class="number">0</span> <span class="number">0.0</span>.<span class="number">0.0</span>:<span class="number">161</span>       <span class="number">0.0</span>.<span class="number">0.0</span>:*        <span class="number">1464</span>/snmpd</span><br></pre></td></tr></table></figure>
+<p><code>snmpd.conf</code><br><img src="/img/Cacti/Screenshot from 2016-02-24 11:18:34.png" alt="" title="Title"><br><img src="/img/Cacti/Screenshot from 2016-02-24 11:18:54.png" alt="" title="Title"><br><img src="/img/Cacti/Screenshot from 2016-02-24 11:19:20.png" alt="" title="Title"><br><img src="/img/Cacti/Screenshot from 2016-02-24 11:19:54.png" alt="" title="Title"><br><strong>在监控机server16上检测一下</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@server16 cacti]<span class="comment"># snmpwalk -v 1  -c public 172.25.0.17 IP-MIB::ipAdEntIfIndex  ##出现如下表示ok</span></span><br><span class="line">IP-MIB::ipAdEntIfIndex.<span class="number">127.0</span>.<span class="number">0.1</span> = INTEGER: <span class="number">1</span></span><br><span class="line">IP-MIB::ipAdEntIfIndex.<span class="number">172.25</span>.<span class="number">0.17</span> = INTEGER: <span class="number">2</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="u901A_u8FC7_u6D4F_u89C8_u5668_u8BBF_u95EEhttp_3A//172-25-0-16/cacti/_u8FDB_u884C_u6D4B_u8BD5"><a href="#u901A_u8FC7_u6D4F_u89C8_u5668_u8BBF_u95EEhttp_3A//172-25-0-16/cacti/_u8FDB_u884C_u6D4B_u8BD5" class="headerlink" title="通过浏览器访问http://172.25.0.16/cacti/进行测试"></a>通过浏览器访问<a href="http://172.25.0.16/cacti/进行测试" target="_blank" rel="external">http://172.25.0.16/cacti/进行测试</a></h3><p><img src="/img/Cacti/Screenshot from 2016-02-24 20:21:54.png" alt="" title="Title"><br><img src="/img/Cacti/Screenshot from 2016-02-24 20:29:49.png" alt="" title="Title"><br><img src="/img/Cacti/Screenshot from 2016-02-24 20:31:09.png" alt="" title="Title"><br><img src="/img/Cacti/Screenshot from 2016-02-24 20:31:33.png" alt="" title="Title"><br><img src="/img/Cacti/Screenshot from 2016-02-24 20:32:28.png" alt="" title="Title"><br><img src="/img/Cacti/Screenshot from 2016-02-24 20:32:38.png" alt="" title="Title"><br><img src="/img/Cacti/Screenshot from 2016-02-24 20:33:24.png" alt="" title="Title"><br><img src="/img/Cacti/Screenshot from 2016-02-24 20:34:15.png" alt="" title="Title"><br><img src="/img/Cacti/Screenshot from 2016-02-24 20:34:25.png" alt="" title="Title"><br><img src="/img/Cacti/Screenshot from 2016-02-24 20:35:13.png" alt="" title="Title"><br><img src="/img/Cacti/Screenshot from 2016-02-24 21:15:02.png" alt="" title="Title"><br><img src="/img/Cacti/Screenshot from 2016-02-24 21:29:13.png" alt="" title="Title"><br><img src="/img/Cacti/Screenshot from 2016-02-24 21:29:27.png" alt="" title="Title"><br><img src="/img/Cacti/Screenshot from 2016-02-24 21:29:39.png" alt="" title="Title"><br><code>Cacti的功能其实非常多，若要进一步去了解，可以自己查找相关说明书，这里只做一个初步的认识</code></p>
+<h2 id="Cacti_u5F00_u542Fspine"><a href="#Cacti_u5F00_u542Fspine" class="headerlink" title="Cacti开启spine"></a>Cacti开启spine</h2><h3 id="u76D1_u63A7_u673Aserver16-1"><a href="#u76D1_u63A7_u673Aserver16-1" class="headerlink" title="监控机server16"></a>监控机server16</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">[root@server16 cacti]<span class="comment"># cd /mnt/</span></span><br><span class="line">[root@server16 mnt]<span class="comment"># ls</span></span><br><span class="line">cacti-<span class="number">0.8</span>.<span class="number">8</span>f.tar.gz        monitor-v1.<span class="number">3</span>-<span class="number">1</span>.tgz</span><br><span class="line">cacti-spine-<span class="number">0.8</span>.<span class="number">8</span>f.tar.gz  php-snmp-<span class="number">5.3</span>.<span class="number">3</span>-<span class="number">26</span>.el6.x86_64.rpm</span><br><span class="line">[root@server16 mnt]<span class="comment"># tar zxf cacti-spine-0.8.8f.tar.gz  ##spine是多线程的,默认是cmd.php(单线程)</span></span><br><span class="line">[root@server16 mnt]<span class="comment"># yum install -y net-snmp-devel mysql-devel openssh-devel dos2unix autoconf automake binutils libtool gcc cpp glibc-headers kernel-headers glibc-devel  ##安装所需要的包(官方文档中有安装步骤)</span></span><br><span class="line">[root@server16 mnt]<span class="comment"># cd cacti-spine-0.8.8f  ##编译安装spine</span></span><br><span class="line">[root@server16 cacti-spine-<span class="number">0.8</span>.<span class="number">8</span>f]<span class="comment"># sh bootstrap  </span></span><br><span class="line">[root@server16 cacti-spine-<span class="number">0.8</span>.<span class="number">8</span>f]<span class="comment"># ./configure</span></span><br><span class="line">[root@server16 cacti-spine-<span class="number">0.8</span>.<span class="number">8</span>f]<span class="comment"># make</span></span><br><span class="line">[root@server16 cacti-spine-<span class="number">0.8</span>.<span class="number">8</span>f]<span class="comment"># make install</span></span><br><span class="line">[root@server16 cacti-spine-<span class="number">0.8</span>.<span class="number">8</span>f]<span class="comment"># cd /usr/local/spine/ ##spine的主目录</span></span><br><span class="line">[root@server16 spine]<span class="comment"># cd /usr/local/spine/etc</span></span><br><span class="line">[root@server16 etc]<span class="comment"># cp spine.conf.dist /etc/spine.conf  ##将配置文件放置到全局配置文件中，并更名为spine.conf</span></span><br><span class="line">[root@server16 etc]<span class="comment"># vim /etc/spine.conf  ##修改配置文件</span></span><br><span class="line">DB_Host         <span class="number">127.0</span>.<span class="number">0.1</span></span><br><span class="line">DB_Database     cacti</span><br><span class="line">DB_User         cacti  <span class="comment">##用户名</span></span><br><span class="line">DB_Pass         redhat <span class="comment">##密码</span></span><br><span class="line">DB_Port         <span class="number">3306</span></span><br><span class="line">[root@server16 etc]<span class="comment"># su - cacti</span></span><br><span class="line">-bash-<span class="number">4.1</span>$ /usr/<span class="built_in">local</span>/spine/bin/spine</span><br><span class="line">SPINE: Using spine config file [/etc/spine.conf]  <span class="comment">##表示配置ok了</span></span><br><span class="line">SPINE: Version <span class="number">0.8</span>.<span class="number">8</span>f starting</span><br><span class="line">SPINE: Time: <span class="number">0.0978</span> s, Threads: <span class="number">5</span>, Hosts: <span class="number">3</span></span><br><span class="line">-bash-<span class="number">4.1</span>$ <span class="built_in">logout</span></span><br></pre></td></tr></table></figure>
+<p><code>spine.conf</code><br><img src="/img/Cacti/Screenshot from 2016-02-24 21:39:35.png" alt="" title="Title"><br><strong>在浏览器中访问<a href="http://172.25.0.16/cacti/，settings中的Poller中的poller" target="_blank" rel="external">http://172.25.0.16/cacti/，settings中的Poller中的poller</a> type改为spine,在Paths中的Spine Poller File Path 写上路径/usr/local/spine/bin/spine，设置好后save。</strong><br><img src="/img/Cacti/Screenshot from 2016-02-24 21:47:12.png" alt="" title="Title"><br><img src="/img/Cacti/Screenshot from 2016-02-24 21:48:32.png" alt="" title="Title"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@server16 etc]<span class="comment"># cd /var/www/html/cacti/log  ##查看日志</span></span><br><span class="line">[root@server16 <span class="built_in">log</span>]<span class="comment"># tail -f cacti.log</span></span><br><span class="line"><span class="number">02</span>/<span class="number">24</span>/<span class="number">2016</span> <span class="number">09</span>:<span class="number">55</span>:<span class="number">01</span> PM - SYSTEM STATS: Time:<span class="number">0.1133</span> Method:spine Processes:<span class="number">1</span> Threads:<span class="number">1</span> Hosts:<span class="number">3</span> HostsPerProcess:<span class="number">3</span> DataSources:<span class="number">18</span> RRDsProcessed:<span class="number">16</span>  <span class="comment">##证明spine加载成功</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Cacti_u6DFB_u52A0_u63D2_u4EF6monitor"><a href="#Cacti_u6DFB_u52A0_u63D2_u4EF6monitor" class="headerlink" title="Cacti添加插件monitor"></a>Cacti添加插件monitor</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@server16 mnt]<span class="comment"># tar zxf monitor-v1.3-1.tgz</span></span><br><span class="line">[root@server16 mnt]<span class="comment"># tar zxf monitor-v1.3-1.tgz  -C /var/www/html/cacti/plugins  ##把插件直接解压到cacti的插件目录就行</span></span><br></pre></td></tr></table></figure>
+<p><strong>在浏览器访问ip/cacti–&gt;Plugin Management–&gt;安装–&gt;开启–&gt;点击monitor使用</strong><br><img src="/img/Cacti/Screenshot from 2016-02-24 22:05:25.png" alt="" title="Title"><br><img src="/img/Cacti/Screenshot from 2016-02-24 22:05:39.png" alt="" title="Title"><br><img src="/img/Cacti/Screenshot from 2016-02-24 22:05:50.png" alt="" title="Title"><br><img src="/img/Cacti/Screenshot from 2016-02-24 22:06:00.png" alt="" title="Title"></p>
+<h3 id="u5C0F_u7ED3"><a href="#u5C0F_u7ED3" class="headerlink" title="小结"></a>小结</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#37319;&#38598;&#65306;crontab --&#62;poller.php --&#62; php-snmp----------------&#62;snmpd(udp)--&#62;host&#10;&#23384;&#20648;&#65306;rrdtool ,rra&#20013;&#30340;*.rrd&#10;&#34920;&#31034;&#65306;php--&#62;php-mysql(rrdtool)--&#62;mysql(&#23384;&#20648;&#30528;&#20027;&#26426;&#21517;,&#20027;&#26426;ip,snmp&#22242;&#20307;&#21517;,&#31471;&#21475;&#21495;,rrd&#19982;&#20027;&#26426;&#21517;&#31561;&#30340;&#23545;&#24212;&#20851;&#31995;)--&#62;web--&#62;user</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/02/24/Cacti-monitoring-platform/">Cacti-monitoring-platform</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Wang Chi 的个人博客">Wang Chi</a></p>
+        <p><span>发布时间:</span>2016年02月24日 - 09时17分</p>
+        <p><span>最后更新:</span>2016年02月24日 - 22时26分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/02/24/Cacti-monitoring-platform/" title="Cacti-monitoring-platform">http://yoursite.com/2016/02/24/Cacti-monitoring-platform/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/24/Cacti-monitoring-platform/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/02/24/Nagios-monitoring-platform/">
+                    Nagios-monitoring-platform
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/02/23/MySQL/">
+                    MySQL
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Red_Hat_Enterprise_Linux_6-5"><span class="toc-number">1.</span> <span class="toc-text">Red Hat Enterprise Linux 6.5</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cacti_u5B98_u7F51"><span class="toc-number">1.1.</span> <span class="toc-text">Cacti官网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5B9E_u9A8C_u73AF_u5883"><span class="toc-number">1.2.</span> <span class="toc-text">实验环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u76D1_u63A7_u673Aserver16"><span class="toc-number">1.3.</span> <span class="toc-text">监控机server16</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u88AB_u76D1_u63A7_u7684_u8FDC_u7A0B_u4E3B_u673Aserver17"><span class="toc-number">1.4.</span> <span class="toc-text">被监控的远程主机server17</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u901A_u8FC7_u6D4F_u89C8_u5668_u8BBF_u95EEhttp_3A//172-25-0-16/cacti/_u8FDB_u884C_u6D4B_u8BD5"><span class="toc-number">1.5.</span> <span class="toc-text">通过浏览器访问http://172.25.0.16/cacti/进行测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cacti_u5F00_u542Fspine"><span class="toc-number">2.</span> <span class="toc-text">Cacti开启spine</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u76D1_u63A7_u673Aserver16-1"><span class="toc-number">2.1.</span> <span class="toc-text">监控机server16</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cacti_u6DFB_u52A0_u63D2_u4EF6monitor"><span class="toc-number">2.2.</span> <span class="toc-text">Cacti添加插件monitor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5C0F_u7ED3"><span class="toc-number">2.3.</span> <span class="toc-text">小结</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+    <div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/02/24/Nagios-monitoring-platform/" title="上一篇: Nagios-monitoring-platform">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/02/23/MySQL/" title="下一篇: MySQL">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/24/Nagios-monitoring-platform/">Nagios-monitoring-platform</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/24/Cacti-monitoring-platform/">Cacti-monitoring-platform</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/23/MySQL/">MySQL</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/22/nginx-tomcat-memcached/">nginx+tomcat+memcached</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/22/tomcat-jdk/">tomcat+jdk</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/21/PHP/">PHP</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/20/Nginx/">Nginx</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/19/lanmp-separation/">lanmp-separation</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/18/lanmp/">lanmp</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/17/encapsulate-virtual-machine/">Encapsulate-virtual-machine</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/14/RH124-unit15/">15.Using Virtualized Systems</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/RH124-unit14/">14.Accessing Linux File Systems</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/RH124-unit13/">13.Installingand Updating Software Packages</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/13/RH124-unit12/">12.Archiving and Copying Files Between Systems</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit11/">11.Managing Red Hat Enterprise Linux Networking</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit10/">10.Analyzing and Storing Logs</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit9/">9.Configuring and Securing OpenSSH Service</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit8/">8.Controlling Services and Daemons</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit7/">7.Monitoring and Managing Linux Processes</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/09/RH124-unit6/">6.Controlling Access to Files with Linux File System Permissions</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/RH124-unit5/">5.Managing Local Linux Users and Groups</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/03/RH124-unit4/">4.Creating, Viewing, and Editing Text Files</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit3/">3.Getting Help in Red Hat Enterprise Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit2/">2.Managing Files Form The Command Line</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/RH124-unit1/">1.Accessing The Command Line</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/myfirst/">Wellcome to my blog</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/hello-world/">Hello World</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 Wang Chi
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
