@@ -219,6 +219,72 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-nginx-tomcat-memcached" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/22/nginx-tomcat-memcached/" class="article-date">
+      <time datetime="2016-02-22T13:36:05.000Z" itemprop="datePublished">2016-02-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/22/nginx-tomcat-memcached/">nginx+tomcat+memcached</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="Red_Hat_Enterprise_Linux_6-5"><a href="#Red_Hat_Enterprise_Linux_6-5" class="headerlink" title="Red Hat Enterprise Linux 6.5"></a>Red Hat Enterprise Linux 6.5</h2><h2 id="nginx+tomcat+memcached"><a href="#nginx+tomcat+memcached" class="headerlink" title="nginx+tomcat+memcached"></a>nginx+tomcat+memcached</h2><h3 id="u73AF_u5883_u914D_u7F6E"><a href="#u73AF_u5883_u914D_u7F6E" class="headerlink" title="环境配置"></a>环境配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Environment : selinux and iptables disabled&#10;nginx server: server10.example.com : 172.25.0.10&#10;tomcat+jdk+memcached : server11.example.com : 172.25.0.11&#10;tomcat+jdk+memcached : server12.example.com : 172.25.0.12</span><br></pre></td></tr></table></figure>
+<h3 id="u539F_u7406"><a href="#u539F_u7406" class="headerlink" title="原理"></a>原理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">               |-----&#62;tomcat1-----m2&#10;-----&#62;nginx----|      ##&#20132;&#21449;&#23384;&#20648;&#65292;&#23601;&#19981;&#20250;&#20986;&#29616;&#22240;&#20026;&#26576;&#19968;&#21488;tomcat&#22351;&#25481;&#20043;&#21518;&#24403;&#21069;session&#20002;&#22833;&#10;               |-----&#62;tomcat2-----m1</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/linux-集群架构篇/">linux 集群架构篇</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-集群架构篇/">linux 集群架构篇</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/02/22/nginx-tomcat-memcached/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-tomcat-jdk" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -799,73 +865,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/02/13/RH124-unit13/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-RH124-unit12" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/13/RH124-unit12/" class="article-date">
-      <time datetime="2016-02-13T11:41:26.000Z" itemprop="datePublished">2016-02-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/13/RH124-unit12/">12.Archiving and Copying Files Between Systems</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h2 id="u6253_u5305"><a href="#u6253_u5305" class="headerlink" title="打包"></a>打包</h2><h3 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h3><blockquote>
-<p>打包表示把一堆文件变成一个<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">tar  <span class="operator">-f</span>   <span class="comment">##指定生成包的名字</span></span><br><span class="line">tar  -c   <span class="comment">##创建包</span></span><br><span class="line">tar  -v   <span class="comment">##显示创建过程</span></span><br><span class="line">tar  -t   <span class="comment">##查看包中内容</span></span><br><span class="line">tar  -x   <span class="comment">##解包</span></span><br><span class="line"></span><br><span class="line">tar  -rf  包名 文件名              <span class="comment">##添加文件到包中</span></span><br><span class="line">tar  <span class="operator">-f</span>   包名 --delete filename  <span class="comment">##删除包中指定文件</span></span><br><span class="line">tar  <span class="operator">-f</span>   包名 --get    filename  <span class="comment">##取出包中指定文件</span></span><br><span class="line"></span><br><span class="line">tar -cvf  包名  要打包的目录 <span class="comment">##创建包</span></span><br><span class="line">tar -xvf  包名             <span class="comment">##解包</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/13/RH124-unit12/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
