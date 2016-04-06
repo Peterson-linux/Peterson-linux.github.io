@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>15.Using Virtualized Systems | Hexo</title>
+  <title>USB-input,output-error | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Red Hat Enterprise Linux 7虚拟机安装1yum install qemu-kvm qemu-ing&amp;#9; ##&amp;#23433;&amp;#35013;&amp;#34394;&amp;#25311;&amp;#26426;&amp;#26680;&amp;#24515;&amp;#32452;&amp;#20214;&amp;#10;yum install virt-manager libvirt libvirt-python-virtins">
+  <meta name="description" content="U盘报错解决方案Input/output error可能发生此问题的情况：在对U盘进行操作时（读、写）时，突然拔掉U盘或者U盘非正常弹出，那么当下一次再操作U盘中的文件时，出现‘Input/output error’。这时这些文件既无法打开也无法删除。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="15.Using Virtualized Systems">
-<meta property="og:url" content="http://yoursite.com/2016/02/14/RH124-unit15/index.html">
+<meta property="og:title" content="USB-input,output-error">
+<meta property="og:url" content="http://yoursite.com/2016/04/04/USB-input-output-error/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Red Hat Enterprise Linux 7虚拟机安装1yum install qemu-kvm qemu-ing&amp;#9; ##&amp;#23433;&amp;#35013;&amp;#34394;&amp;#25311;&amp;#26426;&amp;#26680;&amp;#24515;&amp;#32452;&amp;#20214;&amp;#10;yum install virt-manager libvirt libvirt-python-virtins">
-<meta property="og:updated_time" content="2016-02-14T09:49:13.179Z">
+<meta property="og:description" content="U盘报错解决方案Input/output error可能发生此问题的情况：在对U盘进行操作时（读、写）时，突然拔掉U盘或者U盘非正常弹出，那么当下一次再操作U盘中的文件时，出现‘Input/output error’。这时这些文件既无法打开也无法删除。">
+<meta property="og:image" content="http://yoursite.com/img/USB-input,output-error/Screenshot from 2016-04-04 21:34:17.png">
+<meta property="og:image" content="http://yoursite.com/img/USB-input,output-error/Screenshot from 2016-04-04 21:54:20.png">
+<meta property="og:image" content="http://yoursite.com/img/USB-input,output-error/Screenshot from 2016-04-04 21:54:39.png">
+<meta property="og:updated_time" content="2016-04-04T13:58:35.399Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="15.Using Virtualized Systems">
-<meta name="twitter:description" content="Red Hat Enterprise Linux 7虚拟机安装1yum install qemu-kvm qemu-ing&amp;#9; ##&amp;#23433;&amp;#35013;&amp;#34394;&amp;#25311;&amp;#26426;&amp;#26680;&amp;#24515;&amp;#32452;&amp;#20214;&amp;#10;yum install virt-manager libvirt libvirt-python-virtins">
+<meta name="twitter:title" content="USB-input,output-error">
+<meta name="twitter:description" content="U盘报错解决方案Input/output error可能发生此问题的情况：在对U盘进行操作时（读、写）时，突然拔掉U盘或者U盘非正常弹出，那么当下一次再操作U盘中的文件时，出现‘Input/output error’。这时这些文件既无法打开也无法删除。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -215,11 +218,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-RH124-unit15" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-USB-input-output-error" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/14/RH124-unit15/" class="article-date">
-      <time datetime="2016-02-14T09:38:54.000Z" itemprop="datePublished">2016-02-14</time>
+      <a href="/2016/04/04/USB-input-output-error/" class="article-date">
+      <time datetime="2016-04-04T13:20:33.000Z" itemprop="datePublished">2016-04-04</time>
 </a>
     </div>
   
@@ -232,7 +235,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      15.Using Virtualized Systems
+      USB-input,output-error
     </h1>
   
 
@@ -241,13 +244,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
+    <a class="article-category-link" href="/categories/linux-daily-fault/">linux daily fault</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-daily-fault/">linux daily fault</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -257,14 +260,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="u865A_u62DF_u673A_u5B89_u88C5"><a href="#u865A_u62DF_u673A_u5B89_u88C5" class="headerlink" title="虚拟机安装"></a>虚拟机安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install qemu-kvm qemu-ing&#9; ##&#23433;&#35013;&#34394;&#25311;&#26426;&#26680;&#24515;&#32452;&#20214;&#10;yum install virt-manager libvirt libvirt-python-virtinst libvirtnt   ##&#23433;&#35013;&#34394;&#25311;&#26426;&#21069;&#31471;&#31649;&#29702;&#24037;&#20855;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="u865A_u62DF_u673A_u7BA1_u7406"><a href="#u865A_u62DF_u673A_u7BA1_u7406" class="headerlink" title="虚拟机管理"></a>虚拟机管理</h3><blockquote>
-<p>注意：在此命令执行时图形和用户要保持一致<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virt-manager&#9;##&#24320;&#21551;&#34394;&#25311;&#26426;&#22270;&#24418;&#31649;&#29702;</span><br></pre></td></tr></table></figure></p>
-<p>注意：以下命令只能由超级用户执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">virsh list             <span class="comment">##查看开启的虚拟机</span></span><br><span class="line">virsh list --all       <span class="comment">##查看所有虚拟机</span></span><br><span class="line">virsh start    虚拟机   <span class="comment">##开启</span></span><br><span class="line">virsh shutdown 虚拟机   <span class="comment">##关闭</span></span><br><span class="line">virsh destroy  虚拟机   <span class="comment">##强制关闭虚拟机</span></span><br><span class="line">virt-viewer -参数      <span class="comment">##显示虚拟机信息</span></span><br><span class="line"></span><br><span class="line">virsh create 前端管理文件  <span class="comment">##启动此文件管理的虚拟机</span></span><br><span class="line">virsh define 前端管理文件  <span class="comment">##恢复此文件管理的虚拟机</span></span><br><span class="line">virsh undefine 虚拟机     <span class="comment">##删除虚拟机前端管理</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#34394;&#25311;&#26426;&#21069;&#31471;&#31649;&#29702;&#25991;&#20214;&#22312;/etc/libvirt/qemu&#30446;&#24405;&#10;&#34394;&#25311;&#26426;&#23384;&#20648;&#35774;&#22791;&#22312;/var/lib/libvirt/images&#30446;&#24405;</span><br></pre></td></tr></table></figure>
-<h3 id="u901A_u8FC7_u955C_u50CF_u5B89_u88C5_u865A_u62DF_u673A"><a href="#u901A_u8FC7_u955C_u50CF_u5B89_u88C5_u865A_u62DF_u673A" class="headerlink" title="通过镜像安装虚拟机"></a>通过镜像安装虚拟机</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#27493;&#39588;&#65306;&#10;1.&#22312;virtual machine manager&#37324;&#36873;&#25321;&#26032;&#24314;&#34394;&#25311;&#26426;&#65292;&#32473;&#34394;&#25311;&#26426;&#21629;&#21517;&#65292;&#24182;&#36873;&#25321;local install media&#10;2.&#22312;use iso image&#20013;&#36873;&#20837;&#26412;&#26426;&#38236;&#20687;&#30340;&#23384;&#25918;&#20301;&#32622;&#10;3.&#30913;&#30424;&#20998;&#21306;&#65292;/boot 200m&#65292;swap 500m&#65288;&#33509;&#26159;&#30495;&#26426;&#21017;&#26159;&#20869;&#23384;&#30340;&#20004;&#20493;&#65289;&#65292;&#21097;&#20313;&#20840;&#37096;&#20998;&#32473;/&#10;4.&#23436;&#25104;&#30456;&#20851;&#36873;&#25321;&#65292;&#30830;&#23450;&#23433;&#35013;</span><br></pre></td></tr></table></figure>
+        <h2 id="U_u76D8_u62A5_u9519_u89E3_u51B3_u65B9_u6848"><a href="#U_u76D8_u62A5_u9519_u89E3_u51B3_u65B9_u6848" class="headerlink" title="U盘报错解决方案"></a>U盘报错解决方案</h2><h3 id="Input/output_error"><a href="#Input/output_error" class="headerlink" title="Input/output error"></a>Input/output error</h3><p><strong>可能发生此问题的情况：</strong><br><code>在对U盘进行操作时（读、写）时，突然拔掉U盘或者U盘非正常弹出，那么当下一次再操作U盘中的文件时，出现‘Input/output error’。这时这些文件既无法打开也无法删除。</code><br><a id="more"></a><br><img src="/img/USB-input,output-error/Screenshot from 2016-04-04 21:34:17.png" alt="" title="Title"><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">[root@foundation westos-base]<span class="comment"># dmesg  ##用来显示内核环缓冲区（kernel-ring buffer）内容，内核将各种消息存放在这里。</span></span><br><span class="line">[ <span class="number">7223.770844</span>] usb <span class="number">3</span>-<span class="number">2</span>: New USB device found, idVendor=<span class="number">0781</span>, idProduct=<span class="number">5581</span></span><br><span class="line">[ <span class="number">7223.770849</span>] usb <span class="number">3</span>-<span class="number">2</span>: New USB device strings: Mfr=<span class="number">1</span>, Product=<span class="number">2</span>, SerialNumber=<span class="number">3</span></span><br><span class="line">[ <span class="number">7223.770852</span>] usb <span class="number">3</span>-<span class="number">2</span>: Product: Ultra</span><br><span class="line">[ <span class="number">7223.770855</span>] usb <span class="number">3</span>-<span class="number">2</span>: Manufacturer: SanDisk</span><br><span class="line">[ <span class="number">7223.770858</span>] usb <span class="number">3</span>-<span class="number">2</span>: SerialNumber: <span class="number">4</span>C530001010914111574</span><br><span class="line">[ <span class="number">7223.771221</span>] usb-storage <span class="number">3</span>-<span class="number">2</span>:<span class="number">1.0</span>: USB Mass Storage device detected</span><br><span class="line">[ <span class="number">7223.771664</span>] scsi8 : usb-storage <span class="number">3</span>-<span class="number">2</span>:<span class="number">1.0</span></span><br><span class="line">[ <span class="number">7224.773958</span>] scsi <span class="number">8</span>:<span class="number">0</span>:<span class="number">0</span>:<span class="number">0</span>: Direct-Access     SanDisk  Ultra            <span class="number">1.00</span> PQ: <span class="number">0</span> ANSI: <span class="number">6</span></span><br><span class="line">[ <span class="number">7224.774362</span>] sd <span class="number">8</span>:<span class="number">0</span>:<span class="number">0</span>:<span class="number">0</span>: Attached scsi generic sg2 <span class="built_in">type</span> <span class="number">0</span></span><br><span class="line">[ <span class="number">7224.775392</span>] sd <span class="number">8</span>:<span class="number">0</span>:<span class="number">0</span>:<span class="number">0</span>: [sdb] <span class="number">30031250</span> <span class="number">512</span>-byte logical blocks: (<span class="number">15.3</span> GB/<span class="number">14.3</span> GiB)</span><br><span class="line">[ <span class="number">7224.777721</span>] sd <span class="number">8</span>:<span class="number">0</span>:<span class="number">0</span>:<span class="number">0</span>: [sdb] Write Protect is off</span><br><span class="line">[ <span class="number">7224.777734</span>] sd <span class="number">8</span>:<span class="number">0</span>:<span class="number">0</span>:<span class="number">0</span>: [sdb] Mode Sense: <span class="number">43</span> <span class="number">00</span> <span class="number">00</span> <span class="number">00</span></span><br><span class="line">[ <span class="number">7224.778165</span>] sd <span class="number">8</span>:<span class="number">0</span>:<span class="number">0</span>:<span class="number">0</span>: [sdb] Write cache: disabled, <span class="built_in">read</span> cache: enabled, doesn<span class="string">'t support DPO or FUA</span><br><span class="line">[ 7224.787432]  sdb: sdb1</span><br><span class="line">[ 7224.788755] sd 8:0:0:0: [sdb] Attached SCSI removable disk</span><br><span class="line">[ 7224.968436] FAT-fs (sdb1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.</span><br><span class="line">[ 7225.235022] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 0)</span><br><span class="line">[ 7225.235027] FAT-fs (sdb1): Filesystem has been set read-only</span><br><span class="line">[ 7225.254486] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 0)</span><br><span class="line">[ 7225.256615] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 0)</span><br><span class="line">[ 7225.669752] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 373541549)</span><br><span class="line">[ 7225.669766] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 373541549)</span><br><span class="line">[ 7225.669769] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 373541549)</span><br><span class="line">[ 7225.669772] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 373541549)</span><br><span class="line">[ 7225.669775] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 373541549)</span><br><span class="line">[ 7225.669777] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 373541549)</span><br><span class="line">[ 7225.669790] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 373541549)</span><br><span class="line">[ 7239.747475] fat_get_cluster: 778 callbacks suppressed</span><br><span class="line">[ 7239.747481] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 0)</span><br><span class="line">[ 7239.773868] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 0)</span><br><span class="line">[ 7250.000371] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 0)</span><br><span class="line">[ 7250.000666] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 0)</span><br><span class="line">[ 7276.203383] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 0)</span><br><span class="line">[ 7276.203509] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 0)</span><br><span class="line">[ 7276.203534] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 0)</span><br><span class="line">[ 7276.203558] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 0)</span><br><span class="line">[ 7276.203579] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 0)</span><br><span class="line">[ 7276.203602] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 0)</span><br><span class="line">[ 7389.083891] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 0)</span><br><span class="line">[ 7389.084017] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 0)</span><br><span class="line">[ 7389.084043] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 0)</span><br><span class="line">[ 7389.084066] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 0)</span><br><span class="line">[ 7389.084087] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 0)</span><br><span class="line">[ 7389.084109] FAT-fs (sdb1): error, fat_get_cluster: invalid cluster chain (i_pos 0)</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>解决方案：</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@foundation ~]<span class="comment"># dosfsck -v -a /dev/sdb1</span></span><br><span class="line">[root@foundation ~]<span class="comment"># cd /run/media/root/907F-B255  ##进入U盘</span></span><br><span class="line">[root@foundation <span class="number">907</span>F-B255]<span class="comment"># rm -f *.REC  ##删除这些文件</span></span><br><span class="line">[root@foundation <span class="number">907</span>F-B255]<span class="comment"># ls</span></span><br><span class="line">westos-base</span><br><span class="line">[root@foundation <span class="number">907</span>F-B255]<span class="comment"># cd westos-base/</span></span><br><span class="line">[root@foundation westos-base]<span class="comment"># ls  ##文件已经正常</span></span><br><span class="line"><span class="number">10.11</span>picture  <span class="number">10.18</span>picture  <span class="number">10.24</span>picture  <span class="number">10.2</span>picture   <span class="number">10.3</span>picture</span><br><span class="line"><span class="number">10.17</span>picture  <span class="number">10.1</span>picture   <span class="number">10.25</span>picture  <span class="number">10.31</span>picture</span><br></pre></td></tr></table></figure></p>
+<p><img src="/img/USB-input,output-error/Screenshot from 2016-04-04 21:54:20.png" alt="" title="Title"><br><img src="/img/USB-input,output-error/Screenshot from 2016-04-04 21:54:39.png" alt="" title="Title"></p>
 
       
     </div>
@@ -273,13 +271,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/02/14/RH124-unit15/">15.Using Virtualized Systems</a></p>
+        <p><span>本文标题:</span><a href="/2016/04/04/USB-input-output-error/">USB-input,output-error</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Wang Chi 的个人博客">Wang Chi</a></p>
-        <p><span>发布时间:</span>2016年02月14日 - 17时38分</p>
-        <p><span>最后更新:</span>2016年02月14日 - 17时49分</p>
+        <p><span>发布时间:</span>2016年04月04日 - 21时20分</p>
+        <p><span>最后更新:</span>2016年04月04日 - 21时58分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/02/14/RH124-unit15/" title="15.Using Virtualized Systems">http://yoursite.com/2016/02/14/RH124-unit15/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/14/RH124-unit15/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/04/04/USB-input-output-error/" title="USB-input,output-error">http://yoursite.com/2016/04/04/USB-input-output-error/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/04/04/USB-input-output-error/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -292,16 +290,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/02/17/encapsulate-virtual-machine/">
-                    Encapsulate-virtual-machine
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/02/13/RH124-unit14/">
-                    14.Accessing Linux File Systems
+                <a href="/2016/03/10/Pacemaker-MFS/">
+                    Pacemaker+Corosync+MFS
                 </a>
             </div>
         
@@ -312,7 +304,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Red_Hat_Enterprise_Linux_7"><span class="toc-number">1.</span> <span class="toc-text">Red Hat Enterprise Linux 7</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u865A_u62DF_u673A_u5B89_u88C5"><span class="toc-number">1.1.</span> <span class="toc-text">虚拟机安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u865A_u62DF_u673A_u7BA1_u7406"><span class="toc-number">1.2.</span> <span class="toc-text">虚拟机管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u901A_u8FC7_u955C_u50CF_u5B89_u88C5_u865A_u62DF_u673A"><span class="toc-number">1.3.</span> <span class="toc-text">通过镜像安装虚拟机</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#U_u76D8_u62A5_u9519_u89E3_u51B3_u65B9_u6848"><span class="toc-number">1.</span> <span class="toc-text">U盘报错解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Input/output_error"><span class="toc-number">1.1.</span> <span class="toc-text">Input/output error</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -380,15 +372,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/02/17/encapsulate-virtual-machine/" title="上一篇: Encapsulate-virtual-machine">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/02/13/RH124-unit14/" title="下一篇: 14.Accessing Linux File Systems">
+            <a href="/2016/03/10/Pacemaker-MFS/" title="下一篇: Pacemaker+Corosync+MFS">
                 <i class="fa fa-angle-right"></i>
             </a>
         
