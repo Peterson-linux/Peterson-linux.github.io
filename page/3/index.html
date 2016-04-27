@@ -219,6 +219,71 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-RH124-unit14" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/13/RH124-unit14/" class="article-date">
+      <time datetime="2016-02-13T12:48:18.000Z" itemprop="datePublished">2016-02-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/13/RH124-unit14/">14.Accessing Linux File Systems</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="u8BBE_u5907_u7684_u8BC6_u522B"><a href="#u8BBE_u5907_u7684_u8BC6_u522B" class="headerlink" title="设备的识别"></a>设备的识别</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/dev/sda&#9;##&#31995;&#32479;&#20013;&#30340;&#31532;&#19968;&#22359;&#20018;&#21475;&#30828;&#30424;&#10;/dev/hda&#9;##&#31995;&#32479;&#20013;&#31532;&#19968;&#22359;&#24182;&#21475;&#30828;&#30424;&#10;/dev/hdb&#9;##&#31995;&#32479;&#20013;&#31532;&#20108;&#22359;&#24182;&#21475;&#30828;&#30424;&#10;/dev/cdrom&#9;##&#31995;&#32479;&#20809;&#39537;&#10;/dev/mapper/xxx&#9;##&#34394;&#25311;&#35774;&#22791;</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/02/13/RH124-unit14/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-RH124-unit13" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -837,73 +902,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/02/05/RH124-unit5/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-RH124-unit4" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/03/RH124-unit4/" class="article-date">
-      <time datetime="2016-02-03T11:30:30.000Z" itemprop="datePublished">2016-02-03</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/03/RH124-unit4/">4.Creating, Viewing, and Editing Text Files</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="u5982_u4F55_u7BA1_u7406_u8F93_u51FA"><a href="#u5982_u4F55_u7BA1_u7406_u8F93_u51FA" class="headerlink" title="如何管理输出"></a>如何管理输出</h3><blockquote>
-<p>1表示正确，2表示错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /etc -name passwd&#9;&#62; file&#9;       ##&#37325;&#23450;&#21521;&#27491;&#30830;&#36755;&#20986;&#10;find /etc -name passwd&#9;2&#62; file&#9;       ##&#37325;&#23450;&#21521;&#38169;&#35823;&#36755;&#20986;&#10;find /etc -name passwd&#9;&#38;&#62; file&#9;       ##&#37325;&#23450;&#21521;&#25152;&#26377;&#36755;&#20986;&#10;find /etc -name passwd&#9;&#62;&#62; file&#9;       ##&#36861;&#21152;&#27491;&#30830;&#36755;&#20986;&#10;find /etc -name passwd&#9;2&#62;&#62; file       ##&#36861;&#21152;&#38169;&#35823;&#36755;&#20986;&#10;find /etc -name passwd&#9;&#38;&#62;&#62; file       ##&#36861;&#21152;&#36755;&#20986;&#10;find /etc -name passwd&#9;&#62; file 2&#62;&#38;1    ##&#37325;&#26032;&#23450;&#20041;&#38169;&#35823;&#36755;&#20986;&#20026;&#27491;&#30830;&#10;find /etc -name passwd  &#62; file 1&#62;&#38;2    ##&#37325;&#26032;&#23450;&#20041;&#27491;&#30830;&#36755;&#20986;&#20026;&#38169;&#35823;&#10;find /etc -name passwd  &#62; /dev/null    ##&#25172;&#25481;&#36755;&#20986;&#32467;&#26524;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/03/RH124-unit4/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
