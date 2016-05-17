@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>14.Accessing Linux File Systems | Hexo</title>
+  <title>Python入门 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Red Hat Enterprise Linux 7设备的识别1/dev/sda&amp;#9;##&amp;#31995;&amp;#32479;&amp;#20013;&amp;#30340;&amp;#31532;&amp;#19968;&amp;#22359;&amp;#20018;&amp;#21475;&amp;#30828;&amp;#30424;&amp;#10;/dev/hda&amp;#9;##&amp;#31995;&amp;#32479;&amp;#20013;&amp;#31532;&amp;#19968;&amp;#22359">
+  <meta name="description">
 <meta property="og:type" content="article">
-<meta property="og:title" content="14.Accessing Linux File Systems">
-<meta property="og:url" content="http://yoursite.com/2016/02/13/RH124-unit14/index.html">
+<meta property="og:title" content="Python入门">
+<meta property="og:url" content="http://yoursite.com/2016/05/14/Python入门/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Red Hat Enterprise Linux 7设备的识别1/dev/sda&amp;#9;##&amp;#31995;&amp;#32479;&amp;#20013;&amp;#30340;&amp;#31532;&amp;#19968;&amp;#22359;&amp;#20018;&amp;#21475;&amp;#30828;&amp;#30424;&amp;#10;/dev/hda&amp;#9;##&amp;#31995;&amp;#32479;&amp;#20013;&amp;#31532;&amp;#19968;&amp;#22359">
-<meta property="og:updated_time" content="2016-02-14T09:36:42.218Z">
+<meta property="og:description">
+<meta property="og:updated_time" content="2016-05-14T13:35:13.872Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="14.Accessing Linux File Systems">
-<meta name="twitter:description" content="Red Hat Enterprise Linux 7设备的识别1/dev/sda&amp;#9;##&amp;#31995;&amp;#32479;&amp;#20013;&amp;#30340;&amp;#31532;&amp;#19968;&amp;#22359;&amp;#20018;&amp;#21475;&amp;#30828;&amp;#30424;&amp;#10;/dev/hda&amp;#9;##&amp;#31995;&amp;#32479;&amp;#20013;&amp;#31532;&amp;#19968;&amp;#22359">
+<meta name="twitter:title" content="Python入门">
+<meta name="twitter:description">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -215,11 +215,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-RH124-unit14" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Python入门" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/13/RH124-unit14/" class="article-date">
-      <time datetime="2016-02-13T12:48:18.000Z" itemprop="datePublished">2016-02-13</time>
+      <a href="/2016/05/14/Python入门/" class="article-date">
+      <time datetime="2016-05-14T13:35:13.000Z" itemprop="datePublished">2016-05-14</time>
 </a>
     </div>
   
@@ -232,7 +232,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      14.Accessing Linux File Systems
+      Python入门
     </h1>
   
 
@@ -240,16 +240,8 @@
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
-    </div>
-
 
         
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
-    </div>
-
         <div class="clearfix"></div>
       </div>
       
@@ -257,30 +249,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="u8BBE_u5907_u7684_u8BC6_u522B"><a href="#u8BBE_u5907_u7684_u8BC6_u522B" class="headerlink" title="设备的识别"></a>设备的识别</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/dev/sda&#9;##&#31995;&#32479;&#20013;&#30340;&#31532;&#19968;&#22359;&#20018;&#21475;&#30828;&#30424;&#10;/dev/hda&#9;##&#31995;&#32479;&#20013;&#31532;&#19968;&#22359;&#24182;&#21475;&#30828;&#30424;&#10;/dev/hdb&#9;##&#31995;&#32479;&#20013;&#31532;&#20108;&#22359;&#24182;&#21475;&#30828;&#30424;&#10;/dev/cdrom&#9;##&#31995;&#32479;&#20809;&#39537;&#10;/dev/mapper/xxx&#9;##&#34394;&#25311;&#35774;&#22791;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="u8BBE_u5907_u7684_u4F7F_u7528"><a href="#u8BBE_u5907_u7684_u4F7F_u7528" class="headerlink" title="设备的使用"></a>设备的使用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mount	设备	挂载点	<span class="comment">##挂载</span></span><br><span class="line">mount /dev/sda1	/mnt	<span class="comment">##把系统中的第一快硬盘的第一个分区挂载到/mnt下</span></span><br><span class="line">umount	设备|挂载点	<span class="comment">##卸载设备</span></span><br><span class="line">blkid			<span class="comment">##显示所有可用设备的id信息</span></span><br><span class="line"></span><br><span class="line">df  -h(<span class="number">2</span>的n次方)  <span class="comment">##查看挂载信息</span></span><br><span class="line">df  -H(<span class="number">10</span>的n次方) <span class="comment">##查看挂载信息</span></span><br><span class="line"></span><br><span class="line">du  -h(显示单位)    <span class="operator">-s</span>(只统计目录本身) file|dir	<span class="comment">##统计文件大小</span></span><br></pre></td></tr></table></figure>
-<h3 id="u5F53_u8BBE_u5907_u5378_u8F7D_u51FA_u73B0_u4EE5_u4E0B_u95EE_u9898_u65F6"><a href="#u5F53_u8BBE_u5907_u5378_u8F7D_u51FA_u73B0_u4EE5_u4E0B_u95EE_u9898_u65F6" class="headerlink" title="当设备卸载出现以下问题时"></a>当设备卸载出现以下问题时</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@foundation0 ~]<span class="comment"># umount /mnt/</span></span><br><span class="line">umount: /mnt: target is busy.</span><br><span class="line">        (In some cases useful info about processes that use</span><br><span class="line">         the device is found by lsof(<span class="number">8</span>) or fuser(<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>找到占用设备的进程</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fuser&#9;&#35774;&#22791;|&#25346;&#36733;&#28857;&#10;lsof&#9;&#35774;&#22791;|&#25346;&#36733;&#28857;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="u5982_u4F55_u5728_u7CFB_u7EDF_u4E2D_u67E5_u627E_u6587_u4EF6"><a href="#u5982_u4F55_u5728_u7CFB_u7EDF_u4E2D_u67E5_u627E_u6587_u4EF6" class="headerlink" title="如何在系统中查找文件"></a>如何在系统中查找文件</h3><h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><blockquote>
-<p>find 路径 条件 条件值<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">find /mnt -name file</span><br><span class="line">find /mnt -name <span class="string">"file*"</span></span><br><span class="line">find /etc -name <span class="string">"*.conf"</span></span><br><span class="line">find 路径 -user  username      <span class="comment">##查找文件所有人为username的文件</span></span><br><span class="line">find 路径 -group groupname     <span class="comment">##查找文件所有组为groupname的文件</span></span><br><span class="line">find 路径 条件<span class="number">1</span>  -o  条件<span class="number">2</span>       <span class="comment">##查找满足条件1或者条件2的文件</span></span><br><span class="line">find 路径 -type  类型（一个字符） <span class="comment">##按类型查找文件</span></span><br><span class="line">find 路径 -mmin  +|-数字        <span class="comment">##按时间查找文件(+表示数字时间之前的文件，-表示数字时间之内的文件）</span></span><br><span class="line"></span><br><span class="line">find 路径 -size 数字|-数字|+数字  <span class="comment">##查找大小符合条件的文件(可以组合用来表示一个区间)</span></span><br><span class="line">find 路径 -perm  <span class="number">444</span>            <span class="comment">##文件权限必须是rrr</span></span><br><span class="line">find 路径 -perm -<span class="number">444</span>            <span class="comment">##文件每一位都要含有r权限</span></span><br><span class="line">find 路径 -perm /<span class="number">444</span>            <span class="comment">##文件任意一位含有r权限</span></span><br><span class="line"></span><br><span class="line">find 路径 -maxdepth 数字        <span class="comment">##最深目录层    </span></span><br><span class="line">find 路径 -mindepth 数字        <span class="comment">##最小目录层</span></span><br><span class="line"></span><br><span class="line">find 路径 查找条件  -exec 命令 &#123;&#125; \;   <span class="comment">##对查找出的结果做相应处理</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="locate"><a href="#locate" class="headerlink" title="locate"></a>locate</h3><p><strong>用法</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">locate +条件		<span class="comment">##在数据库中查找符合条件的文件</span></span><br></pre></td></tr></table></figure></p>
-<p><strong>缺点</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#19981;&#33021;&#23454;&#26102;&#33258;&#21160;&#26356;&#26032;&#25968;&#25454;&#24211;&#65292;&#23548;&#33268;&#26597;&#35810;&#32467;&#26524;&#19981;&#20934;&#30830;</span><br></pre></td></tr></table></figure></p>
-<p><strong>更新并配置</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">updatedb		<span class="comment">##更新数据库</span></span><br><span class="line">vim /etc/updatedb.conf  <span class="comment">##数据库配置文件（可以规定哪些目录可以被数据库记录）</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="u94FE_u63A5"><a href="#u94FE_u63A5" class="headerlink" title="链接"></a>链接</h3><p><strong>硬链接</strong></p>
-<blockquote>
-<p>硬链接是文件的副本，为了节省设备节点号<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln   文件   链接</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p><strong>软链接</strong></p>
-<blockquote>
-<p>软链接是文件的快捷方式，为了节省设备存储块<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln <span class="operator">-s</span>  文件  链接</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p><strong>查看文件节点号</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -i 文件名</span><br></pre></td></tr></table></figure></p>
-<h3 id="dd"><a href="#dd" class="headerlink" title="dd"></a>dd</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dd <span class="keyword">if</span>=/dev/zero of=/mnt/file bs=<span class="number">1024</span> count=<span class="number">10</span></span><br><span class="line"></span><br><span class="line">dd	<span class="comment">##数据截取</span></span><br><span class="line"><span class="keyword">if</span>	<span class="comment">##数据模板</span></span><br><span class="line">of	<span class="comment">##数据存放文件</span></span><br><span class="line">bs	<span class="comment">##数据块大小</span></span><br><span class="line">count	<span class="comment">##数据块个数</span></span><br></pre></td></tr></table></figure>
-
+        
       
     </div>
     
@@ -288,13 +257,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/02/13/RH124-unit14/">14.Accessing Linux File Systems</a></p>
+        <p><span>本文标题:</span><a href="/2016/05/14/Python入门/">Python入门</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Wang Chi 的个人博客">Wang Chi</a></p>
-        <p><span>发布时间:</span>2016年02月13日 - 20时48分</p>
-        <p><span>最后更新:</span>2016年02月14日 - 17时36分</p>
+        <p><span>发布时间:</span>2016年05月14日 - 21时35分</p>
+        <p><span>最后更新:</span>2016年05月14日 - 21时35分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/02/13/RH124-unit14/" title="14.Accessing Linux File Systems">http://yoursite.com/2016/02/13/RH124-unit14/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/13/RH124-unit14/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/05/14/Python入门/" title="Python入门">http://yoursite.com/2016/05/14/Python入门/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/05/14/Python入门/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -307,16 +276,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/02/14/RH124-unit15/">
-                    15.Using Virtualized Systems
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/02/13/RH124-unit13/">
-                    13.Installingand Updating Software Packages
+                <a href="/2016/04/27/Docker/">
+                    Docker
                 </a>
             </div>
         
@@ -327,7 +290,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Red_Hat_Enterprise_Linux_7"><span class="toc-number">1.</span> <span class="toc-text">Red Hat Enterprise Linux 7</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u8BBE_u5907_u7684_u8BC6_u522B"><span class="toc-number">1.1.</span> <span class="toc-text">设备的识别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u8BBE_u5907_u7684_u4F7F_u7528"><span class="toc-number">1.2.</span> <span class="toc-text">设备的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5F53_u8BBE_u5907_u5378_u8F7D_u51FA_u73B0_u4EE5_u4E0B_u95EE_u9898_u65F6"><span class="toc-number">1.3.</span> <span class="toc-text">当设备卸载出现以下问题时</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5982_u4F55_u5728_u7CFB_u7EDF_u4E2D_u67E5_u627E_u6587_u4EF6"><span class="toc-number">1.4.</span> <span class="toc-text">如何在系统中查找文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#find"><span class="toc-number">1.5.</span> <span class="toc-text">find</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#locate"><span class="toc-number">1.6.</span> <span class="toc-text">locate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u94FE_u63A5"><span class="toc-number">1.7.</span> <span class="toc-text">链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dd"><span class="toc-number">1.8.</span> <span class="toc-text">dd</span></a></li></ol></li></ol>
+    
 </div>
 <style>
     .left-col .switch-btn {
@@ -395,15 +358,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/02/14/RH124-unit15/" title="上一篇: 15.Using Virtualized Systems">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/02/13/RH124-unit13/" title="下一篇: 13.Installingand Updating Software Packages">
+            <a href="/2016/04/27/Docker/" title="下一篇: Docker">
                 <i class="fa fa-angle-right"></i>
             </a>
         

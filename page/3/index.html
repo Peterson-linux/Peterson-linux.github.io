@@ -219,6 +219,71 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-RH124-unit15" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/14/RH124-unit15/" class="article-date">
+      <time datetime="2016-02-14T09:38:54.000Z" itemprop="datePublished">2016-02-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/14/RH124-unit15/">15.Using Virtualized Systems</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="u865A_u62DF_u673A_u5B89_u88C5"><a href="#u865A_u62DF_u673A_u5B89_u88C5" class="headerlink" title="虚拟机安装"></a>虚拟机安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install qemu-kvm qemu-img&#9; ##&#23433;&#35013;&#34394;&#25311;&#26426;&#26680;&#24515;&#32452;&#20214;&#10;yum install virt-manager libvirt libvirt-python-virtinst libvirtnt   ##&#23433;&#35013;&#34394;&#25311;&#26426;&#21069;&#31471;&#31649;&#29702;&#24037;&#20855;</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/02/14/RH124-unit15/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-RH124-unit14" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -833,75 +898,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/02/09/RH124-unit6/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-RH124-unit5" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/05/RH124-unit5/" class="article-date">
-      <time datetime="2016-02-05T09:33:12.000Z" itemprop="datePublished">2016-02-05</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/05/RH124-unit5/">5.Managing Local Linux Users and Groups</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h2 id="u7528_u6237_u5982_u4F55_u5B58_u5728_u4E8E_u7CFB_u7EDF_u5F53_u4E2D"><a href="#u7528_u6237_u5982_u4F55_u5B58_u5728_u4E8E_u7CFB_u7EDF_u5F53_u4E2D" class="headerlink" title="用户如何存在于系统当中"></a>用户如何存在于系统当中</h2><h3 id="/etc/passwd_u7528_u6237_u4FE1_u606F_u6587_u4EF6"><a href="#/etc/passwd_u7528_u6237_u4FE1_u606F_u6587_u4EF6" class="headerlink" title="/etc/passwd用户信息文件"></a>/etc/passwd用户信息文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># ll /etc/passwd</span></span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root <span class="number">2009</span> Feb  <span class="number">8</span> <span class="number">20</span>:<span class="number">40</span> /etc/passwd</span><br></pre></td></tr></table></figure>
-<p><code>用户名字：用户密码：用户uid：用户gid：用户说明：用户家目录：用户使用的shell</code></p>
-<blockquote>
-<p><em>example</em><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root:x:<span class="number">0</span>:<span class="number">0</span>:root:/root:/bin/bash</span><br><span class="line">bin:x:<span class="number">1</span>:<span class="number">1</span>:bin:/bin:/sbin/nologin</span><br><span class="line">daemon:x:<span class="number">2</span>:<span class="number">2</span>:daemon:/sbin:/sbin/nologin</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/05/RH124-unit5/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
