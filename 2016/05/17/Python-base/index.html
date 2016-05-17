@@ -3,21 +3,36 @@
 <head>
   <meta charset="utf-8">
   
-  <title>12.Archiving and Copying Files Between Systems | Hexo</title>
+  <title>Python-base | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Red Hat Enterprise Linux 7打包tar
-打包表示把一堆文件变成一个123456789101112tar  -f   ##指定生成包的名字tar  -c   ##创建包tar  -v   ##显示创建过程tar  -t   ##查看包中内容tar  -x   ##解包tar  -rf  包名 文件名              ##添加文件到包中tar  -f   包名 --d">
+  <meta name="description" content="Python 特点
+优雅
+明确
+简单Python 适合的领域
+Web网站和各种网络服务
+系统工具和脚本
+作为“胶水”语言把其他语言开发的模块包装起来方便使用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="12.Archiving and Copying Files Between Systems">
-<meta property="og:url" content="http://yoursite.com/2016/02/13/RH124-unit12/index.html">
+<meta property="og:title" content="Python-base">
+<meta property="og:url" content="http://yoursite.com/2016/05/17/Python-base/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Red Hat Enterprise Linux 7打包tar
-打包表示把一堆文件变成一个123456789101112tar  -f   ##指定生成包的名字tar  -c   ##创建包tar  -v   ##显示创建过程tar  -t   ##查看包中内容tar  -x   ##解包tar  -rf  包名 文件名              ##添加文件到包中tar  -f   包名 --d">
-<meta property="og:updated_time" content="2016-02-13T12:12:45.879Z">
+<meta property="og:description" content="Python 特点
+优雅
+明确
+简单Python 适合的领域
+Web网站和各种网络服务
+系统工具和脚本
+作为“胶水”语言把其他语言开发的模块包装起来方便使用">
+<meta property="og:updated_time" content="2016-05-17T16:08:52.337Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="12.Archiving and Copying Files Between Systems">
-<meta name="twitter:description" content="Red Hat Enterprise Linux 7打包tar
-打包表示把一堆文件变成一个123456789101112tar  -f   ##指定生成包的名字tar  -c   ##创建包tar  -v   ##显示创建过程tar  -t   ##查看包中内容tar  -x   ##解包tar  -rf  包名 文件名              ##添加文件到包中tar  -f   包名 --d">
+<meta name="twitter:title" content="Python-base">
+<meta name="twitter:description" content="Python 特点
+优雅
+明确
+简单Python 适合的领域
+Web网站和各种网络服务
+系统工具和脚本
+作为“胶水”语言把其他语言开发的模块包装起来方便使用">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -218,11 +233,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-RH124-unit12" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Python-base" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/13/RH124-unit12/" class="article-date">
-      <time datetime="2016-02-13T11:41:26.000Z" itemprop="datePublished">2016-02-13</time>
+      <a href="/2016/05/17/Python-base/" class="article-date">
+      <time datetime="2016-05-17T15:52:07.000Z" itemprop="datePublished">2016-05-17</time>
 </a>
     </div>
   
@@ -235,7 +250,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      12.Archiving and Copying Files Between Systems
+      Python-base
     </h1>
   
 
@@ -244,13 +259,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
+    <a class="article-category-link" href="/categories/Python/">Python</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python入门/">Python入门</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -260,22 +275,57 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h2 id="u6253_u5305"><a href="#u6253_u5305" class="headerlink" title="打包"></a>打包</h2><h3 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h3><blockquote>
-<p>打包表示把一堆文件变成一个<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">tar  <span class="operator">-f</span>   <span class="comment">##指定生成包的名字</span></span><br><span class="line">tar  -c   <span class="comment">##创建包</span></span><br><span class="line">tar  -v   <span class="comment">##显示创建过程</span></span><br><span class="line">tar  -t   <span class="comment">##查看包中内容</span></span><br><span class="line">tar  -x   <span class="comment">##解包</span></span><br><span class="line"></span><br><span class="line">tar  -rf  包名 文件名              <span class="comment">##添加文件到包中</span></span><br><span class="line">tar  <span class="operator">-f</span>   包名 --delete filename  <span class="comment">##删除包中指定文件</span></span><br><span class="line">tar  <span class="operator">-f</span>   包名 --get    filename  <span class="comment">##取出包中指定文件</span></span><br><span class="line"></span><br><span class="line">tar -cvf  包名  要打包的目录 <span class="comment">##创建包</span></span><br><span class="line">tar -xvf  包名             <span class="comment">##解包</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<a id="more"></a>
-<h2 id="u538B_u7F29"><a href="#u538B_u7F29" class="headerlink" title="压缩"></a>压缩</h2><h3 id="gzip"><a href="#gzip" class="headerlink" title="gzip"></a>gzip</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gzip     xx.tar              <span class="comment">##压缩xx.tar =====&gt; xx.tar.gz</span></span><br><span class="line">gunzip   xx.tar.gz           <span class="comment">##解压xx.tar.gz =====&gt; xx.tar</span></span><br><span class="line">tar zcvf xx.tar.gz 目标文件    <span class="comment">##打包并压缩文件</span></span><br><span class="line">tar zxvf xx.tar.gz           <span class="comment">##解压文件xx.tar.gz===&gt;xx</span></span><br></pre></td></tr></table></figure>
-<h3 id="bz2"><a href="#bz2" class="headerlink" title="bz2"></a>bz2</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">bzip2    xx.tar               <span class="comment">##压缩xx.tar =====&gt; xx.tar.bz2</span></span><br><span class="line">bunzip2  xx.tar.bz2           <span class="comment">##解压xx.tar.bz2 =====&gt; xx.tar</span></span><br><span class="line">tar jcvf xx.tar.bz2 目标文件    <span class="comment">##打包并压缩文件</span></span><br><span class="line">tar jxvf xx.tar.bz2           <span class="comment">##解压文件xx.tar.bz2===&gt;xx</span></span><br></pre></td></tr></table></figure>
-<h3 id="xz"><a href="#xz" class="headerlink" title="xz"></a>xz</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">xz   xx.tar        <span class="comment">##压缩xx.tar =====&gt; xx.tar.xz</span></span><br><span class="line">unxz xx.tar.xz     <span class="comment">##解压xx.tar =====&gt; xx.tar.xz</span></span><br><span class="line">tar Jcvf xx.tar.xz      目标文件    <span class="comment">##打包并压缩文件   </span></span><br><span class="line">tar Jxvf xx.tar.xz                <span class="comment">##解压文件xx.tar.xz===&gt;xx</span></span><br></pre></td></tr></table></figure>
-<h3 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h3><blockquote>
-<p>特殊，不支持tar，必须先打包再压缩<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zip -r xx.tar.zip  xx.tar  <span class="comment">##压缩</span></span><br><span class="line">unzip  xx.tar.zip          <span class="comment">##解压</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h2 id="u8FDC_u7A0B_u6587_u4EF6_u4F20_u8F93"><a href="#u8FDC_u7A0B_u6587_u4EF6_u4F20_u8F93" class="headerlink" title="远程文件传输"></a>远程文件传输</h2><h3 id="scp_u8FDC_u7A0B_u590D_u5236"><a href="#scp_u8FDC_u7A0B_u590D_u5236" class="headerlink" title="scp远程复制"></a>scp远程复制</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">scp 	file	user@ip:/directory	    <span class="comment">##上传文件</span></span><br><span class="line">scp -r 	dir	user@ip:/directory	    <span class="comment">##上传目录</span></span><br><span class="line">scp 	user@ip:/filename	/direcotry  <span class="comment">##下载文件</span></span><br><span class="line">scp -r	user@ip:/directory	/direcotry  <span class="comment">##下载目录</span></span><br></pre></td></tr></table></figure>
-<h3 id="rsync_u8FDC_u7A0B_u540C_u6B65"><a href="#rsync_u8FDC_u7A0B_u540C_u6B65" class="headerlink" title="rsync远程同步"></a>rsync远程同步</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">rsync file|direcotry user@ip:/directory</span><br><span class="line">rsync user@ip:/directory /directory</span><br><span class="line">	-r	<span class="comment">##递归</span></span><br><span class="line">	<span class="operator">-l</span>	<span class="comment">##不忽略链接</span></span><br><span class="line">	-p	<span class="comment">##不忽略权限</span></span><br><span class="line">	-t	<span class="comment">##不忽略时间戳</span></span><br><span class="line">	-g	<span class="comment">##不忽略组信息</span></span><br><span class="line">	-o	<span class="comment">##不忽略用户信息</span></span><br><span class="line">	-D	<span class="comment">##不忽略设备文件</span></span><br></pre></td></tr></table></figure>
-<h3 id="lftp"><a href="#lftp" class="headerlink" title="lftp"></a>lftp</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lftp ip&#22320;&#22336;      ##&#24314;&#31435;&#19987;&#23646;&#20256;&#36755;&#36890;&#36947;&#10;&#27880;&#24847;&#65306;1.&#39318;&#27425;&#20351;&#29992;&#38656;&#35201;&#23433;&#35013;lftp&#21629;&#20196;: yum install lftp -y&#10;     2.&#29992;&#65311;&#26597;&#30475;lftp&#20013;&#30340;&#21629;&#20196;&#21450;&#20351;&#29992;&#26041;&#24335;&#10;     3.get &#25991;&#20214;&#21517;        ##&#19979;&#36733;&#25991;&#20214;&#10;     4.mget &#20851;&#38190;&#23383;*      ##&#25903;&#25345;&#36890;&#37197;&#31526;&#65292;&#25209;&#37327;&#19979;&#36733;&#10;     5.mirror &#30446;&#24405;       ##&#19979;&#36733;&#30446;&#24405;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意：ssh，scp，rsync，sftp所使用的服务都是sshd服务</p>
-</blockquote>
+        <h2 id="Python__u7279_u70B9"><a href="#Python__u7279_u70B9" class="headerlink" title="Python 特点"></a>Python 特点</h2><ul>
+<li>优雅</li>
+<li>明确</li>
+<li>简单<h2 id="Python__u9002_u5408_u7684_u9886_u57DF"><a href="#Python__u9002_u5408_u7684_u9886_u57DF" class="headerlink" title="Python 适合的领域"></a>Python 适合的领域</h2></li>
+<li>Web网站和各种网络服务</li>
+<li>系统工具和脚本</li>
+<li>作为“胶水”语言把其他语言开发的模块包装起来方便使用<a id="more"></a>
+<h2 id="Python__u548C_u5176_u4ED6_u8BED_u8A00_u5BF9_u6BD4"><a href="#Python__u548C_u5176_u4ED6_u8BED_u8A00_u5BF9_u6BD4" class="headerlink" title="Python 和其他语言对比"></a>Python 和其他语言对比</h2></li>
+</ul>
+<hr>
+<table>
+<thead>
+<tr>
+<th>语言</th>
+<th>类型</th>
+<th>运行速度</th>
+<th>代码量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>  C</td>
+<td>编译为机器码</td>
+<td>非常快</td>
+<td>非常多</td>
+</tr>
+<tr>
+<td>  Java</td>
+<td>编译为字节码</td>
+<td>快</td>
+<td>多</td>
+</tr>
+<tr>
+<td>  Python</td>
+<td>解释执行</td>
+<td>慢</td>
+<td>少</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Python__u6570_u636E_u7C7B_u578B"><a href="#Python__u6570_u636E_u7C7B_u578B" class="headerlink" title="Python 数据类型"></a>Python 数据类型</h2><h3 id="u6574_u6570"><a href="#u6574_u6570" class="headerlink" title="整数"></a>整数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">100&#10;-50&#10;0xff</span><br></pre></td></tr></table></figure>
+<h3 id="u6D6E_u70B9_u6570"><a href="#u6D6E_u70B9_u6570" class="headerlink" title="浮点数"></a>浮点数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.23&#10;-3.14&#10;1.23e9</span><br></pre></td></tr></table></figure>
+<h3 id="u5B57_u7B26_u4E32"><a href="#u5B57_u7B26_u4E32" class="headerlink" title="字符串"></a>字符串</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39;abc&#39;&#10;&#34;abc&#34;</span><br></pre></td></tr></table></figure>
+<h3 id="u5E03_u5C14_u503C"><a href="#u5E03_u5C14_u503C" class="headerlink" title="布尔值"></a>布尔值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">True&#10;False</span><br></pre></td></tr></table></figure>
+<p><code>布尔值可以用and、or、not运算</code></p>
+<h3 id="u7A7A_u503C"><a href="#u7A7A_u503C" class="headerlink" title="空值"></a>空值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">None</span><br></pre></td></tr></table></figure>
+<p><code>Python还提供了列表、字典等多种数据类型</code></p>
+<h2 id="print__u8BED_u53E5"><a href="#print__u8BED_u53E5" class="headerlink" title="print 语句"></a>print 语句</h2><p><code>print可以向屏幕输出指定文字</code></p>
+<h3 id="u76F4_u63A5_u6253_u5370"><a href="#u76F4_u63A5_u6253_u5370" class="headerlink" title="直接打印"></a>直接打印</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="built_in">print</span> <span class="string">'Hello world'</span></span><br><span class="line">Hello world</span><br></pre></td></tr></table></figure>
+<h3 id="print__u8BED_u53E5_u53EF_u4EE5_u8DDF_u591A_u4E2A_u5B57_u7B26_u4E32_uFF0C_u7528_u201C_uFF0C_u201D_u9694_u5F00"><a href="#print__u8BED_u53E5_u53EF_u4EE5_u8DDF_u591A_u4E2A_u5B57_u7B26_u4E32_uFF0C_u7528_u201C_uFF0C_u201D_u9694_u5F00" class="headerlink" title="print 语句可以跟多个字符串，用“，”隔开"></a>print 语句可以跟多个字符串，用“，”隔开</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="built_in">print</span> <span class="string">'The hardest things'</span>,<span class="string">'to say'</span>,<span class="string">'are usually the things'</span>,<span class="string">'worth saying'</span></span><br><span class="line">The hardest things to say are usually the things worth saying</span><br></pre></td></tr></table></figure>
+<h3 id="print__u53EF_u4EE5_u6253_u5370_u6574_u6570_u6216_u8005_u8BA1_u7B97_u7ED3_u679C"><a href="#print__u53EF_u4EE5_u6253_u5370_u6574_u6570_u6216_u8005_u8BA1_u7B97_u7ED3_u679C" class="headerlink" title="print 可以打印整数或者计算结果"></a>print 可以打印整数或者计算结果</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="built_in">print</span> <span class="number">300</span></span><br><span class="line"><span class="number">300</span></span><br><span class="line">&gt;&gt;&gt; <span class="built_in">print</span> <span class="number">100</span> + <span class="number">200</span></span><br><span class="line"><span class="number">300</span></span><br><span class="line">&gt;&gt;&gt; <span class="built_in">print</span> <span class="string">'100 + 200 ='</span>, <span class="number">100</span> + <span class="number">200</span></span><br><span class="line"><span class="number">100</span> + <span class="number">200</span> = <span class="number">300</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -284,13 +334,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/02/13/RH124-unit12/">12.Archiving and Copying Files Between Systems</a></p>
+        <p><span>本文标题:</span><a href="/2016/05/17/Python-base/">Python-base</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Wang Chi 的个人博客">Wang Chi</a></p>
-        <p><span>发布时间:</span>2016年02月13日 - 19时41分</p>
-        <p><span>最后更新:</span>2016年02月13日 - 20时12分</p>
+        <p><span>发布时间:</span>2016年05月17日 - 23时52分</p>
+        <p><span>最后更新:</span>2016年05月18日 - 00时08分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/02/13/RH124-unit12/" title="12.Archiving and Copying Files Between Systems">http://yoursite.com/2016/02/13/RH124-unit12/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/13/RH124-unit12/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/05/17/Python-base/" title="Python-base">http://yoursite.com/2016/05/17/Python-base/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/05/17/Python-base/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -303,16 +353,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/02/13/RH124-unit13/">
-                    13.Installingand Updating Software Packages
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/02/09/RH124-unit11/">
-                    11.Managing Red Hat Enterprise Linux Networking
+                <a href="/2016/04/27/Docker/">
+                    Docker
                 </a>
             </div>
         
@@ -323,7 +367,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Red_Hat_Enterprise_Linux_7"><span class="toc-number">1.</span> <span class="toc-text">Red Hat Enterprise Linux 7</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u6253_u5305"><span class="toc-number">2.</span> <span class="toc-text">打包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#tar"><span class="toc-number">2.1.</span> <span class="toc-text">tar</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u538B_u7F29"><span class="toc-number">3.</span> <span class="toc-text">压缩</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gzip"><span class="toc-number">3.1.</span> <span class="toc-text">gzip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bz2"><span class="toc-number">3.2.</span> <span class="toc-text">bz2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xz"><span class="toc-number">3.3.</span> <span class="toc-text">xz</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#zip"><span class="toc-number">3.4.</span> <span class="toc-text">zip</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u8FDC_u7A0B_u6587_u4EF6_u4F20_u8F93"><span class="toc-number">4.</span> <span class="toc-text">远程文件传输</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#scp_u8FDC_u7A0B_u590D_u5236"><span class="toc-number">4.1.</span> <span class="toc-text">scp远程复制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rsync_u8FDC_u7A0B_u540C_u6B65"><span class="toc-number">4.2.</span> <span class="toc-text">rsync远程同步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lftp"><span class="toc-number">4.3.</span> <span class="toc-text">lftp</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Python__u7279_u70B9"><span class="toc-number">1.</span> <span class="toc-text">Python 特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python__u9002_u5408_u7684_u9886_u57DF"><span class="toc-number">2.</span> <span class="toc-text">Python 适合的领域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python__u548C_u5176_u4ED6_u8BED_u8A00_u5BF9_u6BD4"><span class="toc-number">3.</span> <span class="toc-text">Python 和其他语言对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python__u6570_u636E_u7C7B_u578B"><span class="toc-number">4.</span> <span class="toc-text">Python 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u6574_u6570"><span class="toc-number">4.1.</span> <span class="toc-text">整数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u6D6E_u70B9_u6570"><span class="toc-number">4.2.</span> <span class="toc-text">浮点数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5B57_u7B26_u4E32"><span class="toc-number">4.3.</span> <span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5E03_u5C14_u503C"><span class="toc-number">4.4.</span> <span class="toc-text">布尔值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u7A7A_u503C"><span class="toc-number">4.5.</span> <span class="toc-text">空值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#print__u8BED_u53E5"><span class="toc-number">5.</span> <span class="toc-text">print 语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u76F4_u63A5_u6253_u5370"><span class="toc-number">5.1.</span> <span class="toc-text">直接打印</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#print__u8BED_u53E5_u53EF_u4EE5_u8DDF_u591A_u4E2A_u5B57_u7B26_u4E32_uFF0C_u7528_u201C_uFF0C_u201D_u9694_u5F00"><span class="toc-number">5.2.</span> <span class="toc-text">print 语句可以跟多个字符串，用“，”隔开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#print__u53EF_u4EE5_u6253_u5370_u6574_u6570_u6216_u8005_u8BA1_u7B97_u7ED3_u679C"><span class="toc-number">5.3.</span> <span class="toc-text">print 可以打印整数或者计算结果</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -391,15 +435,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/02/13/RH124-unit13/" title="上一篇: 13.Installingand Updating Software Packages">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/02/09/RH124-unit11/" title="下一篇: 11.Managing Red Hat Enterprise Linux Networking">
+            <a href="/2016/04/27/Docker/" title="下一篇: Docker">
                 <i class="fa fa-angle-right"></i>
             </a>
         
