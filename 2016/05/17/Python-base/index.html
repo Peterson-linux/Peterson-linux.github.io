@@ -23,7 +23,7 @@ Web网站和各种网络服务
 Web网站和各种网络服务
 系统工具和脚本
 作为“胶水”语言把其他语言开发的模块包装起来方便使用">
-<meta property="og:updated_time" content="2016-05-19T07:25:21.241Z">
+<meta property="og:updated_time" content="2016-05-29T12:47:27.659Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python-base">
 <meta name="twitter:description" content="Python 特点
@@ -316,17 +316,111 @@ Web网站和各种网络服务
 </tbody>
 </table>
 <h2 id="Python__u6570_u636E_u7C7B_u578B"><a href="#Python__u6570_u636E_u7C7B_u578B" class="headerlink" title="Python 数据类型"></a>Python 数据类型</h2><h3 id="u6574_u6570"><a href="#u6574_u6570" class="headerlink" title="整数"></a>整数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">100&#10;-50&#10;0xff</span><br></pre></td></tr></table></figure>
+<p>Python可以处理任意大小的整数</p>
 <h3 id="u6D6E_u70B9_u6570"><a href="#u6D6E_u70B9_u6570" class="headerlink" title="浮点数"></a>浮点数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.23&#10;-3.14&#10;1.23e9</span><br></pre></td></tr></table></figure>
 <h3 id="u5B57_u7B26_u4E32"><a href="#u5B57_u7B26_u4E32" class="headerlink" title="字符串"></a>字符串</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#39;abc&#39;&#10;&#34;abc&#34;</span><br></pre></td></tr></table></figure>
+<p>字符串是以’’或””括起来的任意文本</p>
 <h3 id="u5E03_u5C14_u503C"><a href="#u5E03_u5C14_u503C" class="headerlink" title="布尔值"></a>布尔值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">True&#10;False</span><br></pre></td></tr></table></figure>
-<p><code>布尔值可以用and、or、not运算</code></p>
+<p>布尔值可以用and、or、not运算</p>
 <h3 id="u7A7A_u503C"><a href="#u7A7A_u503C" class="headerlink" title="空值"></a>空值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">None</span><br></pre></td></tr></table></figure>
-<p><code>Python还提供了列表、字典等多种数据类型</code></p>
-<h2 id="print__u8BED_u53E5"><a href="#print__u8BED_u53E5" class="headerlink" title="print 语句"></a>print 语句</h2><p><code>print可以向屏幕输出指定文字</code></p>
+<p>None不能理解为0，因为0是有意义的，而None是一个特殊的空值。<br>Python还提供了列表、字典等多种数据类型。</p>
+<h2 id="print__u8BED_u53E5"><a href="#print__u8BED_u53E5" class="headerlink" title="print 语句"></a>print 语句</h2><p>print可以向屏幕输出指定文字</p>
 <h3 id="u76F4_u63A5_u6253_u5370"><a href="#u76F4_u63A5_u6253_u5370" class="headerlink" title="直接打印"></a>直接打印</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="built_in">print</span> <span class="string">'Hello world'</span></span><br><span class="line">Hello world</span><br></pre></td></tr></table></figure>
 <h3 id="print__u8BED_u53E5_u53EF_u4EE5_u8DDF_u591A_u4E2A_u5B57_u7B26_u4E32_uFF0C_u7528_u201C_uFF0C_u201D_u9694_u5F00"><a href="#print__u8BED_u53E5_u53EF_u4EE5_u8DDF_u591A_u4E2A_u5B57_u7B26_u4E32_uFF0C_u7528_u201C_uFF0C_u201D_u9694_u5F00" class="headerlink" title="print 语句可以跟多个字符串，用“，”隔开"></a>print 语句可以跟多个字符串，用“，”隔开</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="built_in">print</span> <span class="string">'The hardest things'</span>,<span class="string">'to say'</span>,<span class="string">'are usually the things'</span>,<span class="string">'worth saying'</span></span><br><span class="line">The hardest things to say are usually the things worth saying</span><br></pre></td></tr></table></figure>
+<p>print会依次打印每个字符串，遇到逗号“,”会输出一个空格。</p>
 <h3 id="print__u53EF_u4EE5_u6253_u5370_u6574_u6570_u6216_u8005_u8BA1_u7B97_u7ED3_u679C"><a href="#print__u53EF_u4EE5_u6253_u5370_u6574_u6570_u6216_u8005_u8BA1_u7B97_u7ED3_u679C" class="headerlink" title="print 可以打印整数或者计算结果"></a>print 可以打印整数或者计算结果</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="built_in">print</span> <span class="number">300</span></span><br><span class="line"><span class="number">300</span></span><br><span class="line">&gt;&gt;&gt; <span class="built_in">print</span> <span class="number">100</span> + <span class="number">200</span></span><br><span class="line"><span class="number">300</span></span><br><span class="line">&gt;&gt;&gt; <span class="built_in">print</span> <span class="string">'100 + 200 ='</span>, <span class="number">100</span> + <span class="number">200</span></span><br><span class="line"><span class="number">100</span> + <span class="number">200</span> = <span class="number">300</span></span><br></pre></td></tr></table></figure>
-<h3 id="u6CE8_u91CA"><a href="#u6CE8_u91CA" class="headerlink" title="注释"></a>注释</h3>
+<h3 id="u6CE8_u91CA"><a href="#u6CE8_u91CA" class="headerlink" title="注释"></a>注释</h3><p>Python的注释以 # 开头，后面的文字直到行尾都算注释<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> <span class="string">'Hello Python'</span> <span class="comment">#打印出Hello Python</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="u53D8_u91CF"><a href="#u53D8_u91CF" class="headerlink" title="变量"></a>变量</h2><p>在Python程序中，变量是用变量名表示，变量名必须是以<code>英文字母、数字、下划线（_）</code>组成，且<code>不能以数字开头</code>。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = <span class="number">1</span></span><br><span class="line">&gt;&gt;&gt; _a = <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="u53D8_u91CF_u5728_u8BA1_u7B97_u673A_u5185_u5B58_u4E2D_u7684_u8868_u793A"><a href="#u53D8_u91CF_u5728_u8BA1_u7B97_u673A_u5185_u5B58_u4E2D_u7684_u8868_u793A" class="headerlink" title="变量在计算机内存中的表示"></a>变量在计算机内存中的表示</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = <span class="string">'ABC'</span></span><br><span class="line">&gt;&gt;&gt; b = a</span><br><span class="line">&gt;&gt;&gt; a = <span class="string">'XYZ'</span></span><br><span class="line">&gt;&gt;&gt; <span class="built_in">print</span> b</span><br><span class="line">ABC</span><br></pre></td></tr></table></figure>
+<p><strong>Python解释器是怎么做的</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#25191;&#34892;a = &#39;ABC&#39;&#65292;&#35299;&#37322;&#22120;&#21019;&#24314;&#20102;&#23383;&#31526;&#20018;&#39;ABC&#39;&#21644;&#21464;&#37327; a&#65292;&#24182;&#25226;a&#25351;&#21521;&#39;ABC&#39;&#10;&#25191;&#34892;b = a&#65292;&#35299;&#37322;&#22120;&#21019;&#24314;&#20102;&#21464;&#37327; b&#65292;&#24182;&#25226;b&#25351;&#21521; a &#25351;&#21521;&#30340;&#23383;&#31526;&#20018;&#39;ABC&#39;&#10;&#25191;&#34892;a = &#39;XYZ&#39;&#65292;&#35299;&#37322;&#22120;&#21019;&#24314;&#20102;&#23383;&#31526;&#20018;&#39;XYZ&#39;&#65292;&#24182;&#25226;a&#30340;&#25351;&#21521;&#25913;&#20026;&#39;XYZ&#39;&#65292;&#20294;b&#24182;&#27809;&#26377;&#26356;&#25913;&#10;&#25171;&#21360;&#21464;&#37327;b&#30340;&#32467;&#26524;&#33258;&#28982;&#26159;&#39;ABC&#39;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="u5B57_u7B26_u4E32-1"><a href="#u5B57_u7B26_u4E32-1" class="headerlink" title="字符串"></a>字符串</h2><h3 id="u5B57_u7B26_u4E32_u5305_u542B_u5355_u5F15_u53F7"><a href="#u5B57_u7B26_u4E32_u5305_u542B_u5355_u5F15_u53F7" class="headerlink" title="字符串包含单引号"></a>字符串包含单引号</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">如果字符串包含“<span class="string">'”,使用""括起来</span><br><span class="line">---------------------------</span><br><span class="line">&gt;&gt;&gt; print "I '</span>am fun<span class="string">"</span><br><span class="line">I 'am fun</span></span><br></pre></td></tr></table></figure>
+<h3 id="u5B57_u7B26_u4E32_u5305_u542B_u53CC_u5F15_u53F7"><a href="#u5B57_u7B26_u4E32_u5305_u542B_u53CC_u5F15_u53F7" class="headerlink" title="字符串包含双引号"></a>字符串包含双引号</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">如果字符串包含“<span class="string">"”,使用''括起来</span><br><span class="line">--------------------------</span><br><span class="line">&gt;&gt;&gt; print '"</span>Linux<span class="string">" is beautiful'</span><br><span class="line">"</span>Linux<span class="string">" is beautiful</span></span><br></pre></td></tr></table></figure>
+<h3 id="u5B57_u7B26_u4E32_u65E2_u5305_u542B_u5355_u5F15_u53F7_u53C8_u5305_u542B_u53CC_u5F15_u53F7"><a href="#u5B57_u7B26_u4E32_u65E2_u5305_u542B_u5355_u5F15_u53F7_u53C8_u5305_u542B_u53CC_u5F15_u53F7" class="headerlink" title="字符串既包含单引号又包含双引号"></a>字符串既包含单引号又包含双引号</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">如果字符串中既包含“<span class="string">"”又包含“'”,使用“\”转义或使用“'''”包含。“'''”的用法会在后面提到。</span><br><span class="line">---------------------------------------------------</span><br><span class="line">&gt;&gt;&gt; print 'he said : \"I \'am ok"</span><span class="string">'</span><br><span class="line">he said : "I '</span>am ok<span class="string">"</span><br><span class="line">&gt;&gt;&gt; print '''he said : "</span>I <span class="string">'am ok"'</span><span class="string">''</span></span><br><span class="line">he said : <span class="string">"I 'am ok"</span></span><br></pre></td></tr></table></figure>
+<h3 id="u5E38_u89C1_u8F6C_u4E49_u5B57_u7B26"><a href="#u5E38_u89C1_u8F6C_u4E49_u5B57_u7B26" class="headerlink" title="常见转义字符"></a>常见转义字符</h3><hr>
+<table>
+<thead>
+<tr>
+<th>转义字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(在行尾时)</td>
+<td>续行符</td>
+</tr>
+<tr>
+<td>\</td>
+<td>反斜杠符号</td>
+</tr>
+<tr>
+<td>\’</td>
+<td>英文单引号</td>
+</tr>
+<tr>
+<td>\”</td>
+<td>英文双引号</td>
+</tr>
+<tr>
+<td>\a</td>
+<td>响铃</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>退格</td>
+</tr>
+<tr>
+<td>\000</td>
+<td>空</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>纵向制表符</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>横向制表符</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>换页</td>
+</tr>
+<tr>
+<td>\oyy</td>
+<td>八进制数yy代表的字符，例如：\o12代表换行</td>
+</tr>
+<tr>
+<td>\xyy</td>
+<td>十进制数yy代表的字符，例如：\x0a代表换行</td>
+</tr>
+<tr>
+<td>\other</td>
+<td>其它的字符以普通格式输出</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="raw_u5B57_u7B26_u4E32_u4E0E_u591A_u884C_u5B57_u7B26_u4E32"><a href="#raw_u5B57_u7B26_u4E32_u4E0E_u591A_u884C_u5B57_u7B26_u4E32" class="headerlink" title="raw字符串与多行字符串"></a>raw字符串与多行字符串</h3><p><strong>在字符串前面加个前缀<code>r</code>，表示这是一个<code>raw</code>字符串，里面的字符就不需要转义了</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="built_in">print</span> <span class="string">'hello\tworld\n\\\nhello\tpython'</span></span><br><span class="line">hello	world</span><br><span class="line">\</span><br><span class="line">hello	python</span><br><span class="line">---------------------------------</span><br><span class="line">&gt;&gt;&gt; <span class="built_in">print</span> r<span class="string">'hello\tworld\n\\\nhello\tpython'</span></span><br><span class="line">hello\tworld\n\\\nhello\tpython</span><br></pre></td></tr></table></figure></p>
+<p><strong>表示多行字符串</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">用<span class="string">''</span><span class="string">'...'</span><span class="string">''</span>表示多行字符串</span><br><span class="line">---------------------</span><br><span class="line">&gt;&gt;&gt; <span class="string">''</span><span class="string">'Line 1</span><br><span class="line">... Line 2</span><br><span class="line">... Line 3'</span><span class="string">''</span></span><br><span class="line"><span class="string">'Line 1\nLine 2\nLine 3'</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>在多行字符串前面添加<code>r</code>，把这个多行字符串也变成一个raw字符串</strong><br>1.直接通过<code>\</code>转义<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="built_in">print</span> <span class="string">'\"To be, or not to be\": that is the question.\nWhether it\'</span>s nobler <span class="keyword">in</span> the mind to suffer.<span class="string">'</span><br><span class="line">"To be, or not to be": that is the question.</span><br><span class="line">Whether it'</span>s nobler <span class="keyword">in</span> the mind to suffer.</span><br></pre></td></tr></table></figure></p>
+<p>2.加<code>&#39;&#39;&#39;</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="built_in">print</span> <span class="string">''</span><span class="string">'"To be, or not to be": that is the question.\nWhether it'</span>s nobler <span class="keyword">in</span> the mind to suffer.<span class="string">''</span><span class="string">'</span><br><span class="line">"To be, or not to be": that is the question.</span><br><span class="line">Whether it'</span>s nobler <span class="keyword">in</span> the mind to suffer.</span><br></pre></td></tr></table></figure></p>
+<p>3.加<code>r</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="built_in">print</span> r<span class="string">''</span><span class="string">'"To be, or not to be": that is the question.\nWhether it'</span>s nobler <span class="keyword">in</span> the mind to suffer.<span class="string">''</span><span class="string">'</span><br><span class="line">"To be, or not to be": that is the question.\nWhether it'</span>s nobler <span class="keyword">in</span> the mind to suffer.</span><br></pre></td></tr></table></figure></p>
+<p>4.加<code>r</code>,则不需要<code>\n</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="built_in">print</span> r<span class="string">''</span><span class="string">'"To be, or not to be": that is the question.</span><br><span class="line">... Whether it'</span>s nobler <span class="keyword">in</span> the mind to suffer.<span class="string">''</span><span class="string">'</span><br><span class="line">"To be, or not to be": that is the question.</span><br><span class="line">Whether it'</span>s nobler <span class="keyword">in</span> the mind to suffer.</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="Unicode_u5B57_u7B26_u4E32"><a href="#Unicode_u5B57_u7B26_u4E32" class="headerlink" title="Unicode字符串"></a>Unicode字符串</h3><p>为了统一所有文字的编码，Unicode应运而生。Unicode把所有语言都统一到一套编码里，这样就不会再有乱码问题了。Unicode通常用两个字节表示一个字符，原有的英文编码从单字节变成双字节，只需要把高字节全部填为0就可以。<br><strong>如果中文字符串在Python环境下遇到 UnicodeDecodeError，这是因为.py文件保存的格式有问题。可以在第一行添加注释:</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>Python支持对整数和浮点数直接进行四则混合运算，运算规则和数学上的四则运算规则完全一致。</strong><br>1.基本运算<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="number">1</span> + <span class="number">2</span> + <span class="number">3</span></span><br><span class="line"><span class="number">6</span></span><br><span class="line">&gt;&gt;&gt; <span class="number">4</span> * <span class="number">5</span> - <span class="number">6</span></span><br><span class="line"><span class="number">14</span></span><br><span class="line">&gt;&gt;&gt; <span class="number">7.5</span> / <span class="number">8</span> + <span class="number">2.1</span></span><br><span class="line"><span class="number">3.0375</span></span><br></pre></td></tr></table></figure></p>
+<p>2.使用小括号提升优先级<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; (<span class="number">1</span> + <span class="number">2</span>) * <span class="number">3</span></span><br><span class="line"><span class="number">9</span></span><br><span class="line">&gt;&gt;&gt; (<span class="number">2.5</span> + <span class="number">3.6</span>) / (<span class="number">1.3</span> * (<span class="number">5</span> - <span class="number">2.7</span>))</span><br><span class="line"><span class="number">2.040133779264214</span></span><br></pre></td></tr></table></figure></p>
+<p>3.Python的整数运算结果仍然是整数，浮点数运算结果仍然是浮点数，整数与浮点数运算结果是浮点数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="number">5</span> / <span class="number">3</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line">&gt;&gt;&gt; <span class="number">5.0</span> / <span class="number">3.0</span></span><br><span class="line"><span class="number">1.6666666666666667</span></span><br><span class="line">&gt;&gt;&gt; <span class="number">5</span> / <span class="number">3.0</span></span><br><span class="line"><span class="number">1.6666666666666667</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="u5E03_u5C14_u7C7B_u578B"><a href="#u5E03_u5C14_u7C7B_u578B" class="headerlink" title="布尔类型"></a>布尔类型</h3>
       
     </div>
     
@@ -337,7 +431,7 @@ Web网站和各种网络服务
         <p><span>本文标题:</span><a href="/2016/05/17/Python-base/">Python-base</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Wang Chi 的个人博客">Wang Chi</a></p>
         <p><span>发布时间:</span>2016年05月17日 - 23时52分</p>
-        <p><span>最后更新:</span>2016年05月19日 - 15时25分</p>
+        <p><span>最后更新:</span>2016年05月29日 - 20时47分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/05/17/Python-base/" title="Python-base">http://yoursite.com/2016/05/17/Python-base/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/05/17/Python-base/　　作者: Wang Chi" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -367,7 +461,7 @@ Web网站和各种网络服务
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Python__u7279_u70B9"><span class="toc-number">1.</span> <span class="toc-text">Python 特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python__u9002_u5408_u7684_u9886_u57DF"><span class="toc-number">2.</span> <span class="toc-text">Python 适合的领域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python__u548C_u5176_u4ED6_u8BED_u8A00_u5BF9_u6BD4"><span class="toc-number">3.</span> <span class="toc-text">Python 和其他语言对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python__u6570_u636E_u7C7B_u578B"><span class="toc-number">4.</span> <span class="toc-text">Python 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u6574_u6570"><span class="toc-number">4.1.</span> <span class="toc-text">整数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u6D6E_u70B9_u6570"><span class="toc-number">4.2.</span> <span class="toc-text">浮点数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5B57_u7B26_u4E32"><span class="toc-number">4.3.</span> <span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5E03_u5C14_u503C"><span class="toc-number">4.4.</span> <span class="toc-text">布尔值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u7A7A_u503C"><span class="toc-number">4.5.</span> <span class="toc-text">空值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#print__u8BED_u53E5"><span class="toc-number">5.</span> <span class="toc-text">print 语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u76F4_u63A5_u6253_u5370"><span class="toc-number">5.1.</span> <span class="toc-text">直接打印</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#print__u8BED_u53E5_u53EF_u4EE5_u8DDF_u591A_u4E2A_u5B57_u7B26_u4E32_uFF0C_u7528_u201C_uFF0C_u201D_u9694_u5F00"><span class="toc-number">5.2.</span> <span class="toc-text">print 语句可以跟多个字符串，用“，”隔开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#print__u53EF_u4EE5_u6253_u5370_u6574_u6570_u6216_u8005_u8BA1_u7B97_u7ED3_u679C"><span class="toc-number">5.3.</span> <span class="toc-text">print 可以打印整数或者计算结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u6CE8_u91CA"><span class="toc-number">5.4.</span> <span class="toc-text">注释</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Python__u7279_u70B9"><span class="toc-number">1.</span> <span class="toc-text">Python 特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python__u9002_u5408_u7684_u9886_u57DF"><span class="toc-number">2.</span> <span class="toc-text">Python 适合的领域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python__u548C_u5176_u4ED6_u8BED_u8A00_u5BF9_u6BD4"><span class="toc-number">3.</span> <span class="toc-text">Python 和其他语言对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python__u6570_u636E_u7C7B_u578B"><span class="toc-number">4.</span> <span class="toc-text">Python 数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u6574_u6570"><span class="toc-number">4.1.</span> <span class="toc-text">整数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u6D6E_u70B9_u6570"><span class="toc-number">4.2.</span> <span class="toc-text">浮点数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5B57_u7B26_u4E32"><span class="toc-number">4.3.</span> <span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5E03_u5C14_u503C"><span class="toc-number">4.4.</span> <span class="toc-text">布尔值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u7A7A_u503C"><span class="toc-number">4.5.</span> <span class="toc-text">空值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#print__u8BED_u53E5"><span class="toc-number">5.</span> <span class="toc-text">print 语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u76F4_u63A5_u6253_u5370"><span class="toc-number">5.1.</span> <span class="toc-text">直接打印</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#print__u8BED_u53E5_u53EF_u4EE5_u8DDF_u591A_u4E2A_u5B57_u7B26_u4E32_uFF0C_u7528_u201C_uFF0C_u201D_u9694_u5F00"><span class="toc-number">5.2.</span> <span class="toc-text">print 语句可以跟多个字符串，用“，”隔开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#print__u53EF_u4EE5_u6253_u5370_u6574_u6570_u6216_u8005_u8BA1_u7B97_u7ED3_u679C"><span class="toc-number">5.3.</span> <span class="toc-text">print 可以打印整数或者计算结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u6CE8_u91CA"><span class="toc-number">5.4.</span> <span class="toc-text">注释</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u53D8_u91CF"><span class="toc-number">6.</span> <span class="toc-text">变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u53D8_u91CF_u5728_u8BA1_u7B97_u673A_u5185_u5B58_u4E2D_u7684_u8868_u793A"><span class="toc-number">6.1.</span> <span class="toc-text">变量在计算机内存中的表示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5B57_u7B26_u4E32-1"><span class="toc-number">7.</span> <span class="toc-text">字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u5B57_u7B26_u4E32_u5305_u542B_u5355_u5F15_u53F7"><span class="toc-number">7.1.</span> <span class="toc-text">字符串包含单引号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5B57_u7B26_u4E32_u5305_u542B_u53CC_u5F15_u53F7"><span class="toc-number">7.2.</span> <span class="toc-text">字符串包含双引号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5B57_u7B26_u4E32_u65E2_u5305_u542B_u5355_u5F15_u53F7_u53C8_u5305_u542B_u53CC_u5F15_u53F7"><span class="toc-number">7.3.</span> <span class="toc-text">字符串既包含单引号又包含双引号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5E38_u89C1_u8F6C_u4E49_u5B57_u7B26"><span class="toc-number">7.4.</span> <span class="toc-text">常见转义字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#raw_u5B57_u7B26_u4E32_u4E0E_u591A_u884C_u5B57_u7B26_u4E32"><span class="toc-number">7.5.</span> <span class="toc-text">raw字符串与多行字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Unicode_u5B57_u7B26_u4E32"><span class="toc-number">7.6.</span> <span class="toc-text">Unicode字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5E03_u5C14_u7C7B_u578B"><span class="toc-number">7.7.</span> <span class="toc-text">布尔类型</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
