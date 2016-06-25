@@ -141,7 +141,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Python入门/" style="font-size: 10px;">Python入门</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux-daily-fault/" style="font-size: 10px;">linux daily fault</a> <a href="/tags/linux-基础/" style="font-size: 15px;">linux 基础</a> <a href="/tags/linux-集群架构篇/" style="font-size: 20px;">linux 集群架构篇</a> <a href="/tags/主页/" style="font-size: 10px;">主页</a>
+                        <a href="/tags/Python入门/" style="font-size: 10px;">Python入门</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux-daily-fault/" style="font-size: 10px;">linux daily fault</a> <a href="/tags/linux-基础/" style="font-size: 15px;">linux 基础</a> <a href="/tags/linux-基础篇/" style="font-size: 10px;">linux 基础篇</a> <a href="/tags/linux-集群架构篇/" style="font-size: 20px;">linux 集群架构篇</a> <a href="/tags/主页/" style="font-size: 10px;">主页</a>
                     </div>
                 </section>
                 
@@ -218,6 +218,71 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-encapsulate-virtual-machine" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/17/encapsulate-virtual-machine/" class="article-date">
+      <time datetime="2016-02-17T12:28:24.000Z" itemprop="datePublished">2016-02-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/17/encapsulate-virtual-machine/">Encapsulate-virtual-machine</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="Red_Hat_Enterprise_Linux_6-5"><a href="#Red_Hat_Enterprise_Linux_6-5" class="headerlink" title="Red Hat Enterprise Linux 6.5"></a>Red Hat Enterprise Linux 6.5</h2><h2 id="u5C01_u88C5_u865A_u62DF_u673A"><a href="#u5C01_u88C5_u865A_u62DF_u673A" class="headerlink" title="封装虚拟机"></a>封装虚拟机</h2><h3 id="u914D_u7F6Eyum_u6E90_28_u7269_u7406_u673ARhel7_29"><a href="#u914D_u7F6Eyum_u6E90_28_u7269_u7406_u673ARhel7_29" class="headerlink" title="配置yum源(物理机Rhel7)"></a>配置yum源(物理机Rhel7)</h3><p><strong>效果</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@foundation ~]<span class="comment"># df -h</span></span><br><span class="line">Filesystem                           Size  Used Avail Use% Mounted on</span><br><span class="line">/dev/mapper/rhel_foundation163-root   <span class="number">89</span>G   <span class="number">33</span>G   <span class="number">57</span>G  <span class="number">37</span>% /</span><br><span class="line">devtmpfs                             <span class="number">3.8</span>G     <span class="number">0</span>  <span class="number">3.8</span>G   <span class="number">0</span>% /dev</span><br><span class="line">tmpfs                                <span class="number">3.8</span>G   <span class="number">18</span>M  <span class="number">3.8</span>G   <span class="number">1</span>% /dev/shm</span><br><span class="line">tmpfs                                <span class="number">3.8</span>G  <span class="number">9.0</span>M  <span class="number">3.8</span>G   <span class="number">1</span>% /run</span><br><span class="line">tmpfs                                <span class="number">3.8</span>G     <span class="number">0</span>  <span class="number">3.8</span>G   <span class="number">0</span>% /sys/fs/cgroup</span><br><span class="line">/dev/loop0                           <span class="number">3.5</span>G  <span class="number">3.5</span>G     <span class="number">0</span> <span class="number">100</span>% /var/www/html/<span class="built_in">source</span></span><br><span class="line">/dev/loop1                           <span class="number">3.6</span>G  <span class="number">3.6</span>G     <span class="number">0</span> <span class="number">100</span>% /var/www/html/rh6.<span class="number">5</span>  <span class="comment">##镜像挂载成功</span></span><br><span class="line">/dev/sda3                            <span class="number">497</span>M  <span class="number">122</span>M  <span class="number">376</span>M  <span class="number">25</span>% /boot</span><br><span class="line">[root@foundation ~]<span class="comment"># vim /etc/fstab  ##设置开机自动挂载</span></span><br><span class="line">/<span class="built_in">source</span>/rhel-server-<span class="number">6.5</span>-x86_64-dvd.iso /var/www/html/rh6.<span class="number">5</span> iso9660 ro,relatime <span class="number">0</span> <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/linux-集群架构篇/">linux 集群架构篇</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-集群架构篇/">linux 集群架构篇</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/02/17/encapsulate-virtual-machine/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
   
     <article id="post-RH124-unit15" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -832,72 +897,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/02/09/RH124-unit7/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-RH124-unit6" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/09/RH124-unit6/" class="article-date">
-      <time datetime="2016-02-08T18:02:59.000Z" itemprop="datePublished">2016-02-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/09/RH124-unit6/">6.Controlling Access to Files with Linux File System Permissions</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="Red_Hat_Enterprise_Linux_7"><a href="#Red_Hat_Enterprise_Linux_7" class="headerlink" title="Red Hat Enterprise Linux 7"></a>Red Hat Enterprise Linux 7</h2><h3 id="u67E5_u770B_u6587_u4EF6_u5C5E_u6027"><a href="#u67E5_u770B_u6587_u4EF6_u5C5E_u6027" class="headerlink" title="查看文件属性"></a>查看文件属性</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls <span class="operator">-l</span> filename</span><br><span class="line">-		rw-rw-r-- 	<span class="number">1</span> 		kiosk 	kiosk 		<span class="number">0</span> 	Oct  <span class="number">2</span> <span class="number">17</span>:<span class="number">05</span> 		file</span><br><span class="line">文件类型	         文件权限   文件副本个数	      文件所有人  文件所有组	大小	最后一次被修改的时间	名字</span><br></pre></td></tr></table></figure>
-<h3 id="u67E5_u770B_u76EE_u5F55_u5C5E_u6027"><a href="#u67E5_u770B_u76EE_u5F55_u5C5E_u6027" class="headerlink" title="查看目录属性"></a>查看目录属性</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls -ld	directoy</span><br><span class="line">d	rwxr-xr-x  	<span class="number">3</span> 	kiosk 	kiosk    	<span class="number">33</span> 			Aug <span class="number">27</span> <span class="number">09</span>:<span class="number">47</span> 		directory</span><br><span class="line">类型	权限	   子目录个数   目录所有人  目录所有组  子文件属性大小	                目录中内容变化		目录名字</span><br></pre></td></tr></table></figure>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/linux-基础篇/">linux 基础篇</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-基础/">linux 基础</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/09/RH124-unit6/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
